@@ -1,0 +1,40 @@
+name: Сервер Базара
+on:
+  push:
+    branches: [feature/bazar-store]
+    paths:
+      - .github/workflows/cloudflare.yml
+      - tools/deploy-ci.mjs
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: bazar-cloudflare
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Проверка доступа и развёртывание
+        run: node tools/deploy-ci.mjs
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          BAZAR_OWNER_EMAIL: ${{ secrets.BAZAR_OWNER_EMAIL }}
+          BAZAR_OWNER_PASSWORD: ${{ secrets.BAZAR_OWNER_PASSWORD }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: backend-connection
+          path: |
+            public/deployment.json
+            .runtime/backend-result.json
+          include-hidden-files: true
+          retention-days: 7
