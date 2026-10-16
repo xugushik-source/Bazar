@@ -2,13 +2,13 @@
 export const profiles={
  loose:{mode:'WEIGHED',policy_version:1,minimum_g:100,order_step_g:100,tolerance_bps:1000,tolerance_cap_g:200},
  delicate:{mode:'WEIGHED',policy_version:1,minimum_g:100,order_step_g:50,tolerance_bps:1000,tolerance_cap_g:50},
- herbs_by_weight:{mode:'WEIGHED',policy_version:1,minimum_g:50,order_step_g:50,tolerance_bps:1000,tolerance_cap_g:20},
+ small_cap_20g:{mode:'WEIGHED',policy_version:1,minimum_g:50,order_step_g:50,tolerance_bps:1000,tolerance_cap_g:20},
  whole:{mode:'WHOLE_BY_WEIGHT',policy_version:1},
- each:{mode:'EACH',policy_version:1},bunch:{mode:'BUNCH',policy_version:1},pack:{mode:'FIXED_PACK',policy_version:1},preweighed:{mode:'PREWEIGHED',policy_version:1}
+ each:{mode:'EACH',policy_version:1},bunch:{mode:'BUNCH',policy_version:1},pack:{mode:'FIXED_PACK',policy_version:1},preweighed:{mode:'PREWEIGHED',policy_version:1,reweigh_tolerance_g:3}
 };
 export const productProfiles={
  apple_loose:'loose',pear_loose:'loose',tomato_loose:'loose',cucumber_loose:'loose',potato_loose:'loose',carrot_loose:'loose',onion_loose:'loose',beetroot_loose:'loose',orange_loose:'loose',mandarin_loose:'loose',lemon_loose:'loose',banana_loose:'loose',grapes_loose:'loose',plum_loose:'loose',peach_loose:'loose',apricot_loose:'loose',aubergine_loose:'loose',pepper_loose:'loose',courgette_loose:'loose',
- strawberry_loose:'delicate',cherry_loose:'delicate',raspberry_loose:'delicate',ginger_loose:'herbs_by_weight',garlic_loose:'herbs_by_weight',
+ strawberry_loose:'delicate',cherry_loose:'delicate',raspberry_loose:'delicate',ginger_loose:'small_cap_20g',garlic_loose:'small_cap_20g',
  watermelon_whole_kg:'whole',melon_whole_kg:'whole',pumpkin_whole_kg:'whole',cabbage_whole_kg:'whole',cauliflower_whole_kg:'whole',
  avocado_each:'each',mango_each:'each',pineapple_each:'each',watermelon_fixed_each:'each',lettuce_each:'each',
  parsley_bunch:'bunch',dill_bunch:'bunch',coriander_bunch:'bunch',spring_onion_bunch:'bunch',

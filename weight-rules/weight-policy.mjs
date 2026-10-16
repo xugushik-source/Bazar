@@ -30,7 +30,9 @@ export function quote(product, selection, lineId) {
     q.estimate_minor=weightPrice(p.price_per_kg_minor,q.target_g);
     q.maximum_minor=weightPrice(p.price_per_kg_minor,q.max_g);
   } else if(mode==='PREWEIGHED') {
-    q.count=int(s.count,1,1);q.target_g=int(p.exact_net_g,1);q.min_g=q.target_g;q.max_g=q.target_g;
+    // Reweigh check only: scales disagree by a few grams. The label weight is what is charged.
+    const scale=int(p.reweigh_tolerance_g??0,0,10);
+    q.count=int(s.count,1,1);q.target_g=int(p.exact_net_g,1);q.min_g=Math.max(1,q.target_g-scale);q.max_g=q.target_g+scale;
     q.estimate_minor=weightPrice(p.price_per_kg_minor,q.target_g);q.maximum_minor=q.estimate_minor;
   } else {
     q.count=int(s.count,1,100);q.estimate_minor=int(p.price_per_unit_minor)*q.count;q.maximum_minor=q.estimate_minor;
@@ -49,11 +51,15 @@ export function assess(q, actual) {
     grams=weights.reduce((a,g)=>a+g,0);int(grams);
     amount=weightPrice(q.product.price_per_kg_minor,grams);
     if(weights.some(g=>g<q.each_min_g||g>q.each_max_g))return {decision:'CUSTOMER_APPROVAL_REQUIRED',reason:'OUTSIDE_SIZE_RANGE',actual_minor:amount};
-  } else if(q.mode==='WEIGHED'||q.mode==='PREWEIGHED') {
+  } else if(q.mode==='WEIGHED') {
     grams=int(actual.net_g);
     amount=weightPrice(q.product.price_per_kg_minor,grams);
     if(grams<q.min_g||grams>q.max_g)return {decision:'CUSTOMER_APPROVAL_REQUIRED',reason:'OUTSIDE_WEIGHT_RANGE',actual_minor:amount};
-    if(q.mode==='PREWEIGHED'&&actual.count!==1)return {decision:'CUSTOMER_APPROVAL_REQUIRED',reason:'COUNT_CHANGE',actual_minor:null};
+  } else if(q.mode==='PREWEIGHED') {
+    if(actual.count!==1)return {decision:'CUSTOMER_APPROVAL_REQUIRED',reason:'COUNT_CHANGE',actual_minor:null};
+    const reweighed=int(actual.net_g);
+    if(reweighed<q.min_g||reweighed>q.max_g)return {decision:'CUSTOMER_APPROVAL_REQUIRED',reason:'LABEL_MISMATCH',actual_minor:null};
+    grams=q.target_g;amount=q.estimate_minor;
   } else {
     const count=int(actual.count);
     if(count!==q.count)return {decision:'CUSTOMER_APPROVAL_REQUIRED',reason:'COUNT_CHANGE',actual_minor:null};
