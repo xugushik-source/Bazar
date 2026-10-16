@@ -18,5 +18,15 @@
   "devDependencies": {
     "esbuild": "0.27.3",
     "wrangler": "4.92.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "DB": {
+        "description": "Отдельная база заказов Базара. Cloudflare создаст и привяжет её при запуске."
+      },
+      "BAZAR_OWNER_PASSWORD": {
+        "description": "Придумайте пароль кабинета Базара, минимум 16 символов. Логин: owner@bazar.local. Не используйте пароль Cloudflare."
+      }
+    }
   }
 }
