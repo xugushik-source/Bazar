@@ -1,3 +1,4 @@
+import {publicAPI}from './public-api.mjs';
 import {catalogAdmin}from './catalog-admin.mjs';
 import {weightPrice} from './weight-policy.mjs';
 import {q,parse,own,catalog,slots,priceBasket,customerQuotes,createOrder,orderView,action,approve,settle,inventoryAction,clock} from './commerce.mjs';
@@ -40,4 +41,4 @@ export async function handle(req,env){try{
  }
  fail('NOT_FOUND',404);
  }catch(e){if(e instanceof Problem)return reply({error:e.code},e.status);if(/CHECK|UNIQUE|constraint/i.test(e.message||''))return reply({error:'CONFLICT'},409);return reply({error:'SERVER_ERROR'},500);}}
-export default {async fetch(req,env,ctx){if(new URL(req.url).pathname.startsWith('/api/'))return handle(req,env);return env.ASSETS.fetch(req)}};
+export default {async fetch(req,env,ctx){if(new URL(req.url).pathname.startsWith('/api/'))return publicAPI(req,env,handle);return env.ASSETS.fetch(req)}};
