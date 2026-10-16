@@ -9,7 +9,8 @@ export function weightPrice(pricePerKgMinor, grams) {
 function freeze(v){Object.values(v).forEach(x=>{if(x&&typeof x==='object')freeze(x)});return Object.freeze(v)}
 export function quote(product, selection, lineId) {
   if(!product?.id||!modes.has(product.mode)||!product.policy_version||!lineId)throw Error('UNCONFIGURED_PRODUCT');
-  if(!['GEL','AMD','RUB'].includes(product.currency))throw Error('INVALID_CURRENCY');
+  // Sales are in Akhalkalaki only: amounts are tetri (1 GEL = 100). Add a currency here only together with a new market.
+  if(!['GEL'].includes(product.currency))throw Error('INVALID_CURRENCY');
   const p=copy(product),s=copy(selection),mode=p.mode;
   const q={line_id:lineId,product_id:p.id,variant_id:p.variant_id||p.id,currency:p.currency,mode,policy_version:p.policy_version,product:p,selection:s};
   if(mode==='WEIGHED') {
