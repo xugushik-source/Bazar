@@ -1,0 +1,24 @@
+{
+  "id": "./",
+  "name": "Базар · Բազար · ბაზარი",
+  "short_name": "Базар",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#254637",
+  "theme_color": "#254637",
+  "icons": [
+    {
+      "src": "./icons/bazar-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/bazar-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
