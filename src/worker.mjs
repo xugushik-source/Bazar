@@ -1,3 +1,6 @@
+import {listPromotions,savePromotion,referralInfo,referralManage}from './promotions.mjs';
+import {configured,telegramWebhook,telegramManage,botInvite,drainTelegram}from './telegram.mjs';
+import {courierSummary,shift,cashReport,cashReview,remit}from './couriers.mjs';
 import {publicAPI}from './public-api.mjs';
 import {catalogAdmin}from './catalog-admin.mjs';
 import {weightPrice} from './weight-policy.mjs';
@@ -9,12 +12,15 @@ const reply=(value,status=200,extra={})=>new Response(JSON.stringify(value),{sta
 async function body(req){if(req.method!=='POST')return null;const origin=req.headers.get('origin');if(origin&&origin!==new URL(req.url).origin||req.headers.get('sec-fetch-site')==='cross-site'||req.headers.get('X-Bazar-CSRF')!=='1')fail('FORBIDDEN',403);if(!req.headers.get('content-type')?.includes('application/json'))fail('INVALID_INPUT');const raw=await req.text();if(new TextEncoder().encode(raw).length>65536)fail('PAYLOAD_TOO_LARGE',413);let b;try{b=JSON.parse(raw)}catch{fail('INVALID_INPUT')}if(!b||typeof b!=='object'||Array.isArray(b))fail('INVALID_INPUT');return b;}
 async function login(req,db,b){const email=text(b.email,200,true).toLowerCase(),password=text(b.password,200,true),limit=await sha((req.headers.get('CF-Connecting-IP')||'local')+email),at=Date.now(),rate=await q(db,'SELECT * FROM auth_limits WHERE key=?',limit).first();if(rate&&rate.expires>at&&rate.attempts>=10)fail('RATE_LIMITED',429);await q(db,'INSERT INTO auth_limits(key,attempts,expires) VALUES(?,1,?) ON CONFLICT(key) DO UPDATE SET attempts=CASE WHEN expires>? THEN attempts+1 ELSE 1 END,expires=CASE WHEN expires>? THEN expires ELSE excluded.expires END',limit,at+15*60000,at,at).run();const u=await q(db,'SELECT * FROM users WHERE email=? AND active=1',email).first();const salt=u?.salt||'dummy-salt-for-constant-login-work';if(!constant(await passwordHash(password,salt),u?.hash||'none'))fail('INVALID_LOGIN',401);const value=token();await q(db,'INSERT INTO sessions(hash,user_id,expires) VALUES(?,?,?)',await sha(value),u.id,at+8*3600000).run();await q(db,'DELETE FROM auth_limits WHERE key=?',limit).run();return reply({ok:true},200,{'Set-Cookie':`bazar_session=${value}; HttpOnly; SameSite=Strict; Path=/; Max-Age=28800${new URL(req.url).protocol==='https:'?'; Secure':''}`});}
 export async function handle(req,env){try{
- const url=new URL(req.url),p=url.pathname,db=env.DB;if(p==='/api/health')return reply({ok:true,brand:'BAZAR',demo:config.demo,database:!!db,telegram:false,googleSheets:false});if(!db)fail('DATABASE_UNAVAILABLE',503);
+ const url=new URL(req.url),p=url.pathname,db=env.DB;if(p==='/api/telegram/webhook')return await telegramWebhook(req,env);if(p==='/api/health')return reply({ok:true,brand:'BAZAR',operationsVersion:1,demo:config.demo,database:!!db,telegram:configured(env),googleSheets:false});if(!db)fail('DATABASE_UNAVAILABLE',503);
  const b=await body(req),user=env.PRIVATE_SITES_SESSION?await env.PRIVATE_SITES_SESSION(req,db):await userSession(req,db);
- if(p==='/api/bootstrap'&&req.method==='GET')return reply({brand:config.brand,contact:{phone:config.phone,address:config.address},demo:config.demo,cities:(await db.prepare('SELECT * FROM cities WHERE active=1 ORDER BY id').all()).results.map(c=>({...c,names:parse(c.names)})),user,integrations:{telegram:'DISABLED',googleSheets:'DISABLED',acquiring:false}});
+ if(p==='/api/bootstrap'&&req.method==='GET')return reply({brand:config.brand,contact:{phone:config.phone,address:config.address},demo:config.demo,cities:(await db.prepare('SELECT * FROM cities WHERE active=1 ORDER BY id').all()).results.map(c=>({...c,names:parse(c.names)})),user,integrations:{telegram:configured(env)?'CONFIGURED':'DISABLED',googleSheets:'DISABLED',acquiring:false}});
  if(p==='/api/catalog'&&req.method==='GET')return reply(await catalog(db,url.searchParams.get('city')));
  if(p==='/api/slots'&&req.method==='GET')return reply(await slots(db,url.searchParams.get('city'),url.searchParams.get('day')));
+ if(p==='/api/promotions'&&req.method==='GET')return reply(await listPromotions(db,url.searchParams.get('city')));
+ if(p==='/api/order/referral'&&b)return reply(await referralInfo(db,b));
  if(p==='/api/quote'&&b){const quote=await priceBasket(db,b),fee=b.fulfillment==='delivery'?quote.city.delivery_fee:0;if(!['pickup','delivery'].includes(b.fulfillment))fail('INVALID_INPUT');return reply({quotes:customerQuotes(quote.lines),items_total:quote.estimate_minor,total:quote.estimate_minor+fee,maximum_total:quote.maximum_minor+fee,delivery_fee:fee,currency:quote.city.currency});}
+ if(p==='/api/order/telegram'&&b)return reply(await botInvite(db,b,null,env,true));
  if(p==='/api/orders'&&b)return reply(await createOrder(db,b),201);
  if(p==='/api/order/view'&&b)return reply(await orderView(db,b.id,user,b.key));
  if(p==='/api/order/approve'&&b)return reply(await approve(db,b));
@@ -23,6 +29,16 @@ export async function handle(req,env){try{
  if(p==='/api/join'&&b){const invite=await q(db,'SELECT * FROM invites WHERE hash=? AND used=0 AND expires>?',await sha(text(b.invite,100,true)),Date.now()).first();if(!invite)fail('INVALID_INVITE',409);const password=text(b.password,200,true);if(password.length<12)fail('PASSWORD_TOO_SHORT');const id=uuid(),salt=token(),email=text(b.email,200,true).toLowerCase();if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))fail('INVALID_INPUT');await db.batch([q(db,'UPDATE invites SET used=1 WHERE hash=? AND used=0',invite.hash),db.prepare('INSERT INTO guards(value) VALUES(changes())'),q(db,'INSERT INTO users(id,email,name,hash,salt) VALUES(?,?,?,?,?)',id,email,text(b.name,100,true),await passwordHash(password,salt),salt),q(db,'INSERT INTO memberships(user_id,vendor_id,role) VALUES(?,?,?)',id,invite.vendor_id,invite.role),db.prepare('DELETE FROM guards')]);return reply({ok:true});}
  if(p.startsWith('/api/manage/')){
  if(!user)fail('LOGIN_REQUIRED',401);
+ if(p.startsWith('/api/manage/telegram/')){if(p.split('/').pop()==='status'?req.method!=='GET':!b)fail('METHOD_NOT_ALLOWED',405);return reply(await telegramManage(db,b,user,env,p.split('/').pop(),url.origin));}
+ if(p==='/api/manage/promotions'&&req.method==='GET'){if(!user.owner)fail('FORBIDDEN',403);return reply(await listPromotions(db,url.searchParams.get('city'),true))}
+ if(p==='/api/manage/promotion'&&b)return reply(await savePromotion(db,b,user));
+ if(p.startsWith('/api/manage/referral/')){if(p.split('/').pop()==='status'?req.method!=='GET':!b)fail('METHOD_NOT_ALLOWED',405);return reply(await referralManage(db,b,user,p.split('/').pop()));}
+ if(p==='/api/manage/operations'&&req.method==='GET'){if(!user.owner)fail('FORBIDDEN',403);const city=url.searchParams.get('city');return reply({events:(await q(db,'SELECT e.*,o.city_id FROM events e JOIN orders o ON o.id=e.order_id WHERE o.city_id=? ORDER BY e.at DESC LIMIT 200',city).all()).results,audit:(await db.prepare('SELECT * FROM operations_audit ORDER BY at DESC LIMIT 100').all()).results,customers:(await q(db,"SELECT json_extract(customer,'$.phone') phone,json_extract(customer,'$.name') name,COUNT(*) orders,SUM(CASE WHEN status='COMPLETED' THEN total ELSE 0 END) revenue FROM orders WHERE city_id=? GROUP BY json_extract(customer,'$.phone') ORDER BY MAX(created_at) DESC LIMIT 200",city).all()).results,payments:(await q(db,'SELECT p.* FROM payments p JOIN orders o ON o.id=p.order_id WHERE o.city_id=? ORDER BY p.at DESC LIMIT 200',city).all()).results})}
+ if(p==='/api/manage/couriers'&&req.method==='GET')return reply(await courierSummary(db,user,url.searchParams.get('city')));
+ if(p==='/api/manage/shift'&&b)return reply(await shift(db,b,user));
+ if(p==='/api/manage/cash/report'&&b)return reply(await cashReport(db,b,user));
+ if(p==='/api/manage/cash/review'&&b)return reply(await cashReview(db,b,user));
+ if(p==='/api/manage/cash/remit'&&b)return reply(await remit(db,b,user));
  if(p==='/api/manage/action'&&b)return reply(await action(db,b,user));
  if(p==='/api/manage/inventory'&&b)return reply(await inventoryAction(db,b,user));
  if(p==='/api/manage/settle'&&b)return reply(await settle(db,b,user));
@@ -41,4 +57,4 @@ export async function handle(req,env){try{
  }
  fail('NOT_FOUND',404);
  }catch(e){if(e instanceof Problem)return reply({error:e.code},e.status);if(/CHECK|UNIQUE|constraint/i.test(e.message||''))return reply({error:'CONFLICT'},409);return reply({error:'SERVER_ERROR'},500);}}
-export default {async fetch(req,env,ctx){if(new URL(req.url).pathname.startsWith('/api/'))return publicAPI(req,env,handle);return env.ASSETS.fetch(req)}};
+export default {async fetch(req,env,ctx){if(new URL(req.url).pathname.startsWith('/api/')){const r=await publicAPI(req,env,handle);if(configured(env)&&ctx?.waitUntil)ctx.waitUntil(drainTelegram(env,new URL(req.url).origin).catch(()=>{}));return r;}return env.ASSETS.fetch(req)}};

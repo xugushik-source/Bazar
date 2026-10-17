@@ -18,6 +18,12 @@
   "workers_dev": true,
   "vars": {
     "PUBLIC_STOREFRONT_ORIGIN": "https://xugushik-source.github.io",
-    "BAZAR_OWNER_EMAIL": "owner@bazar.local"
+    "BAZAR_OWNER_EMAIL": "owner@bazar.local",
+    "BAZAR_PUBLIC_ORIGIN": "https://bazar-demo.xugushik.workers.dev"
+  },
+  "triggers": {
+    "crons": [
+      "*/2 * * * *"
+    ]
   }
 }
