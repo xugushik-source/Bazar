@@ -91,8 +91,24 @@ export async function userSession(req, db) {
         .bind(u.id)
         .all()
     ).results,
+    team: await teamOf(db, u.id),
   };
 }
+// City-scoped collection roles (migration 0006). Before that migration reaches a database the user simply has none.
+export async function teamOf(db, id) {
+  try {
+    return (
+      await db
+        .prepare("SELECT city_id,role FROM team_roles WHERE user_id=?")
+        .bind(id)
+        .all()
+    ).results;
+  } catch {
+    return [];
+  }
+}
+export const teamRole = (user, city) =>
+  user?.team?.find((t) => t.city_id === city)?.role || null;
 export function requireUser(user) {
   if (!user) fail("LOGIN_REQUIRED", 401);
   return user;
