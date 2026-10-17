@@ -7,7 +7,7 @@ No client roles/prices/payment verification. Unknown costs remain null. Weighted
 adjustments inside disclosed bounds do not require new approval; substitutions,
 unit-price changes and out-of-bounds changes do. Apply stock/slot/version guards
 atomically. Every UI string needs hy/ru/ka parity. No slow intro or hidden content.
-Demo catalogue, stock and prices must be explicitly marked. Never commit secrets.
+Owner confirmed current catalogue/prices for publication on 2026-10-17. Do not invent future merchant data; imported test fixtures remain isolated. Never commit secrets.
 Run npm test and npm run build; distinguish SQLite compatibility from hosted D1 tests.
 
 ## Постоянное правило владельца: публикация

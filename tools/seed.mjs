@@ -17,7 +17,7 @@ const products=[
 export async function seed(db) {
  if(await db.prepare("SELECT value FROM app_config WHERE key='catalog-expanded-v1'").first())return;
  const st=[];for(const c of config.cities){st.push(db.prepare('INSERT INTO cities(id,names) VALUES(?,?) ON CONFLICT DO NOTHING').bind(c.id,JSON.stringify(c.names)));
- const vendors=[{id:c.id+'-garden',names:{ru:'Учебный сад',hy:'Փորձնական այգի',ka:'სატესტო ბაღი'}},{id:c.id+'-farm',names:{ru:'Учебная ферма',hy:'Փորձնական ֆերմա',ka:'სატესტო ფერმა'}}];
+ const vendors=[{id:c.id+'-garden',names:{ru:'Сад Базара',hy:'Բազարի այգի',ka:'ბაზრის ბაღი'}},{id:c.id+'-farm',names:{ru:'Ферма Базара',hy:'Բազարի ֆերմա',ka:'ბაზრის ფერმა'}}];
  for(const v of vendors)st.push(db.prepare('INSERT INTO vendors(id,city_id,names) VALUES(?,?,?) ON CONFLICT DO NOTHING').bind(v.id,c.id,JSON.stringify(v.names)));
  for(const [i,row]of [...products,...marketProducts].entries()){
  const [key,ru,hy,ka,category,art,price]=row,vendor=vendors[i%2].id,profile={...profileFor(key)},weighted=['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'].includes(profile.mode);
