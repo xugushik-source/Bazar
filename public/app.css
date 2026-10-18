@@ -31,3 +31,7 @@ a.button.primary{background:var(--green);color:var(--white);border-color:var(--g
 .ledger-lines{margin:.4rem 0;padding-left:1.1rem;font-size:.9rem;line-height:1.5;overflow-wrap:anywhere}
 .category-row button.soon{opacity:.75}.category-row button.soon img{filter:grayscale(.35)}.category-row button small{display:block;font-size:10px;color:var(--green);font-weight:600}
 .category-row button.soon.active{opacity:1}.category-row button.active small{color:white}#products>.empty{grid-column:1/-1;max-width:34em;margin:24px auto}
+/* All departments visible at once (a sideways-scrolling row hid most of them on phones). */
+.category-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;overflow:visible}
+.category-row button{display:flex;align-items:center;gap:8px;white-space:normal;text-align:left;padding:6px 10px;min-height:52px;line-height:1.2}
+.category-row button img{flex:none;width:40px;height:40px}
