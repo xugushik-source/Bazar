@@ -47,6 +47,7 @@ export async function handle(req,env){try{
  if(p==='/api/manage/cash/review'&&b)return reply(await cashReview(db,b,user));
  if(p==='/api/manage/cash/remit'&&b)return reply(await remit(db,b,user));
  if(p==='/api/manage/action'&&b)return reply(await action(db,b,user));
+ if(p==='/api/manage/approve-phone'&&b)return reply(await approve(db,b,user));
  if(p==='/api/manage/inventory'&&b)return reply(await inventoryAction(db,b,user));
  if(p==='/api/manage/settle'&&b)return reply(await settle(db,b,user));
  if(p==='/api/manage/orders'&&req.method==='GET'){const city=url.searchParams.get('city'),rows=(await q(db,'SELECT id FROM orders WHERE city_id=? ORDER BY created_at DESC LIMIT 200',city).all()).results,result=[];for(const row of rows){try{result.push(await orderView(db,row.id,user))}catch(e){if(!(e instanceof Problem)||e.code!=='FORBIDDEN')throw e}}return reply({orders:result});}

@@ -147,3 +147,24 @@ test('owner-managed staff passwords: short login, six characters, only the owner
  // the owner still logs in with the full address
  assert.equal((await login('owner@test.invalid','test-password-123456')).http,200);
 }finally{e.DB.close()}});
+
+test('buyer answer taken by phone: controller/owner record approval or refusal of a change with a note; collector cannot; Telegram dialog works',async()=>{const e=await env();try{
+ const collector=await hire(e,'COLLECTOR','Арам'),controller=await hire(e,'CONTROLLER','Нино'),o=await order(e);await act(e,o,controller,'confirm');
+ await act(e,o,collector,'weigh',{actuals:[{line_id:pid('apple_loose'),net_g:1450},{line_id:pid('pear_loose'),net_g:1000}]});
+ let c=await customer(e,o);assert.equal(c.status,'AWAITING_APPROVAL');const body={id:o.id,version:c.version,proposal_id:c.proposal.id,approved:true};
+ assert.equal((await call(e,'manage/approve-phone',body,collector)).http,403);assert.equal((await call(e,'manage/approve-phone',body,controller)).http,400,'a note is required');
+ assert.equal((await call(e,'manage/approve-phone',{...body,approved:false,reason:'Покупатель просит не больше килограмма'},controller)).http,200);
+ c=await customer(e,o);assert.equal(c.status,'WEIGHING');assert.equal(c.proposal,null);
+ const ev=(await view(e,o,e.owner)).events.find(x=>x.event==='CHANGE_REJECTED');assert.equal(ev.actor,'Нино');assert.equal(ev.data.source,'PHONE');assert.equal(ev.data.reason,'Покупатель просит не больше килограмма');
+ await act(e,o,collector,'weigh',{actuals:[{line_id:pid('apple_loose'),net_g:1450}]});c=await customer(e,o);
+ assert.equal((await call(e,'manage/approve-phone',{id:o.id,version:c.version,proposal_id:c.proposal.id,approved:true,reason:'Согласен на 1450 г по телефону'},e.owner)).http,200);
+ c=await customer(e,o);assert.equal(c.status,'ASSEMBLING');assert.equal(c.actuals.find(a=>a.line_id===pid('apple_loose')).net_g,1450);
+ assert.equal((await call(e,'manage/approve-phone',{id:o.id,version:c.version,proposal_id:'x',approved:true,reason:'повтор'},e.owner)).http,409,'nothing left to approve');
+ // Telegram: the controller answers for the buyer through a reply with the note
+ const send=async data=>telegramWebhook(new Request('https://bazar.test/api/telegram/webhook',{method:'POST',headers:{'Content-Type':'application/json','X-Telegram-Bot-Api-Secret-Token':e.TELEGRAM_WEBHOOK_SECRET},body:JSON.stringify({update_id:++e.update,...data})}),e);
+ const inv=await botInvite(e.DB,{kind:'IDENTITY',lang:'ru'},{id:controller.id,owner:false,memberships:[]},e);await send({message:{message_id:1,text:inv.command,chat:{id:22,type:'private'},from:{id:22}}});
+ const o2=await order(e);await act(e,o2,controller,'confirm');await act(e,o2,collector,'weigh',{actuals:[{line_id:pid('apple_loose'),net_g:1450},{line_id:pid('pear_loose'),net_g:1000}]});await drainTelegram(e,'https://bazar.test',50);
+ const l=await q(e.DB,'SELECT * FROM tg_links WHERE chat_id=?','22').first(),btn=(await q(e.DB,'SELECT * FROM tg_buttons WHERE link_id=? AND order_id=? ORDER BY rowid DESC',l.id,o2.id).all()).results.find(b=>JSON.parse(b.payload).action==='approve_phone');assert.ok(btn,'approve by phone button');
+ await send({callback_query:{id:'cb',data:'bz:'+btn.id,from:{id:22},message:{message_id:1,chat:{id:22}}}});await send({message:{message_id:2,text:'Согласен, сказал по телефону',chat:{id:22,type:'private'},from:{id:22}}});
+ assert.equal((await customer(e,o2)).status,'ASSEMBLING');
+}finally{e.DB.close()}});
