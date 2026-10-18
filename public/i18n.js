@@ -37,3 +37,7 @@ words.ru.ledger='Расчёты с поставщиками';words.hy.ledger='Հ
 words.ru.couriers??='Курьеры';words.hy.couriers??='Առաքիչներ';words.ka.couriers??='კურიერები';
 words.ru.soon='Скоро';words.hy.soon='Շուտով';words.ka.soon='მალე';
 words.ru.soonText='Скоро здесь появится раздел «{name}». Мы подключаем местных поставщиков.';words.hy.soonText='Շուտով այստեղ կհայտնվի «{name}» բաժինը։ Մենք միացնում ենք տեղական մատակարարներին։';words.ka.soonText='მალე აქ გამოჩნდება განყოფილება „{name}“. ჩვენ ვაკავშირებთ ადგილობრივ მომწოდებლებს.';
+// Owner 18.10: the welcome speaks for the whole market, not only fruit and vegetables.
+Object.assign(words.ru,{heroEyebrow:'ВЕСЬ БАЗАР · С ДОСТАВКОЙ',heroText:'Весь базар — с доставкой к вашему столу. Фрукты, овощи, орехи и сухофрукты уже здесь; сыр, хлеб, мясо и форель — скоро.'});
+Object.assign(words.hy,{heroEyebrow:'ԱՄԲՈՂՋ ԲԱԶԱՐԸ · ԱՌԱՔՈՒՄՈՎ',heroText:'Ամբողջ բազարը՝ առաքմամբ ձեր սեղանին։ Մրգերը, բանջարեղենը, ընկույզներն ու չրերն արդեն այստեղ են, իսկ պանիրը, հացը, միսը և իշխանը՝ շուտով։'});
+Object.assign(words.ka,{heroEyebrow:'მთელი ბაზარი · მიწოდებით',heroText:'მთელი ბაზარი — მიწოდებით თქვენს სუფრამდე. ხილი, ბოსტნეული, თხილეული და ჩირი უკვე აქ არის; ყველი, პური, ხორცი და კალმახი — მალე.'});
