@@ -5,8 +5,8 @@ import {botInvite,telegramWebhook,drainTelegram}from '../src/telegram.mjs';impor
 const cid='akhalkalaki',pid=k=>cid+'--'+k;
 async function env(){const DB=new LocalD1();migrate(DB);await seed(DB);const sent=[];let message=500;const e={DB,sent,update:0,TELEGRAM_BOT_TOKEN:'fake-test-token',TELEGRAM_WEBHOOK_SECRET:token(),TELEGRAM_FETCH:async(url,init)=>{const method=url.split('/').pop(),body=JSON.parse(init.body);sent.push({method,...body});return Response.json({ok:true,result:method==='getMe'?{id:99,username:'bazar_test_bot'}:method==='getChatMember'?{status:'administrator'}:method==='sendMessage'?{message_id:++message}:true})}};e.owner={id:await createUser(DB,{email:'owner@test.invalid',name:'Владелец',password:'test-password-123456',owner:true})};return e}
 async function call(e,path,b,user=null){const headers=b?{'Content-Type':'application/json','X-Bazar-CSRF':'1'}:{};if(user){const s=token();await q(e.DB,'INSERT INTO sessions(hash,user_id,expires) VALUES(?,?,?)',await sha(s),user.id,Date.now()+100000).run();headers.cookie='bazar_session='+s}const r=await handle(new Request('https://bazar.test/api/'+path,{method:b?'POST':'GET',headers,...(b?{body:JSON.stringify(b)}:{})}),e);return {http:r.status,...await r.json()}}
-// The owner invites; the person accepts the one-time link and sets their own password. No shortcut accounts.
-async function hire(e,role,name,city=cid){const inv=await call(e,'manage/team/invite',{role,city_id:city},e.owner);assert.equal(inv.http,200,JSON.stringify(inv));assert.equal(inv.expires_in,86400);const email=name.toLowerCase()+'@test.invalid';assert.equal((await call(e,'join',{invite:inv.invite,name,email,password:'staff-password-123'})).http,200);assert.equal((await call(e,'join',{invite:inv.invite,name:'Повтор',email:'again'+email,password:'staff-password-123'})).error,'INVALID_INVITE');return {id:(await q(e.DB,'SELECT id FROM users WHERE email=?',email).first()).id,name}}
+// The owner creates the account and sets the password; the employee only logs in with it.
+async function hire(e,role,name,city=cid){const login=role.toLowerCase()+'-'+(++e.update),r=await call(e,'manage/team/create',{role,city_id:city,name,login,password:'123456'},e.owner);assert.equal(r.http,200,JSON.stringify(r));assert.equal((await call(e,'manage/team/create',{role,city_id:city,name,login,password:'123456'},e.owner)).error,'LOGIN_TAKEN');return {id:r.id,name,login}}
 async function order(e,fulfillment='pickup'){const b={city_id:cid,items:[{product_id:pid('apple_loose'),selection:{grams:1000}},{product_id:pid('pear_loose'),selection:{grams:1000}}],fulfillment},p=await priceBasket(e.DB,b),fee=fulfillment==='delivery'?500:0;return createOrder(e.DB,{...b,idem:crypto.randomUUID(),day:clock('Asia/Tbilisi',new Date(Date.now()+86400000)).day,minute:600,method:'cash',customer:{name:'ТЕСТ сборки',phone:'+995555000777',address:'ТЕСТ — не доставлять',note:'Яблоки покрупнее'},expected_total:p.estimate_minor+fee,maximum_total:p.maximum_minor+fee,accepted_weight_rules:true})}
 const version=async(e,o)=>(await q(e.DB,'SELECT version FROM orders WHERE id=?',o.id).first()).version;
 async function act(e,o,user,action,extra={},expect=200){const b={id:o.id,version:await version(e,o),command:crypto.randomUUID(),action,...extra},r=await call(e,'manage/action',b,user);assert.equal(r.http,expect,JSON.stringify({action,r}));return {b,r}}
@@ -74,10 +74,10 @@ test('outsiders: other city, revoked staff, unauthenticated and non-owner cannot
  assert.equal((await view(e,o,tb)).http,403);assert.equal((await view(e,o)).http,401);
  for(const path of['manage/summary?city='+cid,'manage/team','manage/operations?city='+cid])for(const u of[tb,ak])assert.equal((await call(e,path,null,u)).http,403,path);
  for(const u of[tb,ak]){const r=await call(e,'manage/telegram/status',null,u);assert.equal(r.http,200,JSON.stringify(r));assert.deepEqual([r.links,r.jobs,r.people],[[],[],[]],'staff only learn whether their own Telegram is linked')}
- assert.equal((await call(e,'manage/team/invite',{role:'CONTROLLER',city_id:cid},ak)).http,403);assert.equal((await call(e,'manage/team/invite',{role:'OWNER',city_id:cid},e.owner)).http,403);
+ assert.equal((await call(e,'manage/team/create',{role:'CONTROLLER',city_id:cid,name:'x',login:'xx',password:'123456'},ak)).http,403);assert.equal((await call(e,'manage/team/create',{role:'OWNER',city_id:cid,name:'x',login:'xx',password:'123456'},e.owner)).http,403);
  assert.equal((await call(e,'manage/action',{id:o.id,version:0,command:crypto.randomUUID(),action:'cancel',reason:'x'},ak)).http,403);
  const orders=(await call(e,'manage/orders?city='+cid,null,ak)).orders;assert.equal(orders.length,1);assert.equal(orders[0].paid,null);
- assert.equal((await call(e,'manage/team/revoke',{user_id:ak.id,city_id:cid},e.owner)).http,200);assert.equal((await view(e,o,ak)).http,403);
+ assert.equal((await call(e,'manage/team/revoke',{user_id:ak.id,city_id:cid},e.owner)).http,200);assert.equal((await view(e,o,ak)).http,401,'revoked account is deactivated');
  const team=(await call(e,'manage/team',null,e.owner)).team;assert.deepEqual(team.map(t=>t.name),['Тбилиси']);
 }finally{e.DB.close()}});
 
@@ -124,3 +124,26 @@ test('migration 0006 keeps existing orders unchanged and the server works on a d
  for(const k of Object.keys(before))assert.deepEqual(after[k],before[k],k);assert.equal(after.collection_round,0);assert.equal((await q(DB,'SELECT availability FROM order_lines WHERE order_id=?',o.id).first()).availability,'PENDING');
  assert.equal((await call(e,'health')).collection,true);
 }finally{DB.close()}});
+
+test('owner-managed staff passwords: short login, six characters, only the owner changes them, old sessions closed, per-account attempt limit',async()=>{const e=await env();try{
+ const login=async(name,password,ip='1.1.1.1')=>{const r=await handle(new Request('https://bazar.test/api/login',{method:'POST',headers:{'Content-Type':'application/json','X-Bazar-CSRF':'1','CF-Connecting-IP':ip},body:JSON.stringify({email:name,password})}),e);return {http:r.status,cookie:r.headers.get('Set-Cookie')?.split(';')[0]}};
+ assert.equal((await call(e,'manage/team/create',{role:'COLLECTOR',city_id:cid,name:'Арам',login:'aram',password:'12345'},e.owner)).error,'PASSWORD_TOO_SHORT');
+ assert.equal((await call(e,'manage/team/create',{role:'COLLECTOR',city_id:cid,name:'Арам',login:'арам',password:'123456'},e.owner)).error,'INVALID_LOGIN_NAME');
+ const a=await call(e,'manage/team/create',{role:'COLLECTOR',city_id:cid,name:'Арам',login:'Aram',password:'482913'},e.owner);assert.equal(a.login,'aram');
+ const first=await login('aram','482913');assert.equal(first.http,200);
+ const me=await handle(new Request('https://bazar.test/api/bootstrap',{headers:{cookie:first.cookie}}),e).then(r=>r.json());assert.equal(me.user.team[0].role,'COLLECTOR');
+ // staff cannot change any password, including their own
+ const staff=await handle(new Request('https://bazar.test/api/manage/team/password',{method:'POST',headers:{'Content-Type':'application/json','X-Bazar-CSRF':'1',cookie:first.cookie},body:JSON.stringify({user_id:a.id,password:'000000'})}),e);assert.equal(staff.status,403);
+ assert.equal((await call(e,'manage/team/password',{user_id:e.owner.id,password:'000000'},e.owner)).http,404,'the owner password is not changed here');
+ assert.equal((await call(e,'manage/team/password',{user_id:a.id,password:'771204'},e.owner)).http,200);
+ assert.equal((await handle(new Request('https://bazar.test/api/manage/orders?city='+cid,{headers:{cookie:first.cookie}}),e)).status,401,'old session closed');
+ assert.equal((await login('aram','482913')).http,401);assert.equal((await login('aram','771204')).http,200);
+ // guessing from many addresses still hits the per-account limit
+ for(let i=0;i<30;i++)await login('aram','000'+String(i).padStart(3,'0'),'10.0.0.'+i);assert.equal((await login('aram','771204','10.9.9.9')).http,429);
+ // revoked staff cannot log in; the same login can be created again with a new password
+ await q(e.DB,'DELETE FROM auth_limits').run();assert.equal((await call(e,'manage/team/revoke',{user_id:a.id,city_id:cid},e.owner)).http,200);assert.equal((await login('aram','771204')).http,401);
+ const again=await call(e,'manage/team/create',{role:'CONTROLLER',city_id:cid,name:'Арам',login:'aram',password:'550011'},e.owner);assert.equal(again.id,a.id);assert.equal((await login('aram','550011')).http,200);
+ assert.equal((await call(e,'manage/team',null,e.owner)).team[0].login,'aram');
+ // the owner still logs in with the full address
+ assert.equal((await login('owner@test.invalid','test-password-123456')).http,200);
+}finally{e.DB.close()}});
