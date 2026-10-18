@@ -559,5 +559,157 @@
     "download_url": "https://images.pexels.com/photos/28576626/pexels-photo-28576626.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/household.jpg",
     "sha256": "7a01f1e46b6797a83edfb9120736292d4db3e921db09df08ec3940b41494a24b"
+  },
+  {
+    "key": "apple-yellow",
+    "source": "https://www.pexels.com/photo/yellow-apples-in-close-up-photography-10256311/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10256311/pexels-photo-10256311.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/apple-yellow.jpg",
+    "sha256": "744ad54a2340cf02f8bfa609dbc03465ae1aa5ac757cea5603182c5d2f3b3069"
+  },
+  {
+    "key": "grapefruit",
+    "source": "https://www.pexels.com/photo/close-up-photo-of-fresh-grapefruits-14840380/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/14840380/pexels-photo-14840380.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/grapefruit.jpg",
+    "sha256": "d8589ea2a163d90911cc08729ea976b43826f5bbb6c00ccc8caa4858a413139f"
+  },
+  {
+    "key": "persimmon",
+    "source": "https://www.pexels.com/photo/persimmon-fruits-on-gray-surface-7418940/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7418940/pexels-photo-7418940.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/persimmon.jpg",
+    "sha256": "821ab8f56f537d085c0dff8ac25baa8fdb9c67adb7b5053a45a903e8095a2a54"
+  },
+  {
+    "key": "kiwi",
+    "source": "https://www.pexels.com/photo/brown-round-kiwi-fruits-on-white-surface-6411505/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6411505/pexels-photo-6411505.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/kiwi.jpg",
+    "sha256": "acf1784eece30800565c2ce81e12f2aa49e2aab953b836e9acb919e5e4eea638"
+  },
+  {
+    "key": "nectarine",
+    "source": "https://www.pexels.com/photo/close-up-of-fresh-nectarines-displayed-38579929/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/38579929/pexels-photo-38579929.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/nectarine.jpg",
+    "sha256": "7770520dcb08bc94cbf4f6b9a038777dfbf124c2b389a70728b9eeb918997293"
+  },
+  {
+    "key": "plum",
+    "source": "https://www.pexels.com/photo/close-up-of-fresh-purple-plums-in-market-39029998/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/39029998/pexels-photo-39029998.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/plum.jpg",
+    "sha256": "bed906adad9a378f5085e4aa263d4478a5e52bb045ef4e796cb4fa12e88387bd"
+  },
+  {
+    "key": "chestnut",
+    "source": "https://www.pexels.com/photo/close-up-of-fresh-raw-chestnuts-in-bulk-29111340/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/29111340/pexels-photo-29111340.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/chestnut.jpg",
+    "sha256": "088422f3d65409ee3a08e4c485bf9da4502b7692289a578a19d5732f526f9033"
+  },
+  {
+    "key": "pomegranate",
+    "source": "https://www.pexels.com/photo/photograph-of-pomegranates-9810910/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/9810910/pexels-photo-9810910.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pomegranate.jpg",
+    "sha256": "4a14c160296d866eef8ecc604f43a60675760fe220eb9d9d04d31a690cae23d9"
+  },
+  {
+    "key": "pineapple",
+    "source": "https://www.pexels.com/photo/ripe-pineapples-on-green-surface-7194817/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7194817/pexels-photo-7194817.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pineapple.jpg",
+    "sha256": "d9e32d2966c835d3fbeaaf80497a47caa525e1ecf5b6ddc3d3de6cc77287812a"
+  },
+  {
+    "key": "pepper-red-long",
+    "source": "https://www.pexels.com/photo/red-chilies-in-close-up-photography-6805781/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6805781/pexels-photo-6805781.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pepper-red-long.jpg",
+    "sha256": "739971197bb04fdbc5280cbffec02243abc6ba486f73507fea6cd652c4069c3a"
+  },
+  {
+    "key": "chili",
+    "source": "https://www.pexels.com/photo/close-up-photo-of-green-chilies-13422250/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/13422250/pexels-photo-13422250.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/chili.jpg",
+    "sha256": "5ad3c95c5a43d31c34be0d632d3349835e48982b79c573d6bd296929da2d01c7"
+  },
+  {
+    "key": "aubergine",
+    "source": "https://www.pexels.com/photo/eggplants-on-a-purple-surface-7195177/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7195177/pexels-photo-7195177.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/aubergine.jpg",
+    "sha256": "48858683bf8be0570bad2561b31c500aec9de1f653a960ac377717e636ba6e99"
+  },
+  {
+    "key": "beetroot",
+    "source": "https://www.pexels.com/photo/close-up-shot-of-beetroots-on-white-surface-5758605/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/5758605/pexels-photo-5758605.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/beetroot.jpg",
+    "sha256": "c42d5b63513f5327dcb9316a06d13016fdf95125454484a425e42f5a0c337ed0"
+  },
+  {
+    "key": "turnip",
+    "source": "https://www.pexels.com/photo/a-close-up-of-turnips-16069702/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/16069702/pexels-photo-16069702.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/turnip.jpg",
+    "sha256": "34d1b46a024f4f8c9760ff2b27018c68aaf752a1a2b8f8b22c3d547660339b68"
+  },
+  {
+    "key": "cauliflower",
+    "source": "https://www.pexels.com/photo/fresh-cauliflower-in-close-up-shot-10111497/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10111497/pexels-photo-10111497.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/cauliflower.jpg",
+    "sha256": "a9fae57e6ff4c13b1977636add63651cbe460fbb65e647bf87ad7f5cc49d64de"
+  },
+  {
+    "key": "peanut-shell",
+    "source": "https://www.pexels.com/photo/close-up-shot-of-peanuts-7717463/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7717463/pexels-photo-7717463.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/peanut-shell.jpg",
+    "sha256": "dac23e93747f6d9bcba8e450007375308e4155600c9c521dd890a67789fdce04"
+  },
+  {
+    "key": "beans-speckled",
+    "source": "https://www.pexels.com/photo/close-up-shot-of-a-pinto-beans-6316673/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6316673/pexels-photo-6316673.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/beans-speckled.jpg",
+    "sha256": "880dcc2e0b12f6dcec5e8c685089d64330e01bd20d628674ce240d54e41d0e36"
+  },
+  {
+    "key": "beans-speckled-dark",
+    "source": "https://www.pexels.com/photo/beige-and-purple-beans-176169/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/176169/pexels-photo-176169.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/beans-speckled-dark.jpg",
+    "sha256": "dbc604fe12402602b22c002c04c0ffc65606c9cb3e63976462698c97bff360dd"
+  },
+  {
+    "key": "corn",
+    "source": "https://www.pexels.com/photo/close-up-of-yellow-corn-kernels-background-30204262/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/30204262/pexels-photo-30204262.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/corn.jpg",
+    "sha256": "4bf6e883ef88f58180cda8624f35116855e511106ce472b926f7484eae376ad2"
   }
 ]
