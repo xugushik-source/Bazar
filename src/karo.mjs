@@ -61,3 +61,9 @@ export function karoSql(profileFor){
   out.push(`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--'+key)},${s(v.id)},${j({ru,hy,ka})},${s(category)},${s(art)},${j(profile)},${price},${cost},${weighted?100000:50} WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`)}
  return out;
 }
+// Owner 18.10: Karo's dark speckled beans are the site's «Фасоль красная» — move that product to Karo and retire the duplicate.
+export const karoFixes=[['red_beans',700]],karoRetired=['beans_speckled_dark'];
+export function karoFixSql(){const v=karoVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",out=[];
+ for(const [key,cost]of karoFixes)out.push(`UPDATE products SET vendor_id=${s(v.id)},price=${retail(cost)},cost=${cost},version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND vendor_id IN('akhalkalaki-garden','akhalkalaki-farm') AND EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)});`);
+ for(const key of karoRetired)out.push(`UPDATE products SET active=0,version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND active=1;`);
+ return out}

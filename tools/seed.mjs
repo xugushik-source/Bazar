@@ -1,4 +1,4 @@
-import {marketProducts}from '../src/market-catalog.mjs';import {karoSql}from '../src/karo.mjs';import {categories}from '../src/categories.mjs';
+import {marketProducts}from '../src/market-catalog.mjs';import {karoSql,karoFixSql}from '../src/karo.mjs';import {categories}from '../src/categories.mjs';
 import config from '../src/config.mjs';
 import {profileFor,profiles,exampleWholeRanges} from '../src/weight-profiles.mjs';
 import {uuid,token,passwordHash} from '../src/security.mjs';
@@ -30,5 +30,5 @@ export async function seed(db,{karo=true}={}) {
  for(let i=0;i<st.length;i+=80)await db.batch(st.slice(i,i+80));
  if(karo)await applyKaro(db);
 }
-// Same statements as migrations/0008_karo_supplier.sql, so fresh local/test databases match production.
-async function applyKaro(db){const st=karoSql(profileFor).map(sql=>db.prepare(sql));for(let i=0;i<st.length;i+=80)await db.batch(st.slice(i,i+80))}
+// Same statements as migrations 0008 and 0010, so fresh local/test databases match production.
+async function applyKaro(db){const st=[...karoSql(profileFor),...karoFixSql()].map(sql=>db.prepare(sql));for(let i=0;i<st.length;i+=80)await db.batch(st.slice(i,i+80))}
