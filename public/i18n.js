@@ -35,3 +35,5 @@ Object.assign(words.hy,{"proposalWas": "Ներկայիս գումարը", "propo
 Object.assign(words.ka,{"proposalWas": "ამჟამინდელი თანხა", "proposalNew": "ახალი თანხა", "orderedRange": "შეკვეთილია", "weighedFact": "აიწონა", "overBy": "დაშვებულზე მეტია", "underBy": "დაშვებულზე ნაკლებია", "newComposition": "შემოთავაზებული შემადგენლობა", "rejectWeightHint": "თუ არ ეთანხმებით — შემგროვებელი ხელახლა შეარჩევს საქონელს შეკვეთილი წონის ფარგლებში.", "rejectReplaceHint": "თუ არ ეთანხმებით — შეკვეთის შემადგენლობა უცვლელი რჩება, დაგიკავშირდებიან."});
 words.ru.ledger='Расчёты с поставщиками';words.hy.ledger='Հաշվարկներ մատակարարների հետ';words.ka.ledger='ანგარიშსწორება მომწოდებლებთან';
 words.ru.couriers??='Курьеры';words.hy.couriers??='Առաքիչներ';words.ka.couriers??='კურიერები';
+words.ru.soon='Скоро';words.hy.soon='Շուտով';words.ka.soon='მალე';
+words.ru.soonText='Скоро здесь появится раздел «{name}». Мы подключаем местных поставщиков.';words.hy.soonText='Շուտով այստեղ կհայտնվի «{name}» բաժինը։ Մենք միացնում ենք տեղական մատակարարներին։';words.ka.soonText='მალე აქ გამოჩნდება განყოფილება „{name}“. ჩვენ ვაკავშირებთ ადგილობრივ მომწოდებლებს.';

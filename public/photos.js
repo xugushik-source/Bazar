@@ -10,3 +10,5 @@ export const artLabels={
  meat:{ru:'Мясо',hy:'Միս',ka:'ხორცი'},chicken:{ru:'Курица',hy:'Հավ',ka:'ქათამი'},trout:{ru:'Форель',hy:'Իշխան',ka:'კალმახი'},sausage:{ru:'Бастурма, колбасы',hy:'Բաստուրմա, երշիկ',ka:'ბასტურმა, ძეხვი'},
  pickles:{ru:'Соленья',hy:'Թթու',ka:'მწნილი'},flour:{ru:'Мука, бакалея',hy:'Ալյուր, նպարեղեն',ka:'ფქვილი, ბაკალეა'},drinks:{ru:'Вода, напитки',hy:'Ջուր, ըմպելիքներ',ka:'წყალი, სასმელები'},household:{ru:'Хозтовары',hy:'Տնտեսական ապրանքներ',ka:'სამეურნეო საქონელი'}
 };
+// Picture for a department that has no products yet (shown with «Скоро»).
+export const categoryArt={dairy:'cheese',eggs:'eggs',bread:'bread',meat:'meat',trout:'trout',deli:'sausage',preserves:'pickles',pantry:'flour',drinks:'drinks',household:'household'};
