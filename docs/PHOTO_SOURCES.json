@@ -719,5 +719,13 @@
     "download_url": "https://images.pexels.com/photos/10307853/pexels-photo-10307853.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/mushrooms.jpg",
     "sha256": "d86617662573286b4ce023721ac963df2baafe96eff26e833dbdfabe66773db7"
+  },
+  {
+    "key": "apple-red",
+    "source": "https://www.pexels.com/photo/red-apples-in-close-up-photography-14408622/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/14408622/pexels-photo-14408622.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/apple-red.jpg",
+    "sha256": "44fc9c9b7248befd608c39fcb80ecd5418c307320a2af75e83cc03c0864a5a6d"
   }
 ]

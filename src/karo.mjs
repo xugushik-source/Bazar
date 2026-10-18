@@ -49,7 +49,7 @@ export const karoProducts=[
  ['minicorn_nostimo_330g','Кукуруза мини маринованная Nostimo · 330 г','Մինի եգիպտացորեն մարինացված Nostimo · 330 գ','მინი სიმინდი მარინადში Nostimo · 330 გ','preserves','pickles','each',500]
 ];
 export const karoProfiles=Object.fromEntries(karoProducts.map(r=>[r[0],r[6]]));
-export const karoArts=[...new Set(karoProducts.map(r=>r[5]))];
+export const karoArts=[...new Set([...karoProducts.map(r=>r[5]),'apple-red'])];
 // Photos still missing (no free licensed photo found); the shop shows «фото временно недоступно».
 export const karoArtsWithoutPhoto=['radish-black','radish-red','radish-green'];
 // Idempotent statements: create the vendor, move the starter-catalogue products (only while they are still with the initial vendors), add new products.
@@ -74,3 +74,5 @@ export const karoJarNames={
  cucumber_pickled_jar:{ru:'Огурцы маринованные · банка 3 л',hy:'Մարինացված վարունգ · տարա 3 լ',ka:'მარინადში კიტრი · ქილა 3 ლ'}
 };
 export function karoJarSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'";return Object.entries(karoJarNames).map(([key,names])=>`UPDATE products SET names=${s(JSON.stringify(names))},version=version+1 WHERE id=${s(karoVendor.city_id+'--'+key)} AND names<>${s(JSON.stringify(names))};`)}
+// Owner 18.10: Karo's red apples are fully dark red (Red Delicious type) — own photo for Akhalkalaki; Tbilisi keeps the general apple photo.
+export function karoPhotoSql(){return [`UPDATE products SET art='apple-red',version=version+1 WHERE id='${karoVendor.city_id}--apple_loose' AND art='apple';`]}
