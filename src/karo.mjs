@@ -67,3 +67,10 @@ export function karoFixSql(){const v=karoVendor,s=x=>"'"+String(x).replaceAll("'
  for(const [key,cost]of karoFixes)out.push(`UPDATE products SET vendor_id=${s(v.id)},price=${retail(cost)},cost=${cost},version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND vendor_id IN('akhalkalaki-garden','akhalkalaki-farm') AND EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)});`);
  for(const key of karoRetired)out.push(`UPDATE products SET active=0,version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND active=1;`);
  return out}
+// Owner 18.10: the pickle jars are exactly 3 litres.
+export const karoJarNames={
+ cauliflower_pickled_jar:{ru:'Цветная капуста маринованная · банка 3 л',hy:'Մարինացված ծաղկակաղամբ · տարա 3 լ',ka:'მარინადში ყვავილოვანი კომბოსტო · ქილა 3 ლ'},
+ tomato_pickled_jar:{ru:'Помидоры маринованные · банка 3 л',hy:'Մարինացված լոլիկ · տարա 3 լ',ka:'მარინადში პომიდორი · ქილა 3 ლ'},
+ cucumber_pickled_jar:{ru:'Огурцы маринованные · банка 3 л',hy:'Մարինացված վարունգ · տարա 3 լ',ka:'მარინადში კიტრი · ქილა 3 ლ'}
+};
+export function karoJarSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'";return Object.entries(karoJarNames).map(([key,names])=>`UPDATE products SET names=${s(JSON.stringify(names))},version=version+1 WHERE id=${s(karoVendor.city_id+'--'+key)} AND names<>${s(JSON.stringify(names))};`)}
