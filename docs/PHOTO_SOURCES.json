@@ -463,5 +463,101 @@
     "download_url": "https://images.unsplash.com/photo-1772986830000-6f7a1b00388c?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
     "file": "public/media/cranberry.jpg",
     "sha256": "9b03d8c8716f8460200292f39bc9d22b9dc5ea16101449a9fcc325706c1a47ac"
+  },
+  {
+    "key": "cheese",
+    "source": "https://www.pexels.com/photo/close-up-photograph-of-slices-of-cheese-6660243/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6660243/pexels-photo-6660243.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/cheese.jpg",
+    "sha256": "396259b624114e12fdacd94bcebdc1a51a23160ef66cc9c021f24ea379dacab9"
+  },
+  {
+    "key": "dairy",
+    "source": "https://www.pexels.com/photo/bottle-container-cream-creamy-373882/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/373882/pexels-photo-373882.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/dairy.jpg",
+    "sha256": "c7d92c3fc52d475e4d461de406faeaa0fcfb951520c4548ff1158edcc7de1820"
+  },
+  {
+    "key": "eggs",
+    "source": "https://www.pexels.com/photo/six-brown-eggs-with-tray-2959303/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/2959303/pexels-photo-2959303.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/eggs.jpg",
+    "sha256": "f6a368603d2c648888d80a890dd7a85239d191dcc4a2ac36f9d3b7cea14bb78c"
+  },
+  {
+    "key": "bread",
+    "source": "https://www.pexels.com/photo/loaf-of-bread-7541727/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7541727/pexels-photo-7541727.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/bread.jpg",
+    "sha256": "ab7235bba7898ef4fc6f23e05d656a76e9a47c80f19ec0a6f63dfc47e0c92850"
+  },
+  {
+    "key": "meat",
+    "source": "https://www.pexels.com/photo/raw-meat-on-brown-wooden-tray-8444102/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/8444102/pexels-photo-8444102.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/meat.jpg",
+    "sha256": "e4bedc650d07c8cffc96b54e63f7f21c3e001b73d8665f703e6ae5abe18a6ee0"
+  },
+  {
+    "key": "chicken",
+    "source": "https://www.pexels.com/photo/overhead-shot-of-a-dressed-chicken-10842249/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10842249/pexels-photo-10842249.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/chicken.jpg",
+    "sha256": "3efbef2b645b4d0d15a0ff234844543ce1fbbe90599a516b932b6baeb19b96a9"
+  },
+  {
+    "key": "trout",
+    "source": "https://www.pexels.com/photo/fresh-rainbow-trout-on-wooden-cutting-board-28575465/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/28575465/pexels-photo-28575465.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/trout.jpg",
+    "sha256": "658fcff0138b615c5075cab88934552a45b379aaf8ec6c504361efff8c2f610e"
+  },
+  {
+    "key": "sausage",
+    "source": "https://www.pexels.com/photo/cold-cuts-of-cured-sausage-on-board-4639328/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/4639328/pexels-photo-4639328.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/sausage.jpg",
+    "sha256": "23aeb5edb368f9d76d7215290ed123e23c58d9bf39cfcf7e4456a68dd5abe56d"
+  },
+  {
+    "key": "pickles",
+    "source": "https://www.pexels.com/photo/pickled-cucumbers-on-glass-jars-9462573/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/9462573/pexels-photo-9462573.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pickles.jpg",
+    "sha256": "1df7805095c7a920819a16d494b8d062676b8e6f41372d1aebad585574a1dd5e"
+  },
+  {
+    "key": "flour",
+    "source": "https://www.pexels.com/photo/paper-bag-of-wheat-flour-with-stainless-scoop-6287223/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6287223/pexels-photo-6287223.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/flour.jpg",
+    "sha256": "1c73867b344b8895016e2912f93bf727d63f8363716f2117c01e4c672310962e"
+  },
+  {
+    "key": "drinks",
+    "source": "https://www.pexels.com/photo/plastic-bottles-of-water-and-cups-on-surface-8761309/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/8761309/pexels-photo-8761309.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/drinks.jpg",
+    "sha256": "a7ba2dacff925969ee5b64fb61b98f44437096e972aae99d8cdaa1a876d13244"
+  },
+  {
+    "key": "household",
+    "source": "https://www.pexels.com/photo/minimalist-cleaning-supplies-on-grey-background-28576626/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/28576626/pexels-photo-28576626.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/household.jpg",
+    "sha256": "7a01f1e46b6797a83edfb9120736292d4db3e921db09df08ec3940b41494a24b"
   }
 ]
