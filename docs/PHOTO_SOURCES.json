@@ -711,5 +711,13 @@
     "download_url": "https://images.pexels.com/photos/30204262/pexels-photo-30204262.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/corn.jpg",
     "sha256": "4bf6e883ef88f58180cda8624f35116855e511106ce472b926f7484eae376ad2"
+  },
+  {
+    "key": "mushrooms",
+    "source": "https://www.pexels.com/photo/close-up-of-mushrooms-on-wooden-surface-10307853/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10307853/pexels-photo-10307853.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/mushrooms.jpg",
+    "sha256": "d86617662573286b4ce023721ac963df2baafe96eff26e833dbdfabe66773db7"
   }
 ]

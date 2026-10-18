@@ -10,7 +10,7 @@ export const karoMoves=[
  ['peanut_kernel',1100,{ru:'Арахис очищенный',hy:'Մաքրված արախիս',ka:'გაწმენდილი მიწის თხილი'}],['churchkhela_each',500],
  ['almond_kernel',3500],['pumpkin_seed',1800],['walnut_kernel',2200],['cashew_kernel',4500],['raisins_dried',2000],['hazelnut_kernel',3500]
 ];
-// New Karo products: [key, ru, hy, ka, category, art, profile, cost in tetri].
+// New Karo products: [key, ru, hy, ka, category, art, profile, cost in tetri, optional owner-set price].
 export const karoProducts=[
  ['apple_yellow_loose','Яблоки жёлтые','Դեղին խնձոր','ყვითელი ვაშლი','fruit','apple-yellow','loose',400],
  ['pear_yellow_loose','Груши жёлтые','Դեղին տանձ','ყვითელი მსხალი','fruit','pear','loose',500],
@@ -30,7 +30,8 @@ export const karoProducts=[
  ['aubergine_loose','Баклажаны','Սմբուկ','ბადრიჯანი','vegetables','aubergine','loose',300],
  ['beetroot_loose','Свёкла','Ճակնդեղ','ჭარხალი','vegetables','beetroot','loose',150],
  ['radish_black_loose','Редька чёрная','Սև բողկ','შავი ბოლოკი','vegetables','radish-black','loose',300],
- ['radish_red_long_loose','Редька красная длинная','Կարմիր երկար բողկ','წითელი გრძელი ბოლოკი','vegetables','radish-red','loose',300],
+ ['radish_red_loose','Редька красная','Կարմիր բողկ','წითელი ბოლოკი','vegetables','radish-red','loose',300],
+ ['champignon_loose','Шампиньоны','Շամպինյոն','შამპინიონი','vegetables','mushrooms','delicate',1100,1500],
  ['radish_green_loose','Редька зелёная','Կանաչ բողկ','მწვანე ბოლოკი','vegetables','radish-green','loose',300],
  ['turnip_loose','Репа','Շաղգամ','თალგამი','vegetables','turnip','loose',200],
  ['cauliflower_whole_kg','Цветная капуста','Ծաղկակաղամբ','ყვავილოვანი კომბოსტო','vegetables','cauliflower','whole',250],
@@ -56,7 +57,7 @@ export function karoSql(profileFor){
  const v=karoVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o)),out=[];
  out.push(`INSERT INTO vendors(id,city_id,names) SELECT ${s(v.id)},${s(v.city_id)},${j(v.names)} WHERE EXISTS(SELECT 1 FROM cities WHERE id=${s(v.city_id)}) ON CONFLICT(id) DO NOTHING;`);
  for(const [key,cost,names]of karoMoves)out.push(`UPDATE products SET vendor_id=${s(v.id)},price=${retail(cost)},cost=${cost},${names?`names=${j(names)},`:''}version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND vendor_id IN('akhalkalaki-garden','akhalkalaki-farm') AND EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)});`);
- for(const [key,ru,hy,ka,category,art,,cost]of karoProducts){const profile=profileFor(key),weighted=['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'].includes(profile.mode);
-  out.push(`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--'+key)},${s(v.id)},${j({ru,hy,ka})},${s(category)},${s(art)},${j(profile)},${retail(cost)},${cost},${weighted?100000:50} WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`)}
+ for(const [key,ru,hy,ka,category,art,,cost,price=retail(cost)]of karoProducts){const profile=profileFor(key),weighted=['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'].includes(profile.mode);
+  out.push(`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--'+key)},${s(v.id)},${j({ru,hy,ka})},${s(category)},${s(art)},${j(profile)},${price},${cost},${weighted?100000:50} WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`)}
  return out;
 }
