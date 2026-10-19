@@ -30,13 +30,11 @@
   },
   {
     "key": "banana",
-    "source": "https://unsplash.com/photos/banana-fruit-NBT3LOCdkVM",
-    "cdn": "https://images.unsplash.com/photo-1567789352758-9e3dc54b3ae3?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    "license": "https://unsplash.com/license",
-    "author": "Diane Alkier",
-    "download_url": "https://images.unsplash.com/photo-1567789352758-9e3dc54b3ae3?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "source": "https://www.pexels.com/photo/vibrant-yellow-bananas-bunches-at-market-30543146/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/30543146/pexels-photo-30543146.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/banana.jpg",
-    "sha256": "2693ed921e4d4028a473e734d70a9ccd51554b30c8f12d3dbc267b0bf0f21db3"
+    "sha256": "c75b330649b3864d6bb83691ef4fefe5ecbc0a5eefe9e865bf559b52bf89df90"
   },
   {
     "key": "potato",
@@ -60,13 +58,11 @@
   },
   {
     "key": "onion",
-    "source": "https://unsplash.com/photos/onion-vegetable-tnhZUDFpKyw",
-    "cdn": "https://images.unsplash.com/photo-1556843824-7d672fa52011?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    "license": "https://unsplash.com/license",
-    "author": "Erda Estremera",
-    "download_url": "https://images.unsplash.com/photo-1556843824-7d672fa52011?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "source": "https://www.pexels.com/photo/close-up-of-onions-6316541/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6316541/pexels-photo-6316541.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/onion.jpg",
-    "sha256": "1a28daace030fadbbb02da5ba071ef91787d8da1945c232194e0c368021e2ae2"
+    "sha256": "f57061a40ee576569c2e58c9586bedc7b138aaf500a96b9a81f5834240b05029"
   },
   {
     "key": "cucumber",
@@ -98,13 +94,11 @@
   },
   {
     "key": "cabbage",
-    "source": "https://unsplash.com/photos/green-cabbage-Kr2zQhCl4WY",
-    "cdn": "https://images.unsplash.com/photo-1573414147157-e4e87cd692dd?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    "license": "https://unsplash.com/license",
-    "author": "Aditya Saxena",
-    "download_url": "https://images.unsplash.com/photo-1573414147157-e4e87cd692dd?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "source": "https://www.pexels.com/photo/green-cabbages-in-close-up-photography-6316536/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6316536/pexels-photo-6316536.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/cabbage.jpg",
-    "sha256": "31161754a1c113b1fb2ae10071bc4dcf661c5fa54d412ba1ec369ed160bf6d09"
+    "sha256": "15d1eda94053d182b4453318f4f29f70fdb5bd4cf26259d1e92f6c9ede9c9830"
   },
   {
     "key": "mango",
@@ -224,13 +218,11 @@
   },
   {
     "key": "figs",
-    "source": "https://unsplash.com/photos/bowl-of-dried-figs-on-a-wooden-surface-WY4Os5Vd83g",
-    "cdn": "https://images.unsplash.com/photo-1759801345063-2645087e9fcf?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    "license": "https://unsplash.com/license",
-    "author": "Jay Sekhar",
-    "download_url": "https://images.unsplash.com/photo-1759801345063-2645087e9fcf?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "source": "https://www.pexels.com/photo/dried-fig-in-close-up-photography-10112716/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10112716/pexels-photo-10112716.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/figs.jpg",
-    "sha256": "90f07577b603413f481a6f0cd91e5d46d98c3871ddfac21bd3d90f926b10bdbe"
+    "sha256": "67ba8dde76f6042d321d79c84cd255c3df24420c8bec596e6aa5b23f7c679788"
   },
   {
     "key": "almond",
@@ -254,13 +246,11 @@
   },
   {
     "key": "pistachio",
-    "source": "https://unsplash.com/photos/pistachio-nuts-_AyaZtsQauY",
-    "cdn": "https://images.unsplash.com/photo-1563418521618-7604896cbdfd?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    "license": "https://unsplash.com/license",
-    "author": "Cindy C",
-    "download_url": "https://images.unsplash.com/photo-1563418521618-7604896cbdfd?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "source": "https://www.pexels.com/photo/green-and-brown-pistachio-nuts-7717478/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7717478/pexels-photo-7717478.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/pistachio.jpg",
-    "sha256": "a34233164a48cf3ca5b1aa17de88a6d09d1641ada8e9de613bf574fd8725eb80"
+    "sha256": "3e1779092e3ec70e1788199d8847a04ae7358ebf90a47320b7bdc712c705a9f4"
   },
   {
     "key": "walnut",
@@ -294,23 +284,19 @@
   },
   {
     "key": "pumpkin-seeds",
-    "source": "https://unsplash.com/photos/pumpkin-seeds-in-jar-v_N35OYZfoI",
-    "cdn": "https://images.unsplash.com/photo-1545447859-6a9eca16e6ed?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    "license": "https://unsplash.com/license",
-    "author": "CHUTTERSNAP",
-    "download_url": "https://images.unsplash.com/photo-1545447859-6a9eca16e6ed?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "source": "https://www.pexels.com/photo/pile-of-green-seeds-7217526/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7217526/pexels-photo-7217526.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/pumpkin-seeds.jpg",
-    "sha256": "bac82a0a2b7688bc11c37012152c28dc2dd4f1802b2df3059e817e586ec84305"
+    "sha256": "8cddf46374694d0ac8fb387b100203b79d8a285ff17c515ca0d856382a4fb649"
   },
   {
     "key": "peanut",
-    "source": "https://unsplash.com/photos/peanuts-in-a-partially-open-shell-mtNCQri04QQ",
-    "cdn": "https://images.unsplash.com/photo-1743821966608-f5c80463597b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    "license": "https://unsplash.com/license",
-    "author": "luca romano",
-    "download_url": "https://images.unsplash.com/photo-1743821966608-f5c80463597b?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "source": "https://www.pexels.com/photo/close-up-photo-of-peanuts-10111745/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10111745/pexels-photo-10111745.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/peanut.jpg",
-    "sha256": "b08e09391fcf912a324c73c05236a8d41c5107dbaabe330965b4bf1514f34c30"
+    "sha256": "ff3a3593295dea4968536297a3542c7f67d108880ee3db8c5afc85d4dd8ba947"
   },
   {
     "key": "white-beans",
@@ -364,13 +350,11 @@
   },
   {
     "key": "jam",
-    "source": "https://unsplash.com/photos/a-jar-of-jam-WrYNjfwD-Z0",
-    "cdn": "https://images.unsplash.com/photo-1668440241114-a6155cef5ae2?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    "license": "https://unsplash.com/license",
-    "author": "Supliful - Supplements On Demand",
-    "download_url": "https://images.unsplash.com/photo-1668440241114-a6155cef5ae2?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "source": "https://www.pexels.com/photo/strawberry-jam-in-a-jar-26727863/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/26727863/pexels-photo-26727863.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/jam.jpg",
-    "sha256": "5b9c97152a6372f8cb3483bef93612767502f15a6e73a7ce66508199fc6ee10e"
+    "sha256": "556f61da11715df4c99da181abbb103b1cf48ccfb40c809c704bed10a918dcb1"
   },
   {
     "key": "churchkhela",
@@ -430,12 +414,11 @@
   },
   {
     "key": "lemon",
-    "source": "https://unsplash.com/photos/sliced-lemons-on-white-tray-eJ-vvwrO6IE",
-    "cdn": "https://images.unsplash.com/photo-1529209363321-0a94be1fb776?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    "license": "https://unsplash.com/license",
-    "download_url": "https://images.unsplash.com/photo-1529209363321-0a94be1fb776?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "source": "https://www.pexels.com/photo/vibrant-yellow-lemons-at-a-market-display-38571543/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/38571543/pexels-photo-38571543.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/lemon.jpg",
-    "sha256": "1f9556e202a767b3214c8838851f1e3c6614802d7f0b3ab9343ff62cc525d28c"
+    "sha256": "d8143c7b6073be1652ffdb54e12bb1ca7cd2048d46b82486418bf16450ffd26c"
   },
   {
     "key": "pepper",
@@ -727,5 +710,109 @@
     "download_url": "https://images.pexels.com/photos/14408622/pexels-photo-14408622.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/apple-red.jpg",
     "sha256": "44fc9c9b7248befd608c39fcb80ecd5418c307320a2af75e83cc03c0864a5a6d"
+  },
+  {
+    "key": "pear-conference",
+    "source": "https://www.pexels.com/photo/green-pears-with-brown-spots-on-tablecloth-7586244/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7586244/pexels-photo-7586244.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pear-conference.jpg",
+    "sha256": "0095fc709a4b1b8d8244df474ebb786d6eed831692679850d9ca8cbb22eda8e0"
+  },
+  {
+    "key": "pear-yellow",
+    "source": "https://www.pexels.com/photo/fresh-pears-displayed-at-a-brazilian-market-30683039/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/30683039/pexels-photo-30683039.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pear-yellow.jpg",
+    "sha256": "5369e4da2de2c0ff0ecf485e6a467664b3e9a581e5e5fde84128996fadd7fe52"
+  },
+  {
+    "key": "pear-brown",
+    "source": "https://www.pexels.com/photo/pears-in-close-up-photography-10024753/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10024753/pexels-photo-10024753.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pear-brown.jpg",
+    "sha256": "e8ded78772b5f55c85baada107ada9920629dbc1d62e92984df48c62150212bb"
+  },
+  {
+    "key": "dill",
+    "source": "https://www.pexels.com/photo/bunch-of-fresh-dill-placed-on-table-4198113/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/4198113/pexels-photo-4198113.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/dill.jpg",
+    "sha256": "902205cab222e686157bf49fac3516800892a7b1e3c6f153ab08015f8d58a84a"
+  },
+  {
+    "key": "peanut-blanched",
+    "source": "https://www.pexels.com/photo/bunch-of-brown-peanuts-6103952/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6103952/pexels-photo-6103952.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/peanut-blanched.jpg",
+    "sha256": "a7002328d10394f4ab16482927545e7e594a2df2609f469079a0aa4051e26fd1"
+  },
+  {
+    "key": "pistachio-shell",
+    "source": "https://www.pexels.com/photo/close-up-of-raw-pistachios-in-shell-38571524/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/38571524/pexels-photo-38571524.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pistachio-shell.jpg",
+    "sha256": "ba8ba4177cc921d14953876658d8ebe66bf5840fd82b10de75d68dc8442a4b90"
+  },
+  {
+    "key": "cucumber-long",
+    "source": "https://www.pexels.com/photo/pile-of-cucumbers-3568039/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/3568039/pexels-photo-3568039.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/cucumber-long.jpg",
+    "sha256": "e6c5d9cf3b74771762f622f883191bc4e785e4e1c208197d455bf996a11671f9"
+  },
+  {
+    "key": "tomato-crate",
+    "source": "https://www.pexels.com/photo/abundant-fresh-tomatoes-in-market-crate-38901735/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/38901735/pexels-photo-38901735.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/tomato-crate.jpg",
+    "sha256": "428397e1dc5bdad4b63da226703ccc3169cca47a3b1ff394bf160e2647fe736e"
+  },
+  {
+    "key": "raisins-golden",
+    "source": "https://www.pexels.com/photo/close-up-shot-of-raisins-6086004/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6086004/pexels-photo-6086004.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/raisins-golden.jpg",
+    "sha256": "0d222de0d8411ffeaf0b2ab65dbfd395eec752b5091dd7e15570cff98fb819e7"
+  },
+  {
+    "key": "churchkhela-color",
+    "source": "https://www.pexels.com/photo/colorful-churchkhela-display-in-georgia-market-39732684/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/39732684/pexels-photo-39732684.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/churchkhela-color.jpg",
+    "sha256": "9708892bf2f8def826fc0b0f32fca4044ba327f6971cf7171fecdcf5bfd81a12"
+  },
+  {
+    "key": "pickled-tomatoes",
+    "source": "https://www.pexels.com/photo/woman-holding-jar-of-pickled-tomatoes-28996268/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/28996268/pexels-photo-28996268.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pickled-tomatoes.jpg",
+    "sha256": "6647a5c23443ea86fd3cdfcf5652f64c60e7bf188e3aaf79ff1172a3c56ec32f"
+  },
+  {
+    "key": "pickled-cauliflower",
+    "source": "https://www.pexels.com/photo/https-microbiomebank-org-hu-28180367/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/28180367/pexels-photo-28180367.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pickled-cauliflower.jpg",
+    "sha256": "1a1f4f4ec8ca6456f001fc2e18bf7ae4783cc5cc30f14595cc4d2e7ae048e42d"
+  },
+  {
+    "key": "okra",
+    "source": "https://www.pexels.com/photo/close-up-of-fresh-green-okra-pods-39490207/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/39490207/pexels-photo-39490207.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/okra.jpg",
+    "sha256": "22fb8a2d7b156d9c17292685778c9621292f8f1e184c6cf2ab1c8da152d832fe"
   }
 ]
