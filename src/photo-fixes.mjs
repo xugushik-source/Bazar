@@ -7,7 +7,10 @@ export const photoFixes=[
  ['churchkhela_color_each',['akhalkalaki'],'churchkhela','churchkhela-color'],['tomato_pickled_jar',['akhalkalaki'],'pickles','pickled-tomatoes'],['cauliflower_pickled_jar',['akhalkalaki'],'pickles','pickled-cauliflower'],
  ['okra_pickled_jar',['akhalkalaki'],'pickles','okra'],['minicorn_nostimo_330g',['akhalkalaki'],'pickles','minicorn']
 ];
-export const fixArts=[...new Set(photoFixes.map(f=>f[3]))];
+export const fixArts=[...new Set([...photoFixes.map(f=>f[3]),'pepper-light'])];
 // No free licensed photo of a jar of pickled baby corn was found; the shop shows «фото временно недоступно» rather than a wrong picture.
 export const fixArtsWithoutPhoto=['minicorn'];
 export const photoFixSql=()=>photoFixes.flatMap(([key,cities,from,to])=>cities.map(c=>`UPDATE products SET art='${to}',version=version+1 WHERE id='${c}--${key}' AND art='${from}';`));
+// Owner 19.10: Karo has two Bulgarian sweet peppers, light and red — whole peppers, no cut pepper or chili. Migration 0015.
+export const pepperFixes=[['pepper_loose','pepper','pepper-light',{ru:'Перец сладкий светлый',hy:'Քաղցր պղպեղ, բաց գույնի',ka:'ტკბილი წიწაკა, ღია'}],['pepper_red_long_loose','pepper-red-long','pepper-red-long',{ru:'Перец сладкий красный',hy:'Քաղցր կարմիր պղպեղ',ka:'ტკბილი წითელი წიწაკა'}]];
+export const pepperFixSql=()=>pepperFixes.map(([key,from,to,names])=>`UPDATE products SET art='${to}',names='${JSON.stringify(names)}',version=version+1 WHERE id='akhalkalaki--${key}' AND art='${from}' AND vendor_id='akhalkalaki-karo' AND json_extract(names,'$.ru')<>'${names.ru}';`);

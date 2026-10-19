@@ -422,21 +422,19 @@
   },
   {
     "key": "pepper",
-    "source": "https://unsplash.com/photos/red-bell-pepper-Q6S1e72aoKs",
-    "cdn": "https://images.unsplash.com/photo-1543834712-e239e18d25af?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    "license": "https://unsplash.com/license",
-    "download_url": "https://images.unsplash.com/photo-1543834712-e239e18d25af?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "source": "https://www.pexels.com/photo/a-bunch-of-yellow-and-green-peppers-10847032/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10847032/pexels-photo-10847032.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/pepper.jpg",
-    "sha256": "8b42e1413137a2ad78392160ae169297ab5d7539a244b4204af33b98f728e1ea"
+    "sha256": "8a40f993dafc87f049a6a276a6bb966f8fafd72b719a17fa6699de469588cfd2"
   },
   {
     "key": "spice",
-    "source": "https://unsplash.com/photos/a-pile-of-ground-spices-on-top-of-a-table-t3tF44rCzBo",
-    "cdn": "https://images.unsplash.com/photo-1634114627043-9a2abf455494?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    "license": "https://unsplash.com/license",
-    "download_url": "https://images.unsplash.com/photo-1634114627043-9a2abf455494?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "source": "https://www.pexels.com/photo/close-up-of-marjoram-herb-in-teaspoon-35809382/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/35809382/pexels-photo-35809382.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/spice.jpg",
-    "sha256": "ede50f96eb39c87d53b9b961e2c8208e393db111ec16c44cde10d30fe6e532e4"
+    "sha256": "b1c517f68c7bc6fd9b35c0ebda44632c45c4d28701be9e80e19a7c4d7f05e332"
   },
   {
     "key": "cranberry",
@@ -617,11 +615,11 @@
   },
   {
     "key": "pepper-red-long",
-    "source": "https://www.pexels.com/photo/red-chilies-in-close-up-photography-6805781/",
+    "source": "https://www.pexels.com/photo/fresh-red-bell-peppers-at-a-market-display-28486991/",
     "license": "https://www.pexels.com/license/",
-    "download_url": "https://images.pexels.com/photos/6805781/pexels-photo-6805781.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "download_url": "https://images.pexels.com/photos/28486991/pexels-photo-28486991.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/pepper-red-long.jpg",
-    "sha256": "739971197bb04fdbc5280cbffec02243abc6ba486f73507fea6cd652c4069c3a"
+    "sha256": "a38bdbcd91b8cc4fce8825883676b54899c1d20beb1771522a38646238b5b516"
   },
   {
     "key": "chili",
@@ -641,11 +639,11 @@
   },
   {
     "key": "beetroot",
-    "source": "https://www.pexels.com/photo/close-up-shot-of-beetroots-on-white-surface-5758605/",
+    "source": "https://www.pexels.com/photo/freshly-harvested-organic-beets-and-greens-33893317/",
     "license": "https://www.pexels.com/license/",
-    "download_url": "https://images.pexels.com/photos/5758605/pexels-photo-5758605.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "download_url": "https://images.pexels.com/photos/33893317/pexels-photo-33893317.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/beetroot.jpg",
-    "sha256": "c42d5b63513f5327dcb9316a06d13016fdf95125454484a425e42f5a0c337ed0"
+    "sha256": "793c47b8e9e7b5538c1ac56418dcacc3f8cbbf286d3e1552b07801ac33178364"
   },
   {
     "key": "turnip",
@@ -814,5 +812,13 @@
     "download_url": "https://images.pexels.com/photos/39490207/pexels-photo-39490207.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/okra.jpg",
     "sha256": "22fb8a2d7b156d9c17292685778c9621292f8f1e184c6cf2ab1c8da152d832fe"
+  },
+  {
+    "key": "pepper-light",
+    "source": "https://www.pexels.com/photo/close-up-photo-of-green-bell-pepers-10111744/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10111744/pexels-photo-10111744.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pepper-light.jpg",
+    "sha256": "ffc68c3ee116416fa27a53a6945b72bcd354288c038f03c8d91f409d0e1c2366"
   }
 ]
