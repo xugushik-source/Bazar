@@ -6,7 +6,7 @@ import {ledgerView,fixDay,answerDay,payVendor,reversePayment}from './vendor-ledg
 import {publicAPI}from './public-api.mjs';
 import {catalogAdmin}from './catalog-admin.mjs';
 import {weightPrice} from './weight-policy.mjs';
-import {q,parse,own,catalog,slots,priceBasket,customerQuotes,createOrder,orderView,action,approve,settle,inventoryAction,clock,confirmCollection} from './commerce.mjs';
+import {q,parse,own,catalog,slots,priceBasket,customerQuotes,createOrder,orderView,action,approve,settle,inventoryAction,clock,confirmCollection,deliveryFee} from './commerce.mjs';
 import {Problem,fail,text,integer,uuid,token,sha,passwordHash,constant,userSession,now,teamOf} from './security.mjs';
 import config from './config.mjs';
 const headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'same-origin'};
@@ -23,7 +23,7 @@ export async function handle(req,env){try{
  if(p==='/api/slots'&&req.method==='GET')return reply(await slots(db,url.searchParams.get('city'),url.searchParams.get('day')));
  if(p==='/api/promotions'&&req.method==='GET')return reply(await listPromotions(db,url.searchParams.get('city')));
  if(p==='/api/order/referral'&&b)return reply(await referralInfo(db,b));
- if(p==='/api/quote'&&b){const quote=await priceBasket(db,b),fee=b.fulfillment==='delivery'?quote.city.delivery_fee:0;if(!['pickup','delivery'].includes(b.fulfillment))fail('INVALID_INPUT');return reply({quotes:customerQuotes(quote.lines),items_total:quote.estimate_minor,total:quote.estimate_minor+fee,maximum_total:quote.maximum_minor+fee,delivery_fee:fee,currency:quote.city.currency});}
+ if(p==='/api/quote'&&b){const quote=await priceBasket(db,b),fee=deliveryFee(quote.city,b.fulfillment,quote.estimate_minor);if(!['pickup','delivery'].includes(b.fulfillment))fail('INVALID_INPUT');return reply({quotes:customerQuotes(quote.lines),items_total:quote.estimate_minor,total:quote.estimate_minor+fee,maximum_total:quote.maximum_minor+fee,delivery_fee:fee,currency:quote.city.currency});}
  if(p==='/api/order/telegram'&&b)return reply(await botInvite(db,b,null,env,true));
  if(p==='/api/orders'&&b)return reply(await createOrder(db,b),201);
  if(p==='/api/order/view'&&b)return reply(await orderView(db,b.id,user,b.key));
