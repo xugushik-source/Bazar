@@ -41,3 +41,6 @@ words.ru.soonText='Скоро здесь появится раздел «{name}�
 Object.assign(words.ru,{heroEyebrow:'ВЕСЬ БАЗАР · С ДОСТАВКОЙ',heroText:'Весь базар — с доставкой к вашему столу. Фрукты, овощи, орехи и сухофрукты уже здесь; сыр, хлеб, мясо и форель — скоро.'});
 Object.assign(words.hy,{heroEyebrow:'ԱՄԲՈՂՋ ԲԱԶԱՐԸ · ԱՌԱՔՈՒՄՈՎ',heroText:'Ամբողջ բազարը՝ առաքմամբ ձեր սեղանին։ Մրգերը, բանջարեղենը, ընկույզներն ու չրերն արդեն այստեղ են, իսկ պանիրը, հացը, միսը և իշխանը՝ շուտով։'});
 Object.assign(words.ka,{heroEyebrow:'მთელი ბაზარი · მიწოდებით',heroText:'მთელი ბაზარი — მიწოდებით თქვენს სუფრამდე. ხილი, ბოსტნეული, თხილეული და ჩირი უკვე აქ არის; ყველი, პური, ხორცი და კალმახი — მალე.'});
+Object.assign(words.ru,{freeLeft:'До бесплатной доставки осталось {sum}',freeDone:'Доставка бесплатная'});Object.assign(words.hy,{freeLeft:'Անվճար առաքմանը մնաց {sum}',freeDone:'Առաքումն անվճար է'});Object.assign(words.ka,{freeLeft:'უფასო მიწოდებამდე დარჩა {sum}',freeDone:'მიწოდება უფასოა'});
+Object.assign(words.ru,{loadingTimes:'Загружаем свободное время…'});Object.assign(words.hy,{loadingTimes:'Բեռնում ենք ազատ ժամերը…'});Object.assign(words.ka,{loadingTimes:'იტვირთება თავისუფალი დრო…'});
+Object.assign(words.ru,{soundToggle:'Звуки: включить или выключить'});Object.assign(words.hy,{soundToggle:'Ձայներ՝ միացնել կամ անջատել'});Object.assign(words.ka,{soundToggle:'ხმები: ჩართვა ან გამორთვა'});
