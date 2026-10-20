@@ -848,5 +848,12 @@
     "download_url": "https://images.pexels.com/photos/35613995/pexels-photo-35613995.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/radish-red.jpg",
     "sha256": "4fe35f31c8afd078e4426d37af3983d069e456c36a341a6306ce06f23a3415ff"
+  },
+  {
+    "key": "minicorn",
+    "source": "owner: pack shot of Nostimo baby corn 330 g, sent by the owner on 20.10.2026",
+    "license": "owner-provided product image for selling this product",
+    "file": "public/media/minicorn.jpg",
+    "sha256": "e3db5a45ebbbb91cbca2489b67245614416caacd5cd5a667598496bb743d8ff7"
   }
 ]
