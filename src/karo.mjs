@@ -76,3 +76,13 @@ export const karoJarNames={
 export function karoJarSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'";return Object.entries(karoJarNames).map(([key,names])=>`UPDATE products SET names=${s(JSON.stringify(names))},version=version+1 WHERE id=${s(karoVendor.city_id+'--'+key)} AND names<>${s(JSON.stringify(names))};`)}
 // Owner 18.10: Karo's red apples are fully dark red (Red Delicious type) — own photo for Akhalkalaki; Tbilisi keeps the general apple photo.
 export function karoPhotoSql(){return [`UPDATE products SET art='apple-red',version=version+1 WHERE id='${karoVendor.city_id}--apple_loose' AND art='apple';`]}
+// Owner 20.10: markup by group instead of a flat 30%. Staples, which people compare with Karo's own shelf, take 15%;
+// other fruit, vegetables and pulses 20%; nuts, dried fruit, exotic fruit and jars keep 30% (already below the chains).
+export const karoTiers={staple:15,produce:20,specialty:30};
+export const karoStaples=['potato_loose','onion_loose','carrot_loose','beetroot_loose','cabbage_whole_kg','apple_loose','apple_yellow_loose','tomato_loose','tomato_second_loose','cucumber_loose','cucumber_long_loose','pepper_loose','pepper_red_long_loose','aubergine_loose','banana_loose','mandarin_loose','lemon_loose','garlic_loose'];
+export const karoProduce=['pear_loose','pear_yellow_loose','pear_brown_loose','grapefruit_loose','persimmon_loose','kiwi_loose','nectarine_loose','plum_loose','pomegranate_loose','chili_green_loose','radish_black_loose','radish_red_loose','radish_green_loose','champignon_loose','turnip_loose','cauliflower_whole_kg','beans_speckled_light','red_beans','corn_kernels'];
+export const karoTier=key=>karoStaples.includes(key)?'staple':karoProduce.includes(key)?'produce':'specialty';
+export const tierRetail=(cost,pct)=>Math.ceil(Math.round(cost*(100+pct)/100)/10)*10;
+export const karoCosts=()=>[...karoMoves.map(([key,cost])=>[key,cost]),...karoProducts.filter(r=>!karoRetired.includes(r[0])).map(r=>[r[0],r[7]]),...karoFixes];
+// Only rows still at the recorded cost are repriced, so a cost the owner has since changed in the catalogue is left alone.
+export function karoTierSql(){const v=karoVendor;return karoCosts().map(([key,cost])=>{const price=tierRetail(cost,karoTiers[karoTier(key)]);return `UPDATE products SET price=${price},version=version+1 WHERE id='${v.city_id}--${key}' AND vendor_id='${v.id}' AND cost=${cost} AND price<>${price};`})}
