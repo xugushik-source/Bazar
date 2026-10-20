@@ -50,8 +50,8 @@ export const karoProducts=[
 ];
 export const karoProfiles=Object.fromEntries(karoProducts.map(r=>[r[0],r[6]]));
 export const karoArts=[...new Set([...karoProducts.map(r=>r[5]),'apple-red'])];
-// Photos still missing (no free licensed photo found); the shop shows «фото временно недоступно».
-export const karoArtsWithoutPhoto=['radish-black','radish-red','radish-green'];
+// All Karo photos are present (radishes added 20.10; two of them CC BY-SA, credited in the footer).
+export const karoArtsWithoutPhoto=[];
 // Idempotent statements: create the vendor, move the starter-catalogue products (only while they are still with the initial vendors), add new products.
 export function karoSql(profileFor){
  const v=karoVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o)),out=[];

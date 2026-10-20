@@ -820,5 +820,33 @@
     "download_url": "https://images.pexels.com/photos/10111744/pexels-photo-10111744.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/pepper-light.jpg",
     "sha256": "ffc68c3ee116416fa27a53a6945b72bcd354288c038f03c8d91f409d0e1c2366"
+  },
+  {
+    "key": "radish-black",
+    "source": "https://commons.wikimedia.org/wiki/File:R%C3%A1banos_negros.jpg",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": "San Juan del Sur (Wikimedia Commons)",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/R%C3%A1banos_negros.jpg",
+    "changes": "cropped and resized to 600x520; this crop is shared under CC BY-SA 4.0",
+    "file": "public/media/radish-black.jpg",
+    "sha256": "690d8fac40dbd99e8b70477dc4eb02252d9b0be1e48de016e9d37bcd5bc694cb"
+  },
+  {
+    "key": "radish-green",
+    "source": "https://commons.wikimedia.org/wiki/File:Brassicales_-_Green_Radish_from_Tianjin_-_1.jpg",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": "Emőke Dénes (Wikimedia Commons)",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Brassicales_-_Green_Radish_from_Tianjin_-_1.jpg",
+    "changes": "cropped and resized to 600x520; this crop is shared under CC BY-SA 4.0",
+    "file": "public/media/radish-green.jpg",
+    "sha256": "fa5f21ec1c25a144bafcde098f628a2692f822499d12a7e1a05b19a2f0d813f9"
+  },
+  {
+    "key": "radish-red",
+    "source": "https://www.pexels.com/photo/freshly-harvested-pink-daikon-radishes-at-market-35613995/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/35613995/pexels-photo-35613995.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/radish-red.jpg",
+    "sha256": "4fe35f31c8afd078e4426d37af3983d069e456c36a341a6306ce06f23a3415ff"
   }
 ]
