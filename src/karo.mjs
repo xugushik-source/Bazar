@@ -89,7 +89,10 @@ export function karoTierSql(){const v=karoVendor;return karoCosts().map(([key,co
 // Owner 21.10: where Karo's 30% price was already within 10% of the chains (comparison of 20.10), the group cut only gave margin away —
 // those products go back to the 30% price. Black and green radish follow the red one (same cost, no chain price of their own).
 export const karoKeepFull=['pear_loose','lemon_loose','potato_loose','garlic_loose','cucumber_long_loose','pepper_red_long_loose','aubergine_loose','radish_red_loose','radish_black_loose','radish_green_loose','cauliflower_whole_kg','beans_speckled_light','red_beans'];
-export const karoPrice=(key,cost)=>karoKeepFull.includes(key)?retail(cost):tierRetail(cost,karoTiers[karoTier(key)]);
+// Owner 21.10, later: Conference pears were only compared with the premium chain (Agrohub) and stay at the 20% price after all.
+export const karoKeepUndone=['pear_loose'];
+export const karoPrice=(key,cost)=>karoKeepFull.includes(key)&&!karoKeepUndone.includes(key)?retail(cost):tierRetail(cost,karoTiers[karoTier(key)]);
+export function karoUndoSql(){const v=karoVendor;return karoCosts().filter(([key])=>karoKeepUndone.includes(key)).map(([key,cost])=>`UPDATE products SET price=${karoPrice(key,cost)},version=version+1 WHERE id='${v.city_id}--${key}' AND vendor_id='${v.id}' AND cost=${cost} AND price=${retail(cost)};`)}
 // Only rows still at the recorded cost and at the price migration 0016 set are restored, so a later manual price is left alone.
 export function karoKeepSql(){const v=karoVendor;return karoCosts().filter(([key])=>karoKeepFull.includes(key)).map(([key,cost])=>`UPDATE products SET price=${retail(cost)},version=version+1 WHERE id='${v.city_id}--${key}' AND vendor_id='${v.id}' AND cost=${cost} AND price=${tierRetail(cost,karoTiers[karoTier(key)])};`)}
 // The seed sets the final price in one step (migrations 0016 then 0017 reach the same state), so reapplying it changes nothing.
