@@ -86,3 +86,11 @@ export const tierRetail=(cost,pct)=>Math.ceil(Math.round(cost*(100+pct)/100)/10)
 export const karoCosts=()=>[...karoMoves.map(([key,cost])=>[key,cost]),...karoProducts.filter(r=>!karoRetired.includes(r[0])).map(r=>[r[0],r[7]]),...karoFixes];
 // Only rows still at the recorded cost are repriced, so a cost the owner has since changed in the catalogue is left alone.
 export function karoTierSql(){const v=karoVendor;return karoCosts().map(([key,cost])=>{const price=tierRetail(cost,karoTiers[karoTier(key)]);return `UPDATE products SET price=${price},version=version+1 WHERE id='${v.city_id}--${key}' AND vendor_id='${v.id}' AND cost=${cost} AND price<>${price};`})}
+// Owner 21.10: where Karo's 30% price was already within 10% of the chains (comparison of 20.10), the group cut only gave margin away —
+// those products go back to the 30% price. Black and green radish follow the red one (same cost, no chain price of their own).
+export const karoKeepFull=['pear_loose','lemon_loose','potato_loose','garlic_loose','cucumber_long_loose','pepper_red_long_loose','aubergine_loose','radish_red_loose','radish_black_loose','radish_green_loose','cauliflower_whole_kg','beans_speckled_light','red_beans'];
+export const karoPrice=(key,cost)=>karoKeepFull.includes(key)?retail(cost):tierRetail(cost,karoTiers[karoTier(key)]);
+// Only rows still at the recorded cost and at the price migration 0016 set are restored, so a later manual price is left alone.
+export function karoKeepSql(){const v=karoVendor;return karoCosts().filter(([key])=>karoKeepFull.includes(key)).map(([key,cost])=>`UPDATE products SET price=${retail(cost)},version=version+1 WHERE id='${v.city_id}--${key}' AND vendor_id='${v.id}' AND cost=${cost} AND price=${tierRetail(cost,karoTiers[karoTier(key)])};`)}
+// The seed sets the final price in one step (migrations 0016 then 0017 reach the same state), so reapplying it changes nothing.
+export function karoPriceSql(){const v=karoVendor;return karoCosts().map(([key,cost])=>{const price=karoPrice(key,cost);return `UPDATE products SET price=${price},version=version+1 WHERE id='${v.city_id}--${key}' AND vendor_id='${v.id}' AND cost=${cost} AND price<>${price};`})}
