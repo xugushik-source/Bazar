@@ -71,3 +71,7 @@ Object.assign(words.ka,{pickSwapCall:'დაურეკეთ მყიდვ�
 Object.assign(words.ru,{pickLeft:'Не собрано заказов',pickSwipe:'листайте',pickWaitBuyer:'Ждём ответа покупателя по весу. Когда он подтвердит, нажмёте «Заказ собран».'});
 Object.assign(words.hy,{pickLeft:'Չհավաքված պատվերներ',pickSwipe:'թերթեք',pickWaitBuyer:'Սպասում ենք գնորդի պատասխանին քաշի վերաբերյալ։ Երբ հաստատի, կսեղմեք «Պատվերը հավաքված է»։'});
 Object.assign(words.ka,{pickLeft:'შეუგროვებელი შეკვეთები',pickSwipe:'გადაფურცლეთ',pickWaitBuyer:'ველოდებით მყიდველის პასუხს წონაზე. დადასტურების შემდეგ დააჭერთ „შეკვეთა შეგროვებულია“.'});
+// Buyer's live order status bar (owner 22.10).
+Object.assign(words.ru,{liveOrder:'Заказ',liveAccepted:'Заказ принят — скоро позвоним',liveCollecting:'Собираем ваш заказ',liveNeedYou:'Нужно ваше подтверждение — нажмите',liveReady:'Заказ собран — скоро в пути',liveRoad:'Курьер в пути'});
+Object.assign(words.hy,{liveOrder:'Պատվեր',liveAccepted:'Պատվերը ընդունված է — շուտով կզանգենք',liveCollecting:'Հավաքում ենք ձեր պատվերը',liveNeedYou:'Անհրաժեշտ է ձեր հաստատումը — սեղմեք',liveReady:'Պատվերը հավաքված է — շուտով ճանապարհին',liveRoad:'Առաքիչը ճանապարհին է'});
+Object.assign(words.ka,{liveOrder:'შეკვეთა',liveAccepted:'შეკვეთა მიღებულია — მალე დაგირეკავთ',liveCollecting:'ვაგროვებთ თქვენს შეკვეთას',liveNeedYou:'საჭიროა თქვენი დადასტურება — დააჭირეთ',liveReady:'შეკვეთა შეგროვებულია — მალე გზაშია',liveRoad:'კურიერი გზაშია'});
