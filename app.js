@@ -1,11 +1,11 @@
-import {entryReady}from './entry.js?v=7d7f378466';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=7d7f378466';
-import {botWords}from './bot-words.js?v=7d7f378466';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=7d7f378466';
-import {salesWords}from './sales-i18n.js?v=7d7f378466';
-import {photoPath,artLabels}from './photos.js?v=7d7f378466';import {transferLinks}from './payments.js?v=7d7f378466';import {ledger}from './ledger.js?v=7d7f378466';import {sound,soundButton,watchOrders}from './sounds.js?v=7d7f378466';
-import {words,statuses} from './i18n.js?v=7d7f378466';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=7d7f378466';
-import {quote as makeQuote,assess} from './weight-policy.js?v=7d7f378466';
+import {entryReady}from './entry.js?v=f3a9aa9230';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=f3a9aa9230';
+import {botWords}from './bot-words.js?v=f3a9aa9230';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=f3a9aa9230';
+import {salesWords}from './sales-i18n.js?v=f3a9aa9230';
+import {photoPath,artLabels}from './photos.js?v=f3a9aa9230';import {transferLinks}from './payments.js?v=f3a9aa9230';import {ledger}from './ledger.js?v=f3a9aa9230';import {sound,soundButton,watchOrders}from './sounds.js?v=f3a9aa9230';
+import {words,statuses} from './i18n.js?v=f3a9aa9230';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=f3a9aa9230';
+import {quote as makeQuote,assess} from './weight-policy.js?v=f3a9aa9230';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 const chipArt={meat:'meat'};
 // Home page sections (owner 22.10, after the storefront study): six larger sections, meat first; a category with one product
