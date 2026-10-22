@@ -977,16 +977,6 @@
     "sha256": "22a99c941e3ef9b468e1d53fe78c623441e2f6cb80d76a3dbd93bf7be4c1f42f"
   },
   {
-    "key": "pork-trotters",
-    "source": "https://www.pexels.com/photo/close-up-of-a-raw-pork-leg-20579990/",
-    "cdn": "https://images.pexels.com/photos/20579990/pexels-photo-20579990.jpeg",
-    "license": "https://www.pexels.com/license/",
-    "author": "Boryslav Shoot",
-    "download_url": "https://images.pexels.com/photos/20579990/pexels-photo-20579990.jpeg?auto=compress&cs=tinysrgb&w=1400",
-    "file": "public/media/pork-trotters.jpg",
-    "sha256": "0c668ea35911eea3cb901aa5e75f86970de812d240a71d680a25333614cf9262"
-  },
-  {
     "key": "charcoal",
     "source": "https://www.pexels.com/photo/close-up-of-pile-of-chopped-charcoal-10709388/",
     "cdn": "https://images.pexels.com/photos/10709388/pexels-photo-10709388.jpeg",
@@ -1075,5 +1065,45 @@
     "author": "owner",
     "file": "public/media/beef-head.jpg",
     "sha256": "8a0e66899ba7678021ca39e1572fb36e4c182c983003c8fdc2f72f0f27ef09cb"
+  },
+  {
+    "key": "lyulya-chicken",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/lyulya-chicken.jpg",
+    "sha256": "0e026d3b0fb8dd903ef31beff043be0994d0229a7338ae4026643413363e0ac9"
+  },
+  {
+    "key": "lyulya-beef-pork",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/lyulya-beef-pork.jpg",
+    "sha256": "95b18edc297d1d01cf192f823618512cd5f2e980363fb7c2c87bd12f1b0db0fc"
+  },
+  {
+    "key": "cutlet-beef-pork",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/cutlet-beef-pork.jpg",
+    "sha256": "9e923b2518b4ecec1dc592f87a82a2c2dde56abf5b95dd75c1cbb7528626974f"
+  },
+  {
+    "key": "pork-head",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/pork-head.jpg",
+    "sha256": "a4c68837ec40ccfa422f10f72f5270be0a4637b122728257c6bb4c814039dd93"
+  },
+  {
+    "key": "pork-trotters",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/pork-trotters.jpg",
+    "sha256": "0a5b3989770668e7d5a53bb385154946f602ecf7dee04a051c8de9d3da7f569c"
   }
 ]
