@@ -1131,5 +1131,13 @@
     "author": "owner",
     "file": "public/media/oxtail.jpg",
     "sha256": "95f9c869f489a21e517f2ae3b701a781dce1b26aeb2c20fcfdde6d9a4aee942c"
+  },
+  {
+    "key": "beef-spleen",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/beef-spleen.jpg",
+    "sha256": "3ea344c7f047c78955566cd96a9c4067fdb4c9910059e9de1aaf7228f30590c9"
   }
 ]

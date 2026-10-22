@@ -30,7 +30,7 @@ export const amoProducts=[
  ['charcoal_4kg','Уголь для мангала · мешок 4 кг','Փայտածուխ մանղալի համար · պարկ 4 կգ','ნახშირი მაყალისთვის · ტომარა 4 კგ','household','charcoal','each',1500]
 ];
 // No suitable free photo yet (owner may send his own); the shop shows «Фото временно недоступно» for these.
-export const amoArtsWithoutPhoto=['pork-offal','kholodets-set','beef-spleen','pork-spleen'];
+export const amoArtsWithoutPhoto=['pork-offal','kholodets-set','pork-spleen'];
 export function amoSql(profileFor){const v=amoVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o)),out=[];
  out.push(`INSERT INTO vendors(id,city_id,names) SELECT ${s(v.id)},${s(v.city_id)},${j(v.names)} WHERE EXISTS(SELECT 1 FROM cities WHERE id=${s(v.city_id)}) ON CONFLICT(id) DO NOTHING;`);
  for(const [key,ru,hy,ka,category,art,,list]of amoProducts){const profile=profileFor(key),weighted=['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'].includes(profile.mode);
