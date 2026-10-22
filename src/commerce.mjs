@@ -36,7 +36,8 @@ export async function access(db,id,user,key){const o=await q(db,'SELECT * FROM o
  const team=teamRole(user,o.city_id);if(team)return {o,role:team};
  const vendors=(await q(db,'SELECT vendor_id FROM order_groups WHERE order_id=?',id).all()).results.map(x=>x.vendor_id);
  const memberships=user.memberships.filter(m=>vendors.includes(m.vendor_id));
- if(memberships.some(m=>m.role==='DRIVER')){if(o.driver_id===user.id)return {o,role:'DRIVER'};if(!o.driver_id)return {o,role:'UNASSIGNED_DRIVER'};fail('FORBIDDEN',403)}
+ // A courier serves every order in his city, whichever vendors are in it (couriers joined in the bot have one vendor membership).
+ if(memberships.some(m=>m.role==='DRIVER')||o.fulfillment==='delivery'&&user.memberships.some(m=>m.role==='DRIVER')&&await q(db,"SELECT 1 FROM memberships m JOIN vendors v ON v.id=m.vendor_id WHERE m.user_id=? AND m.role='DRIVER' AND v.city_id=?",user.id,o.city_id).first()){if(o.driver_id===user.id)return {o,role:'DRIVER'};if(!o.driver_id)return {o,role:'UNASSIGNED_DRIVER'};fail('FORBIDDEN',403)}
  if(memberships.some(m=>['ADMIN','STAFF','SUPPLIER'].includes(m.role)))return {o,role:'SUPPLIER'};fail('FORBIDDEN',403);
 }
 export async function orderView(db,id,user,key){const {o,role}=await access(db,id,user,key),supplier=role==='SUPPLIER',unassigned=role==='UNASSIGNED_DRIVER',collector=role==='COLLECTOR',team=collector||role==='CONTROLLER',owner=role==='OWNER';
