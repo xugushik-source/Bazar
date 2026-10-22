@@ -1139,5 +1139,13 @@
     "author": "owner",
     "file": "public/media/beef-spleen.jpg",
     "sha256": "4359936f65976e04be8cb826a5f4bad005676d505f11b5ac2b0a9c90d4adf08a"
+  },
+  {
+    "key": "trout-rainbow",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Rafo Vovi (used whole at the owner's request)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/trout-rainbow.jpg",
+    "sha256": "cba6ae96e96e6d08c2e8e84ca37114a8314a4072db285399a4c8d25250165284"
   }
 ]
