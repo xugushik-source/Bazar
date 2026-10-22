@@ -14,11 +14,11 @@ const view=(e,o,user)=>call(e,'order/view',{id:o.id},user),customer=(e,o)=>call(
 
 test('collector and controller: separate accounts, missing item agreed by buyer, measured weights, return with reason, check, buyer confirmation; payment stays separate',async()=>{const e=await env();try{
  const collector=await hire(e,'COLLECTOR','Арам'),controller=await hire(e,'CONTROLLER','Нино'),o=await order(e);
- // the collector cannot start before the call is confirmed, and cannot confirm the call itself
- await act(e,o,collector,'line_found',{line_id:pid('apple_loose')},403);await act(e,o,collector,'confirm',{},403);
- await act(e,o,controller,'confirm');let v=await view(e,o,collector);assert.equal(v.status,'WEIGHING');assert.equal(v.role,'COLLECTOR');
- // what the collector sees: lines and the buyer's note, no money, no contacts
- assert.equal(v.total,null);assert.equal(v.paid,null);assert.equal(v.payment,null);assert.deepEqual(v.customer,{note:'Яблоки покрупнее'});assert.equal(v.quotes.length,2);
+ // the collector cannot start before the call is confirmed; since 22.10 the collector makes that call (owner's decision)
+ await act(e,o,collector,'line_found',{line_id:pid('apple_loose')},403);
+ await act(e,o,collector,'confirm');let v=await view(e,o,collector);assert.equal(v.status,'WEIGHING');assert.equal(v.role,'COLLECTOR');
+ // what the collector sees: lines, the buyer's name, phone (for the call) and note; no money, no address
+ assert.equal(v.total,null);assert.equal(v.paid,null);assert.equal(v.payment,null);assert.deepEqual(Object.keys(v.customer).sort(),['name','note','phone']);assert.equal(v.customer.note,'Яблоки покрупнее');assert.equal(v.customer.phone,'+995555000777');assert.equal(v.quotes.length,2);
  const cv=await view(e,o,controller);assert.equal(cv.customer.phone,'+995555000777');assert.equal(cv.paid,null);assert.ok(cv.total>0);
  // a measured weight is never zero; a missing item is marked explicitly and blocks submission until the buyer agrees
  await act(e,o,collector,'weigh',{actuals:[{line_id:pid('apple_loose'),net_g:0}]},400);
@@ -46,7 +46,7 @@ test('collector and controller: separate accounts, missing item agreed by buyer,
  assert.equal((await call(e,'order/confirm',{id:o.id,key:'0'.repeat(64),version:ok.version,accepted:true})).http,404);
  // owner sees who did what; payment is still unpaid until the owner confirms money
  const ow=await view(e,o,e.owner);assert.equal(ow.collection.collected_by,'Арам');assert.equal(ow.collection.checked_by,'Нино');assert.equal(ow.collection.self_checked,false);assert.equal(ow.payment,'UNPAID');
- const names=ow.events.map(x=>x.event+':'+x.actor);for(const x of['CONFIRM:Нино','LINE_MISSING:Арам','SUBMIT_COLLECTION:Арам','RETURN_COLLECTION:Нино','CHECK_COLLECTION:Нино','CUSTOMER_CONFIRMED:CUSTOMER'])assert.ok(names.includes(x),x+' in '+names);
+ const names=ow.events.map(x=>x.event+':'+x.actor);for(const x of['CONFIRM:Арам','LINE_MISSING:Арам','SUBMIT_COLLECTION:Арам','RETURN_COLLECTION:Нино','CHECK_COLLECTION:Нино','CUSTOMER_CONFIRMED:CUSTOMER'])assert.ok(names.includes(x),x+' in '+names);
  assert.equal(ow.routing.active_links,0);assert.deepEqual(ow.routing.chats,[]);
  // pickup handover by the controller completes the order; money remains a separate owner action
  await act(e,o,controller,'payment',{amount:100,reason:'нет'},403);await act(e,o,controller,'handover');assert.equal((await view(e,o,e.owner)).payment,'UNPAID');
@@ -90,7 +90,7 @@ test('Telegram mock: personal cards for collector and controller, buttons by rol
  const o=await order(e),drain=()=>drainTelegram(e,'https://bazar.test',50);await drain();
  const cards=chat=>e.sent.filter(m=>['sendMessage','editMessageText'].includes(m.method)&&String(m.chat_id)===String(chat)&&String(m.text||'').startsWith(o.id));
  assert.ok(cards(21).length&&cards(22).length&&cards(1).length,'owner, collector and controller are notified');
- assert.ok(!cards(21).at(-1).text.includes('+995555000777'),'collector card has no phone');assert.ok(cards(22).at(-1).text.includes('+995555000777'),'controller sees the phone to call');
+ assert.ok(cards(21).at(-1).text.includes('+995555000777'),'collector sees the phone: he makes the confirmation call (22.10)');assert.ok(cards(22).at(-1).text.includes('+995555000777'),'controller sees the phone to call');
  assert.ok(cards(21).at(-1).text.includes(botWords.ru.expected),'expected weight is labelled as expected, not measured');
  const press=async(l,action,tg)=>{const b=(await q(e.DB,'SELECT * FROM tg_buttons WHERE link_id=? AND order_id=? ORDER BY rowid DESC',l.id,o.id).all()).results.find(b=>JSON.parse(b.payload).action===action);assert.ok(b,'missing button '+action);await send({callback_query:{id:'cb'+e.update,data:'bz:'+b.id,from:{id:tg},message:{message_id:1,chat:{id:Number(l.chat_id)}}}});await drain()};
  const answers=()=>e.sent.filter(m=>m.method==='answerCallbackQuery');

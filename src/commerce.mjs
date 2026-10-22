@@ -46,7 +46,7 @@ export async function orderView(db,id,user,key){const {o,role}=await access(db,i
  const out={id:o.id,city_id:o.city_id,status:o.status,payment:collector?null:o.payment,currency:o.currency,day:o.day,minute:o.minute,fulfillment:o.fulfillment,version:o.version,driver_id:o.driver_id,confirmed:!!o.confirmed,groups,role};
  if(unassigned)return out;
  const c=parse(o.customer),hideMoney=supplier||collector;
- Object.assign(out,{quotes,original_quotes:customerQuotes(parse(o.original_quotes,[])).filter(l=>!supplier||own(user,l.vendor_id)),actuals:parse(o.actuals),weighing:parse(o.weighing,[]),proposal:parse(o.proposal),customer:supplier?null:collector?{note:c?.note||''}:c,total:hideMoney?null:o.total,maximum_total:hideMoney?null:o.maximum_total,delivery_fee:hideMoney?null:o.delivery_fee,paid:supplier||team?null:o.paid,created_at:o.created_at});
+ Object.assign(out,{quotes,original_quotes:customerQuotes(parse(o.original_quotes,[])).filter(l=>!supplier||own(user,l.vendor_id)),actuals:parse(o.actuals),weighing:parse(o.weighing,[]),proposal:parse(o.proposal),customer:supplier?null:collector?{name:c?.name||'',phone:c?.phone||'',note:c?.note||''}:c,total:hideMoney?null:o.total,maximum_total:hideMoney?null:o.maximum_total,delivery_fee:hideMoney?null:o.delivery_fee,paid:supplier||team?null:o.paid,created_at:o.created_at});
  if(supplier){out.actuals=out.actuals?.filter(a=>lines.some(l=>l.line_id===a.line_id));out.weighing=out.weighing.filter(a=>lines.some(l=>l.line_id===a.line_id));out.proposal=null;}
  if(collector&&out.proposal)out.proposal={id:out.proposal.id,type:out.proposal.type};
  out.availability=Object.fromEntries(lines.map(l=>[l.line_id,l.availability||'PENDING']));
@@ -82,7 +82,7 @@ function stageActual(db,st,o,lines,actuals,total){for(const row of lines){const 
 export async function action(db,b,user){if(!user)fail('LOGIN_REQUIRED',401);const ctx=await commandContext(db,b,user);if(ctx.replay)return ctx.replay;const {o,role}=await access(db,b.id,user);if(integer(b.version)!==o.version)fail('STALE_VERSION',409);const owner=role==='OWNER',driver=role==='DRIVER'||owner&&o.driver_id===user.id,collector=role==='COLLECTOR',controller=role==='CONTROLLER',st=[],fields={},lines=(await q(db,'SELECT * FROM order_lines WHERE order_id=?',o.id).all()).results;
  if(['COMPLETED','CANCELLED'].includes(o.status)&&b.action!=='payment')fail('INVALID_TRANSITION',409);
  if(b.action==='claim'){if(o.fulfillment!=='delivery')fail('INVALID_TRANSITION',409);if(!(owner||role==='UNASSIGNED_DRIVER'||driver)||o.driver_id&&o.driver_id!==user.id)fail('NOT_AVAILABLE',409);fields.driver_id=user.id;}
- else if(b.action==='confirm'){if(!(owner||driver||controller)||!['NEW','CLAIMED'].includes(o.status))fail('FORBIDDEN',403);fields.confirmed=1;fields.status='WEIGHING';}
+ else if(b.action==='confirm'){if(!(owner||driver||controller||collector)||!['NEW','CLAIMED'].includes(o.status))fail('FORBIDDEN',403);fields.confirmed=1;fields.status='WEIGHING';}
  else if(['available','missing','prepare','ready'].includes(b.action)){
  if(!o.confirmed||!['WEIGHING','ASSEMBLING'].includes(o.status)||(!owner&&!collector&&!own(user,b.vendor_id)))fail('FORBIDDEN',403);const g=await q(db,'SELECT * FROM order_groups WHERE order_id=? AND vendor_id=?',o.id,b.vendor_id).first();if(!g)fail('NOT_FOUND',404);
  const from={available:['WAITING','MISSING'],missing:['WAITING','AVAILABLE','PREPARING'],prepare:['AVAILABLE'],ready:['PREPARING']}[b.action];if(!from.includes(g.status))fail('INVALID_TRANSITION',409);
