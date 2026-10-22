@@ -6,6 +6,9 @@ export function weightPrice(pricePerKgMinor, grams) {
   int(pricePerKgMinor);int(grams);
   return Number((BigInt(pricePerKgMinor)*BigInt(grams)+500n)/1000n);
 }
+// Wholesale (owner 22.10): a WEIGHED product may carry bulk:{from_g,price_per_kg_minor}; an order of at least from_g is priced
+// at the bulk rate for its whole weight. The rate is fixed by the ordered weight, so weighing a little under keeps it.
+function kgRate(p,grams){if(!p.bulk)return p.price_per_kg_minor;const from=int(p.bulk.from_g,1),rate=int(p.bulk.price_per_kg_minor,1,p.price_per_kg_minor);return grams>=from?rate:p.price_per_kg_minor}
 function freeze(v){Object.values(v).forEach(x=>{if(x&&typeof x==='object')freeze(x)});return Object.freeze(v)}
 export function quote(product, selection, lineId) {
   if(!product?.id||!modes.has(product.mode)||!product.policy_version||!lineId)throw Error('UNCONFIGURED_PRODUCT');
@@ -18,8 +21,9 @@ export function quote(product, selection, lineId) {
     const bps=int(p.tolerance_bps,0,1000),cap=int(p.tolerance_cap_g,0);
     const tolerance=Math.min(Math.floor(target*bps/10000),cap);
     q.target_g=target;q.min_g=Math.max(1,target-tolerance);q.max_g=target+tolerance;
-    q.estimate_minor=weightPrice(p.price_per_kg_minor,target);
-    q.maximum_minor=weightPrice(p.price_per_kg_minor,q.max_g);
+    const rate=kgRate(p,target);if(p.bulk)q.price_per_kg_minor=rate;
+    q.estimate_minor=weightPrice(rate,target);
+    q.maximum_minor=weightPrice(rate,q.max_g);
   } else if(mode==='WHOLE_BY_WEIGHT') {
     q.count=int(s.count,1,20);
     const range=p.ranges?.find(r=>r.id===s.range_id);
@@ -51,7 +55,7 @@ export function assess(q, actual) {
     if(weights.some(g=>g<q.each_min_g||g>q.each_max_g))return {decision:'CUSTOMER_APPROVAL_REQUIRED',reason:'OUTSIDE_SIZE_RANGE',actual_minor:amount};
   } else if(q.mode==='WEIGHED'||q.mode==='PREWEIGHED') {
     grams=int(actual.net_g);
-    amount=weightPrice(q.product.price_per_kg_minor,grams);
+    amount=weightPrice(q.price_per_kg_minor??q.product.price_per_kg_minor,grams);
     if(grams<q.min_g||grams>q.max_g)return {decision:'CUSTOMER_APPROVAL_REQUIRED',reason:'OUTSIDE_WEIGHT_RANGE',actual_minor:amount};
     if(q.mode==='PREWEIGHED'&&actual.count!==1)return {decision:'CUSTOMER_APPROVAL_REQUIRED',reason:'COUNT_CHANGE',actual_minor:null};
   } else {
