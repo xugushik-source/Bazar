@@ -479,11 +479,11 @@
   },
   {
     "key": "meat",
-    "source": "https://www.pexels.com/photo/raw-meat-on-brown-wooden-tray-8444102/",
-    "license": "https://www.pexels.com/license/",
-    "download_url": "https://images.pexels.com/photos/8444102/pexels-photo-8444102.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "source": "owner: photo sent by the owner on 2026-10-22 for the «Мясо и птица» category (cropped)",
+    "license": "owner-provided",
+    "author": "owner",
     "file": "public/media/meat.jpg",
-    "sha256": "e4bedc650d07c8cffc96b54e63f7f21c3e001b73d8665f703e6ae5abe18a6ee0"
+    "sha256": "f3d7bcf6f78db9ba51b9048a984b25c0349814f898701d7c5cbb2f1eb9ddeba5"
   },
   {
     "key": "chicken",
@@ -988,13 +988,11 @@
   },
   {
     "key": "shashlik-loin",
-    "source": "https://www.pexels.com/photo/close-up-photo-of-marinated-raw-pork-skewers-13533570/",
-    "cdn": "https://images.pexels.com/photos/13533570/pexels-photo-13533570.jpeg",
-    "license": "https://www.pexels.com/license/",
-    "author": "Mateusz Feliksik",
-    "download_url": "https://images.pexels.com/photos/13533570/pexels-photo-13533570.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, knife with a third-party brand left out, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
     "file": "public/media/shashlik-loin.jpg",
-    "sha256": "cfc410ccf422c707ff1df1ea354dc2ffb50043e1728d30ced88235237ae93757"
+    "sha256": "4d0861a3f3119709378d8f5b93ac6e14a2eb7f416cbfcda9e04388ac2069c663"
   },
   {
     "key": "shashlik-pork",
@@ -1018,13 +1016,11 @@
   },
   {
     "key": "dog-bones",
-    "source": "https://www.pexels.com/photo/slices-of-bone-marrow-on-a-tray-8477057/",
-    "cdn": "https://images.pexels.com/photos/8477057/pexels-photo-8477057.jpeg",
-    "license": "https://www.pexels.com/license/",
-    "author": "Los Muertos Crew",
-    "download_url": "https://images.pexels.com/photos/8477057/pexels-photo-8477057.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
     "file": "public/media/dog-bones.jpg",
-    "sha256": "7e491df55937b0fe9360e75ae8c30f850855292988b4b7ffdda976340fb29a8f"
+    "sha256": "d60aceaa77bb6adb38ea9b21d951c26d02da95ca83795d097d8477b00c1c730e"
   },
   {
     "key": "beef-heart",
