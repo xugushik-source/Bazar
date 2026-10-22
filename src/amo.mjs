@@ -30,7 +30,7 @@ export const amoProducts=[
  ['charcoal_4kg','Уголь для мангала · мешок 4 кг','Փայտածուխ մանղալի համար · պարկ 4 կգ','ნახშირი მაყალისთვის · ტომარა 4 კგ','household','charcoal','each',1500]
 ];
 // No suitable free photo yet (owner may send his own); the shop shows «Фото временно недоступно» for these.
-export const amoArtsWithoutPhoto=['pork-offal','kholodets-set','oxtail','beef-spleen','pork-heart','pork-kidneys','pork-liver','pork-spleen'];
+export const amoArtsWithoutPhoto=['pork-offal','kholodets-set','beef-spleen','pork-spleen'];
 export function amoSql(profileFor){const v=amoVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o)),out=[];
  out.push(`INSERT INTO vendors(id,city_id,names) SELECT ${s(v.id)},${s(v.city_id)},${j(v.names)} WHERE EXISTS(SELECT 1 FROM cities WHERE id=${s(v.city_id)}) ON CONFLICT(id) DO NOTHING;`);
  for(const [key,ru,hy,ka,category,art,,list]of amoProducts){const profile=profileFor(key),weighted=['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'].includes(profile.mode);
@@ -75,6 +75,9 @@ export const amoSplit=[
 ];
 export const amoSplitRetired=['kholodets_set'];
 export function amoSplitSql(profileFor){const v=amoVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));return [...amoSplitRetired.map(key=>`UPDATE products SET active=0,version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND active=1;`),...amoSplit.map(([key,ru,hy,ka,category,art,,list])=>`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--'+key)},${s(v.id)},${j({ru,hy,ka})},${s(category)},${s(art)},${j(profileFor(key))},${amoPrice50(list)},${amoCost(list)},50 WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`)]}
+// Owner 22.10, later: pork spleen is no longer sold.
+export const amoRemoved=['pork_spleen'];
+export function amoRemovedSql(){const v=amoVendor;return amoRemoved.map(key=>`UPDATE products SET active=0,version=version+1 WHERE id='${v.city_id}--${key}' AND active=1;`)}
 export const amoProfiles=Object.fromEntries([...amoProducts,...amoOffal,...amoPieces,...amoSplit].map(r=>[r[0],r[6]]));
 export const amoArts=[...amoProducts,...amoOffal,...amoPieces,...amoSplit].map(r=>r[5]);
 // Owner 22.10, later: the lyulya is 80% beef and 20% lard (not beef and pork 50/50); price unchanged.

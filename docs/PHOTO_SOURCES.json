@@ -1105,5 +1105,37 @@
     "author": "owner",
     "file": "public/media/pork-trotters.jpg",
     "sha256": "0a5b3989770668e7d5a53bb385154946f602ecf7dee04a051c8de9d3da7f569c"
+  },
+  {
+    "key": "pork-heart",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/pork-heart.jpg",
+    "sha256": "744d315e466147b0146483d728e3c17e5569cd8ce069a43f16fe779aa211f282"
+  },
+  {
+    "key": "pork-kidneys",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/pork-kidneys.jpg",
+    "sha256": "36f704a36e01f6381afbb783f468c6710a4beac122faf801d8b44c0e11db4a72"
+  },
+  {
+    "key": "pork-liver",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/pork-liver.jpg",
+    "sha256": "868f10a6ec9a228358b75eb40b1f40c0c048f626ed1241c07b99829cc8d29115"
+  },
+  {
+    "key": "oxtail",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/oxtail.jpg",
+    "sha256": "95f9c869f489a21e517f2ae3b701a781dce1b26aeb2c20fcfdde6d9a4aee942c"
   }
 ]
