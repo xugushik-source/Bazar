@@ -1,0 +1,2 @@
+-- Owner 22.10: weighed fruit and vegetables from 500 g in 100 g steps; garlic, ginger, hot pepper, champignons unchanged. Generated from src/produce.mjs (produceSql).
+UPDATE products SET profile=json_set(profile,'$.minimum_g',500,'$.order_step_g',100),version=version+1 WHERE category IN ('fruit','vegetables') AND json_extract(profile,'$.mode')='WEIGHED' AND json_extract(profile,'$.minimum_g')=100 AND json_extract(profile,'$.order_step_g')=100;
