@@ -78,3 +78,6 @@ export function amoLyulyaSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'"
 export const amoPrice50=list=>Math.ceil(list*105/5000)*50;
 export function amoMeatSql(profiles){const v=amoVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o)),gone=[...amoRetired,...amoPiecesRetired];
  return [...amoProducts,...amoOffal,...amoPieces].filter(r=>(r[4]==='meat'||r[0]==='charcoal_4kg')&&!gone.includes(r[0])).map(([key,,,,,,profile,list])=>`UPDATE products SET price=${amoPrice50(list)},${profile==='loose'?`profile=${j(profiles.meat)},`:''}version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND vendor_id=${s(v.id)} AND cost=${amoCost(list)} AND (price<>${amoPrice50(list)}${profile==='loose'?` OR profile<>${j(profiles.meat)}`:''});`)}
+// Owner 22.10, later: Amo works 09:00–18:00. Orders with Amo goods are delivered from an hour after opening until closing.
+export const amoHours={open_minute:540,close_minute:1080};
+export function amoHoursSql(){return [`UPDATE vendors SET open_minute=${amoHours.open_minute},close_minute=${amoHours.close_minute} WHERE id='${amoVendor.id}' AND (open_minute IS NOT ${amoHours.open_minute} OR close_minute IS NOT ${amoHours.close_minute});`]}
