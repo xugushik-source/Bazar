@@ -89,8 +89,8 @@ export function amoLyulyaSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'"
 // Owner 22.10, later: meat prices round up to 50 tetri (6.10 → 6.50) and meat sold by weight starts at 1 kg (then 100 g steps).
 // Charcoal rounds the same way. Rows keep their recorded cost; only those still at it are repriced.
 export const amoPrice50=list=>Math.ceil(list*105/5000)*50;
-export function amoMeatSql(profiles){const v=amoVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o)),gone=[...amoRetired,...amoPiecesRetired];
- return [...amoProducts,...amoOffal,...amoPieces].filter(r=>(r[4]==='meat'||r[0]==='charcoal_4kg')&&!gone.includes(r[0])).map(([key,,,,,,profile,list])=>`UPDATE products SET price=${amoPrice50(list)},${profile==='loose'?`profile=${j(profiles.meat)},`:''}version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND vendor_id=${s(v.id)} AND cost=${amoCost(list)} AND (price<>${amoPrice50(list)}${profile==='loose'?` OR profile<>${j(profiles.meat)}`:''});`)}
+export function amoMeatSql(profiles,overrides={}){const v=amoVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o)),gone=[...amoRetired,...amoPiecesRetired];
+ return [...amoProducts,...amoOffal,...amoPieces].filter(r=>(r[4]==='meat'||r[0]==='charcoal_4kg')&&!gone.includes(r[0])).map(([key,,,,,,profile,list])=>[key,profile,list,overrides[key]??amoPrice50(list)]).map(([key,profile,list,price])=>`UPDATE products SET price=${price},${profile==='loose'?`profile=${j(profiles.meat)},`:''}version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND vendor_id=${s(v.id)} AND cost=${amoCost(list)} AND (price<>${price}${profile==='loose'?` OR profile<>${j(profiles.meat)}`:''});`)}
 // Owner 22.10, later: Amo works 09:00–18:00. Orders with Amo goods are delivered from an hour after opening; the last slot is 17:40.
 export const amoHours={open_minute:540,close_minute:1080};
 export function amoHoursSql(){return [`UPDATE vendors SET open_minute=${amoHours.open_minute},close_minute=${amoHours.close_minute} WHERE id='${amoVendor.id}' AND (open_minute IS NOT ${amoHours.open_minute} OR close_minute IS NOT ${amoHours.close_minute});`]}
