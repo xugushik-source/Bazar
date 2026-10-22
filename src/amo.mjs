@@ -78,6 +78,9 @@ export function amoSplitSql(profileFor){const v=amoVendor,s=x=>"'"+String(x).rep
 // Owner 22.10, later: pork spleen is no longer sold.
 export const amoRemoved=['pork_spleen'];
 export function amoRemovedSql(){const v=amoVendor;return amoRemoved.map(key=>`UPDATE products SET active=0,version=version+1 WHERE id='${v.city_id}--${key}' AND active=1;`)}
+// Owner 22.10, later: sale prices the owner sets by hand instead of listed + 5% (dog bones 3 ₾/kg; cost stays listed − 10%).
+export const amoPriceOverrides={dog_bones:300};
+export function amoOverrideSql(){const v=amoVendor,rows=Object.fromEntries([...amoProducts,...amoOffal,...amoPieces,...amoSplit].map(r=>[r[0],r[7]]));return Object.entries(amoPriceOverrides).map(([key,price])=>`UPDATE products SET price=${price},version=version+1 WHERE id='${v.city_id}--${key}' AND vendor_id='${v.id}' AND cost=${amoCost(rows[key])} AND price<>${price};`)}
 export const amoProfiles=Object.fromEntries([...amoProducts,...amoOffal,...amoPieces,...amoSplit].map(r=>[r[0],r[6]]));
 export const amoArts=[...amoProducts,...amoOffal,...amoPieces,...amoSplit].map(r=>r[5]);
 // Owner 22.10, later: the lyulya is 80% beef and 20% lard (not beef and pork 50/50); price unchanged.

@@ -938,13 +938,11 @@
   },
   {
     "key": "lard-thick",
-    "source": "https://www.pexels.com/photo/fresh-frozen-meat-on-a-wooden-chopping-board-7298040/",
-    "cdn": "https://images.pexels.com/photos/7298040/pexels-photo-7298040.jpeg",
-    "license": "https://www.pexels.com/license/",
-    "author": "麗娜 顏",
-    "download_url": "https://images.pexels.com/photos/7298040/pexels-photo-7298040.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
     "file": "public/media/lard-thick.jpg",
-    "sha256": "2b872bb1a972e1145a5cc8da02776a7bcc0d593ffd9f0c4b7df13c915e652ffa"
+    "sha256": "5469818662b009b462a1ce97c8b1c4cf13d665c3766571ccf00ac93bc0fb7bec"
   },
   {
     "key": "lard-smoked",
