@@ -1,4 +1,4 @@
-import {assess}from './weight-policy.js?v=a111acbcfc';
+import {assess}from './weight-policy.js?v=0af27f314b';
 // Collection workflow view: each fact (saved, call, collected, checked, buyer confirmed, handed over, money) is shown separately.
 const weighted=m=>['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'].includes(m),after=['CHECKING','CUSTOMER_REVIEW','READY','PICKED_UP','OUT_FOR_DELIVERY','COMPLETED'];
 export const collectionEvents={LINE_FOUND:'found',LINE_MISSING:'missingLine',SUBMIT_COLLECTION:'submitCollection',CHECK_COLLECTION:'checkCollection',RETURN_COLLECTION:'returnCollection',CONFIRM_PHONE:'confirmPhone',CUSTOMER_CONFIRMED:'stepCustomer',CUSTOMER_DISPUTED:'dispute'};
