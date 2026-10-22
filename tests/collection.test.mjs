@@ -178,3 +178,17 @@ test('missing item: the collector calls the buyer, proposes a replacement and re
  assert.equal((await call(e,'manage/approve-phone',{...body,reason:'Согласовано по телефону'},collector)).http,200);
  v=await view(e,o,collector);assert.equal(v.status,'WEIGHING');assert.deepEqual(v.quotes.map(l=>l.product_id).sort(),[pid('apple_loose'),pid('mandarin_loose')]);
  const ow=await view(e,o,e.owner);assert.ok(ow.events.some(x=>x.actor==='Арам'&&/APPROV/.test(x.event)),ow.events.map(x=>x.event+':'+x.actor).join(','))}finally{e.DB.close()}});
+
+test('photos: the collector photographs the packed order, the buyer attaches a transfer screenshot by the order key; others cannot',async()=>{const e=await env();try{
+ const collector=await hire(e,'COLLECTOR','Арам'),o=await order(e,'delivery');await act(e,o,collector,'confirm');
+ const img='data:image/jpeg;base64,'+Buffer.from('not-a-real-jpeg').toString('base64');
+ assert.equal((await call(e,'manage/photo',{id:o.id,image:img,command:'p1'},collector)).http,200);
+ assert.equal((await call(e,'manage/photo',{id:o.id,image:img,command:'p1'},collector)).http,200,'the same upload again is not a second photo');
+ assert.equal((await call(e,'manage/photo',{id:o.id,image:'data:text/html;base64,PGI+',command:'p2'},collector)).http,400);
+ assert.equal((await call(e,'manage/photo',{id:o.id,image:img,command:'p3'})).http,401,'login required');
+ const list=await call(e,'manage/photos?order='+o.id,null,collector);assert.deepEqual(list.photos.map(p=>p.kind),['COLLECTED']);
+ assert.equal((await call(e,'order/receipt',{id:o.id,key:'wrong-key',image:img,command:'r1'})).http,404);
+ assert.equal((await call(e,'order/receipt',{id:o.id,key:o.key,image:img,command:'r2'})).http,200);
+ assert.deepEqual((await call(e,'manage/photos?order='+o.id,null,e.owner)).photos.map(p=>p.kind),['COLLECTED','RECEIPT']);
+ const pid=(await q(e.DB,"SELECT id FROM order_photos WHERE kind='RECEIPT'").first()).id,r=await handle(new Request('https://bazar.test/api/manage/photo-file?id='+pid,{headers:{cookie:'bazar_session=none'}}),e);assert.equal(r.status,401,'the image is for staff only')
+}finally{e.DB.close()}});
