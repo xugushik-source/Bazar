@@ -73,3 +73,8 @@ export const amoArts=[...amoProducts,...amoOffal,...amoPieces].map(r=>r[5]);
 // Owner 22.10, later: the lyulya is 80% beef and 20% lard (not beef and pork 50/50); price unchanged.
 export const amoLyulyaNames={lyulya_beef_pork_each:{ru:'Люля-кебаб: 80% говядины, 20% сала, полуфабрикат · штука 250 г',hy:'Լյուլյա-քաբաբ՝ 80% տավար, 20% ճարպ, կիսաֆաբրիկատ · հատ 250 գ',ka:'ლულა-ქაბაბი: 80% საქონელი, 20% ქონი, ნახევარფაბრიკატი · ცალი 250 გ'}};
 export function amoLyulyaSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'";return Object.entries(amoLyulyaNames).map(([key,names])=>`UPDATE products SET names=${s(JSON.stringify(names))},version=version+1 WHERE id=${s(amoVendor.city_id+'--'+key)} AND names<>${s(JSON.stringify(names))};`)}
+// Owner 22.10, later: meat prices round up to 50 tetri (6.10 → 6.50) and meat sold by weight starts at 1 kg (then 100 g steps).
+// Charcoal rounds the same way. Rows keep their recorded cost; only those still at it are repriced.
+export const amoPrice50=list=>Math.ceil(list*105/5000)*50;
+export function amoMeatSql(profiles){const v=amoVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o)),gone=[...amoRetired,...amoPiecesRetired];
+ return [...amoProducts,...amoOffal,...amoPieces].filter(r=>(r[4]==='meat'||r[0]==='charcoal_4kg')&&!gone.includes(r[0])).map(([key,,,,,,profile,list])=>`UPDATE products SET price=${amoPrice50(list)},${profile==='loose'?`profile=${j(profiles.meat)},`:''}version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND vendor_id=${s(v.id)} AND cost=${amoCost(list)} AND (price<>${amoPrice50(list)}${profile==='loose'?` OR profile<>${j(profiles.meat)}`:''});`)}
