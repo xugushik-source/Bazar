@@ -29,12 +29,35 @@ export const amoProducts=[
  ['oxtail','Хвост говяжий','Տավարի պոչ','საქონლის კუდი','meat','oxtail','loose',2000],
  ['charcoal_4kg','Уголь для мангала · мешок 4 кг','Փայտածուխ մանղալի համար · պարկ 4 կգ','ნახშირი მაყალისთვის · ტომარა 4 კგ','household','charcoal','each',1500]
 ];
-export const amoProfiles=Object.fromEntries(amoProducts.map(r=>[r[0],r[6]]));
-export const amoArts=amoProducts.map(r=>r[5]);
 // No suitable free photo yet (owner may send his own); the shop shows «Фото временно недоступно» for these.
-export const amoArtsWithoutPhoto=['tongue','pork-offal','kholodets-set','beef-head','oxtail','lyulya-chicken'];
+export const amoArtsWithoutPhoto=['tongue','pork-offal','kholodets-set','beef-head','oxtail','lyulya-chicken','beef-heart','beef-kidneys','beef-liver','beef-spleen','pork-heart','pork-kidneys','pork-liver','pork-spleen'];
 export function amoSql(profileFor){const v=amoVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o)),out=[];
  out.push(`INSERT INTO vendors(id,city_id,names) SELECT ${s(v.id)},${s(v.city_id)},${j(v.names)} WHERE EXISTS(SELECT 1 FROM cities WHERE id=${s(v.city_id)}) ON CONFLICT(id) DO NOTHING;`);
  for(const [key,ru,hy,ka,category,art,,list]of amoProducts){const profile=profileFor(key),weighted=['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'].includes(profile.mode);
   out.push(`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--'+key)},${s(v.id)},${j({ru,hy,ka})},${s(category)},${s(art)},${j(profile)},${amoPrice(list)},${amoCost(list)},${weighted?100000:50} WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`)}
  return out}
+// Owner 22.10, later: clearer names; offal sold separately (beef 10 ₾/kg, pork 7 ₾/kg) instead of one «Субпродукты свиные».
+export const amoRenames={
+ pork_bone_in:{ru:'Свинина мякоть с костью',hy:'Խոզի փափուկ միս՝ ոսկորով',ka:'ღორის რბილი ხორცი ძვლით'},
+ tongue_each:{ru:'Язык говяжий · штука',hy:'Տավարի լեզու · հատ',ka:'საქონლის ენა · ცალი'},
+ kholodets_set:{ru:'Набор для холодца, полуфабрикат: свиная голова и 4 ножки',hy:'Խոլոդեցի հավաքածու, կիսաֆաբրիկատ՝ խոզի գլուխ և 4 ոտք',ka:'ხოლოდეცის ნაკრები, ნახევარფაბრიკატი: ღორის თავი და 4 ფეხი'}
+};
+export const amoOffal=[
+ ['beef_heart','Сердце говяжье','Տավարի սիրտ','საქონლის გული','meat','beef-heart','loose',1000],
+ ['beef_kidneys','Почки говяжьи','Տավարի երիկամներ','საქონლის თირკმელები','meat','beef-kidneys','loose',1000],
+ ['beef_liver','Печень говяжья','Տավարի լյարդ','საქონლის ღვიძლი','meat','beef-liver','loose',1000],
+ ['beef_spleen','Селезёнка говяжья','Տավարի փայծաղ','საქონლის ელენთა','meat','beef-spleen','loose',1000],
+ ['pork_heart','Сердце свиное','Խոզի սիրտ','ღორის გული','meat','pork-heart','loose',700],
+ ['pork_kidneys','Почки свиные','Խոզի երիկամներ','ღორის თირკმელები','meat','pork-kidneys','loose',700],
+ ['pork_liver','Печень свиная','Խոզի լյարդ','ღორის ღვიძლი','meat','pork-liver','loose',700],
+ ['pork_spleen','Селезёнка свиная','Խոզի փայծաղ','ღორის ელენთა','meat','pork-spleen','loose',700]
+];
+export const amoRetired=['pork_offal'];
+export const amoOffalArts=amoOffal.map(r=>r[5]);
+export function amoUpdateSql(profileFor){const v=amoVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o)),out=[];
+ for(const [key,names]of Object.entries(amoRenames))out.push(`UPDATE products SET names=${j(names)},version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND names<>${j(names)};`);
+ for(const [key,ru,hy,ka,category,art,,list]of amoOffal){const profile=profileFor(key);out.push(`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--'+key)},${s(v.id)},${j({ru,hy,ka})},${s(category)},${s(art)},${j(profile)},${amoPrice(list)},${amoCost(list)},100000 WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`)}
+ for(const key of amoRetired)out.push(`UPDATE products SET active=0,version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND active=1;`);
+ return out}
+export const amoProfiles=Object.fromEntries([...amoProducts,...amoOffal].map(r=>[r[0],r[6]]));
+export const amoArts=[...amoProducts,...amoOffal].map(r=>r[5]);
