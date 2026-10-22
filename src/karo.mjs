@@ -97,6 +97,6 @@ export function karoUndoSql(){const v=karoVendor;return karoCosts().filter(([key
 export function karoKeepSql(){const v=karoVendor;return karoCosts().filter(([key])=>karoKeepFull.includes(key)).map(([key,cost])=>`UPDATE products SET price=${retail(cost)},version=version+1 WHERE id='${v.city_id}--${key}' AND vendor_id='${v.id}' AND cost=${cost} AND price=${tierRetail(cost,karoTiers[karoTier(key)])};`)}
 // The seed sets the final price in one step (migrations 0016 then 0017 reach the same state), so reapplying it changes nothing.
 export function karoPriceSql(){const v=karoVendor;return karoCosts().map(([key,cost])=>{const price=karoPrice(key,cost);return `UPDATE products SET price=${price},version=version+1 WHERE id='${v.city_id}--${key}' AND vendor_id='${v.id}' AND cost=${cost} AND price<>${price};`})}
-// Owner 22.10: Karo works 08:00–23:00 (inside the city's delivery hours, so the window does not narrow today).
+// Owner 22.10: Karo works 08:00–23:00; the city's slots run until its last one, 22:40.
 export const karoHours={open_minute:480,close_minute:1380};
 export function karoHoursSql(){return [`UPDATE vendors SET open_minute=${karoHours.open_minute},close_minute=${karoHours.close_minute} WHERE id='${karoVendor.id}' AND (open_minute IS NOT ${karoHours.open_minute} OR close_minute IS NOT ${karoHours.close_minute});`]}
