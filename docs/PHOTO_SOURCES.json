@@ -133,7 +133,7 @@
     "source": "https://unsplash.com/photos/blueberries-fruit-BCbYlrdgSdQ",
     "cdn": "https://images.unsplash.com/photo-1566749928258-4e382b7cb82a?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
     "license": "https://unsplash.com/license",
-    "author": "Niklas Sagr\u00e9n",
+    "author": "Niklas Sagrén",
     "download_url": "https://images.unsplash.com/photo-1566749928258-4e382b7cb82a?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
     "file": "public/media/blueberry.jpg",
     "sha256": "58f4417d97d6c20ba13e592a090968d4c3f7c1e6c7215eaad59f23800d92264d"
@@ -153,7 +153,7 @@
     "source": "https://unsplash.com/photos/a-pile-of-fresh-green-herbs-including-parsley-and-dill-Zz2prRbsgsk",
     "cdn": "https://images.unsplash.com/photo-1779173932688-2bc0e3ecb95e?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
     "license": "https://unsplash.com/license",
-    "author": "Do\u011fan Alpaslan DEM\u0130R",
+    "author": "Doğan Alpaslan DEMİR",
     "download_url": "https://images.unsplash.com/photo-1779173932688-2bc0e3ecb95e?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
     "file": "public/media/herbs.jpg",
     "sha256": "78bcaf6caba97c2da73c690f1921ea4091102c031c0e10cef7c872286f7c31af"
@@ -303,7 +303,7 @@
     "source": "https://unsplash.com/photos/white-beans-on-white-background-b6h5nTVD1Hw",
     "cdn": "https://images.unsplash.com/photo-1613728913084-090a0d106c3a?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
     "license": "https://unsplash.com/license",
-    "author": "\u0141ukasz Rawa",
+    "author": "Łukasz Rawa",
     "download_url": "https://images.unsplash.com/photo-1613728913084-090a0d106c3a?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
     "file": "public/media/white-beans.jpg",
     "sha256": "f6c6edbb84f6675849393d89fc118cf170a13ded878ace48d25f584f0cf6b43a"
@@ -313,7 +313,7 @@
     "source": "https://unsplash.com/photos/pile-of-red-lentils-filling-the-frame-lSs08NWEZ_g",
     "cdn": "https://images.unsplash.com/photo-1770617476260-1addeea7c826?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
     "license": "https://unsplash.com/license",
-    "author": "Mustafa ak\u0131n",
+    "author": "Mustafa akın",
     "download_url": "https://images.unsplash.com/photo-1770617476260-1addeea7c826?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
     "file": "public/media/lentils.jpg",
     "sha256": "d8c44ef8dc0fe1db547ceb667ecd7f908c6f609a260ec52c9cb0f69be5d45959"
@@ -333,7 +333,7 @@
     "source": "https://unsplash.com/photos/a-close-up-view-of-uncooked-white-rice-grains-D8PSaH0o7kk",
     "cdn": "https://images.unsplash.com/photo-1770617474928-3c7554a51941?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
     "license": "https://unsplash.com/license",
-    "author": "Mustafa ak\u0131n",
+    "author": "Mustafa akın",
     "download_url": "https://images.unsplash.com/photo-1770617474928-3c7554a51941?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
     "file": "public/media/rice.jpg",
     "sha256": "47fcc965537fe89fa402983e4a07f2ace75a7a93eb1ec909df71fee1d8b4fe6e"
@@ -361,7 +361,7 @@
     "source": "https://www.pexels.com/photo/close-up-of-traditional-churchkhela-sweets-37306054/",
     "cdn": "https://images.pexels.com/photos/37306054/pexels-photo-37306054/free-photo-of-close-up-of-traditional-churchkhela-sweets.jpeg?auto=compress&dpr=1&h=750&w=1260",
     "license": "https://www.pexels.com/license/",
-    "author": "Mihman Du\u011fanl\u0131",
+    "author": "Mihman Duğanlı",
     "download_error": "HTTP Error 403: Forbidden",
     "hosting": "external"
   },
@@ -370,7 +370,7 @@
     "source": "https://unsplash.com/photos/bsFzFUmZwwg",
     "cdn": "https://images.unsplash.com/photo-1670843629580-475c9d1da4e2?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
     "license": "https://unsplash.com/license",
-    "author": "Joanna Sto\u0142owicz",
+    "author": "Joanna Stołowicz",
     "download_url": "https://images.unsplash.com/photo-1670843629580-475c9d1da4e2?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
     "file": "public/media/buckwheat.jpg",
     "sha256": "a992cb7ea53449857ead4f0e3bbfdd53eaf10f6d807d3b4925854c9627f6521f"
@@ -835,7 +835,7 @@
     "key": "radish-green",
     "source": "https://commons.wikimedia.org/wiki/File:Brassicales_-_Green_Radish_from_Tianjin_-_1.jpg",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "author": "Em\u0151ke D\u00e9nes (Wikimedia Commons)",
+    "author": "Emőke Dénes (Wikimedia Commons)",
     "download_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Brassicales_-_Green_Radish_from_Tianjin_-_1.jpg",
     "changes": "cropped and resized to 600x520; this crop is shared under CC BY-SA 4.0",
     "file": "public/media/radish-green.jpg",
@@ -881,7 +881,7 @@
     "source": "https://unsplash.com/photos/raw-meat-on-green-textile-TEaC_tItywg",
     "cdn": "https://images.unsplash.com/photo-1629224803318-c4f3a8f06f3c",
     "license": "https://unsplash.com/license",
-    "author": "Rickie-Tom Sch\u00fcnemann",
+    "author": "Rickie-Tom Schünemann",
     "download_url": "https://images.unsplash.com/photo-1629224803318-c4f3a8f06f3c?w=1400&q=85&fm=jpg",
     "file": "public/media/pork-bone-in.jpg",
     "sha256": "04ed1f34aa8785084f569b0dafee61c5de4e994c5a305cf8b5a10998ffc885f6"
@@ -941,7 +941,7 @@
     "source": "https://www.pexels.com/photo/fresh-frozen-meat-on-a-wooden-chopping-board-7298040/",
     "cdn": "https://images.pexels.com/photos/7298040/pexels-photo-7298040.jpeg",
     "license": "https://www.pexels.com/license/",
-    "author": "\u9e97\u5a1c \u984f",
+    "author": "麗娜 顏",
     "download_url": "https://images.pexels.com/photos/7298040/pexels-photo-7298040.jpeg?auto=compress&cs=tinysrgb&w=1400",
     "file": "public/media/lard-thick.jpg",
     "sha256": "2b872bb1a972e1145a5cc8da02776a7bcc0d593ffd9f0c4b7df13c915e652ffa"
@@ -1035,5 +1035,45 @@
     "download_url": "https://images.pexels.com/photos/8477057/pexels-photo-8477057.jpeg?auto=compress&cs=tinysrgb&w=1400",
     "file": "public/media/dog-bones.jpg",
     "sha256": "7e491df55937b0fe9360e75ae8c30f850855292988b4b7ffdda976340fb29a8f"
+  },
+  {
+    "key": "beef-heart",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/beef-heart.jpg",
+    "sha256": "1203deae615a33ce49d8335e9df74b4f75fc9388c61539476e5faaf89c674066"
+  },
+  {
+    "key": "beef-liver",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/beef-liver.jpg",
+    "sha256": "75a50ee56771e283f88d2f8cc01a678032aca0edc085e7138c9e081b996fec47"
+  },
+  {
+    "key": "beef-kidneys",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/beef-kidneys.jpg",
+    "sha256": "4ce8f4870647a0bfa0ec349429c1b6be1a69b8558e726b1226834fc805b52727"
+  },
+  {
+    "key": "tongue",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/tongue.jpg",
+    "sha256": "386f98044180154529c4743abe5e4eddfca5735bd93f601345af566c9544645c"
+  },
+  {
+    "key": "beef-head",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/beef-head.jpg",
+    "sha256": "8a0e66899ba7678021ca39e1572fb36e4c182c983003c8fdc2f72f0f27ef09cb"
   }
 ]
