@@ -148,7 +148,7 @@ test('owner-managed staff passwords: short login, six characters, only the owner
  assert.equal((await login('owner@test.invalid','test-password-123456')).http,200);
 }finally{e.DB.close()}});
 
-test('buyer answer taken by phone: controller/owner record approval or refusal of a change with a note; collector cannot; Telegram dialog works',async()=>{const e=await env();try{
+test('buyer answer taken by phone: controller/owner record approval or refusal of a change with a note; collector cannot approve a weight change; Telegram dialog works',async()=>{const e=await env();try{
  const collector=await hire(e,'COLLECTOR','Арам'),controller=await hire(e,'CONTROLLER','Нино'),o=await order(e);await act(e,o,controller,'confirm');
  await act(e,o,collector,'weigh',{actuals:[{line_id:pid('apple_loose'),net_g:1450},{line_id:pid('pear_loose'),net_g:1000}]});
  let c=await customer(e,o);assert.equal(c.status,'AWAITING_APPROVAL');const body={id:o.id,version:c.version,proposal_id:c.proposal.id,approved:true};
@@ -168,3 +168,13 @@ test('buyer answer taken by phone: controller/owner record approval or refusal o
  await send({callback_query:{id:'cb',data:'bz:'+btn.id,from:{id:22},message:{message_id:1,chat:{id:22}}}});await send({message:{message_id:2,text:'Согласен, сказал по телефону',chat:{id:22,type:'private'},from:{id:22}}});
  assert.equal((await customer(e,o2)).status,'ASSEMBLING');
 }finally{e.DB.close()}});
+
+test('missing item: the collector calls the buyer, proposes a replacement and records the phone agreement; owner sees who did it',async()=>{const e=await env();try{
+ const collector=await hire(e,'COLLECTOR','Арам'),o=await order(e);await act(e,o,collector,'confirm');
+ let v=await view(e,o,collector);await act(e,o,collector,'replace',{items:[{product_id:pid('apple_loose'),selection:{grams:1000}},{product_id:pid('mandarin_loose'),selection:{grams:1000}}]});
+ v=await view(e,o,collector);assert.equal(v.status,'AWAITING_APPROVAL');assert.equal(v.proposal.type,'REPLACEMENT');
+ const body={id:o.id,version:v.version,proposal_id:v.proposal.id,approved:true};
+ assert.equal((await call(e,'manage/approve-phone',body,collector)).http,400,'a note is required');
+ assert.equal((await call(e,'manage/approve-phone',{...body,reason:'Согласовано по телефону'},collector)).http,200);
+ v=await view(e,o,collector);assert.equal(v.status,'WEIGHING');assert.deepEqual(v.quotes.map(l=>l.product_id).sort(),[pid('apple_loose'),pid('mandarin_loose')]);
+ const ow=await view(e,o,e.owner);assert.ok(ow.events.some(x=>x.actor==='Арам'&&/APPROV/.test(x.event)),ow.events.map(x=>x.event+':'+x.actor).join(','))}finally{e.DB.close()}});
