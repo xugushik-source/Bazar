@@ -110,6 +110,9 @@ function pickCheck(sec){if(!sec){$$('.picker').forEach(pickCheck);return}const g
  if(worst==='QUALITY_REVIEW_REQUIRED'){go.disabled=true;go.textContent=t('pickReweigh');out.textContent=`«${bad}»: ${t('pickTooFar')}`;return}
  go.disabled=false;if(worst==='CUSTOMER_APPROVAL_REQUIRED'){go.classList.add('warn');go.textContent=t('pickAsk');out.textContent=t('pickAskHint')}else {go.textContent='✓ '+t('pickDone');out.textContent=t('pickOkHint')}}
 document.addEventListener('input',e=>{if(e.target.classList?.contains('pick-input'))pickCheck(e.target.closest('.picker'))});
+// The buyer's details are kept as they type, not only after an order, so an interrupted checkout is not filled in again.
+document.addEventListener('input',e=>{const f=e.target.closest?.('#checkout-form');if(!f||!['name','phone','address','method'].includes(e.target.name))return;const me=read('bazar.customer',{});me[e.target.name]=e.target.value;write('bazar.customer',me)});
+document.addEventListener('change',e=>{if(e.target.closest?.('#checkout-form')&&e.target.name==='method'){const me=read('bazar.customer',{});me.method=e.target.value;write('bazar.customer',me)}});
 // Keep the card the collector is working on in view after the screen refreshes.
 let pickFocus=null;document.addEventListener('click',e=>{const c=e.target.closest?.('.picker');if(c)pickFocus=c.dataset.id},true);
 function pickScroll(){const c=pickFocus&&$(`.picker[data-id="${CSS.escape(pickFocus)}"]`);if(c)c.parentElement.scrollLeft=c.offsetLeft-c.parentElement.offsetLeft}
