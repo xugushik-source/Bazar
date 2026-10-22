@@ -20,7 +20,7 @@ export async function handle(req,env){try{
  const b=await body(req),user=env.PRIVATE_SITES_SESSION?await env.PRIVATE_SITES_SESSION(req,db):await userSession(req,db);
  if(p==='/api/bootstrap'&&req.method==='GET')return reply({brand:config.brand,contact:{phone:config.phone,address:config.address},demo:config.demo,advertising:await advertising(db),cities:(await db.prepare('SELECT * FROM cities WHERE active=1 ORDER BY id').all()).results.map(c=>({...c,names:parse(c.names)})),user,integrations:{telegram:configured(env)?'CONFIGURED':'DISABLED',googleSheets:'DISABLED',acquiring:false}});
  if(p==='/api/catalog'&&req.method==='GET')return reply(await catalog(db,url.searchParams.get('city')));
- if(p==='/api/slots'&&req.method==='GET')return reply(await slots(db,url.searchParams.get('city'),url.searchParams.get('day'),url.searchParams.get('products')||''));
+ if(p==='/api/slots'&&req.method==='GET')return reply(await slots(db,url.searchParams.get('city'),url.searchParams.get('day'),url.searchParams.get('products')||'',url.searchParams.get('lead')||0));
  if(p==='/api/promotions'&&req.method==='GET')return reply(await listPromotions(db,url.searchParams.get('city')));
  if(p==='/api/order/referral'&&b)return reply(await referralInfo(db,b));
  if(p==='/api/quote'&&b){const quote=await priceBasket(db,b),fee=deliveryFee(quote.city,b.fulfillment,quote.estimate_minor);if(!['pickup','delivery'].includes(b.fulfillment))fail('INVALID_INPUT');return reply({quotes:customerQuotes(quote.lines),items_total:quote.estimate_minor,total:quote.estimate_minor+fee,maximum_total:quote.maximum_minor+fee,delivery_fee:fee,currency:quote.city.currency});}

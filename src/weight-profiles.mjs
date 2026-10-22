@@ -4,7 +4,7 @@ export const profiles={
  dry:{mode:'WEIGHED',policy_version:1,minimum_g:100,order_step_g:50,tolerance_bps:1000,tolerance_cap_g:20},
  nuts:{mode:'WEIGHED',policy_version:1,minimum_g:100,order_step_g:50,tolerance_bps:1000,tolerance_cap_g:20},
  grains:{mode:'WEIGHED',policy_version:1,minimum_g:100,order_step_g:100,tolerance_bps:1000,tolerance_cap_g:100},
- loose:{mode:'WEIGHED',policy_version:1,minimum_g:100,order_step_g:100,tolerance_bps:1000,tolerance_cap_g:200},meat:{mode:'WEIGHED',policy_version:1,minimum_g:1000,order_step_g:500,tolerance_bps:1000,tolerance_cap_g:200},trout:{mode:'WEIGHED',policy_version:1,minimum_g:1000,order_step_g:500,tolerance_bps:1000,tolerance_cap_g:200,bulk:{from_g:10000,price_per_kg_minor:1800}},
+ loose:{mode:'WEIGHED',policy_version:1,minimum_g:100,order_step_g:100,tolerance_bps:1000,tolerance_cap_g:200},meat:{mode:'WEIGHED',policy_version:1,minimum_g:1000,order_step_g:500,tolerance_bps:1000,tolerance_cap_g:200},trout:{mode:'WEIGHED',policy_version:1,minimum_g:1000,order_step_g:500,tolerance_bps:1000,tolerance_cap_g:200,bulk:{from_g:10000,price_per_kg_minor:1800,lead_minutes:120,supplier_delivers:true}},
  delicate:{mode:'WEIGHED',policy_version:1,minimum_g:100,order_step_g:50,tolerance_bps:1000,tolerance_cap_g:50},
  herbs_by_weight:{mode:'WEIGHED',policy_version:1,minimum_g:50,order_step_g:50,tolerance_bps:1000,tolerance_cap_g:20},
  whole:{mode:'WHOLE_BY_WEIGHT',policy_version:1},
