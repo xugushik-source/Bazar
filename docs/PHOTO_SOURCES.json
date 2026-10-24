@@ -1423,5 +1423,149 @@
     "author": "owner",
     "file": "public/media/noy10-050.jpg",
     "sha256": "134eaa27786b84ea2ca71f5af3dff44e9aed62a5536c9fe3d84209a3f79b7044"
+  },
+  {
+    "key": "ararat-ani-005",
+    "source": "https://www.whiskysite.nl/en/ararat-ani-7-years-old-050-ltr-40.html",
+    "cdn": "https://cdn.webshopapp.com/shops/39103/files/428515765/ararat-ararat-ani-7-years-old-050-ltr-40.jpg",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "whiskysite.nl",
+    "file": "public/media/ararat-ani-005.jpg",
+    "sha256": "5e6e2caa68d0cf7daaef70adc8802c8e81bc53714c8e3ad4547653596c2aecd3"
+  },
+  {
+    "key": "ararat-ani-050",
+    "source": "https://www.whiskysite.nl/en/ararat-ani-7-years-old-050-ltr-40.html",
+    "cdn": "https://cdn.webshopapp.com/shops/39103/files/428515765/ararat-ararat-ani-7-years-old-050-ltr-40.jpg",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "whiskysite.nl",
+    "file": "public/media/ararat-ani-050.jpg",
+    "sha256": "5e6e2caa68d0cf7daaef70adc8802c8e81bc53714c8e3ad4547653596c2aecd3"
+  },
+  {
+    "key": "ararat-ani-070-gift",
+    "source": "https://www.whiskysite.nl/en/ararat-ani-7-years-old-giftbox-with-2-glasses-070.html",
+    "cdn": "https://cdn.webshopapp.com/shops/39103/files/428515760/ararat-ararat-ani-7-years-old-giftbox-with-2-glass.jpg",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "whiskysite.nl",
+    "file": "public/media/ararat-ani-070-gift.jpg",
+    "sha256": "a8c3cffdb64a156736ece87940db5c9ab596071a418ff2076f8b9d680f0acf55"
+  },
+  {
+    "key": "ararat-akhtamar-070-gift",
+    "source": "https://www.bondston.com/ararat-akhtamar-10-year-old-with-2-glasses-p15137",
+    "cdn": "https://images-svetnapojov-cdn.rshop.sk/default/products/d3616eb2c77a6e68f9c5a8e6b221f316.jpg",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "bondston.com",
+    "file": "public/media/ararat-akhtamar-070-gift.jpg",
+    "sha256": "51718afd7fced0aeffd0067ee8c5062ad57a6ac844dc40ced1c26ba4656fc929"
+  },
+  {
+    "key": "ararat5-070-gift",
+    "source": "https://www.whiskysite.nl/en/ararat-5-years-old-with-3-glasses-070-ltr-40.html",
+    "cdn": "https://cdn.webshopapp.com/shops/39103/files/428515717/ararat-ararat-5-years-old-with-3-glasses-070-ltr-4.jpg",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "whiskysite.nl",
+    "file": "public/media/ararat5-070-gift.jpg",
+    "sha256": "1e2058f3584921a764915314667fcfccb4edbb2c48e5a3add316102bde27ed58"
+  },
+  {
+    "key": "ararat-vaspurakan-050",
+    "source": "https://shopsk.com/products/ararat-vaspurakan-15-yr-armenian-brandy-700ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T101423.362.jpg?v=1656436487",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-vaspurakan-050.jpg",
+    "sha256": "c310902c32b1aa820d971693e09a0a2d12b7de22f27f8b700dc07b18680f29e1"
+  },
+  {
+    "key": "ararat-vaspurakan-070",
+    "source": "https://shopsk.com/products/ararat-vaspurakan-15-yr-armenian-brandy-700ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T101423.362.jpg?v=1656436487",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-vaspurakan-070.jpg",
+    "sha256": "c310902c32b1aa820d971693e09a0a2d12b7de22f27f8b700dc07b18680f29e1"
+  },
+  {
+    "key": "ararat-nairi-050",
+    "source": "https://shopsk.com/products/ararat-nairi-xo-20-yr-armenian-brandy-700ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T101149.780.jpg?v=1656436329",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-nairi-050.jpg",
+    "sha256": "a542ce8c68736ac22bc4c4c51be0075a1cc2775d0bbe3e7eb923ebb57c3671fd"
+  },
+  {
+    "key": "ararat-nairi-070",
+    "source": "https://shopsk.com/products/ararat-nairi-xo-20-yr-armenian-brandy-700ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T101149.780.jpg?v=1656436329",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-nairi-070.jpg",
+    "sha256": "a542ce8c68736ac22bc4c4c51be0075a1cc2775d0bbe3e7eb923ebb57c3671fd"
+  },
+  {
+    "key": "ararat-dvin-070",
+    "source": "https://shopsk.com/products/ararat-dvin-armenian-brandy-700ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T095039.713.jpg?v=1656435058",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-dvin-070.jpg",
+    "sha256": "6f3e494f13d4d5471738e73dcf3720d082af4ff379dc0da588ff3d17b38cf6bc"
+  },
+  {
+    "key": "ararat-otborny-070",
+    "source": "https://hedonism.co.uk/products/ararat-7-year-old-otborny-reserve",
+    "cdn": "https://cdn.shopify.com/s/files/1/0998/7696/2634/files/HED04283.jpg?v=1781896204",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "hedonism.co.uk",
+    "file": "public/media/ararat-otborny-070.jpg",
+    "sha256": "4ba1b42452c0139bfc5bf62976859fd7bfc431b907eb7606c442cac4d0cf0ee7"
+  },
+  {
+    "key": "ararat-armenia-070",
+    "source": "https://shopsk.com/products/ararat-armenia-10-yr-armenian-brandy-750ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/files/ARARAT_10_59534-FBqcM8W6KGESLb.jpg?v=1770920217",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-armenia-070.jpg",
+    "sha256": "2ed00230788fe977cd0c1b5c628ede3ae50e0766a389d2390401ee025699a9d9"
+  },
+  {
+    "key": "ararat-apricot",
+    "source": "https://shopsk.com/products/ararat-brandy-apricot-armenia-750ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T093213.446.jpg?v=1741376083",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-apricot.jpg",
+    "sha256": "ee0770caf57fdf40965b623fbfbe918e581b6250df75a3def89b8aee2691c0ad"
+  },
+  {
+    "key": "ararat-coffee",
+    "source": "https://hedonism.co.uk/products/ararat-coffee",
+    "cdn": "https://cdn.shopify.com/s/files/1/0998/7696/2634/files/HED05035.jpg?v=1781898415",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "hedonism.co.uk",
+    "file": "public/media/ararat-coffee.jpg",
+    "sha256": "9b1db1d6e2a8dae547641e4feb672a6a32eb8a58e1309b1bde0c4ddf287a7716"
+  },
+  {
+    "key": "ararat-aznavour",
+    "source": "https://hedonism.co.uk/products/ararat-25-year-old-charles-aznavour-signature-blend",
+    "cdn": "https://hedonism.co.uk/cdn/shop/files/HED45360.jpg?v=1781903018&width=1200",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "hedonism.co.uk",
+    "file": "public/media/ararat-aznavour.jpg",
+    "sha256": "3213dc403d712e051399da98638854795e53eddc2558d0a2f9a0133aeeec399a"
+  },
+  {
+    "key": "ararat-erebuni-30",
+    "source": "https://shopsk.com/products/ararat-erebuni-30yr-armenian-brandy",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T100746.690.jpg?v=1656436085",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-erebuni-30.jpg",
+    "sha256": "2d642a85e918e6a40ab7c785621411054a58089fb9ced1eb53a9cd582e9f2b4a"
   }
 ]
