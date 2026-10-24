@@ -1207,5 +1207,13 @@
     "author": "owner",
     "file": "public/media/grapes-kishmish-pink.jpg",
     "sha256": "77516d4b7f79f9e1f25aa8d24facd6839d6508d7d1ff1f2c9e69c55315f2f881"
+  },
+  {
+    "key": "lavash",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); cropped to the card",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/lavash.jpg",
+    "sha256": "83ba7985778f7ed3baa14028aa1e0c27d7adf8e9053215f9a9b64ff9c4cf4005"
   }
 ]
