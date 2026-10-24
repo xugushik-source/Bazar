@@ -101,3 +101,9 @@ Object.assign(words.ka,{termsLine:'🚚 მიწოდება {fee} · უფ
 Object.assign(words.ru,{fillerTitle:'Чем добрать до бесплатной доставки:'});
 Object.assign(words.hy,{fillerTitle:'Ինչով լրացնել մինչև անվճար առաքում՝'});
 Object.assign(words.ka,{fillerTitle:'რით შეავსოთ უფასო მიწოდებამდე:'});
+Object.assign(words.ru,{group_bread:'Хлеб и лаваш',upsellLavash:'Лаваш к мясу'});
+Object.assign(words.hy,{group_bread:'Հաց և լավաշ',upsellLavash:'Լավաշ մսի հետ'});
+Object.assign(words.ka,{group_bread:'პური და ლავაში',upsellLavash:'ლავაში ხორცთან'});
+Object.assign(words.ru,{group_deli:'Колбасы и деликатесы',group_drinks:'Напитки',group_alcohol:'Алкоголь 18+',adultOnly:'18+',adultNotice:'🔞 В заказе алкоголь: продаём только с 18 лет — курьер попросит документ.'});
+Object.assign(words.hy,{group_deli:'Երշիկ և նրբերշիկ',group_drinks:'Ըմպելիքներ',group_alcohol:'Ալկոհոլ 18+',adultOnly:'18+',adultNotice:'🔞 Պատվերում ալկոհոլ կա. վաճառում ենք միայն 18 տարեկանից — առաքիչը կխնդրի փաստաթուղթ։'});
+Object.assign(words.ka,{group_deli:'ძეხვეული და დელიკატესები',group_drinks:'სასმელები',group_alcohol:'ალკოჰოლი 18+',adultOnly:'18+',adultNotice:'🔞 შეკვეთაში ალკოჰოლია: ვყიდით მხოლოდ 18 წლიდან — კურიერი მოგთხოვთ დოკუმენტს.'});

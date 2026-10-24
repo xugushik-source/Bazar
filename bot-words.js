@@ -18,3 +18,7 @@ Object.assign(botWords.ka,{joinAsk:'👤 {name}, შეკვეთების 
 Object.assign(botWords.ru,{bulkSupplier:'🚚 Опт — доставляет поставщик {v}. Курьерам заказ не отправлен: передайте адрес и телефон поставщику.'});
 Object.assign(botWords.hy,{bulkSupplier:'🚚 Մեծածախ — առաքում է մատակարարը՝ {v}։ Պատվերը առաքիչներին չի ուղարկվել. փոխանցեք հասցեն և հեռախոսը մատակարարին։'});
 Object.assign(botWords.ka,{bulkSupplier:'🚚 საბითუმო — აწვდის მომწოდებელი {v}. შეკვეთა კურიერებს არ გაეგზავნა: გადაეცით მისამართი და ტელეფონი მომწოდებელს.'});
+// Owner 24.10: alcohol only to adults — the courier checks the buyer's age at handover.
+Object.assign(botWords.ru,{adultCheck:'🔞 В заказе алкоголь: при передаче проверьте возраст покупателя (18+).'});
+Object.assign(botWords.hy,{adultCheck:'🔞 Պատվերում ալկոհոլ կա. հանձնելիս ստուգեք գնորդի տարիքը (18+)։'});
+Object.assign(botWords.ka,{adultCheck:'🔞 შეკვეთაში ალკოჰოლია: გადაცემისას შეამოწმეთ მყიდველის ასაკი (18+).'});
