@@ -1,4 +1,4 @@
-import {mediaVersions}from './media-versions.js?v=a7143e0607';
+import {mediaVersions}from './media-versions.js?v=9f8704b663';
 // Most images are local; two source-hosted photographs retain their original license links.
 export const remotePhotos={
  prunes:'https://images.pexels.com/photos/11828235/pexels-photo-11828235.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -14,3 +14,6 @@ export const artLabels={
 };
 // Picture for a department that has no products yet (shown with «Скоро»).
 export const categoryArt={dairy:'cheese',eggs:'eggs',bread:'bread',meat:'meat',trout:'trout',deli:'sausage',preserves:'pickles',pantry:'flour',drinks:'drinks',alcohol:'alcohol-generic',household:'household'};
+// Photos whose licence asks to name the author (CC BY-SA 4.0): the credit sits on the product's own card (owner 24.10: not in the
+// footer).
+export const photoCredits={'radish-black':'📷 San Juan del Sur · CC BY-SA 4.0','radish-green':'📷 Emőke Dénes · CC BY-SA 4.0'};

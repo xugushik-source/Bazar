@@ -61,3 +61,4 @@ a.button.primary{background:var(--green);color:var(--white);border-color:var(--g
 .filler{margin:10px 0;padding:10px 12px;border:1px dashed var(--line);border-radius:14px}.filler p{margin:0 0 6px}
 .art{position:relative}.adult-badge{position:absolute;top:8px;left:8px;padding:3px 8px;border-radius:999px;background:#b3261e;color:#fff;font-size:.78rem;font-weight:800}
 .grid .subhead{grid-column:1/-1;margin:18px 0 2px;font-size:1.05rem;color:var(--green);border-bottom:1px solid var(--line);padding-bottom:6px}.grid .subhead:first-child{margin-top:4px}
+.photo-credit{margin:2px 0 6px;font-size:.72rem;color:var(--muted)}.photo-credit a{color:inherit}
