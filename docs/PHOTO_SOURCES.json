@@ -1311,5 +1311,117 @@
     "author": "БАЗАР",
     "file": "public/media/alcohol-generic.jpg",
     "sha256": "69883d244ff4887bceff8b923ffabaeb3d49656a145e213cde9b46c6953d3c91"
+  },
+  {
+    "key": "ararat3-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-3-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat3-050.jpg",
+    "sha256": "175ed27b2e80ee75e79dc1a750f83318428f5fa168f7ef91a0400d988cbb65d2"
+  },
+  {
+    "key": "ararat3-070",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-3-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat3-070.jpg",
+    "sha256": "175ed27b2e80ee75e79dc1a750f83318428f5fa168f7ef91a0400d988cbb65d2"
+  },
+  {
+    "key": "ararat5-005",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-5-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat5-005.jpg",
+    "sha256": "8a9c0b5ef392ecfaa0be7ac8bdea7d5efea8571f1e09564a7612fd72bc6d6e96"
+  },
+  {
+    "key": "ararat5-020",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-5-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat5-020.jpg",
+    "sha256": "8a9c0b5ef392ecfaa0be7ac8bdea7d5efea8571f1e09564a7612fd72bc6d6e96"
+  },
+  {
+    "key": "ararat5-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-5-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat5-050.jpg",
+    "sha256": "8a9c0b5ef392ecfaa0be7ac8bdea7d5efea8571f1e09564a7612fd72bc6d6e96"
+  },
+  {
+    "key": "ararat5-070",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-5-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat5-070.jpg",
+    "sha256": "8a9c0b5ef392ecfaa0be7ac8bdea7d5efea8571f1e09564a7612fd72bc6d6e96"
+  },
+  {
+    "key": "ararat5-100",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-5-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat5-100.jpg",
+    "sha256": "8a9c0b5ef392ecfaa0be7ac8bdea7d5efea8571f1e09564a7612fd72bc6d6e96"
+  },
+  {
+    "key": "ararat-akhtamar-005",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-akhtamar-10-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat-akhtamar-005.jpg",
+    "sha256": "4993e2d9fc37ff915b392c54e2020ff4eec3d3c7fd41628db1310035163cb840"
+  },
+  {
+    "key": "ararat-akhtamar-020",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-akhtamar-10-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat-akhtamar-020.jpg",
+    "sha256": "4993e2d9fc37ff915b392c54e2020ff4eec3d3c7fd41628db1310035163cb840"
+  },
+  {
+    "key": "ararat-akhtamar-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-akhtamar-10-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat-akhtamar-050.jpg",
+    "sha256": "4993e2d9fc37ff915b392c54e2020ff4eec3d3c7fd41628db1310035163cb840"
+  },
+  {
+    "key": "ararat-akhtamar-070",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-akhtamar-10-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat-akhtamar-070.jpg",
+    "sha256": "4993e2d9fc37ff915b392c54e2020ff4eec3d3c7fd41628db1310035163cb840"
+  },
+  {
+    "key": "noy3-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (noy-3-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/noy3-050.jpg",
+    "sha256": "fe734a22567dfd3d73dab3fe6c98f8bca6dcc9e4cee5550be12a9318ecbf4694"
+  },
+  {
+    "key": "noy5-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (noy-5-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/noy5-050.jpg",
+    "sha256": "801f185b525537625cbf8a65bbcd9021a761fb16f9656fd39e1a36d9ddddc9d8"
+  },
+  {
+    "key": "noy10-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (noy-10-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/noy10-050.jpg",
+    "sha256": "134eaa27786b84ea2ca71f5af3dff44e9aed62a5536c9fe3d84209a3f79b7044"
   }
 ]
