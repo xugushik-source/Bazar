@@ -14,3 +14,6 @@ export const artLabels={
 };
 // Picture for a department that has no products yet (shown with «Скоро»).
 export const categoryArt={dairy:'cheese',eggs:'eggs',bread:'bread',meat:'meat',trout:'trout',deli:'sausage',preserves:'pickles',pantry:'flour',drinks:'drinks',alcohol:'alcohol-generic',household:'household'};
+// Photos whose licence asks to name the author (CC BY-SA 4.0): the credit sits on the product's own card (owner 24.10: not in the
+// footer).
+export const photoCredits={'radish-black':'📷 San Juan del Sur · CC BY-SA 4.0','radish-green':'📷 Emőke Dénes · CC BY-SA 4.0'};

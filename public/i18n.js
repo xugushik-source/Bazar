@@ -45,9 +45,9 @@ Object.assign(words.ru,{freeLeft:'До бесплатной доставки о�
 Object.assign(words.ru,{loadingTimes:'Загружаем свободное время…'});Object.assign(words.hy,{loadingTimes:'Բեռնում ենք ազատ ժամերը…'});Object.assign(words.ka,{loadingTimes:'იტვირთება თავისუფალი დრო…'});
 Object.assign(words.ru,{soundToggle:'Звуки: включить или выключить'});Object.assign(words.hy,{soundToggle:'Ձայներ՝ միացնել կամ անջատել'});Object.assign(words.ka,{soundToggle:'ხმები: ჩართვა ან გამორთვა'});
 // Radish photos from Wikimedia Commons are CC BY-SA 4.0 and must credit their authors.
-Object.assign(words.ru,{photoCredit:'Фото товаров: Unsplash, Pexels и Wikimedia Commons (чёрная редька — San Juan del Sur, зелёная редька — Emőke Dénes; CC BY-SA 4.0, creativecommons.org/licenses/by-sa/4.0). Сцена рынка создана с помощью ИИ. Фактический вид товаров может отличаться.'});
-Object.assign(words.hy,{photoCredit:'Ապրանքների լուսանկարներ՝ Unsplash, Pexels և Wikimedia Commons (սև բողկ — San Juan del Sur, կանաչ բողկ — Emőke Dénes; CC BY-SA 4.0, creativecommons.org/licenses/by-sa/4.0)։ Շուկայի տեսարանը ստեղծվել է ԱԲ-ով։ Ապրանքների իրական տեսքը կարող է տարբերվել։'});
-Object.assign(words.ka,{photoCredit:'პროდუქტების ფოტოები: Unsplash, Pexels და Wikimedia Commons (შავი ბოლოკი — San Juan del Sur, მწვანე ბოლოკი — Emőke Dénes; CC BY-SA 4.0, creativecommons.org/licenses/by-sa/4.0). ბაზრის სცენა შექმნილია AI-ით. პროდუქტის რეალური იერი შეიძლება განსხვავდებოდეს.'});
+Object.assign(words.ru,{photoCredit:'Фактический вид товаров может отличаться.'});
+Object.assign(words.hy,{photoCredit:'Ապրանքների իրական տեսքը կարող է տարբերվել։'});
+Object.assign(words.ka,{photoCredit:'პროდუქტის რეალური იერი შეიძლება განსხვავდებოდეს.'});
 // Owner 20.10: people here are used to choosing produce themselves, so the first thing on the page says how we choose for them.
 // Every point is something the order flow already enforces: a second person checks the collection, the buyer confirms it before dispatch.
 Object.assign(words.ru,{trustTitle:'Выбираем, как для себя',trustLead:'Вы привыкли выбирать сами — мы это понимаем. Поэтому:',trust1:'Отбираем по одному',trust1text:'Каждый помидор и каждое яблоко — руками: без мятых, вялых и перезрелых. Как для своей семьи.',trust2:'Проверяет второй человек',trust2text:'Один собирает, другой проверяет. Свою же сборку проверить нельзя — так устроена система.',trust3:'Последнее слово — за вами',trust3text:'До отправки вы видите собранный заказ и точный вес. Не устроит — пересоберём. Что-то не так при получении — скажите курьеру, решим на месте.'});
