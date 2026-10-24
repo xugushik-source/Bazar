@@ -10,7 +10,7 @@ import {quote as makeQuote,assess} from './weight-policy.js';
 const chipArt={meat:'meat'};
 // Home page sections (owner 22.10, after the storefront study): six larger sections, meat first; a category with one product
 // (household) has no chip and is found through «All» and search.
-const chipGroups=[['meat',['meat','trout']],['vegetables',['vegetables','herbs']],['fruit',['fruit','berries']],['nuts',['nuts','dried']],['market',['market','preserves']],['grains',['grains']]];
+const chipGroups=[['meat',['meat','trout']],['vegetables',['vegetables','herbs']],['fruit',['fruit','berries']],['bread',['bread']],['nuts',['nuts','dried']],['market',['market','preserves']],['grains',['grains']]];
 const inFilter=p=>filter==='all'||p.category===filter||chipGroups.find(([g])=>g===filter)?.[1].includes(p.category);
 // Products the owner wants first in their section (owner 24.10: beef boneless opens «Мясо и рыба»).
 const firstInSection=['beef_boneless'];
@@ -60,8 +60,10 @@ async function refreshLive(){const list=storedOrders();if(!list.length||staticMo
 setInterval(()=>{if(!document.hidden)refreshLive()},30000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshLive()});
 // Upsell (owner 22.10): any meat, trout, or aubergines, tomatoes and peppers for the grill in the cart → offer charcoal.
 const grillKeys=['aubergine_loose','tomato_loose','tomato_second_loose','pepper_loose','pepper_red_long_loose','chili_green_loose'];
-function upsellHTML(){const coal=data.products.find(p=>p.id.endsWith('--charcoal_4kg')&&p.available>0);if(!coal||basket.some(b=>b.product_id===coal.id))return '';const grill=basket.some(b=>{const p=data.products.find(x=>x.id===b.product_id);return p&&(['meat','trout'].includes(p.category)&&!p.id.endsWith('--dog_bones')||grillKeys.some(k=>p.id.endsWith('--'+k)))});if(!grill)return '';
- return `<div class="upsell"><img src="${esc(photoPath(coal.art))}" alt="" width="56" height="56"><div class="grow"><b>🔥 ${esc(t('upsellCoal'))}</b><small>${esc(name(coal))} · ${money(coal.price)}</small></div><button type="button" class="primary" data-do="upsell-add" data-id="${esc(coal.id)}">${esc(t('add'))}</button></div>`}
+function upsellHTML(){const grill=basket.some(b=>{const p=data.products.find(x=>x.id===b.product_id);return p&&(['meat','trout'].includes(p.category)&&!p.id.endsWith('--dog_bones')||grillKeys.some(k=>p.id.endsWith('--'+k)))});if(!grill)return '';
+ // Owner 24.10: lavash goes with meat, offered next to the charcoal.
+ const offer=(key,label,icon)=>{const p=data.products.find(x=>x.id.endsWith('--'+key)&&x.available>0);return p&&!basket.some(b=>b.product_id===p.id)?`<div class="upsell"><img src="${esc(photoPath(p.art))}" alt="" width="56" height="56"><div class="grow"><b>${icon} ${esc(t(label))}</b><small>${esc(name(p))} · ${money(p.price)}</small></div><button type="button" class="primary" data-do="upsell-add" data-id="${esc(p.id)}">${esc(t('add'))}</button></div>`:''};
+ return offer('charcoal_4kg','upsellCoal','🔥')+offer('lavash_pack_5','upsellLavash','🫓')}
 // Near the free-delivery threshold (owner 22.10, after the storefront study): suggest honey, nuts and dried fruit — they earn
 // several lari each, while topping up with potatoes earns almost nothing once delivery is free.
 function fillerHTML(q){const free=data.city?.free_delivery_from;if(free==null)return '';const left=free-(q.total-q.delivery_fee);if(!(left>0&&left<=2500))return '';const rank=p=>p.id.includes('honey')?0:p.category==='nuts'?1:2,picks=data.products.filter(p=>['market','nuts','dried'].includes(p.category)&&p.available>0&&!basket.some(b=>b.product_id===p.id)).sort((a,b)=>rank(a)-rank(b)||b.price-a.price).slice(0,3);if(!picks.length)return '';

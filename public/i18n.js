@@ -101,3 +101,6 @@ Object.assign(words.ka,{termsLine:'🚚 მიწოდება {fee} · უფ
 Object.assign(words.ru,{fillerTitle:'Чем добрать до бесплатной доставки:'});
 Object.assign(words.hy,{fillerTitle:'Ինչով լրացնել մինչև անվճար առաքում՝'});
 Object.assign(words.ka,{fillerTitle:'რით შეავსოთ უფასო მიწოდებამდე:'});
+Object.assign(words.ru,{group_bread:'Хлеб и лаваш',upsellLavash:'Лаваш к мясу'});
+Object.assign(words.hy,{group_bread:'Հաց և լավաշ',upsellLavash:'Լավաշ մսի հետ'});
+Object.assign(words.ka,{group_bread:'პური და ლავაში',upsellLavash:'ლავაში ხორცთან'});
