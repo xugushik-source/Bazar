@@ -1,11 +1,11 @@
-import {entryReady}from './entry.js?v=81869d37fa';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=81869d37fa';
-import {botWords}from './bot-words.js?v=81869d37fa';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=81869d37fa';
-import {salesWords}from './sales-i18n.js?v=81869d37fa';
-import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=81869d37fa';import {mediaVersions}from './media-versions.js?v=81869d37fa';import {transferLinks}from './payments.js?v=81869d37fa';import {ledger}from './ledger.js?v=81869d37fa';import {sound,soundButton,watchOrders}from './sounds.js?v=81869d37fa';
-import {words,statuses} from './i18n.js?v=81869d37fa';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=81869d37fa';
-import {quote as makeQuote,assess} from './weight-policy.js?v=81869d37fa';
+import {entryReady}from './entry.js?v=5596c32158';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=5596c32158';
+import {botWords}from './bot-words.js?v=5596c32158';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=5596c32158';
+import {salesWords}from './sales-i18n.js?v=5596c32158';
+import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=5596c32158';import {mediaVersions}from './media-versions.js?v=5596c32158';import {transferLinks}from './payments.js?v=5596c32158';import {ledger}from './ledger.js?v=5596c32158';import {sound,soundButton,watchOrders}from './sounds.js?v=5596c32158';
+import {words,statuses} from './i18n.js?v=5596c32158';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=5596c32158';
+import {quote as makeQuote,assess} from './weight-policy.js?v=5596c32158';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 const chipArt={meat:'meat',alcohol:'mado-gubernator-050'};
 // Home page sections (owner 22.10, after the storefront study): six larger sections, meat first; a category with one product
