@@ -36,7 +36,7 @@ export async function priceBasket(db,b,credits=new Map()){
  let line;try{line=quote(product,item.selection,p.id)}catch(e){fail(e.message||'INVALID_SELECTION')}
  const reserve=weighted(line.mode)?line.max_g:line.count;
  if(reserve>p.stock-p.reserved+(credits.get(p.id)||0))fail('OUT_OF_STOCK',409);
- lines.push({...line,names:parse(p.names),vendor_id:p.vendor_id,product_version:p.version,...(p.promotion_id?{promotion_id:p.promotion_id,promotion_version:p.promotion_version,regular_price:p.regular_price}:{}),reserve,cost:p.cost});
+ lines.push({...line,names:parse(p.names),vendor_id:p.vendor_id,category:p.category,product_version:p.version,...(p.promotion_id?{promotion_id:p.promotion_id,promotion_version:p.promotion_version,regular_price:p.regular_price}:{}),reserve,cost:p.cost});
  }
  return {city:c,lines,estimate_minor:lines.reduce((a,l)=>a+l.estimate_minor,0),maximum_minor:lines.reduce((a,l)=>a+l.maximum_minor,0)};
 }

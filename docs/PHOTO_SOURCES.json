@@ -1215,5 +1215,101 @@
     "author": "owner",
     "file": "public/media/lavash.jpg",
     "sha256": "83ba7985778f7ed3baa14028aa1e0c27d7adf8e9053215f9a9b64ff9c4cf4005"
+  },
+  {
+    "key": "mado-sudzhuk-slice-070",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (atenk-sudzhuk-slice-070.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-sudzhuk-slice-070.jpg",
+    "sha256": "ebfef089519553046a1f39dbc8aac7a9f1faa87b7999f06ef58cf0fc5a94f090"
+  },
+  {
+    "key": "mado-sausages-hotdog-550",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (atenk-sausages.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-sausages-hotdog-550.jpg",
+    "sha256": "3134b9a57664e270ac749e477b249a4adec192cb867759160aca03b6de7af3d1"
+  },
+  {
+    "key": "mado-jerky-chicken-030",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (atenk-jerky-chicken-030.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-jerky-chicken-030.jpg",
+    "sha256": "b1133c923eb88198df276d14f435b9ddd5bc67bd1c67e155d057465b7a516d47"
+  },
+  {
+    "key": "mado-jerky-pork-030",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (atenk-jerky-pork-030.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-jerky-pork-030.jpg",
+    "sha256": "afe7befa64cb41540f8e12c5641ed06c84c718e17bc05aa0c1bd4d6f209ddf41"
+  },
+  {
+    "key": "mado-vana-khash",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (vana-khash.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-vana-khash.jpg",
+    "sha256": "d3793115ed3683d9919c3884ec726de7cc7ee6d3cd0952a7496d286a9cce9df5"
+  },
+  {
+    "key": "mado-adrenaline-025",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (adrenaline-rush-025.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-adrenaline-025.jpg",
+    "sha256": "5f891e9f948ec9692e53d330f59abe1cba3dca198fc839c2d7a766ce4b208454"
+  },
+  {
+    "key": "mado-gubernator-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (artashat-gubernator-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-gubernator-050.jpg",
+    "sha256": "a670f1c7b135c6be4dfb9cb5b478239e35203e71d82a86417f14ea7626b7d525"
+  },
+  {
+    "key": "mado-gubernator-exclusive-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (artashat-gubernator-exclusive-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-gubernator-exclusive-050.jpg",
+    "sha256": "0eb0f33ecb9b576ab0cd746ee6e4574bbac3f4e7bd654c58ea5229365a922297"
+  },
+  {
+    "key": "mado-gubernator-collection-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (artashat-gubernator-collection-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-gubernator-collection-050.jpg",
+    "sha256": "d146df394998ead1711d9057df6e360e75ff155fbcdbe534fd56319530575f18"
+  },
+  {
+    "key": "mado-druzhba-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (artashat-druzhba-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-druzhba-050.jpg",
+    "sha256": "741d84e28b710beee53e824f6ad63207911e52953bd9473bd2909025e2457da7"
+  },
+  {
+    "key": "mado-piton-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (artashat-piton-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-piton-050.jpg",
+    "sha256": "7a36eb31ea041361e920f19467ef642fab542e8bddcfdeeffb7b284c27aafd01"
+  },
+  {
+    "key": "alcohol-generic",
+    "source": "drawn: neutral bottle silhouette drawn for БАЗАР, shown until the owner sends a product photo",
+    "license": "own work",
+    "author": "БАЗАР",
+    "file": "public/media/alcohol-generic.jpg",
+    "sha256": "69883d244ff4887bceff8b923ffabaeb3d49656a145e213cde9b46c6953d3c91"
   }
 ]
