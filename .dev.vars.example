@@ -1,0 +1,2 @@
+# Required only for the Cloudflare deployment form. Choose a new password (16+ characters).
+BAZAR_OWNER_PASSWORD=

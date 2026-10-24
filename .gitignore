@@ -1,0 +1,8 @@
+node_modules
+.runtime/
+.wrangler/
+dist/
+.env*
+.dev.vars*
+
+dist-pages/

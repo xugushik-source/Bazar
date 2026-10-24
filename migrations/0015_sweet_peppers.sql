@@ -1,0 +1,3 @@
+-- Owner 19.10: Karo sweet peppers, light and red: whole-pepper photos and names. Generated from src/photo-fixes.mjs (pepperFixSql). Idempotent.
+UPDATE products SET art='pepper-light',names='{"ru":"Перец сладкий светлый","hy":"Քաղցր պղպեղ, բաց գույնի","ka":"ტკბილი წიწაკა, ღია"}',version=version+1 WHERE id='akhalkalaki--pepper_loose' AND art='pepper' AND vendor_id='akhalkalaki-karo' AND json_extract(names,'$.ru')<>'Перец сладкий светлый';
+UPDATE products SET art='pepper-red-long',names='{"ru":"Перец сладкий красный","hy":"Քաղցր կարմիր պղպեղ","ka":"ტკბილი წითელი წიწაკა"}',version=version+1 WHERE id='akhalkalaki--pepper_red_long_loose' AND art='pepper-red-long' AND vendor_id='akhalkalaki-karo' AND json_extract(names,'$.ru')<>'Перец сладкий красный';

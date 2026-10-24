@@ -1,0 +1,3 @@
+-- Owner 24.10: new supplier Mtsco — lavash, a pack of 5 (cost 3.20 ₾, sale 4 ₾). Generated from src/mtsco.mjs (mtscoSql).
+INSERT INTO vendors(id,city_id,names) SELECT 'akhalkalaki-mtsco','akhalkalaki','{"ru":"Мццо","hy":"Մցցո","ka":"მცცო"}' WHERE EXISTS(SELECT 1 FROM cities WHERE id='akhalkalaki') ON CONFLICT(id) DO NOTHING;
+INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT 'akhalkalaki--lavash_pack_5','akhalkalaki-mtsco','{"ru":"Лаваш · 5 штук","hy":"Լավաշ · 5 հատ","ka":"ლავაში · 5 ცალი"}','bread','lavash','{"mode":"EACH","policy_version":1}',400,320,100 WHERE EXISTS(SELECT 1 FROM vendors WHERE id='akhalkalaki-mtsco') AND EXISTS(SELECT 1 FROM categories WHERE id='bread') ON CONFLICT(id) DO NOTHING;

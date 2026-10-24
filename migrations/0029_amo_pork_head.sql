@@ -1,0 +1,3 @@
+-- Owner 22.10: kholodets set retired; pork trotters stay by weight, pork head sold whole (Amo 10 ₾ a piece). Generated from src/amo.mjs (amoSplitSql).
+UPDATE products SET active=0,version=version+1 WHERE id='akhalkalaki--kholodets_set' AND active=1;
+INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT 'akhalkalaki--pork_head','akhalkalaki-amo','{"ru":"Голова свиная · штука","hy":"Խոզի գլուխ · հատ","ka":"ღორის თავი · ცალი"}','meat','pork-head','{"mode":"EACH","policy_version":1}',1050,900,50 WHERE EXISTS(SELECT 1 FROM vendors WHERE id='akhalkalaki-amo') AND EXISTS(SELECT 1 FROM categories WHERE id='meat') ON CONFLICT(id) DO NOTHING;

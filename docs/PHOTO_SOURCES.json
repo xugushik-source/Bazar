@@ -1,0 +1,1742 @@
+[
+  {
+    "key": "apple",
+    "source": "https://unsplash.com/photos/red-apple-fruits-HfRpk5l943s",
+    "cdn": "https://images.unsplash.com/photo-1570916615308-688beca7a953?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Michele Blackwell",
+    "download_url": "https://images.unsplash.com/photo-1570916615308-688beca7a953?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/apple.jpg",
+    "sha256": "3b46a622fb3d719684849b3ec0dd0395eeaaa1627224ff24154ed384892e894c"
+  },
+  {
+    "key": "tomato",
+    "source": "https://unsplash.com/photos/fresh-red-tomatoes-with-water-droplets-on-a-white-background-RRZeNjuuf3w",
+    "cdn": "https://images.unsplash.com/photo-1783306083326-4b65b6383253?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1783306083326-4b65b6383253?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/tomato.jpg",
+    "sha256": "58d4254f98cba4f4c93f3fd467463b37ec107592b1c50c144276c5b066f0970e"
+  },
+  {
+    "key": "grapes",
+    "source": "https://unsplash.com/photos/grapes-fruits-O5CtZHg5VgU",
+    "cdn": "https://images.unsplash.com/photo-1535521344776-da06aeead46f?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Hari Nandakumar",
+    "download_url": "https://images.unsplash.com/photo-1535521344776-da06aeead46f?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/grapes.jpg",
+    "sha256": "8a8857ef681b3f706e82be6bdcab1a278e75d3d8f6fd492c2ae541c81735bb50"
+  },
+  {
+    "key": "banana",
+    "source": "https://www.pexels.com/photo/vibrant-yellow-bananas-bunches-at-market-30543146/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/30543146/pexels-photo-30543146.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/banana.jpg",
+    "sha256": "c75b330649b3864d6bb83691ef4fefe5ecbc0a5eefe9e865bf559b52bf89df90"
+  },
+  {
+    "key": "potato",
+    "source": "https://unsplash.com/photos/potatoes-LSZfNPVZjTw",
+    "cdn": "https://images.unsplash.com/photo-1508313880080-c4bef0730395?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Hai Nguyen",
+    "download_url": "https://images.unsplash.com/photo-1508313880080-c4bef0730395?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/potato.jpg",
+    "sha256": "49823c7ec9a2dddcddb1b53d1697702e3d3696fb2259b3a8eaa8d561bc53456b"
+  },
+  {
+    "key": "watermelon",
+    "source": "https://unsplash.com/photos/watermelon-fruit-on-white-table-izi5AnlbRIA",
+    "cdn": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Art Rachen",
+    "download_url": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/watermelon.jpg",
+    "sha256": "62b569771569702d1b7154951dc28066bb2ccad9a2d849867b8131d6749e1c91"
+  },
+  {
+    "key": "onion",
+    "source": "https://www.pexels.com/photo/close-up-of-onions-6316541/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6316541/pexels-photo-6316541.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/onion.jpg",
+    "sha256": "f57061a40ee576569c2e58c9586bedc7b138aaf500a96b9a81f5834240b05029"
+  },
+  {
+    "key": "cucumber",
+    "source": "https://unsplash.com/photos/fresh-cucumbers-are-displayed-in-blue-paper-baskets-RUlX79xwyzI",
+    "cdn": "https://images.unsplash.com/photo-1751778706641-49c24df0af97?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1751778706641-49c24df0af97?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/cucumber.jpg",
+    "sha256": "00c5e179bbe3ee5beda5fcaa59dd4e8c635d7207168bd11b2d9fa918e951976a"
+  },
+  {
+    "key": "melon",
+    "source": "https://unsplash.com/photos/cantaloupe-fruit-H6NPHHWRZPw",
+    "cdn": "https://images.unsplash.com/photo-1563288525-8f1ee0f874a8?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Kenny Kennethh",
+    "download_url": "https://images.unsplash.com/photo-1563288525-8f1ee0f874a8?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/melon.jpg",
+    "sha256": "a1bb24813ad99b5fe8aee19db782023d194641a3dfbd780c7af314ed5e752ff8"
+  },
+  {
+    "key": "carrot",
+    "source": "https://unsplash.com/photos/bunch-of-carrots-VjvjEHmITZk",
+    "cdn": "https://images.unsplash.com/photo-1442897961655-905a8343c8eb?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1442897961655-905a8343c8eb?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/carrot.jpg",
+    "sha256": "5cbb167bb06c2cbde624816a84875640a2930a7096c1ef7dec4e1b8db324b556"
+  },
+  {
+    "key": "cabbage",
+    "source": "https://www.pexels.com/photo/green-cabbages-in-close-up-photography-6316536/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6316536/pexels-photo-6316536.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/cabbage.jpg",
+    "sha256": "15d1eda94053d182b4453318f4f29f70fdb5bd4cf26259d1e92f6c9ede9c9830"
+  },
+  {
+    "key": "mango",
+    "source": "https://unsplash.com/photos/sliced-mango-on-white-ceramic-plate-yOqstdu16tc",
+    "cdn": "https://images.unsplash.com/photo-1631178306815-7f9a2cb0aafb?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1631178306815-7f9a2cb0aafb?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/mango.jpg",
+    "sha256": "2617aa33f8cab0581b678781cb37e12b651bc9b2e4a417743404059da49e48ba"
+  },
+  {
+    "key": "pumpkin",
+    "source": "https://unsplash.com/photos/a-pumpkin-on-a-table-A_tFWezb5fY",
+    "cdn": "https://images.unsplash.com/photo-1665816019507-23313603cc39?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1665816019507-23313603cc39?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/pumpkin.jpg",
+    "sha256": "bd177461edc07f8bedd593b957a16abfd1b881998dc8c96bc7558e456cc7c298"
+  },
+  {
+    "key": "avocado",
+    "source": "https://unsplash.com/photos/avocado-fruits--Imp19esjyI",
+    "cdn": "https://images.unsplash.com/photo-1555598488-b7d9660fb260?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Marta Weronika",
+    "download_url": "https://images.unsplash.com/photo-1555598488-b7d9660fb260?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/avocado.jpg",
+    "sha256": "3faed30d10128b4952a3b58ab484828f8b58ccb8bb794fcc0ddf1084ebf58114"
+  },
+  {
+    "key": "blueberry",
+    "source": "https://unsplash.com/photos/blueberries-fruit-BCbYlrdgSdQ",
+    "cdn": "https://images.unsplash.com/photo-1566749928258-4e382b7cb82a?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Niklas Sagrén",
+    "download_url": "https://images.unsplash.com/photo-1566749928258-4e382b7cb82a?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/blueberry.jpg",
+    "sha256": "58f4417d97d6c20ba13e592a090968d4c3f7c1e6c7215eaad59f23800d92264d"
+  },
+  {
+    "key": "strawberry",
+    "source": "https://unsplash.com/photos/strawberries-in-shallow-focus-rfK7qmyPOEg",
+    "cdn": "https://images.unsplash.com/photo-1519180392711-496e450edf6a?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "H&CO",
+    "download_url": "https://images.unsplash.com/photo-1519180392711-496e450edf6a?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/strawberry.jpg",
+    "sha256": "112149a4e89245350df2900ed5c0bf01fb621a8ec1f0ae70bbbcc73646a97019"
+  },
+  {
+    "key": "herbs",
+    "source": "https://unsplash.com/photos/a-pile-of-fresh-green-herbs-including-parsley-and-dill-Zz2prRbsgsk",
+    "cdn": "https://images.unsplash.com/photo-1779173932688-2bc0e3ecb95e?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Doğan Alpaslan DEMİR",
+    "download_url": "https://images.unsplash.com/photo-1779173932688-2bc0e3ecb95e?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/herbs.jpg",
+    "sha256": "78bcaf6caba97c2da73c690f1921ea4091102c031c0e10cef7c872286f7c31af"
+  },
+  {
+    "key": "ginger",
+    "source": "https://unsplash.com/photos/fresh-ginger-root-is-shown-up-close-7sg-CFuOc3g",
+    "cdn": "https://images.unsplash.com/photo-1741517802684-ba07c444a5d2?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Zoshua Colah",
+    "download_url": "https://images.unsplash.com/photo-1741517802684-ba07c444a5d2?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/ginger.jpg",
+    "sha256": "8b38f1a8333ef20d5e62722899a2469582a39f8ac96f6162ea42cfd907cdd4fa"
+  },
+  {
+    "key": "raisins",
+    "source": "https://unsplash.com/photos/raisins-in-a-bowl-and-container-jTgDCFwwYRc",
+    "cdn": "https://images.unsplash.com/photo-1741963383961-c1decb9d4d63?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Valentina Teramo",
+    "download_url": "https://images.unsplash.com/photo-1741963383961-c1decb9d4d63?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/raisins.jpg",
+    "sha256": "aeec28828c495f21e8330313e71ece2b44a0b50e2904db572af0c3e87e5bfb1c"
+  },
+  {
+    "key": "dates",
+    "source": "https://unsplash.com/photos/a-pile-of-dried-dates-_31irwLhWSs",
+    "cdn": "https://images.unsplash.com/photo-1774334135992-88f76f512fbd?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Defrino Maasy",
+    "download_url": "https://images.unsplash.com/photo-1774334135992-88f76f512fbd?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/dates.jpg",
+    "sha256": "0c27f93ab66324bed86142878b6a8175aa5624254c96c5d71b362a324a34bfce"
+  },
+  {
+    "key": "garlic",
+    "source": "https://unsplash.com/photos/garlic-bulb-on-white-surface-gKt9wZp2ujU",
+    "cdn": "https://images.unsplash.com/photo-1587049332298-1c42e83937a7?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Mockup Graphics",
+    "download_url": "https://images.unsplash.com/photo-1587049332298-1c42e83937a7?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/garlic.jpg",
+    "sha256": "71d60d7188b43818b3a43d7c2a4ca3c9ecf5e5beae519a0de293bbf81c981956"
+  },
+  {
+    "key": "dried-apricot",
+    "source": "https://unsplash.com/photos/pile-of-golden-dried-apricots-9-7vSSswKtU",
+    "cdn": "https://images.unsplash.com/photo-1784043436919-28fd8e17ff3c?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "engin akyurt",
+    "download_url": "https://images.unsplash.com/photo-1784043436919-28fd8e17ff3c?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/dried-apricot.jpg",
+    "sha256": "3f48cab0fc2d2b380879475d383aa58379782ad0e33536d1febbe0f2c5538337"
+  },
+  {
+    "key": "prunes",
+    "source": "https://www.pexels.com/photo/close-up-of-dried-plums-11828235/",
+    "cdn": "https://images.pexels.com/photos/11828235/pexels-photo-11828235.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "license": "https://www.pexels.com/license/",
+    "hosting": "external",
+    "verification": "Source page checked; local CDN download returned HTTP 403."
+  },
+  {
+    "key": "figs",
+    "source": "https://www.pexels.com/photo/dried-fig-in-close-up-photography-10112716/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10112716/pexels-photo-10112716.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/figs.jpg",
+    "sha256": "67ba8dde76f6042d321d79c84cd255c3df24420c8bec596e6aa5b23f7c679788"
+  },
+  {
+    "key": "almond",
+    "source": "https://unsplash.com/photos/a-pile-of-almonds-on-a-white-background-YOrkLtieun8",
+    "cdn": "https://images.unsplash.com/photo-1772986798816-904e7edfdd3e?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Tamanna Rumee",
+    "download_url": "https://images.unsplash.com/photo-1772986798816-904e7edfdd3e?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/almond.jpg",
+    "sha256": "5cb3a230bd6c66903b96994f23a42c15c82acef7f1c201e56c2429ba8cc0d87e"
+  },
+  {
+    "key": "cashew",
+    "source": "https://unsplash.com/photos/cashew-nuts-FG29J5efMYQ",
+    "cdn": "https://images.unsplash.com/photo-1573555657105-47a0bb37c3ea?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Maja Vujic",
+    "download_url": "https://images.unsplash.com/photo-1573555657105-47a0bb37c3ea?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/cashew.jpg",
+    "sha256": "fd8b5887255ab207bb80bb9d1fe443009d86d0bb7b589aacd720eea4bd5d3430"
+  },
+  {
+    "key": "pistachio",
+    "source": "https://www.pexels.com/photo/green-and-brown-pistachio-nuts-7717478/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7717478/pexels-photo-7717478.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pistachio.jpg",
+    "sha256": "3e1779092e3ec70e1788199d8847a04ae7358ebf90a47320b7bdc712c705a9f4"
+  },
+  {
+    "key": "walnut",
+    "source": "https://unsplash.com/photos/close-up-of-cracked-walnuts-with-visible-kernels-j_7kYmhYkKk",
+    "cdn": "https://images.unsplash.com/photo-1756364039776-bc761dfeeb82?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "engin akyurt",
+    "download_url": "https://images.unsplash.com/photo-1756364039776-bc761dfeeb82?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/walnut.jpg",
+    "sha256": "502639cef2e415297f74ae85bde8e9c7c8ff4b1f5503db4820716c50e20b11fd"
+  },
+  {
+    "key": "hazelnut",
+    "source": "https://unsplash.com/photos/pile-of-shelled-hazelnuts-fxdvuD1OAFg",
+    "cdn": "https://images.unsplash.com/photo-1756361946143-771044c7e4b4?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "engin akyurt",
+    "download_url": "https://images.unsplash.com/photo-1756361946143-771044c7e4b4?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/hazelnut.jpg",
+    "sha256": "2d5789ffe08f8bedbb9a25404a79724b26ef48420215270796fd518336348646"
+  },
+  {
+    "key": "seeds",
+    "source": "https://unsplash.com/photos/sunflower-seeds-in-a-bowl-and-on-a-spoon-qIVBLLBYSx4",
+    "cdn": "https://images.unsplash.com/photo-1740993384743-dc8f2879f398?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Zulfahmi Al Ridhawi",
+    "download_url": "https://images.unsplash.com/photo-1740993384743-dc8f2879f398?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/seeds.jpg",
+    "sha256": "c94920b0435a8a564f9f2591d2c41d099f666086ad14dcde24184113d32dd4aa"
+  },
+  {
+    "key": "pumpkin-seeds",
+    "source": "https://www.pexels.com/photo/pile-of-green-seeds-7217526/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7217526/pexels-photo-7217526.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pumpkin-seeds.jpg",
+    "sha256": "8cddf46374694d0ac8fb387b100203b79d8a285ff17c515ca0d856382a4fb649"
+  },
+  {
+    "key": "peanut",
+    "source": "https://www.pexels.com/photo/close-up-photo-of-peanuts-10111745/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10111745/pexels-photo-10111745.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/peanut.jpg",
+    "sha256": "ff3a3593295dea4968536297a3542c7f67d108880ee3db8c5afc85d4dd8ba947"
+  },
+  {
+    "key": "white-beans",
+    "source": "https://unsplash.com/photos/white-beans-on-white-background-b6h5nTVD1Hw",
+    "cdn": "https://images.unsplash.com/photo-1613728913084-090a0d106c3a?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Łukasz Rawa",
+    "download_url": "https://images.unsplash.com/photo-1613728913084-090a0d106c3a?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/white-beans.jpg",
+    "sha256": "f6c6edbb84f6675849393d89fc118cf170a13ded878ace48d25f584f0cf6b43a"
+  },
+  {
+    "key": "lentils",
+    "source": "https://unsplash.com/photos/pile-of-red-lentils-filling-the-frame-lSs08NWEZ_g",
+    "cdn": "https://images.unsplash.com/photo-1770617476260-1addeea7c826?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Mustafa akın",
+    "download_url": "https://images.unsplash.com/photo-1770617476260-1addeea7c826?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/lentils.jpg",
+    "sha256": "d8c44ef8dc0fe1db547ceb667ecd7f908c6f609a260ec52c9cb0f69be5d45959"
+  },
+  {
+    "key": "red-beans",
+    "source": "https://unsplash.com/photos/a-pile-of-dried-red-kidney-beans-QTGbQFlTvb8",
+    "cdn": "https://images.unsplash.com/photo-1763368397625-32c8f75fed44?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Zoshua Colah",
+    "download_url": "https://images.unsplash.com/photo-1763368397625-32c8f75fed44?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/red-beans.jpg",
+    "sha256": "7f80eb583379cbd3172ca3fe8989b4f340c8fb7182608a2a22eae6f5c7bcfba1"
+  },
+  {
+    "key": "rice",
+    "source": "https://unsplash.com/photos/a-close-up-view-of-uncooked-white-rice-grains-D8PSaH0o7kk",
+    "cdn": "https://images.unsplash.com/photo-1770617474928-3c7554a51941?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Mustafa akın",
+    "download_url": "https://images.unsplash.com/photo-1770617474928-3c7554a51941?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/rice.jpg",
+    "sha256": "47fcc965537fe89fa402983e4a07f2ace75a7a93eb1ec909df71fee1d8b4fe6e"
+  },
+  {
+    "key": "chickpeas",
+    "source": "https://unsplash.com/photos/a-full-frame-of-dried-light-brown-chickpeas-TO7zLB2i-QI",
+    "cdn": "https://images.unsplash.com/photo-1780648372211-0e395951c179?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Mrs Chimpanzeee",
+    "download_url": "https://images.unsplash.com/photo-1780648372211-0e395951c179?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/chickpeas.jpg",
+    "sha256": "5170ce019a960583c3dd90f298d9ab737d2a1345b729bdb548bd4320b34088f4"
+  },
+  {
+    "key": "jam",
+    "source": "https://www.pexels.com/photo/strawberry-jam-in-a-jar-26727863/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/26727863/pexels-photo-26727863.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/jam.jpg",
+    "sha256": "556f61da11715df4c99da181abbb103b1cf48ccfb40c809c704bed10a918dcb1"
+  },
+  {
+    "key": "churchkhela",
+    "source": "https://www.pexels.com/photo/close-up-of-traditional-churchkhela-sweets-37306054/",
+    "cdn": "https://images.pexels.com/photos/37306054/pexels-photo-37306054/free-photo-of-close-up-of-traditional-churchkhela-sweets.jpeg?auto=compress&dpr=1&h=750&w=1260",
+    "license": "https://www.pexels.com/license/",
+    "author": "Mihman Duğanlı",
+    "download_error": "HTTP Error 403: Forbidden",
+    "hosting": "external"
+  },
+  {
+    "key": "buckwheat",
+    "source": "https://unsplash.com/photos/bsFzFUmZwwg",
+    "cdn": "https://images.unsplash.com/photo-1670843629580-475c9d1da4e2?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Joanna Stołowicz",
+    "download_url": "https://images.unsplash.com/photo-1670843629580-475c9d1da4e2?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/buckwheat.jpg",
+    "sha256": "a992cb7ea53449857ead4f0e3bbfdd53eaf10f6d807d3b4925854c9627f6521f"
+  },
+  {
+    "key": "honey",
+    "source": "https://unsplash.com/photos/honey-jar-with-honey-comb-yQzrDgU-KAI",
+    "cdn": "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "author": "Arwin Neil Baichoo",
+    "download_url": "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/honey.jpg",
+    "sha256": "0191ea505e24db5a78b0c76fbf98dd9ffd11a89260a3a73fa8361bf2b2d0366c"
+  },
+  {
+    "key": "orange",
+    "source": "https://unsplash.com/photos/a-pile-of-fresh-oranges-some-whole-and-some-sliced-Libxm2tRS3g",
+    "cdn": "https://images.unsplash.com/photo-1769489023737-6d907d807a57?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1769489023737-6d907d807a57?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/orange.jpg",
+    "sha256": "0d48ea9ad60ba85952e13e1c219b90be45a0b549261f369ecba6d798b34ebfad"
+  },
+  {
+    "key": "pear",
+    "source": "https://unsplash.com/photos/two-pears-and-a-pear-on-a-plate--pfjDVDkupg",
+    "cdn": "https://images.unsplash.com/photo-1694681733429-b18a99107ae4?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1694681733429-b18a99107ae4?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/pear.jpg",
+    "sha256": "437cf8555096fe94d783c16e1a47daffc8f4e6515013e76811dcd07ca45136d1"
+  },
+  {
+    "key": "tangerine",
+    "source": "https://unsplash.com/photos/a-pile-of-fresh-tangerines-on-a-golden-stand-7j-uQOYXL_c",
+    "cdn": "https://images.unsplash.com/photo-1771179231315-d89d60d02d8b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1771179231315-d89d60d02d8b?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/tangerine.jpg",
+    "sha256": "b4882304a8e540db43291448611a76b92da4836002ddbffb1a2af54f441e6aee"
+  },
+  {
+    "key": "lemon",
+    "source": "https://www.pexels.com/photo/vibrant-yellow-lemons-at-a-market-display-38571543/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/38571543/pexels-photo-38571543.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/lemon.jpg",
+    "sha256": "d8143c7b6073be1652ffdb54e12bb1ca7cd2048d46b82486418bf16450ffd26c"
+  },
+  {
+    "key": "pepper",
+    "source": "https://www.pexels.com/photo/a-bunch-of-yellow-and-green-peppers-10847032/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10847032/pexels-photo-10847032.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pepper.jpg",
+    "sha256": "8a40f993dafc87f049a6a276a6bb966f8fafd72b719a17fa6699de469588cfd2"
+  },
+  {
+    "key": "spice",
+    "source": "https://www.pexels.com/photo/close-up-of-marjoram-herb-in-teaspoon-35809382/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/35809382/pexels-photo-35809382.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/spice.jpg",
+    "sha256": "b1c517f68c7bc6fd9b35c0ebda44632c45c4d28701be9e80e19a7c4d7f05e332"
+  },
+  {
+    "key": "cranberry",
+    "source": "https://unsplash.com/photos/dried-cranberries-scattered-on-a-white-surface-WP4alFhUw9k",
+    "cdn": "https://images.unsplash.com/photo-1772986830000-6f7a1b00388c?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1772986830000-6f7a1b00388c?auto=format&fm=jpg&fit=crop&w=600&h=520&q=80",
+    "file": "public/media/cranberry.jpg",
+    "sha256": "9b03d8c8716f8460200292f39bc9d22b9dc5ea16101449a9fcc325706c1a47ac"
+  },
+  {
+    "key": "cheese",
+    "source": "https://www.pexels.com/photo/close-up-photograph-of-slices-of-cheese-6660243/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6660243/pexels-photo-6660243.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/cheese.jpg",
+    "sha256": "396259b624114e12fdacd94bcebdc1a51a23160ef66cc9c021f24ea379dacab9"
+  },
+  {
+    "key": "dairy",
+    "source": "https://www.pexels.com/photo/bottle-container-cream-creamy-373882/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/373882/pexels-photo-373882.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/dairy.jpg",
+    "sha256": "c7d92c3fc52d475e4d461de406faeaa0fcfb951520c4548ff1158edcc7de1820"
+  },
+  {
+    "key": "eggs",
+    "source": "https://www.pexels.com/photo/six-brown-eggs-with-tray-2959303/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/2959303/pexels-photo-2959303.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/eggs.jpg",
+    "sha256": "f6a368603d2c648888d80a890dd7a85239d191dcc4a2ac36f9d3b7cea14bb78c"
+  },
+  {
+    "key": "bread",
+    "source": "https://www.pexels.com/photo/loaf-of-bread-7541727/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7541727/pexels-photo-7541727.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/bread.jpg",
+    "sha256": "ab7235bba7898ef4fc6f23e05d656a76e9a47c80f19ec0a6f63dfc47e0c92850"
+  },
+  {
+    "key": "meat",
+    "source": "owner: photo sent by the owner on 2026-10-22 for the «Мясо и птица» category (cropped)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/meat.jpg",
+    "sha256": "f3d7bcf6f78db9ba51b9048a984b25c0349814f898701d7c5cbb2f1eb9ddeba5"
+  },
+  {
+    "key": "chicken",
+    "source": "https://www.pexels.com/photo/overhead-shot-of-a-dressed-chicken-10842249/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10842249/pexels-photo-10842249.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/chicken.jpg",
+    "sha256": "3efbef2b645b4d0d15a0ff234844543ce1fbbe90599a516b932b6baeb19b96a9"
+  },
+  {
+    "key": "trout",
+    "source": "https://www.pexels.com/photo/fresh-rainbow-trout-on-wooden-cutting-board-28575465/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/28575465/pexels-photo-28575465.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/trout.jpg",
+    "sha256": "658fcff0138b615c5075cab88934552a45b379aaf8ec6c504361efff8c2f610e"
+  },
+  {
+    "key": "sausage",
+    "source": "https://www.pexels.com/photo/cold-cuts-of-cured-sausage-on-board-4639328/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/4639328/pexels-photo-4639328.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/sausage.jpg",
+    "sha256": "23aeb5edb368f9d76d7215290ed123e23c58d9bf39cfcf7e4456a68dd5abe56d"
+  },
+  {
+    "key": "pickles",
+    "source": "https://www.pexels.com/photo/pickled-cucumbers-on-glass-jars-9462573/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/9462573/pexels-photo-9462573.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pickles.jpg",
+    "sha256": "1df7805095c7a920819a16d494b8d062676b8e6f41372d1aebad585574a1dd5e"
+  },
+  {
+    "key": "flour",
+    "source": "https://www.pexels.com/photo/paper-bag-of-wheat-flour-with-stainless-scoop-6287223/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6287223/pexels-photo-6287223.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/flour.jpg",
+    "sha256": "1c73867b344b8895016e2912f93bf727d63f8363716f2117c01e4c672310962e"
+  },
+  {
+    "key": "drinks",
+    "source": "https://www.pexels.com/photo/plastic-bottles-of-water-and-cups-on-surface-8761309/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/8761309/pexels-photo-8761309.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/drinks.jpg",
+    "sha256": "a7ba2dacff925969ee5b64fb61b98f44437096e972aae99d8cdaa1a876d13244"
+  },
+  {
+    "key": "household",
+    "source": "https://www.pexels.com/photo/minimalist-cleaning-supplies-on-grey-background-28576626/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/28576626/pexels-photo-28576626.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/household.jpg",
+    "sha256": "7a01f1e46b6797a83edfb9120736292d4db3e921db09df08ec3940b41494a24b"
+  },
+  {
+    "key": "apple-yellow",
+    "source": "https://www.pexels.com/photo/yellow-apples-in-close-up-photography-10256311/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10256311/pexels-photo-10256311.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/apple-yellow.jpg",
+    "sha256": "744ad54a2340cf02f8bfa609dbc03465ae1aa5ac757cea5603182c5d2f3b3069"
+  },
+  {
+    "key": "grapefruit",
+    "source": "https://www.pexels.com/photo/close-up-photo-of-fresh-grapefruits-14840380/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/14840380/pexels-photo-14840380.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/grapefruit.jpg",
+    "sha256": "d8589ea2a163d90911cc08729ea976b43826f5bbb6c00ccc8caa4858a413139f"
+  },
+  {
+    "key": "persimmon",
+    "source": "https://www.pexels.com/photo/persimmon-fruits-on-gray-surface-7418940/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7418940/pexels-photo-7418940.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/persimmon.jpg",
+    "sha256": "821ab8f56f537d085c0dff8ac25baa8fdb9c67adb7b5053a45a903e8095a2a54"
+  },
+  {
+    "key": "kiwi",
+    "source": "https://www.pexels.com/photo/brown-round-kiwi-fruits-on-white-surface-6411505/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6411505/pexels-photo-6411505.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/kiwi.jpg",
+    "sha256": "acf1784eece30800565c2ce81e12f2aa49e2aab953b836e9acb919e5e4eea638"
+  },
+  {
+    "key": "nectarine",
+    "source": "https://www.pexels.com/photo/close-up-of-fresh-nectarines-displayed-38579929/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/38579929/pexels-photo-38579929.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/nectarine.jpg",
+    "sha256": "7770520dcb08bc94cbf4f6b9a038777dfbf124c2b389a70728b9eeb918997293"
+  },
+  {
+    "key": "plum",
+    "source": "https://www.pexels.com/photo/close-up-of-fresh-purple-plums-in-market-39029998/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/39029998/pexels-photo-39029998.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/plum.jpg",
+    "sha256": "bed906adad9a378f5085e4aa263d4478a5e52bb045ef4e796cb4fa12e88387bd"
+  },
+  {
+    "key": "chestnut",
+    "source": "https://www.pexels.com/photo/close-up-of-fresh-raw-chestnuts-in-bulk-29111340/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/29111340/pexels-photo-29111340.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/chestnut.jpg",
+    "sha256": "088422f3d65409ee3a08e4c485bf9da4502b7692289a578a19d5732f526f9033"
+  },
+  {
+    "key": "pomegranate",
+    "source": "https://www.pexels.com/photo/photograph-of-pomegranates-9810910/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/9810910/pexels-photo-9810910.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pomegranate.jpg",
+    "sha256": "4a14c160296d866eef8ecc604f43a60675760fe220eb9d9d04d31a690cae23d9"
+  },
+  {
+    "key": "pineapple",
+    "source": "https://www.pexels.com/photo/ripe-pineapples-on-green-surface-7194817/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7194817/pexels-photo-7194817.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pineapple.jpg",
+    "sha256": "d9e32d2966c835d3fbeaaf80497a47caa525e1ecf5b6ddc3d3de6cc77287812a"
+  },
+  {
+    "key": "pepper-red-long",
+    "source": "https://www.pexels.com/photo/fresh-red-bell-peppers-at-a-market-display-28486991/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/28486991/pexels-photo-28486991.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pepper-red-long.jpg",
+    "sha256": "a38bdbcd91b8cc4fce8825883676b54899c1d20beb1771522a38646238b5b516"
+  },
+  {
+    "key": "chili",
+    "source": "https://www.pexels.com/photo/close-up-photo-of-green-chilies-13422250/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/13422250/pexels-photo-13422250.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/chili.jpg",
+    "sha256": "5ad3c95c5a43d31c34be0d632d3349835e48982b79c573d6bd296929da2d01c7"
+  },
+  {
+    "key": "aubergine",
+    "source": "https://www.pexels.com/photo/eggplants-on-a-purple-surface-7195177/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7195177/pexels-photo-7195177.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/aubergine.jpg",
+    "sha256": "48858683bf8be0570bad2561b31c500aec9de1f653a960ac377717e636ba6e99"
+  },
+  {
+    "key": "beetroot",
+    "source": "https://www.pexels.com/photo/freshly-harvested-organic-beets-and-greens-33893317/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/33893317/pexels-photo-33893317.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/beetroot.jpg",
+    "sha256": "793c47b8e9e7b5538c1ac56418dcacc3f8cbbf286d3e1552b07801ac33178364"
+  },
+  {
+    "key": "turnip",
+    "source": "https://www.pexels.com/photo/a-close-up-of-turnips-16069702/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/16069702/pexels-photo-16069702.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/turnip.jpg",
+    "sha256": "34d1b46a024f4f8c9760ff2b27018c68aaf752a1a2b8f8b22c3d547660339b68"
+  },
+  {
+    "key": "cauliflower",
+    "source": "https://www.pexels.com/photo/fresh-cauliflower-in-close-up-shot-10111497/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10111497/pexels-photo-10111497.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/cauliflower.jpg",
+    "sha256": "a9fae57e6ff4c13b1977636add63651cbe460fbb65e647bf87ad7f5cc49d64de"
+  },
+  {
+    "key": "peanut-shell",
+    "source": "https://www.pexels.com/photo/close-up-shot-of-peanuts-7717463/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7717463/pexels-photo-7717463.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/peanut-shell.jpg",
+    "sha256": "dac23e93747f6d9bcba8e450007375308e4155600c9c521dd890a67789fdce04"
+  },
+  {
+    "key": "beans-speckled",
+    "source": "https://www.pexels.com/photo/close-up-shot-of-a-pinto-beans-6316673/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6316673/pexels-photo-6316673.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/beans-speckled.jpg",
+    "sha256": "880dcc2e0b12f6dcec5e8c685089d64330e01bd20d628674ce240d54e41d0e36"
+  },
+  {
+    "key": "beans-speckled-dark",
+    "source": "https://www.pexels.com/photo/beige-and-purple-beans-176169/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/176169/pexels-photo-176169.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/beans-speckled-dark.jpg",
+    "sha256": "dbc604fe12402602b22c002c04c0ffc65606c9cb3e63976462698c97bff360dd"
+  },
+  {
+    "key": "corn",
+    "source": "https://www.pexels.com/photo/close-up-of-yellow-corn-kernels-background-30204262/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/30204262/pexels-photo-30204262.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/corn.jpg",
+    "sha256": "4bf6e883ef88f58180cda8624f35116855e511106ce472b926f7484eae376ad2"
+  },
+  {
+    "key": "mushrooms",
+    "source": "https://www.pexels.com/photo/close-up-of-mushrooms-on-wooden-surface-10307853/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10307853/pexels-photo-10307853.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/mushrooms.jpg",
+    "sha256": "d86617662573286b4ce023721ac963df2baafe96eff26e833dbdfabe66773db7"
+  },
+  {
+    "key": "apple-red",
+    "source": "https://www.pexels.com/photo/red-apples-in-close-up-photography-14408622/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/14408622/pexels-photo-14408622.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/apple-red.jpg",
+    "sha256": "44fc9c9b7248befd608c39fcb80ecd5418c307320a2af75e83cc03c0864a5a6d"
+  },
+  {
+    "key": "pear-conference",
+    "source": "https://www.pexels.com/photo/green-pears-with-brown-spots-on-tablecloth-7586244/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7586244/pexels-photo-7586244.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pear-conference.jpg",
+    "sha256": "0095fc709a4b1b8d8244df474ebb786d6eed831692679850d9ca8cbb22eda8e0"
+  },
+  {
+    "key": "pear-yellow",
+    "source": "https://www.pexels.com/photo/fresh-pears-displayed-at-a-brazilian-market-30683039/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/30683039/pexels-photo-30683039.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pear-yellow.jpg",
+    "sha256": "5369e4da2de2c0ff0ecf485e6a467664b3e9a581e5e5fde84128996fadd7fe52"
+  },
+  {
+    "key": "pear-brown",
+    "source": "https://www.pexels.com/photo/pears-in-close-up-photography-10024753/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10024753/pexels-photo-10024753.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pear-brown.jpg",
+    "sha256": "e8ded78772b5f55c85baada107ada9920629dbc1d62e92984df48c62150212bb"
+  },
+  {
+    "key": "dill",
+    "source": "https://www.pexels.com/photo/bunch-of-fresh-dill-placed-on-table-4198113/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/4198113/pexels-photo-4198113.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/dill.jpg",
+    "sha256": "902205cab222e686157bf49fac3516800892a7b1e3c6f153ab08015f8d58a84a"
+  },
+  {
+    "key": "peanut-blanched",
+    "source": "https://www.pexels.com/photo/bunch-of-brown-peanuts-6103952/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6103952/pexels-photo-6103952.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/peanut-blanched.jpg",
+    "sha256": "a7002328d10394f4ab16482927545e7e594a2df2609f469079a0aa4051e26fd1"
+  },
+  {
+    "key": "pistachio-shell",
+    "source": "https://www.pexels.com/photo/close-up-of-raw-pistachios-in-shell-38571524/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/38571524/pexels-photo-38571524.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pistachio-shell.jpg",
+    "sha256": "ba8ba4177cc921d14953876658d8ebe66bf5840fd82b10de75d68dc8442a4b90"
+  },
+  {
+    "key": "cucumber-long",
+    "source": "https://www.pexels.com/photo/pile-of-cucumbers-3568039/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/3568039/pexels-photo-3568039.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/cucumber-long.jpg",
+    "sha256": "e6c5d9cf3b74771762f622f883191bc4e785e4e1c208197d455bf996a11671f9"
+  },
+  {
+    "key": "tomato-crate",
+    "source": "https://www.pexels.com/photo/abundant-fresh-tomatoes-in-market-crate-38901735/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/38901735/pexels-photo-38901735.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/tomato-crate.jpg",
+    "sha256": "428397e1dc5bdad4b63da226703ccc3169cca47a3b1ff394bf160e2647fe736e"
+  },
+  {
+    "key": "raisins-golden",
+    "source": "https://www.pexels.com/photo/close-up-shot-of-raisins-6086004/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/6086004/pexels-photo-6086004.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/raisins-golden.jpg",
+    "sha256": "0d222de0d8411ffeaf0b2ab65dbfd395eec752b5091dd7e15570cff98fb819e7"
+  },
+  {
+    "key": "churchkhela-color",
+    "source": "https://www.pexels.com/photo/colorful-churchkhela-display-in-georgia-market-39732684/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/39732684/pexels-photo-39732684.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/churchkhela-color.jpg",
+    "sha256": "9708892bf2f8def826fc0b0f32fca4044ba327f6971cf7171fecdcf5bfd81a12"
+  },
+  {
+    "key": "pickled-tomatoes",
+    "source": "https://www.pexels.com/photo/woman-holding-jar-of-pickled-tomatoes-28996268/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/28996268/pexels-photo-28996268.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pickled-tomatoes.jpg",
+    "sha256": "6647a5c23443ea86fd3cdfcf5652f64c60e7bf188e3aaf79ff1172a3c56ec32f"
+  },
+  {
+    "key": "pickled-cauliflower",
+    "source": "https://www.pexels.com/photo/https-microbiomebank-org-hu-28180367/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/28180367/pexels-photo-28180367.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pickled-cauliflower.jpg",
+    "sha256": "1a1f4f4ec8ca6456f001fc2e18bf7ae4783cc5cc30f14595cc4d2e7ae048e42d"
+  },
+  {
+    "key": "okra",
+    "source": "https://www.pexels.com/photo/close-up-of-fresh-green-okra-pods-39490207/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/39490207/pexels-photo-39490207.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/okra.jpg",
+    "sha256": "22fb8a2d7b156d9c17292685778c9621292f8f1e184c6cf2ab1c8da152d832fe"
+  },
+  {
+    "key": "pepper-light",
+    "source": "https://www.pexels.com/photo/close-up-photo-of-green-bell-pepers-10111744/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10111744/pexels-photo-10111744.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pepper-light.jpg",
+    "sha256": "ffc68c3ee116416fa27a53a6945b72bcd354288c038f03c8d91f409d0e1c2366"
+  },
+  {
+    "key": "radish-black",
+    "source": "https://commons.wikimedia.org/wiki/File:R%C3%A1banos_negros.jpg",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": "San Juan del Sur (Wikimedia Commons)",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/R%C3%A1banos_negros.jpg",
+    "changes": "cropped and resized to 600x520; this crop is shared under CC BY-SA 4.0",
+    "file": "public/media/radish-black.jpg",
+    "sha256": "690d8fac40dbd99e8b70477dc4eb02252d9b0be1e48de016e9d37bcd5bc694cb"
+  },
+  {
+    "key": "radish-green",
+    "source": "https://commons.wikimedia.org/wiki/File:Brassicales_-_Green_Radish_from_Tianjin_-_1.jpg",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": "Emőke Dénes (Wikimedia Commons)",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Brassicales_-_Green_Radish_from_Tianjin_-_1.jpg",
+    "changes": "cropped and resized to 600x520; this crop is shared under CC BY-SA 4.0",
+    "file": "public/media/radish-green.jpg",
+    "sha256": "fa5f21ec1c25a144bafcde098f628a2692f822499d12a7e1a05b19a2f0d813f9"
+  },
+  {
+    "key": "radish-red",
+    "source": "https://www.pexels.com/photo/freshly-harvested-pink-daikon-radishes-at-market-35613995/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/35613995/pexels-photo-35613995.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/radish-red.jpg",
+    "sha256": "4fe35f31c8afd078e4426d37af3983d069e456c36a341a6306ce06f23a3415ff"
+  },
+  {
+    "key": "minicorn",
+    "source": "owner: pack shot of Nostimo baby corn 330 g, sent by the owner on 20.10.2026",
+    "license": "owner-provided product image for selling this product",
+    "file": "public/media/minicorn.jpg",
+    "sha256": "e3db5a45ebbbb91cbca2489b67245614416caacd5cd5a667598496bb743d8ff7"
+  },
+  {
+    "key": "beef-bone-in",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); cropped to the card",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/beef-bone-in.jpg",
+    "sha256": "e03f36e1f724cede73cee4930c97871e8a20d92c364b7608e0f22e3b2416ca86"
+  },
+  {
+    "key": "beef-boneless",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); cropped to the card",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/beef-boneless.jpg",
+    "sha256": "79ab34277996ebc16f5a98accd8628fad12ebf31ce317f8731e94e9be1ec06b2"
+  },
+  {
+    "key": "pork-bone-in",
+    "source": "https://unsplash.com/photos/raw-meat-on-green-textile-TEaC_tItywg",
+    "cdn": "https://images.unsplash.com/photo-1629224803318-c4f3a8f06f3c",
+    "license": "https://unsplash.com/license",
+    "author": "Rickie-Tom Schünemann",
+    "download_url": "https://images.unsplash.com/photo-1629224803318-c4f3a8f06f3c?w=1400&q=85&fm=jpg",
+    "file": "public/media/pork-bone-in.jpg",
+    "sha256": "04ed1f34aa8785084f569b0dafee61c5de4e994c5a305cf8b5a10998ffc885f6"
+  },
+  {
+    "key": "pork-loin",
+    "source": "https://unsplash.com/photos/sliced-meat-on-brown-wooden-chopping-board-9J9uxuoIM9A",
+    "cdn": "https://images.unsplash.com/photo-1625144093498-bf62fca631c5",
+    "license": "https://unsplash.com/license",
+    "author": "Towfiqu barbhuiya",
+    "download_url": "https://images.unsplash.com/photo-1625144093498-bf62fca631c5?w=1400&q=85&fm=jpg",
+    "file": "public/media/pork-loin.jpg",
+    "sha256": "8f3d9c992aae86769cebbe5810b75c15ff25959a87c7596ea45643d8f6dd1b9b"
+  },
+  {
+    "key": "pork-boneless",
+    "source": "https://unsplash.com/photos/raw-meat-on-white-plastic-container-RAoX-N4ZcK4",
+    "cdn": "https://images.unsplash.com/photo-1611059263765-f57653f3bba3",
+    "license": "https://unsplash.com/license",
+    "author": "KWON JUNHO",
+    "download_url": "https://images.unsplash.com/photo-1611059263765-f57653f3bba3?w=1400&q=85&fm=jpg",
+    "file": "public/media/pork-boneless.jpg",
+    "sha256": "2b1d330b4cdf893fcfa4bc4b601c344483a42a95e3d4cdebcd23d6b797700fe4"
+  },
+  {
+    "key": "pork-mince",
+    "source": "https://www.pexels.com/photo/uncooked-ground-pork-on-ceramic-bowl-7225485/",
+    "cdn": "https://images.pexels.com/photos/7225485/pexels-photo-7225485.jpeg",
+    "license": "https://www.pexels.com/license/",
+    "author": "Eva Bronzini",
+    "download_url": "https://images.pexels.com/photos/7225485/pexels-photo-7225485.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "file": "public/media/pork-mince.jpg",
+    "sha256": "0399f19a6a9df3537986f243a9942fd44606db70e8199647d84c4e9a00834763"
+  },
+  {
+    "key": "beef-mince",
+    "source": "https://www.pexels.com/photo/grind-meat-in-glass-bowl-128401/",
+    "cdn": "https://images.pexels.com/photos/128401/pexels-photo-128401.jpeg",
+    "license": "https://www.pexels.com/license/",
+    "author": "Angele J",
+    "download_url": "https://images.pexels.com/photos/128401/pexels-photo-128401.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "file": "public/media/beef-mince.jpg",
+    "sha256": "2aaca5d5240f341ffa1a9e07b80c9c832690ff7bb266e15a7203bb322a262f6b"
+  },
+  {
+    "key": "lard-thin",
+    "source": "https://www.pexels.com/photo/cut-pieces-of-salo-lying-on-a-wooden-table-20444767/",
+    "cdn": "https://images.pexels.com/photos/20444767/pexels-photo-20444767.jpeg",
+    "license": "https://www.pexels.com/license/",
+    "author": "Boryslav Shoot",
+    "download_url": "https://images.pexels.com/photos/20444767/pexels-photo-20444767.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "file": "public/media/lard-thin.jpg",
+    "sha256": "dc0069c99f798366807c6bcd7eac481173d70a54ec6d6333a2a7967863e579c7"
+  },
+  {
+    "key": "lard-thick",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/lard-thick.jpg",
+    "sha256": "5469818662b009b462a1ce97c8b1c4cf13d665c3766571ccf00ac93bc0fb7bec"
+  },
+  {
+    "key": "lard-smoked",
+    "source": "https://www.pexels.com/photo/high-angle-view-of-bread-on-table-306799/",
+    "cdn": "https://images.pexels.com/photos/306799/pexels-photo-306799.jpeg",
+    "license": "https://www.pexels.com/license/",
+    "author": "Irita Antonevica",
+    "download_url": "https://images.pexels.com/photos/306799/pexels-photo-306799.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "file": "public/media/lard-smoked.jpg",
+    "sha256": "d0ca91dfb202ad663e831330ed84af739680787b5dfa2f3654e7c32dea0a1d37"
+  },
+  {
+    "key": "kupaty",
+    "source": "https://www.pexels.com/photo/fresh-raw-sausages-with-rosemary-on-dark-background-28881687/",
+    "cdn": "https://images.pexels.com/photos/28881687/pexels-photo-28881687.jpeg",
+    "license": "https://www.pexels.com/license/",
+    "author": "Domenico Scaglione",
+    "download_url": "https://images.pexels.com/photos/28881687/pexels-photo-28881687.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "file": "public/media/kupaty.jpg",
+    "sha256": "efcfe6cbd5b0b0a47b7ebf43a38b0fbaa4d6e5a04f0b65c779764de9698c3403"
+  },
+  {
+    "key": "khash-set",
+    "source": "https://www.pexels.com/photo/delicious-beef-tripe-ready-for-hot-pot-cuisine-34261108/",
+    "cdn": "https://images.pexels.com/photos/34261108/pexels-photo-34261108.jpeg",
+    "license": "https://www.pexels.com/license/",
+    "author": "Gibson Chan",
+    "download_url": "https://images.pexels.com/photos/34261108/pexels-photo-34261108.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "file": "public/media/khash-set.jpg",
+    "sha256": "22a99c941e3ef9b468e1d53fe78c623441e2f6cb80d76a3dbd93bf7be4c1f42f"
+  },
+  {
+    "key": "charcoal",
+    "source": "https://www.pexels.com/photo/close-up-of-pile-of-chopped-charcoal-10709388/",
+    "cdn": "https://images.pexels.com/photos/10709388/pexels-photo-10709388.jpeg",
+    "license": "https://www.pexels.com/license/",
+    "author": "R C",
+    "download_url": "https://images.pexels.com/photos/10709388/pexels-photo-10709388.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "file": "public/media/charcoal.jpg",
+    "sha256": "a8431858a22921170f62513aa0ae624506dfaabc59b617756ed8c1a5ea4a7b89"
+  },
+  {
+    "key": "shashlik-loin",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); cropped to the card, a third-party logo left out",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/shashlik-loin.jpg",
+    "sha256": "e3db300767039ea3ae692b9448a46e079691a8326e671d1ea276ec448be2b98f"
+  },
+  {
+    "key": "shashlik-pork",
+    "source": "https://www.pexels.com/photo/succulent-asian-marinated-pork-bowl-33042405/",
+    "cdn": "https://images.pexels.com/photos/33042405/pexels-photo-33042405.jpeg",
+    "license": "https://www.pexels.com/license/",
+    "author": "Gu Ko",
+    "download_url": "https://images.pexels.com/photos/33042405/pexels-photo-33042405.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "file": "public/media/shashlik-pork.jpg",
+    "sha256": "cb96fdb15aa3a8968f43fb714f6eed40f8d0172f9be33c5cc5cf635b1b638057"
+  },
+  {
+    "key": "shashlik-bone",
+    "source": "https://www.pexels.com/photo/raw-meat-in-the-pot-15047513/",
+    "cdn": "https://images.pexels.com/photos/15047513/pexels-photo-15047513.jpeg",
+    "license": "https://www.pexels.com/license/",
+    "author": "George Piskov",
+    "download_url": "https://images.pexels.com/photos/15047513/pexels-photo-15047513.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "file": "public/media/shashlik-bone.jpg",
+    "sha256": "35273c3d5ad9d4b2ba2fa1a07c0e221e76a9a6fe0baa42f7f3f1450c7042e478"
+  },
+  {
+    "key": "dog-bones",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/dog-bones.jpg",
+    "sha256": "d60aceaa77bb6adb38ea9b21d951c26d02da95ca83795d097d8477b00c1c730e"
+  },
+  {
+    "key": "beef-heart",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/beef-heart.jpg",
+    "sha256": "1203deae615a33ce49d8335e9df74b4f75fc9388c61539476e5faaf89c674066"
+  },
+  {
+    "key": "beef-liver",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/beef-liver.jpg",
+    "sha256": "75a50ee56771e283f88d2f8cc01a678032aca0edc085e7138c9e081b996fec47"
+  },
+  {
+    "key": "beef-kidneys",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/beef-kidneys.jpg",
+    "sha256": "4ce8f4870647a0bfa0ec349429c1b6be1a69b8558e726b1226834fc805b52727"
+  },
+  {
+    "key": "tongue",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/tongue.jpg",
+    "sha256": "386f98044180154529c4743abe5e4eddfca5735bd93f601345af566c9544645c"
+  },
+  {
+    "key": "beef-head",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/beef-head.jpg",
+    "sha256": "8a0e66899ba7678021ca39e1572fb36e4c182c983003c8fdc2f72f0f27ef09cb"
+  },
+  {
+    "key": "lyulya-chicken",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/lyulya-chicken.jpg",
+    "sha256": "0e026d3b0fb8dd903ef31beff043be0994d0229a7338ae4026643413363e0ac9"
+  },
+  {
+    "key": "lyulya-beef-pork",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/lyulya-beef-pork.jpg",
+    "sha256": "95b18edc297d1d01cf192f823618512cd5f2e980363fb7c2c87bd12f1b0db0fc"
+  },
+  {
+    "key": "cutlet-beef-pork",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/cutlet-beef-pork.jpg",
+    "sha256": "9e923b2518b4ecec1dc592f87a82a2c2dde56abf5b95dd75c1cbb7528626974f"
+  },
+  {
+    "key": "pork-head",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/pork-head.jpg",
+    "sha256": "a4c68837ec40ccfa422f10f72f5270be0a4637b122728257c6bb4c814039dd93"
+  },
+  {
+    "key": "pork-trotters",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/pork-trotters.jpg",
+    "sha256": "0a5b3989770668e7d5a53bb385154946f602ecf7dee04a051c8de9d3da7f569c"
+  },
+  {
+    "key": "pork-heart",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/pork-heart.jpg",
+    "sha256": "744d315e466147b0146483d728e3c17e5569cd8ce069a43f16fe779aa211f282"
+  },
+  {
+    "key": "pork-kidneys",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/pork-kidneys.jpg",
+    "sha256": "36f704a36e01f6381afbb783f468c6710a4beac122faf801d8b44c0e11db4a72"
+  },
+  {
+    "key": "pork-liver",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/pork-liver.jpg",
+    "sha256": "868f10a6ec9a228358b75eb40b1f40c0c048f626ed1241c07b99829cc8d29115"
+  },
+  {
+    "key": "oxtail",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/oxtail.jpg",
+    "sha256": "95f9c869f489a21e517f2ae3b701a781dce1b26aeb2c20fcfdde6d9a4aee942c"
+  },
+  {
+    "key": "beef-spleen",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, unified style)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/beef-spleen.jpg",
+    "sha256": "4359936f65976e04be8cb826a5f4bad005676d505f11b5ac2b0a9c90d4adf08a"
+  },
+  {
+    "key": "trout-rainbow",
+    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Rafo Vovi (used whole at the owner's request)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/trout-rainbow.jpg",
+    "sha256": "cba6ae96e96e6d08c2e8e84ca37114a8314a4072db285399a4c8d25250165284"
+  },
+  {
+    "key": "apple-demirchyan",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/apple-demirchyan.jpg",
+    "sha256": "4c95a05c158584396364c586877a6ae7f827b91b1368d25f4d3a9f8b8f9b3ffe"
+  },
+  {
+    "key": "apple-star",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/apple-star.jpg",
+    "sha256": "e9d1560230594eefad4df4e4a705eb03edf0ab8ce999f17dabe7783308662597"
+  },
+  {
+    "key": "apple-golden",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/apple-golden.jpg",
+    "sha256": "bfdc28ac23c228011f4045bbe8a767a50f2a6f51d16c3355376a3d5229fd6f05"
+  },
+  {
+    "key": "tomato-light",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/tomato-light.jpg",
+    "sha256": "ae099ff04bfd4f6bd6ae669ccea47231c1c9e87ce1a7e0f95c6321d31c64f67f"
+  },
+  {
+    "key": "tomato-dark",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/tomato-dark.jpg",
+    "sha256": "91e6bc9b95feaf731427591d7faf0b36c2b1095f82952e7a415dc8edf446bb0b"
+  },
+  {
+    "key": "tomato-azerbaijan",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/tomato-azerbaijan.jpg",
+    "sha256": "297f7f3225854f8628f20639b53ec90b6ae70faa6e663a9f905f38248d08c52d"
+  },
+  {
+    "key": "grapes-red-globe",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/grapes-red-globe.jpg",
+    "sha256": "5db0352e8da6703ace4fb119d2793623bd43ad4da774da319c1c2d30f0cfc4bb"
+  },
+  {
+    "key": "grapes-kishmish-pink",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/grapes-kishmish-pink.jpg",
+    "sha256": "77516d4b7f79f9e1f25aa8d24facd6839d6508d7d1ff1f2c9e69c55315f2f881"
+  },
+  {
+    "key": "lavash",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); cropped to the card",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/lavash.jpg",
+    "sha256": "83ba7985778f7ed3baa14028aa1e0c27d7adf8e9053215f9a9b64ff9c4cf4005"
+  },
+  {
+    "key": "mado-sudzhuk-slice-070",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (atenk-sudzhuk-slice-070.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-sudzhuk-slice-070.jpg",
+    "sha256": "ebfef089519553046a1f39dbc8aac7a9f1faa87b7999f06ef58cf0fc5a94f090"
+  },
+  {
+    "key": "mado-sausages-hotdog-550",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (atenk-sausages.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-sausages-hotdog-550.jpg",
+    "sha256": "3134b9a57664e270ac749e477b249a4adec192cb867759160aca03b6de7af3d1"
+  },
+  {
+    "key": "mado-jerky-chicken-030",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (atenk-jerky-chicken-030.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-jerky-chicken-030.jpg",
+    "sha256": "b1133c923eb88198df276d14f435b9ddd5bc67bd1c67e155d057465b7a516d47"
+  },
+  {
+    "key": "mado-jerky-pork-030",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (atenk-jerky-pork-030.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-jerky-pork-030.jpg",
+    "sha256": "afe7befa64cb41540f8e12c5641ed06c84c718e17bc05aa0c1bd4d6f209ddf41"
+  },
+  {
+    "key": "mado-vana-khash",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (vana-khash.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-vana-khash.jpg",
+    "sha256": "d3793115ed3683d9919c3884ec726de7cc7ee6d3cd0952a7496d286a9cce9df5"
+  },
+  {
+    "key": "mado-adrenaline-025",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (adrenaline-rush-025.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-adrenaline-025.jpg",
+    "sha256": "5f891e9f948ec9692e53d330f59abe1cba3dca198fc839c2d7a766ce4b208454"
+  },
+  {
+    "key": "mado-gubernator-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (artashat-gubernator-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-gubernator-050.jpg",
+    "sha256": "a670f1c7b135c6be4dfb9cb5b478239e35203e71d82a86417f14ea7626b7d525"
+  },
+  {
+    "key": "mado-gubernator-exclusive-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (artashat-gubernator-exclusive-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-gubernator-exclusive-050.jpg",
+    "sha256": "0eb0f33ecb9b576ab0cd746ee6e4574bbac3f4e7bd654c58ea5229365a922297"
+  },
+  {
+    "key": "mado-gubernator-collection-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (artashat-gubernator-collection-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-gubernator-collection-050.jpg",
+    "sha256": "d146df394998ead1711d9057df6e360e75ff155fbcdbe534fd56319530575f18"
+  },
+  {
+    "key": "mado-druzhba-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (artashat-druzhba-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-druzhba-050.jpg",
+    "sha256": "741d84e28b710beee53e824f6ad63207911e52953bd9473bd2909025e2457da7"
+  },
+  {
+    "key": "mado-piton-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (artashat-piton-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/mado-piton-050.jpg",
+    "sha256": "7a36eb31ea041361e920f19467ef642fab542e8bddcfdeeffb7b284c27aafd01"
+  },
+  {
+    "key": "alcohol-generic",
+    "source": "drawn: neutral bottle silhouette drawn for БАЗАР, shown until the owner sends a product photo",
+    "license": "own work",
+    "author": "БАЗАР",
+    "file": "public/media/alcohol-generic.jpg",
+    "sha256": "69883d244ff4887bceff8b923ffabaeb3d49656a145e213cde9b46c6953d3c91"
+  },
+  {
+    "key": "ararat3-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-3-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat3-050.jpg",
+    "sha256": "175ed27b2e80ee75e79dc1a750f83318428f5fa168f7ef91a0400d988cbb65d2"
+  },
+  {
+    "key": "ararat3-070",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-3-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat3-070.jpg",
+    "sha256": "175ed27b2e80ee75e79dc1a750f83318428f5fa168f7ef91a0400d988cbb65d2"
+  },
+  {
+    "key": "ararat5-005",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-5-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat5-005.jpg",
+    "sha256": "8a9c0b5ef392ecfaa0be7ac8bdea7d5efea8571f1e09564a7612fd72bc6d6e96"
+  },
+  {
+    "key": "ararat5-020",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-5-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat5-020.jpg",
+    "sha256": "8a9c0b5ef392ecfaa0be7ac8bdea7d5efea8571f1e09564a7612fd72bc6d6e96"
+  },
+  {
+    "key": "ararat5-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-5-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat5-050.jpg",
+    "sha256": "8a9c0b5ef392ecfaa0be7ac8bdea7d5efea8571f1e09564a7612fd72bc6d6e96"
+  },
+  {
+    "key": "ararat5-070",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-5-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat5-070.jpg",
+    "sha256": "8a9c0b5ef392ecfaa0be7ac8bdea7d5efea8571f1e09564a7612fd72bc6d6e96"
+  },
+  {
+    "key": "ararat5-100",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-5-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat5-100.jpg",
+    "sha256": "8a9c0b5ef392ecfaa0be7ac8bdea7d5efea8571f1e09564a7612fd72bc6d6e96"
+  },
+  {
+    "key": "ararat-akhtamar-005",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-akhtamar-10-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat-akhtamar-005.jpg",
+    "sha256": "4993e2d9fc37ff915b392c54e2020ff4eec3d3c7fd41628db1310035163cb840"
+  },
+  {
+    "key": "ararat-akhtamar-020",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-akhtamar-10-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat-akhtamar-020.jpg",
+    "sha256": "4993e2d9fc37ff915b392c54e2020ff4eec3d3c7fd41628db1310035163cb840"
+  },
+  {
+    "key": "ararat-akhtamar-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-akhtamar-10-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat-akhtamar-050.jpg",
+    "sha256": "4993e2d9fc37ff915b392c54e2020ff4eec3d3c7fd41628db1310035163cb840"
+  },
+  {
+    "key": "ararat-akhtamar-070",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-akhtamar-10-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/ararat-akhtamar-070.jpg",
+    "sha256": "4993e2d9fc37ff915b392c54e2020ff4eec3d3c7fd41628db1310035163cb840"
+  },
+  {
+    "key": "noy3-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (noy-3-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/noy3-050.jpg",
+    "sha256": "fe734a22567dfd3d73dab3fe6c98f8bca6dcc9e4cee5550be12a9318ecbf4694"
+  },
+  {
+    "key": "noy5-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (noy-5-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/noy5-050.jpg",
+    "sha256": "801f185b525537625cbf8a65bbcd9021a761fb16f9656fd39e1a36d9ddddc9d8"
+  },
+  {
+    "key": "noy10-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (noy-10-050.jpg; origin not recorded); the same brand's bottle, fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/noy10-050.jpg",
+    "sha256": "134eaa27786b84ea2ca71f5af3dff44e9aed62a5536c9fe3d84209a3f79b7044"
+  },
+  {
+    "key": "ararat-ani-005",
+    "source": "https://www.whiskysite.nl/en/ararat-ani-7-years-old-050-ltr-40.html",
+    "cdn": "https://cdn.webshopapp.com/shops/39103/files/428515765/ararat-ararat-ani-7-years-old-050-ltr-40.jpg",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "whiskysite.nl",
+    "file": "public/media/ararat-ani-005.jpg",
+    "sha256": "5e6e2caa68d0cf7daaef70adc8802c8e81bc53714c8e3ad4547653596c2aecd3"
+  },
+  {
+    "key": "ararat-ani-050",
+    "source": "https://www.whiskysite.nl/en/ararat-ani-7-years-old-050-ltr-40.html",
+    "cdn": "https://cdn.webshopapp.com/shops/39103/files/428515765/ararat-ararat-ani-7-years-old-050-ltr-40.jpg",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "whiskysite.nl",
+    "file": "public/media/ararat-ani-050.jpg",
+    "sha256": "5e6e2caa68d0cf7daaef70adc8802c8e81bc53714c8e3ad4547653596c2aecd3"
+  },
+  {
+    "key": "ararat-ani-070-gift",
+    "source": "https://www.whiskysite.nl/en/ararat-ani-7-years-old-giftbox-with-2-glasses-070.html",
+    "cdn": "https://cdn.webshopapp.com/shops/39103/files/428515760/ararat-ararat-ani-7-years-old-giftbox-with-2-glass.jpg",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "whiskysite.nl",
+    "file": "public/media/ararat-ani-070-gift.jpg",
+    "sha256": "a8c3cffdb64a156736ece87940db5c9ab596071a418ff2076f8b9d680f0acf55"
+  },
+  {
+    "key": "ararat-akhtamar-070-gift",
+    "source": "https://www.bondston.com/ararat-akhtamar-10-year-old-with-2-glasses-p15137",
+    "cdn": "https://images-svetnapojov-cdn.rshop.sk/default/products/d3616eb2c77a6e68f9c5a8e6b221f316.jpg",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "bondston.com",
+    "file": "public/media/ararat-akhtamar-070-gift.jpg",
+    "sha256": "51718afd7fced0aeffd0067ee8c5062ad57a6ac844dc40ced1c26ba4656fc929"
+  },
+  {
+    "key": "ararat5-070-gift",
+    "source": "https://www.whiskysite.nl/en/ararat-5-years-old-with-3-glasses-070-ltr-40.html",
+    "cdn": "https://cdn.webshopapp.com/shops/39103/files/428515717/ararat-ararat-5-years-old-with-3-glasses-070-ltr-4.jpg",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "whiskysite.nl",
+    "file": "public/media/ararat5-070-gift.jpg",
+    "sha256": "1e2058f3584921a764915314667fcfccb4edbb2c48e5a3add316102bde27ed58"
+  },
+  {
+    "key": "ararat-vaspurakan-050",
+    "source": "https://shopsk.com/products/ararat-vaspurakan-15-yr-armenian-brandy-700ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T101423.362.jpg?v=1656436487",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-vaspurakan-050.jpg",
+    "sha256": "c310902c32b1aa820d971693e09a0a2d12b7de22f27f8b700dc07b18680f29e1"
+  },
+  {
+    "key": "ararat-vaspurakan-070",
+    "source": "https://shopsk.com/products/ararat-vaspurakan-15-yr-armenian-brandy-700ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T101423.362.jpg?v=1656436487",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-vaspurakan-070.jpg",
+    "sha256": "c310902c32b1aa820d971693e09a0a2d12b7de22f27f8b700dc07b18680f29e1"
+  },
+  {
+    "key": "ararat-nairi-050",
+    "source": "https://shopsk.com/products/ararat-nairi-xo-20-yr-armenian-brandy-700ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T101149.780.jpg?v=1656436329",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-nairi-050.jpg",
+    "sha256": "a542ce8c68736ac22bc4c4c51be0075a1cc2775d0bbe3e7eb923ebb57c3671fd"
+  },
+  {
+    "key": "ararat-nairi-070",
+    "source": "https://shopsk.com/products/ararat-nairi-xo-20-yr-armenian-brandy-700ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T101149.780.jpg?v=1656436329",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-nairi-070.jpg",
+    "sha256": "a542ce8c68736ac22bc4c4c51be0075a1cc2775d0bbe3e7eb923ebb57c3671fd"
+  },
+  {
+    "key": "ararat-dvin-070",
+    "source": "https://shopsk.com/products/ararat-dvin-armenian-brandy-700ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T095039.713.jpg?v=1656435058",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-dvin-070.jpg",
+    "sha256": "6f3e494f13d4d5471738e73dcf3720d082af4ff379dc0da588ff3d17b38cf6bc"
+  },
+  {
+    "key": "ararat-otborny-070",
+    "source": "https://hedonism.co.uk/products/ararat-7-year-old-otborny-reserve",
+    "cdn": "https://cdn.shopify.com/s/files/1/0998/7696/2634/files/HED04283.jpg?v=1781896204",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "hedonism.co.uk",
+    "file": "public/media/ararat-otborny-070.jpg",
+    "sha256": "4ba1b42452c0139bfc5bf62976859fd7bfc431b907eb7606c442cac4d0cf0ee7"
+  },
+  {
+    "key": "ararat-armenia-070",
+    "source": "https://shopsk.com/products/ararat-armenia-10-yr-armenian-brandy-750ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/files/ARARAT_10_59534-FBqcM8W6KGESLb.jpg?v=1770920217",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-armenia-070.jpg",
+    "sha256": "2ed00230788fe977cd0c1b5c628ede3ae50e0766a389d2390401ee025699a9d9"
+  },
+  {
+    "key": "ararat-apricot",
+    "source": "https://shopsk.com/products/ararat-brandy-apricot-armenia-750ml",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T093213.446.jpg?v=1741376083",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-apricot.jpg",
+    "sha256": "ee0770caf57fdf40965b623fbfbe918e581b6250df75a3def89b8aee2691c0ad"
+  },
+  {
+    "key": "ararat-coffee",
+    "source": "https://hedonism.co.uk/products/ararat-coffee",
+    "cdn": "https://cdn.shopify.com/s/files/1/0998/7696/2634/files/HED05035.jpg?v=1781898415",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "hedonism.co.uk",
+    "file": "public/media/ararat-coffee.jpg",
+    "sha256": "9b1db1d6e2a8dae547641e4feb672a6a32eb8a58e1309b1bde0c4ddf287a7716"
+  },
+  {
+    "key": "ararat-aznavour",
+    "source": "https://hedonism.co.uk/products/ararat-25-year-old-charles-aznavour-signature-blend",
+    "cdn": "https://hedonism.co.uk/cdn/shop/files/HED45360.jpg?v=1781903018&width=1200",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "hedonism.co.uk",
+    "file": "public/media/ararat-aznavour.jpg",
+    "sha256": "3213dc403d712e051399da98638854795e53eddc2558d0a2f9a0133aeeec399a"
+  },
+  {
+    "key": "ararat-erebuni-30",
+    "source": "https://shopsk.com/products/ararat-erebuni-30yr-armenian-brandy",
+    "cdn": "https://cdn.shopify.com/s/files/1/0099/0045/8042/products/Studio_Project-2022-06-28T100746.690.jpg?v=1656436085",
+    "license": "retailer product photo (manufacturer pack shot), used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "shopsk.com",
+    "file": "public/media/ararat-erebuni-30.jpg",
+    "sha256": "2d642a85e918e6a40ab7c785621411054a58089fb9ced1eb53a9cd582e9f2b4a"
+  },
+  {
+    "key": "mado-artashat10-050",
+    "source": "https://www.sas.am/ru/catalog/armyanskiy_konyak/676778/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/235/058/0589271521737008.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-artashat10-050.jpg",
+    "sha256": "3d496381901fba0c065586d4c8073af06be612db74ab9272957bbd7ce317f613"
+  },
+  {
+    "key": "mado-artashat5-050",
+    "source": "https://www.sas.am/ru/catalog/armyanskiy_konyak/676779/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/194/520/5206793589482640.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-artashat5-050.jpg",
+    "sha256": "06be102054d4fdf0fa2f11454a8f76be1505dc7641d2b1a3604254a476e164b4"
+  },
+  {
+    "key": "mado-artashat7-050",
+    "source": "https://www.sas.am/ru/catalog/armyanskiy_konyak/676780/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/641/096/096470544443984.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-artashat7-050.jpg",
+    "sha256": "ce415a1d200776fbe86c48c93532ae30137f1c483932427c61a0361874d3fccb"
+  },
+  {
+    "key": "mado-basturma-slice-060",
+    "source": "https://www.sas.am/ru/catalog/myasnaya_narezka/114340/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/337/111/111476571370509.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-basturma-slice-060.jpg",
+    "sha256": "5c84ca294eea42e656028e6bf43363c8f8fc9d932df3a8abc042c86c929ad73f"
+  },
+  {
+    "key": "mado-cognac-200",
+    "source": "https://www.sas.am/ru/catalog/syrokopchenaya_kolbasa/66176/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/137/493/4933722967504289.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-cognac-200.jpg",
+    "sha256": "e660f507d0cd4a059852fdb0c47b2511af37be93eb3dc1e64c8a59f4dd4d7774"
+  },
+  {
+    "key": "mado-cognac-400",
+    "source": "https://www.sas.am/ru/catalog/syrokopchenaya_kolbasa/66175/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/211/807/8078792563109349.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-cognac-400.jpg",
+    "sha256": "a8d3834b35fccd1793ef6b8f1c5ed520e0939145173ec7f2dd934d414cfff561"
+  },
+  {
+    "key": "mado-druzhba-classic-050",
+    "source": "https://www.sas.am/ru/catalog/armyanskoe_vodka/924560/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/333/485/4859001909853255.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-druzhba-classic-050.jpg",
+    "sha256": "060910d58a116c738c0c35868e634640e2fb8a5634982f76c07459ffcfe4c161"
+  },
+  {
+    "key": "mado-gubernator-070",
+    "source": "https://www.sas.am/ru/catalog/armyanskoe_vodka/600542/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/388/662/662487578564361.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-gubernator-070.jpg",
+    "sha256": "8d2c6518ab1035c996402bbc27a2eb7f1764d40816fade0b31be3772e42320df"
+  },
+  {
+    "key": "mado-hunter-cheese",
+    "source": "https://www.sas.am/ru/catalog/meatsnack/445332/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/312/958/958194963120864.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-hunter-cheese.jpg",
+    "sha256": "e271014680e770d76fb51f8d1e2d530bae4651525f8054f678e72ab23175919f"
+  },
+  {
+    "key": "mado-hunter-spicy",
+    "source": "https://www.sas.am/ru/catalog/meatsnack/445331/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/293/515/5156063141048625.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-hunter-spicy.jpg",
+    "sha256": "f1b2ff8d2332675cc1e2af9f424cb038ece0ce958787eb0d34a8635927aa0ac4"
+  },
+  {
+    "key": "mado-jerky-beef-030",
+    "source": "https://www.sas.am/ru/catalog/dzherki/635389/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/382/471/4710074069693949.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-jerky-beef-030.jpg",
+    "sha256": "55aeb0f7f898c6d1c00b56b3389cb211d0740cb68dbdda1dc8925ac6dcdd5e12"
+  },
+  {
+    "key": "mado-leninakan-190",
+    "source": "https://www.sas.am/ru/catalog/syrokopchenaya_kolbasa/66178/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/262/398/398208538696773.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-leninakan-190.jpg",
+    "sha256": "ef32fb6860e47262abcdad54bab0582c5e56b9f7fbf1774b33fab6023d1271b4"
+  },
+  {
+    "key": "mado-leninakan-380",
+    "source": "https://www.sas.am/ru/catalog/syrokopchenaya_kolbasa/66177/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/380/077/0774852424740917.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-leninakan-380.jpg",
+    "sha256": "8e19d40dca0fbb83365f1e95b6c1e7f6d27fd88d937ba7224db7095e051d865f"
+  },
+  {
+    "key": "mado-piquant-200",
+    "source": "https://www.sas.am/ru/catalog/syrokopchenaya_kolbasa/66859/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/356/482/4823192520277326.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-piquant-200.jpg",
+    "sha256": "b676f9ad8a7a4326549eef391158956a602c70d54f4f3cc3da0921ce232ab3d2"
+  },
+  {
+    "key": "mado-piquant-400",
+    "source": "https://www.sas.am/ru/catalog/syrokopchenaya_kolbasa/66860/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/256/308/3089191954371225.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-piquant-400.jpg",
+    "sha256": "7bd9d5635985e349d69417e20113db2c50be76741ac474cff7b5ec5feeca4fa8"
+  },
+  {
+    "key": "mado-sausages-milk-500",
+    "source": "https://www.sas.am/ru/catalog/sosiski_sordelki/168413/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/130/228/2287421934437238.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-sausages-milk-500.jpg",
+    "sha256": "5b0c85367f389e40807d79747d92cc08a17fe6a246f74e024a4e87d4dcba4004"
+  },
+  {
+    "key": "mado-sausages-vienna-500",
+    "source": "https://www.sas.am/ru/catalog/sosiski_sordelki/168604/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/243/459/4593303243362018.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-sausages-vienna-500.jpg",
+    "sha256": "9051fe3c1c52958c17cbeada8b1e4dc185295a79aa2f8a328d38894ce0939760"
+  },
+  {
+    "key": "mado-sticks-chicken",
+    "source": "https://www.sas.am/ru/catalog/meatsnack/4990/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/104/995/9956821637808664.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-sticks-chicken.jpg",
+    "sha256": "67414402c71e8b01d48b83b4b4eed907935fdd18b13ebbad41456a951186c351"
+  },
+  {
+    "key": "mado-sticks-pork",
+    "source": "https://www.sas.am/ru/catalog/pivnik_dzherki/4991/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/306/266/2666853494022395.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-sticks-pork.jpg",
+    "sha256": "2bf0cb6afa3150b8ddef4623a5c981797b6f6de65c90c64e319ae2192bd2db02"
+  }
+]
