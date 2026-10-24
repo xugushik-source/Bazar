@@ -1,11 +1,11 @@
-import {entryReady}from './entry.js?v=f1d2b98553';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=f1d2b98553';
-import {botWords}from './bot-words.js?v=f1d2b98553';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=f1d2b98553';
-import {salesWords}from './sales-i18n.js?v=f1d2b98553';
-import {photoPath,artLabels,remotePhotos}from './photos.js?v=f1d2b98553';import {mediaVersions}from './media-versions.js?v=f1d2b98553';import {transferLinks}from './payments.js?v=f1d2b98553';import {ledger}from './ledger.js?v=f1d2b98553';import {sound,soundButton,watchOrders}from './sounds.js?v=f1d2b98553';
-import {words,statuses} from './i18n.js?v=f1d2b98553';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=f1d2b98553';
-import {quote as makeQuote,assess} from './weight-policy.js?v=f1d2b98553';
+import {entryReady}from './entry.js?v=90aa6477c2';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=90aa6477c2';
+import {botWords}from './bot-words.js?v=90aa6477c2';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=90aa6477c2';
+import {salesWords}from './sales-i18n.js?v=90aa6477c2';
+import {photoPath,artLabels,remotePhotos}from './photos.js?v=90aa6477c2';import {mediaVersions}from './media-versions.js?v=90aa6477c2';import {transferLinks}from './payments.js?v=90aa6477c2';import {ledger}from './ledger.js?v=90aa6477c2';import {sound,soundButton,watchOrders}from './sounds.js?v=90aa6477c2';
+import {words,statuses} from './i18n.js?v=90aa6477c2';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=90aa6477c2';
+import {quote as makeQuote,assess} from './weight-policy.js?v=90aa6477c2';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 const chipArt={meat:'meat',alcohol:'mado-gubernator-050'};
 // Home page sections (owner 22.10, after the storefront study): six larger sections, meat first; a category with one product
@@ -79,7 +79,7 @@ async function checkout(){if(!basket.length)return cart();if(staticMode){open(`<
 // Wholesale in the cart (owner 22.10): the earliest times disappear — it is ordered at least lead_minutes ahead.
 const bulkLead=()=>Math.max(0,...basket.map(b=>{const p=data.products.find(x=>x.id===b.product_id)?.profile?.bulk;return p&&b.selection.grams>=p.from_g?p.lead_minutes||0:0}));
 // Only wholesale delivered by the supplier in the cart: transfer only — our courier does not come to take cash (owner 22.10).
-const bulkOnly=()=>basket.length>0&&basket.every(b=>{const pr=data.products.find(x=>x.id===b.product_id)?.profile,p=pr?.bulk;return pr?.supplier_delivers===true||p?.supplier_delivers&&b.selection.grams>=p.from_g});
+const bulkOnly=()=>{const prof=b=>data.products.find(x=>x.id===b.product_id)?.profile;return basket.length>0&&(basket.some(b=>prof(b)?.supplier_delivers===true)||basket.every(b=>{const p=prof(b)?.bulk;return p?.supplier_delivers&&b.selection.grams>=p.from_g}))};
 async function updateSlots(){const f=$('#checkout-form');if(!f)return;const v=formObj(f),lead=bulkLead(),result=await api('slots?city='+encodeURIComponent(city)+'&day='+encodeURIComponent(v.day)+'&products='+encodeURIComponent(basket.map(b=>b.product_id).join(','))+(lead?'&lead='+lead:''));if(!$('#slot'))return;const hint=$('#slot-hint'),w=result.window;if(hint)hint.textContent=w&&(w.from>540||w.to<(w.last??1170))?t('vendorHours').replace('{a}',String(Math.floor(w.from/60)).padStart(2,'0')+':00').replace('{b}',String(Math.floor(w.to/60)).padStart(2,'0')+':'+String(w.to%60).padStart(2,'0')):'';if(hint&&lead)hint.textContent=[hint.textContent,t('bulkLeadHint').replace('{h}',lead/60)].filter(Boolean).join(' ');$('#slot').innerHTML=result.slots.filter(s=>s.available>0).map(s=>`<option value="${s.minute}">${String(Math.floor(s.minute/60)).padStart(2,'0')}:${String(s.minute%60).padStart(2,'0')}</option>`).join('');$('#checkout-form button[type=submit]').disabled=!$('#slot').options.length}
 function storedOrders(){return read('bazar.orders',[])}
 async function myOrders(){await refreshLive().catch(()=>{});const list=[...storedOrders()].reverse(),by=new Map(live.map(o=>[o.id,o]));open(`<h2>${esc(t('orders'))}</h2>${list.length?list.map(x=>{const o=by.get(x.id);return `<div class="row"><span class="grow">${esc(x.id.slice(-6))}${o?`<small>${esc(slot(o))} · ${esc(st(o.status))}${o.total!=null?' · '+money(o.total,o.currency):''}</small>`:''}</span>${button('track','track',`data-id="${esc(x.id)}"`)}</div>`}).join(''):`<p class="empty">${esc(t('empty'))}</p>`}`,'orders')}
