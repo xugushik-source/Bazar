@@ -1738,5 +1738,23 @@
     "author": "sas.am",
     "file": "public/media/mado-sticks-pork.jpg",
     "sha256": "2bf0cb6afa3150b8ddef4623a5c981797b6f6de65c90c64e319ae2192bd2db02"
+  },
+  {
+    "key": "ararat-nairi-070-gift",
+    "source": "https://sas.am/en/catalog/armyanskiy_konyak/912921/",
+    "cdn": "https://www.sas.am/upload/iblock/ed9/aevy10rpe0umxvdo893kol2qalzgicgk.png",
+    "license": "retailer/producer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/ararat-nairi-070-gift.jpg",
+    "sha256": "72434b3406a3bdee6cf94a6af61c7aa7241756587aaf8ba4d98617eeeeef00a5"
+  },
+  {
+    "key": "mado-tsar-khosrov7-050",
+    "source": "https://artashat-vincon.am/en/products/product/cognac-king-khosrov-7-youthful-power-of-a-legend",
+    "cdn": "https://artashat-vincon.am/storage/files/kingkhosrov-7y-withbox-av.png",
+    "license": "retailer/producer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "artashat-vincon.am",
+    "file": "public/media/mado-tsar-khosrov7-050.jpg",
+    "sha256": "916616d96612b6a39138f2abc6e104821852fc9202f54410a8b77cd6247672e2"
   }
 ]

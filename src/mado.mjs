@@ -46,7 +46,7 @@ export const madoProducts=[
  ['mado_artashat5_050',['Бренди «Арташат 5» 0,5 л','Բրենդի «Արտաշատ 5» 0,5 լ','ბრენდი „არტაშატი 5“ 0,5 ლ'],'alcohol','mado-artashat5-050',3900,5100,'web'],
  ['mado_artashat7_050',['Бренди «Арташат 7» 0,5 л','Բրենդի «Արտաշատ 7» 0,5 լ','ბრენდი „არტაშატი 7“ 0,5 ლ'],'alcohol','mado-artashat7-050',4800,6300,'web'],
  ['mado_artashat10_050',['Бренди «Арташат 10» 0,5 л','Բրենդի «Արտաշատ 10» 0,5 լ','ბრენდი „არტაშატი 10“ 0,5 ლ'],'alcohol','mado-artashat10-050',7500,9800,'web'],
- ['mado_tsar_khosrov7_050',['Бренди «Царь Хосров 7» 0,5 л','Բրենդի «Խոսրով Արքա 7» 0,5 լ','ბრენდი „მეფე ხოსროვი 7“ 0,5 ლ'],'alcohol','mado-tsar-khosrov7-050',4500,5900]
+ ['mado_tsar_khosrov7_050',['Бренди «Царь Хосров 7» 0,5 л','Բրենդի «Խոսրով Արքա 7» 0,5 լ','ბრენდი „მეფე ხოსროვი 7“ 0,5 ლ'],'alcohol','mado-tsar-khosrov7-050',4500,5900,'web']
 ];
 export const madoProfiles=Object.fromEntries(madoProducts.map(r=>[r[0],'each']));
 export const madoArts=madoProducts.map(r=>r[3]);
