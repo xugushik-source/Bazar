@@ -16,7 +16,7 @@ const inFilter=p=>filter==='all'||p.category===filter||chipGroups.find(([g])=>g=
 const firstInSection=['beef_boneless'];
 // Subsections inside a section (owner 24.10): meat by animal, sausages by kind, alcohol brandy / vodka; elsewhere the categories
 // a section is made of (vegetables / herbs and so on). A product's subsection comes from its category and Russian name.
-const subOrder={meat:['beef','pork','semi','lard','fish','dogs'],deli:['raw','half','sausages','sliced','snacks'],alcohol:['ararat','noy','artashat','khosrov','vodka','whisky','liqueur','wine'],drinks:['soda','juice','water','energy','coffee']};
+const subOrder={meat:['beef','pork','semi','lard','fish','dogs'],deli:['raw','half','sausages','sliced','snacks'],alcohol:['vodka','ararat','noy','artashat','khosrov','whisky','liqueur','wine'],drinks:['soda','juice','water','energy','coffee']};
 const subOf=p=>{const k=p.id.split('--')[1]||'',n=p.names?.ru||'';
  if(p.category==='trout')return 'fish';
  if(p.category==='meat')return /^(lyulya|cutlet|kupaty|shashlik)/.test(k)?'semi':/^lard/.test(k)?'lard':/^pork/.test(k)?'pork':k==='dog_bones'?'dogs':'beef';
