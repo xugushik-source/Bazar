@@ -9,7 +9,7 @@ export const klontPacks=Object.fromEntries(klontProducts.map(r=>[r[0],1000]));
 export const klontRetired=['honey_jar_500g'];
 export const klontProfiles=Object.fromEntries(klontProducts.map(r=>[r[0],r[6]]));
 export const klontArts=klontProducts.map(r=>r[5]);
-export const klontArtsWithoutPhoto=['honey-linden'];
+export const klontArtsWithoutPhoto=[];
 export function klontSql(profileFor){const v=klontVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));
  return [`INSERT INTO vendors(id,city_id,names) SELECT ${s(v.id)},${s(v.city_id)},${j(v.names)} WHERE EXISTS(SELECT 1 FROM cities WHERE id=${s(v.city_id)}) ON CONFLICT(id) DO NOTHING;`,
   ...klontRetired.map(key=>`UPDATE products SET active=0,version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND active=1;`),

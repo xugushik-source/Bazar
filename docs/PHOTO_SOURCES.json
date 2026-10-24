@@ -2028,5 +2028,13 @@
     "author": "owner",
     "file": "public/media/kri-martini-bianco-050.jpg",
     "sha256": "cbfd3fd85f2d9761ac8f3578ba3e39e25c8abd9e7d39bfac8050a59e2e73f2eb"
+  },
+  {
+    "key": "honey-linden",
+    "source": "owner: photo sent by the owner on 2026-10-25 for Klont linden honey (origin not recorded); cropped to the card",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/honey-linden.jpg",
+    "sha256": "c106d7d4221da2570c48b87be5931dfb3a45eec97fcb7aa8f5ea0e49ca23fecf"
   }
 ]
