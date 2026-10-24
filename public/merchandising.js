@@ -17,7 +17,7 @@ const pairGroups=[
  {reason:'soup',keys:['potato_loose','carrot_loose','onion_loose','dill_bunch'],amount:200},
  {reason:'snack',keys:['apricot_dried','dates_dried','figs_dried','walnut_kernel','almond_kernel','hazelnut_kernel'],amount:100},
  {reason:'lentil',keys:['lentils','onion_loose','carrot_loose','garlic_loose'],amount:100},
- {reason:'fruit',keys:['apple_loose','pear_loose','orange_loose','grapes_loose'],amount:200},
+ {reason:'fruit',keys:['apple_loose','pear_loose','orange_loose','grapes_kishmish_pink_loose','grapes_red_globe_loose','grapes_loose'],amount:200},
  {reason:'tea',keys:['honey_linden_jar_1kg','honey_chestnut_jar_1kg','honey_jar_500g','lemon_loose','ginger_loose'],amount:100}
 ];
 export function recommend(products,city,basket,{focus,limit=3,quote}={}){const owned=new Set(basket.map(b=>b.product_id)),seeds=new Set(focus?[focus]:basket.map(b=>b.product_id)),result=new Map();for(const group of pairGroups){const matches=group.keys.filter(k=>seeds.has(city+'--'+k));if(!matches.length)continue;for(const key of group.keys){const p=products.find(p=>p.id===city+'--'+key);if(!p||owned.has(p.id)||seeds.has(p.id)||p.price<=0||p.available<=0||p.active===0)continue;const selection=selectionFor(p,p.profile.mode==='WEIGHED'?group.amount:1);if(quote){const q=quote(p,selection);if((q.max_g??q.count)>p.available)continue}const score=matches.length;if(!result.has(p.id)||score>result.get(p.id).score)result.set(p.id,{product:p,selection,reason:group.reason,score})}}return [...result.values()].sort((a,b)=>b.score-a.score||a.product.id.localeCompare(b.product.id)).slice(0,limit)}

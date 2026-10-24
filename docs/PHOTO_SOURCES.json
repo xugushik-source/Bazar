@@ -1147,5 +1147,69 @@
     "author": "owner",
     "file": "public/media/trout-rainbow.jpg",
     "sha256": "cba6ae96e96e6d08c2e8e84ca37114a8314a4072db285399a4c8d25250165284"
+  },
+  {
+    "key": "apple-demirchyan",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/apple-demirchyan.jpg",
+    "sha256": "4c95a05c158584396364c586877a6ae7f827b91b1368d25f4d3a9f8b8f9b3ffe"
+  },
+  {
+    "key": "apple-star",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/apple-star.jpg",
+    "sha256": "e9d1560230594eefad4df4e4a705eb03edf0ab8ce999f17dabe7783308662597"
+  },
+  {
+    "key": "apple-golden",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/apple-golden.jpg",
+    "sha256": "bfdc28ac23c228011f4045bbe8a767a50f2a6f51d16c3355376a3d5229fd6f05"
+  },
+  {
+    "key": "tomato-light",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/tomato-light.jpg",
+    "sha256": "ae099ff04bfd4f6bd6ae669ccea47231c1c9e87ce1a7e0f95c6321d31c64f67f"
+  },
+  {
+    "key": "tomato-dark",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/tomato-dark.jpg",
+    "sha256": "91e6bc9b95feaf731427591d7faf0b36c2b1095f82952e7a415dc8edf446bb0b"
+  },
+  {
+    "key": "tomato-azerbaijan",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/tomato-azerbaijan.jpg",
+    "sha256": "297f7f3225854f8628f20639b53ec90b6ae70faa6e663a9f905f38248d08c52d"
+  },
+  {
+    "key": "grapes-red-globe",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/grapes-red-globe.jpg",
+    "sha256": "5db0352e8da6703ace4fb119d2793623bd43ad4da774da319c1c2d30f0cfc4bb"
+  },
+  {
+    "key": "grapes-kishmish-pink",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/grapes-kishmish-pink.jpg",
+    "sha256": "77516d4b7f79f9e1f25aa8d24facd6839d6508d7d1ff1f2c9e69c55315f2f881"
   }
 ]
