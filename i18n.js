@@ -110,3 +110,7 @@ Object.assign(words.ka,{group_deli:'ძეხვეული და დელი
 Object.assign(words.ru,{supplierDelivers:'🚚 Доставляет поставщик · оплата переводом'});
 Object.assign(words.hy,{supplierDelivers:'🚚 Առաքում է մատակարարը · վճարում փոխանցումով'});
 Object.assign(words.ka,{supplierDelivers:'🚚 აწვდის მომწოდებელი · გადახდა გადარიცხვით'});
+// Subsections inside sections (owner 24.10).
+Object.assign(words.ru,{sub_beef:'Говядина',sub_pork:'Свинина',sub_semi:'Полуфабрикаты и шашлык',sub_lard:'Сало',sub_fish:'Рыба',sub_dogs:'Для собак',sub_raw:'Сырокопчёные колбасы',sub_half:'Полукопчёные колбасы',sub_sausages:'Сосиски',sub_sliced:'Нарезка',sub_snacks:'Мясные снеки',sub_brandy:'Коньяк и бренди',sub_vodka:'Водка',sub_energy:'Энергетики'});
+Object.assign(words.hy,{sub_beef:'Տավարի միս',sub_pork:'Խոզի միս',sub_semi:'Կիսաֆաբրիկատներ և խորոված',sub_lard:'Ճարպ (սալո)',sub_fish:'Ձուկ',sub_dogs:'Շների համար',sub_raw:'Հում ապխտած երշիկ',sub_half:'Կիսաապխտած երշիկ',sub_sausages:'Նրբերշիկ',sub_sliced:'Կտրատած',sub_snacks:'Մսային սնեքներ',sub_brandy:'Կոնյակ և բրենդի',sub_vodka:'Օղի',sub_energy:'Էներգետիկներ'});
+Object.assign(words.ka,{sub_beef:'საქონლის ხორცი',sub_pork:'ღორის ხორცი',sub_semi:'ნახევარფაბრიკატები და მწვადი',sub_lard:'ქონი',sub_fish:'თევზი',sub_dogs:'ძაღლებისთვის',sub_raw:'ნედლად შებოლილი ძეხვი',sub_half:'ნახევრად შებოლილი ძეხვი',sub_sausages:'სოსისი',sub_sliced:'დაჭრილი',sub_snacks:'ხორცის სნეკები',sub_brandy:'კონიაკი და ბრენდი',sub_vodka:'არაყი',sub_energy:'ენერგეტიკები'});
