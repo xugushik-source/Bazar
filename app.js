@@ -1,11 +1,11 @@
-import {entryReady}from './entry.js?v=c1e7a2f0a1';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=c1e7a2f0a1';
-import {botWords}from './bot-words.js?v=c1e7a2f0a1';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=c1e7a2f0a1';
-import {salesWords}from './sales-i18n.js?v=c1e7a2f0a1';
-import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=c1e7a2f0a1';import {mediaVersions}from './media-versions.js?v=c1e7a2f0a1';import {transferLinks}from './payments.js?v=c1e7a2f0a1';import {ledger}from './ledger.js?v=c1e7a2f0a1';import {sound,soundButton,watchOrders}from './sounds.js?v=c1e7a2f0a1';
-import {words,statuses} from './i18n.js?v=c1e7a2f0a1';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=c1e7a2f0a1';
-import {quote as makeQuote,assess} from './weight-policy.js?v=c1e7a2f0a1';
+import {entryReady}from './entry.js?v=2c00b34e66';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=2c00b34e66';
+import {botWords}from './bot-words.js?v=2c00b34e66';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=2c00b34e66';
+import {salesWords}from './sales-i18n.js?v=2c00b34e66';
+import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=2c00b34e66';import {mediaVersions}from './media-versions.js?v=2c00b34e66';import {transferLinks}from './payments.js?v=2c00b34e66';import {ledger}from './ledger.js?v=2c00b34e66';import {sound,soundButton,watchOrders}from './sounds.js?v=2c00b34e66';
+import {words,statuses} from './i18n.js?v=2c00b34e66';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=2c00b34e66';
+import {quote as makeQuote,assess} from './weight-policy.js?v=2c00b34e66';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 const chipArt={meat:'meat',alcohol:'mado-gubernator-050'};
 // Home page sections (owner 22.10, after the storefront study): six larger sections, meat first; a category with one product
@@ -16,7 +16,7 @@ const inFilter=p=>filter==='all'||p.category===filter||chipGroups.find(([g])=>g=
 const firstInSection=['beef_boneless'];
 // Subsections inside a section (owner 24.10): meat by animal, sausages by kind, alcohol brandy / vodka; elsewhere the categories
 // a section is made of (vegetables / herbs and so on). A product's subsection comes from its category and Russian name.
-const subOrder={meat:['beef','pork','semi','lard','fish','dogs'],deli:['raw','half','sausages','sliced','snacks'],alcohol:['ararat','noy','artashat','khosrov','vodka','whisky','liqueur','wine'],drinks:['soda','juice','water','energy','coffee']};
+const subOrder={meat:['beef','pork','semi','lard','fish','dogs'],deli:['raw','half','sausages','sliced','snacks'],alcohol:['vodka','ararat','noy','artashat','khosrov','whisky','liqueur','wine'],drinks:['soda','juice','water','energy','coffee']};
 const subOf=p=>{const k=p.id.split('--')[1]||'',n=p.names?.ru||'';
  if(p.category==='trout')return 'fish';
  if(p.category==='meat')return /^(lyulya|cutlet|kupaty|shashlik)/.test(k)?'semi':/^lard/.test(k)?'lard':/^pork/.test(k)?'pork':k==='dog_bones'?'dogs':'beef';
