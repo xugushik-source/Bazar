@@ -45,12 +45,14 @@ export const cognacs=[
 ];
 const vendorOf=k=>k==='garri'?garriVendor:amoVendor;
 export const cognacPrice=cost=>tierRetail(cost,cognacPct(cost));
-// Owner 24.10, later: the very dear bottles (cost from 200 ₾) are delivered by the supplier himself.
+// Owner 24.10: for a while the very dear bottles (cost from 200 ₾) were marked as delivered by the supplier (migration 0048);
+// later the owner explained Amo only distributes Ararat — the courier collects them like any goods (migration 0049).
 export const cognacBySupplier=cost=>cost>=20000;
-export const cognacProfiles=Object.fromEntries(cognacs.map(r=>[r[0],cognacBySupplier(r[4])?'eachBySupplier':'each']));
+export const cognacProfiles=Object.fromEntries(cognacs.map(r=>[r[0],'each']));
 export const cognacArts=cognacs.map(r=>r[3]);
 export const cognacArtsWithoutPhoto=cognacs.filter(r=>!r[5]).map(r=>r[3]);
 export function cognacSql(profileFor){const s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o)),g=garriVendor;
  return [`INSERT INTO vendors(id,city_id,names) SELECT ${s(g.id)},${s(g.city_id)},${j(g.names)} WHERE EXISTS(SELECT 1 FROM cities WHERE id=${s(g.city_id)}) ON CONFLICT(id) DO NOTHING;`,
   ...cognacs.map(([key,vk,names,art,cost])=>{const v=vendorOf(vk);return `INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--'+key)},${s(v.id)},${j(names)},'alcohol',${s(art)},${j({mode:'EACH',policy_version:1})},${cognacPrice(cost)},${cost},50 WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id='alcohol') ON CONFLICT(id) DO NOTHING;`})]}
-export function cognacSupplierSql(profileFor){const s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));return cognacs.filter(r=>cognacBySupplier(r[4])).map(([key,vk])=>{const v=vendorOf(vk),p=profileFor(key);return `UPDATE products SET profile=${j(p)},version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND vendor_id=${s(v.id)} AND profile<>${j(p)};`})}
+export function cognacSupplierSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));return cognacs.filter(r=>cognacBySupplier(r[4])).map(([key,vk])=>{const v=vendorOf(vk),p={mode:'EACH',policy_version:1,supplier_delivers:true};return `UPDATE products SET profile=${j(p)},version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND vendor_id=${s(v.id)} AND profile<>${j(p)};`})}
+export function cognacCourierSql(profileFor){const s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));return cognacs.filter(r=>cognacBySupplier(r[4])).map(([key,vk])=>{const v=vendorOf(vk),p=profileFor(key);return `UPDATE products SET profile=${j(p)},version=version+1 WHERE id=${s(v.city_id+'--'+key)} AND vendor_id=${s(v.id)} AND profile<>${j(p)};`})}
