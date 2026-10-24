@@ -1,18 +1,20 @@
-import {entryReady}from './entry.js?v=b4f1395fda';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=b4f1395fda';
-import {botWords}from './bot-words.js?v=b4f1395fda';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=b4f1395fda';
-import {salesWords}from './sales-i18n.js?v=b4f1395fda';
-import {photoPath,artLabels}from './photos.js?v=b4f1395fda';import {transferLinks}from './payments.js?v=b4f1395fda';import {ledger}from './ledger.js?v=b4f1395fda';import {sound,soundButton,watchOrders}from './sounds.js?v=b4f1395fda';
-import {words,statuses} from './i18n.js?v=b4f1395fda';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=b4f1395fda';
-import {quote as makeQuote,assess} from './weight-policy.js?v=b4f1395fda';
+import {entryReady}from './entry.js?v=42ec091abf';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=42ec091abf';
+import {botWords}from './bot-words.js?v=42ec091abf';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=42ec091abf';
+import {salesWords}from './sales-i18n.js?v=42ec091abf';
+import {photoPath,artLabels}from './photos.js?v=42ec091abf';import {transferLinks}from './payments.js?v=42ec091abf';import {ledger}from './ledger.js?v=42ec091abf';import {sound,soundButton,watchOrders}from './sounds.js?v=42ec091abf';
+import {words,statuses} from './i18n.js?v=42ec091abf';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=42ec091abf';
+import {quote as makeQuote,assess} from './weight-policy.js?v=42ec091abf';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 const chipArt={meat:'meat'};
 // Home page sections (owner 22.10, after the storefront study): six larger sections, meat first; a category with one product
 // (household) has no chip and is found through «All» and search.
 const chipGroups=[['meat',['meat','trout']],['vegetables',['vegetables','herbs']],['fruit',['fruit','berries']],['nuts',['nuts','dried']],['market',['market','preserves']],['grains',['grains']]];
 const inFilter=p=>filter==='all'||p.category===filter||chipGroups.find(([g])=>g===filter)?.[1].includes(p.category);
-const groupRank=p=>{const i=chipGroups.findIndex(([,cs])=>cs.includes(p.category));return (i<0?99:i)*100+data.categories.findIndex(c=>c.id===p.category)};
+// Products the owner wants first in their section (owner 24.10: beef boneless opens «Мясо и рыба»).
+const firstInSection=['beef_boneless'];
+const groupRank=p=>{const i=chipGroups.findIndex(([,cs])=>cs.includes(p.category));return (i<0?99:i)*100+(firstInSection.some(k=>p.id.endsWith('--'+k))?-50:data.categories.findIndex(c=>c.id===p.category))};
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const read=(k,f)=>{try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}},write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};
