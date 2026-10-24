@@ -16,18 +16,18 @@ const inFilter=p=>filter==='all'||p.category===filter||chipGroups.find(([g])=>g=
 const firstInSection=['beef_boneless'];
 // Subsections inside a section (owner 24.10): meat by animal, sausages by kind, alcohol brandy / vodka; elsewhere the categories
 // a section is made of (vegetables / herbs and so on). A product's subsection comes from its category and Russian name.
-const subOrder={meat:['beef','pork','semi','lard','fish','dogs'],deli:['raw','half','sausages','sliced','snacks'],alcohol:['ararat','noy','artashat','khosrov','vodka'],drinks:['energy','drinks']};
+const subOrder={meat:['beef','pork','semi','lard','fish','dogs'],deli:['raw','half','sausages','sliced','snacks'],alcohol:['ararat','noy','artashat','khosrov','vodka','whisky','liqueur','wine'],drinks:['soda','juice','water','energy','coffee']};
 const subOf=p=>{const k=p.id.split('--')[1]||'',n=p.names?.ru||'';
  if(p.category==='trout')return 'fish';
  if(p.category==='meat')return /^(lyulya|cutlet|kupaty|shashlik)/.test(k)?'semi':/^lard/.test(k)?'lard':/^pork/.test(k)?'pork':k==='dog_bones'?'dogs':'beef';
  if(p.category==='deli')return /сырокопч|Пепперони/i.test(n)?'raw':/полукопч|Сервелат/i.test(n)?'half':/Сосиски/.test(n)?'sausages':/нарезка/i.test(n)?'sliced':'snacks';
- if(p.category==='alcohol')return /Водка/.test(n)?'vodka':/Ной/.test(n)?'noy':/Арташат/.test(n)?'artashat':/Хосров/.test(n)?'khosrov':'ararat';
- if(p.category==='drinks')return /Энергетик/.test(n)?'energy':'drinks';
+ if(p.category==='alcohol')return /Водка/.test(n)?'vodka':/^Виски/.test(n)?'whisky':/^(Ликёр|Вермут)/.test(n)?'liqueur':/^Вино/.test(n)?'wine':/Ной/.test(n)?'noy':/Арташат/.test(n)?'artashat':/Хосров/.test(n)?'khosrov':'ararat';
+ if(p.category==='drinks')return /Энергетик/.test(n)?'energy':/кофе/i.test(n)?'coffee':/вода/i.test(n)?'water':/^(Сок|Компот)/.test(n)?'juice':'soda';
  return p.category};
 const subLabel=(s,p)=>words[lang]['sub_'+s]?t('sub_'+s):name(data.categories.find(c=>c.id===p.category));
 // Bottles inside a brand (owner 24.10): Ararat by line from simple to aged, then by volume, gift sets last; other brands by age.
 const araratLines=['3*','5*','Ани','Отборный','Армения','Абрикос','Кофе','Ахтамар','Двин','Васпуракан','Наири','Азнавур','Эребуни'];
-const bottleRank=p=>{const n=p.names?.ru||'',line=p.category!=='alcohol'?0:/Водка/.test(n)?['Дружба','Губернатор','Питон'].findIndex(l=>n.includes(l))+1:araratLines.findIndex(l=>n.includes(l))+1||Number(n.match(/(\d+)\s*(?:год|лет)|Арташат (\d+)|Хосров (\d+)/)?.slice(1).find(Boolean)||0),v=n.match(/(\d+(?:,\d+)?)\s*л(?![а-яё])/i),ml=v?Math.round(parseFloat(v[1].replace(',','.'))*1000):9999;return p.category==='alcohol'?[line,ml,/стакан/.test(n)?1:0]:[0,0,0]};
+const bottleRank=p=>{const n=p.names?.ru||'',line=p.category!=='alcohol'?0:/Водка/.test(n)?['Дружба','Губернатор','Питон','Absolut','Fortuna','Tchaikovsky','Углёвка','Царская','Чистые росы'].findIndex(l=>n.includes(l))+1:araratLines.findIndex(l=>n.includes(l))+1||Number(n.match(/(\d+)\s*(?:год|лет)|Арташат (\d+)|Хосров (\d+)/)?.slice(1).find(Boolean)||0),v=n.match(/(\d+(?:,\d+)?)\s*л(?![а-яё])/i),ml=v?Math.round(parseFloat(v[1].replace(',','.'))*1000):9999;return p.category==='alcohol'?[line,ml,/стакан/.test(n)?1:0]:[0,0,0]};
 const groupKey=p=>{const i=chipGroups.findIndex(([,cs])=>cs.includes(p.category)),g=i<0?99:i,s=subOf(p),order=subOrder[chipGroups[i]?.[0]]||chipGroups[i]?.[1]||[],j=order.indexOf(s);return [g,j<0?order.length:j,firstInSection.some(k=>p.id.endsWith('--'+k))?0:1,...bottleRank(p),hasPhoto(p)?0:1]};
 const byGroup=(a,b)=>{const x=groupKey(a),y=groupKey(b);for(let i=0;i<x.length;i++)if(x[i]!==y[i])return x[i]-y[i];return 0};
 // Products whose own photo has not arrived go to the end of their section.

@@ -1756,5 +1756,277 @@
     "author": "artashat-vincon.am",
     "file": "public/media/mado-tsar-khosrov7-050.jpg",
     "sha256": "916616d96612b6a39138f2abc6e104821852fc9202f54410a8b77cd6247672e2"
+  },
+  {
+    "key": "kri-cola-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (coca-cola-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-cola-050.jpg",
+    "sha256": "ce92209170ab66d7ded1a9f00272f81acf7a2df710b308a0dda222decc5f5a26"
+  },
+  {
+    "key": "kri-fanta-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (fanta-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-fanta-050.jpg",
+    "sha256": "2a11ca58424404f967e85e17c6969dfe8a712a45f9e3cd7ba785894fcf036dff"
+  },
+  {
+    "key": "kri-sprite-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (sprite-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-sprite-050.jpg",
+    "sha256": "7544b8a712b23c3f8d2dbdd3d25c80e6c0d762a7bf838a706bb2baac970a42d5"
+  },
+  {
+    "key": "kri-pepsi-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (pepsi-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-pepsi-050.jpg",
+    "sha256": "39c528e8e8a0a407668dc9628c0593c46de3a6a1d24c505fb40f9b19cb9599e4"
+  },
+  {
+    "key": "kri-mirinda-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (mirinda-green-apple-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-mirinda-050.jpg",
+    "sha256": "bbe73218c6258e15a4fd5beb41f84e3cb1148ae069128deb8f5d5b2ef16cdb22"
+  },
+  {
+    "key": "kri-mirinda-orange-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (mirinda-orange-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-mirinda-orange-050.jpg",
+    "sha256": "7235cc15526c6152b47ad208a21556bd4ddb7b9916bd614e5afb026f953ddb5f"
+  },
+  {
+    "key": "kri-laimon-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (laimon-fresh-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-laimon-050.jpg",
+    "sha256": "143505f3e78cec9b7685dbce8c9eb301eaa20561ecab31826b52f9dc674f5f8e"
+  },
+  {
+    "key": "kri-boom-100",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (boom-lemonade-100.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-boom-100.jpg",
+    "sha256": "ed2313b5af509c9b25633a2d9def05b90fee298307d2591033afe3b0253e8bf6"
+  },
+  {
+    "key": "kri-ararat-juice-075",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-075.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-ararat-juice-075.jpg",
+    "sha256": "618dbd5fa1d7a4c863ec935508748543c6405ce28492a36f6bb22a67cef82572"
+  },
+  {
+    "key": "kri-ararat-premium-097",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-premium-097.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-ararat-premium-097.jpg",
+    "sha256": "adf73c91eb83b1620dd8555d414d715a06d2df08c400fbc9c31d3a0eca324399"
+  },
+  {
+    "key": "kri-ararat-compote-100",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (ararat-compote-100.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-ararat-compote-100.jpg",
+    "sha256": "c4434afc03ea09d3af1cd6910c969acd0aea923a43041457dc85f64b8ec3e3aa"
+  },
+  {
+    "key": "kri-cappy",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (cappy-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-cappy.jpg",
+    "sha256": "f1a868c0aee0ef49928871d666007d2edcc2649a6defb0e7cf32e098db798fb0"
+  },
+  {
+    "key": "kri-likani-060",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (likani-060.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-likani-060.jpg",
+    "sha256": "3c00d3d9c343ec3a80921b720e51d53dbc026c2ab12dd84b0ce0159d7e3705d3"
+  },
+  {
+    "key": "kri-likani-100",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (likani-100.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-likani-100.jpg",
+    "sha256": "1f9fcd610f206b6128cf277c69e3871e141606006cbe738d3dba5574a25e1506"
+  },
+  {
+    "key": "kri-nabeglavi-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (nabeglavi-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-nabeglavi-050.jpg",
+    "sha256": "2a80e1f1925fbd62ed525a4fd6ede090bb7a525e4a401df32c720785fbed0741"
+  },
+  {
+    "key": "kri-nabeglavi-100",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (nabeglavi-100.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-nabeglavi-100.jpg",
+    "sha256": "9513b9d333d5be2e2bfb2653268620ffb3a4084c0d40f3b5e187525eaca2a897"
+  },
+  {
+    "key": "kri-sno-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (sno-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-sno-050.jpg",
+    "sha256": "264e629adc19cd6fe918f1533d9c95dcd99b797a199216e338975d04afc46c78"
+  },
+  {
+    "key": "kri-sno-100",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (sno-100.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-sno-100.jpg",
+    "sha256": "07792b21b68a38ae6d255eca6b2e2bb7e78ddd24f359de7a193e6384aad48a06"
+  },
+  {
+    "key": "kri-redbull-025",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (red-bull-025.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-redbull-025.jpg",
+    "sha256": "64ea3f509f3e7dc376400d07db93b9e8b28e9fcab79737960c2187e0ce4a1af4"
+  },
+  {
+    "key": "kri-burn-025",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (burn-025.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-burn-025.jpg",
+    "sha256": "e1d6de8ce949c5fe5323e1e0fc670d1414ddcf9e04d12a468ef07989860e91ff"
+  },
+  {
+    "key": "kri-bum-fire-033",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (bum-fire-033.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-bum-fire-033.jpg",
+    "sha256": "b0bbd4bab2ed43043693c39e24925ae08cd7ea50b24104facc96894341332a22"
+  },
+  {
+    "key": "kri-moonwalker-024",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (moon-walker-024.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-moonwalker-024.jpg",
+    "sha256": "66af6741fdf1aa909560e30244f541c0f76f1b27fc574945498957a0f0f79354"
+  },
+  {
+    "key": "kri-absolut-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (absolut-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-absolut-050.jpg",
+    "sha256": "55a0540a27aa1bffd9ed28674d2215d82099d6c739b5a56c39d48c8addb80c8e"
+  },
+  {
+    "key": "kri-fortuna-gold-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (fortuna-gold-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-fortuna-gold-050.jpg",
+    "sha256": "2bb59ca1dc6ad7a623d728eca8275e1068cf733a9809ced6d11d71e59dc78492"
+  },
+  {
+    "key": "kri-fortuna-premium-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (fortuna-premium-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-fortuna-premium-050.jpg",
+    "sha256": "415f65b6a05de146180cd9c768f2d5b6715a2a666a97015a4042cd08f2db615e"
+  },
+  {
+    "key": "kri-tchaikovsky-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (tchaikovsky-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-tchaikovsky-050.jpg",
+    "sha256": "f82e428b5dfbca33f8c70ce7987ece5f74ba32760fbf55f804025e40310ba28d"
+  },
+  {
+    "key": "kri-uglevka-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (uglevka-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-uglevka-050.jpg",
+    "sha256": "cb70910a79d11fc8a3d8aa72f6a94b6ce2c922a4bc4371a93ad679220b51956a"
+  },
+  {
+    "key": "kri-uglevka-070",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (uglevka-070.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-uglevka-070.jpg",
+    "sha256": "e06e59710428c822aa2ca1304beb04ded3473607379aed3e1f58a3bc627330b1"
+  },
+  {
+    "key": "kri-tsarskaya-gold-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (tsarskaya-gold-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-tsarskaya-gold-050.jpg",
+    "sha256": "569f4f2eed96c03389ad0e561f570acb20a84a434ac9bdb8ed031da49f38e76a"
+  },
+  {
+    "key": "kri-tsarskaya-original-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (tsarskaya-original-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-tsarskaya-original-050.jpg",
+    "sha256": "7ad10d111298a5bf4723c56e08efcbf92b4481ab0023ff9606074dc3b4ecada2"
+  },
+  {
+    "key": "kri-chistye-rosy-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (chistye-rosy-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-chistye-rosy-050.jpg",
+    "sha256": "592573e4d7f627b391ce9f8b0868c369b3278e4c6d97a5574bc1cc3af73bdf0f"
+  },
+  {
+    "key": "kri-jack-daniels-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (jack-daniels-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-jack-daniels-050.jpg",
+    "sha256": "35e9eed89e58cfb30b0ac3fce54f2848cb38f7e0b5b22377e8cd7a9453c1d608"
+  },
+  {
+    "key": "kri-jagermeister-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (jagermeister-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-jagermeister-050.jpg",
+    "sha256": "9e98e0363dd67d6909e57d321012db707bd9d785f96c5951e5f68510eb5d20ce"
+  },
+  {
+    "key": "kri-martini-bianco-050",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (martini-bianco.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/kri-martini-bianco-050.jpg",
+    "sha256": "cbfd3fd85f2d9761ac8f3578ba3e39e25c8abd9e7d39bfac8050a59e2e73f2eb"
   }
 ]

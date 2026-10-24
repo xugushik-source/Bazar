@@ -1,4 +1,4 @@
-import {marketProfiles,declaredPacks} from './market-catalog.mjs';import {karoProfiles} from './karo.mjs';import {amoProfiles} from './amo.mjs';import {klontProfiles,klontPacks} from './klont.mjs';import {rafoProfiles} from './rafo.mjs';import {karoVarietyProfiles} from './karo-varieties.mjs';import {mtscoProfiles} from './mtsco.mjs';import {madoProfiles} from './mado.mjs';import {cognacProfiles} from './cognac.mjs';
+import {marketProfiles,declaredPacks} from './market-catalog.mjs';import {karoProfiles} from './karo.mjs';import {amoProfiles} from './amo.mjs';import {klontProfiles,klontPacks} from './klont.mjs';import {rafoProfiles} from './rafo.mjs';import {karoVarietyProfiles} from './karo-varieties.mjs';import {mtscoProfiles} from './mtsco.mjs';import {madoProfiles} from './mado.mjs';import {cognacProfiles} from './cognac.mjs';import {kristallProfiles} from './kristall.mjs';
 // Proposed launch profiles, not measurements, stock, prices or a legal standard.
 export const profiles={
  dry:{mode:'WEIGHED',policy_version:1,minimum_g:100,order_step_g:50,tolerance_bps:1000,tolerance_cap_g:20},
@@ -11,7 +11,7 @@ export const profiles={
  each:{mode:'EACH',policy_version:1},eachBySupplier:{mode:'EACH',policy_version:1,supplier_delivers:true},bunch:{mode:'BUNCH',policy_version:1},pack:{mode:'FIXED_PACK',policy_version:1},preweighed:{mode:'PREWEIGHED',policy_version:1}
 };
 export const productProfiles={
- ...marketProfiles,...karoProfiles,...amoProfiles,...klontProfiles,...rafoProfiles,...karoVarietyProfiles,...mtscoProfiles,...madoProfiles,...cognacProfiles,apple_loose:'loose',pear_loose:'loose',tomato_loose:'loose',cucumber_loose:'loose',potato_loose:'loose',carrot_loose:'loose',onion_loose:'loose',beetroot_loose:'loose',orange_loose:'loose',mandarin_loose:'loose',lemon_loose:'loose',banana_loose:'loose',grapes_loose:'loose',plum_loose:'loose',peach_loose:'loose',apricot_loose:'loose',aubergine_loose:'loose',pepper_loose:'loose',courgette_loose:'loose',
+ ...marketProfiles,...karoProfiles,...amoProfiles,...klontProfiles,...rafoProfiles,...karoVarietyProfiles,...mtscoProfiles,...madoProfiles,...cognacProfiles,...kristallProfiles,apple_loose:'loose',pear_loose:'loose',tomato_loose:'loose',cucumber_loose:'loose',potato_loose:'loose',carrot_loose:'loose',onion_loose:'loose',beetroot_loose:'loose',orange_loose:'loose',mandarin_loose:'loose',lemon_loose:'loose',banana_loose:'loose',grapes_loose:'loose',plum_loose:'loose',peach_loose:'loose',apricot_loose:'loose',aubergine_loose:'loose',pepper_loose:'loose',courgette_loose:'loose',
  strawberry_loose:'delicate',cherry_loose:'delicate',raspberry_loose:'delicate',ginger_loose:'herbs_by_weight',garlic_loose:'herbs_by_weight',
  watermelon_whole_kg:'whole',melon_whole_kg:'whole',pumpkin_whole_kg:'whole',cabbage_whole_kg:'whole',cauliflower_whole_kg:'whole',
  avocado_each:'each',mango_each:'each',pineapple_each:'each',watermelon_fixed_each:'each',lettuce_each:'each',
