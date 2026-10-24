@@ -12,7 +12,9 @@ const chipArt={meat:'meat'};
 // (household) has no chip and is found through «All» and search.
 const chipGroups=[['meat',['meat','trout']],['vegetables',['vegetables','herbs']],['fruit',['fruit','berries']],['nuts',['nuts','dried']],['market',['market','preserves']],['grains',['grains']]];
 const inFilter=p=>filter==='all'||p.category===filter||chipGroups.find(([g])=>g===filter)?.[1].includes(p.category);
-const groupRank=p=>{const i=chipGroups.findIndex(([,cs])=>cs.includes(p.category));return (i<0?99:i)*100+data.categories.findIndex(c=>c.id===p.category)};
+// Products the owner wants first in their section (owner 24.10: beef boneless opens «Мясо и рыба»).
+const firstInSection=['beef_boneless'];
+const groupRank=p=>{const i=chipGroups.findIndex(([,cs])=>cs.includes(p.category));return (i<0?99:i)*100+(firstInSection.some(k=>p.id.endsWith('--'+k))?-50:data.categories.findIndex(c=>c.id===p.category))};
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const read=(k,f)=>{try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}},write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};

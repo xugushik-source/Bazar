@@ -858,23 +858,19 @@
   },
   {
     "key": "beef-bone-in",
-    "source": "https://unsplash.com/photos/sliced-raw-meat-on-chopping-board-P7Um6_hkwbU",
-    "cdn": "https://images.unsplash.com/photo-1560883389-3bd36d16d021",
-    "license": "https://unsplash.com/license",
-    "author": "Lucas Vinicius Peixoto",
-    "download_url": "https://images.unsplash.com/photo-1560883389-3bd36d16d021?w=1400&q=85&fm=jpg",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); cropped to the card",
+    "license": "owner-provided",
+    "author": "owner",
     "file": "public/media/beef-bone-in.jpg",
-    "sha256": "1a7be839944063e7ce8b875acbe271406f924ce8468d9b3271e16ba88cb34c40"
+    "sha256": "e03f36e1f724cede73cee4930c97871e8a20d92c364b7608e0f22e3b2416ca86"
   },
   {
     "key": "beef-boneless",
-    "source": "https://unsplash.com/photos/a-slab-of-raw-meat-on-a-cutting-board-with-vegetables-and-a-bowl-of-sauce-ZKv9WGWMOLk",
-    "cdn": "https://images.unsplash.com/photo-1666013942642-b7b54ecafd7d",
-    "license": "https://unsplash.com/license",
-    "author": "Sergey Kotenev",
-    "download_url": "https://images.unsplash.com/photo-1666013942642-b7b54ecafd7d?w=1400&q=85&fm=jpg",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); cropped to the card",
+    "license": "owner-provided",
+    "author": "owner",
     "file": "public/media/beef-boneless.jpg",
-    "sha256": "89ce41f4aece763847ca98bf0ed4f9e59a094c8b0a6c3a1fb01b1115c47453ef"
+    "sha256": "79ab34277996ebc16f5a98accd8628fad12ebf31ce317f8731e94e9be1ec06b2"
   },
   {
     "key": "pork-bone-in",
@@ -986,11 +982,11 @@
   },
   {
     "key": "shashlik-loin",
-    "source": "owner: photo sent by the owner on 2026-10-22 for supplier Amo (background removed, knife with a third-party brand left out, unified style)",
+    "source": "owner: photo chosen and sent by the owner on 2026-10-24 (found online by the owner; origin not recorded); cropped to the card, a third-party logo left out",
     "license": "owner-provided",
     "author": "owner",
     "file": "public/media/shashlik-loin.jpg",
-    "sha256": "4d0861a3f3119709378d8f5b93ac6e14a2eb7f416cbfcda9e04388ac2069c663"
+    "sha256": "e3db300767039ea3ae692b9448a46e079691a8326e671d1ea276ec448be2b98f"
   },
   {
     "key": "shashlik-pork",

@@ -94,3 +94,6 @@ export function amoMeatSql(profiles,overrides={}){const v=amoVendor,s=x=>"'"+Str
 // Owner 22.10, later: Amo works 09:00–18:00. Orders with Amo goods are delivered from an hour after opening; the last slot is 17:40.
 export const amoHours={open_minute:540,close_minute:1080};
 export function amoHoursSql(){return [`UPDATE vendors SET open_minute=${amoHours.open_minute},close_minute=${amoHours.close_minute} WHERE id='${amoVendor.id}' AND (open_minute IS NOT ${amoHours.open_minute} OR close_minute IS NOT ${amoHours.close_minute});`]}
+// Owner 24.10: «Говядина на кости» is called «Говядина с костями».
+export const amoNames24={beef_bone_in:{ru:'Говядина с костями',hy:'Տավարի միս ոսկորներով',ka:'საქონლის ხორცი ძვლებით'}};
+export function amoNames24Sql(){const v=amoVendor,j=o=>"'"+JSON.stringify(o).replaceAll("'","''")+"'";return Object.entries(amoNames24).map(([key,n])=>`UPDATE products SET names=${j(n)},version=version+1 WHERE id='${v.city_id}--${key}' AND vendor_id='${v.id}' AND names<>${j(n)};`)}
