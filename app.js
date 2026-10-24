@@ -1,11 +1,11 @@
-import {entryReady}from './entry.js?v=a2db845032';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=a2db845032';
-import {botWords}from './bot-words.js?v=a2db845032';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=a2db845032';
-import {salesWords}from './sales-i18n.js?v=a2db845032';
-import {photoPath,artLabels,remotePhotos}from './photos.js?v=a2db845032';import {mediaVersions}from './media-versions.js?v=a2db845032';import {transferLinks}from './payments.js?v=a2db845032';import {ledger}from './ledger.js?v=a2db845032';import {sound,soundButton,watchOrders}from './sounds.js?v=a2db845032';
-import {words,statuses} from './i18n.js?v=a2db845032';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=a2db845032';
-import {quote as makeQuote,assess} from './weight-policy.js?v=a2db845032';
+import {entryReady}from './entry.js?v=13b29ed3ef';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=13b29ed3ef';
+import {botWords}from './bot-words.js?v=13b29ed3ef';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=13b29ed3ef';
+import {salesWords}from './sales-i18n.js?v=13b29ed3ef';
+import {photoPath,artLabels,remotePhotos}from './photos.js?v=13b29ed3ef';import {mediaVersions}from './media-versions.js?v=13b29ed3ef';import {transferLinks}from './payments.js?v=13b29ed3ef';import {ledger}from './ledger.js?v=13b29ed3ef';import {sound,soundButton,watchOrders}from './sounds.js?v=13b29ed3ef';
+import {words,statuses} from './i18n.js?v=13b29ed3ef';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=13b29ed3ef';
+import {quote as makeQuote,assess} from './weight-policy.js?v=13b29ed3ef';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 const chipArt={meat:'meat',alcohol:'mado-gubernator-050'};
 // Home page sections (owner 22.10, after the storefront study): six larger sections, meat first; a category with one product
