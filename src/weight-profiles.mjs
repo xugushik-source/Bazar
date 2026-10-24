@@ -8,7 +8,7 @@ export const profiles={
  delicate:{mode:'WEIGHED',policy_version:1,minimum_g:100,order_step_g:50,tolerance_bps:1000,tolerance_cap_g:50},
  herbs_by_weight:{mode:'WEIGHED',policy_version:1,minimum_g:50,order_step_g:50,tolerance_bps:1000,tolerance_cap_g:20},
  whole:{mode:'WHOLE_BY_WEIGHT',policy_version:1},
- each:{mode:'EACH',policy_version:1},bunch:{mode:'BUNCH',policy_version:1},pack:{mode:'FIXED_PACK',policy_version:1},preweighed:{mode:'PREWEIGHED',policy_version:1}
+ each:{mode:'EACH',policy_version:1},eachBySupplier:{mode:'EACH',policy_version:1,supplier_delivers:true},bunch:{mode:'BUNCH',policy_version:1},pack:{mode:'FIXED_PACK',policy_version:1},preweighed:{mode:'PREWEIGHED',policy_version:1}
 };
 export const productProfiles={
  ...marketProfiles,...karoProfiles,...amoProfiles,...klontProfiles,...rafoProfiles,...karoVarietyProfiles,...mtscoProfiles,...madoProfiles,...cognacProfiles,apple_loose:'loose',pear_loose:'loose',tomato_loose:'loose',cucumber_loose:'loose',potato_loose:'loose',carrot_loose:'loose',onion_loose:'loose',beetroot_loose:'loose',orange_loose:'loose',mandarin_loose:'loose',lemon_loose:'loose',banana_loose:'loose',grapes_loose:'loose',plum_loose:'loose',peach_loose:'loose',apricot_loose:'loose',aubergine_loose:'loose',pepper_loose:'loose',courgette_loose:'loose',

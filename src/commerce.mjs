@@ -24,7 +24,9 @@ async function slotWindow(db,city,vendorIds){const w=await vendorWindow(db,vendo
 // supplier delivers them himself; an order made only of such lines is not offered to the courier group.
 const bulkLine=l=>l.mode==='WEIGHED'&&l.product?.bulk&&l.target_g>=l.product.bulk.from_g;
 export function bulkLead(quotes){return Math.max(0,...quotes.filter(bulkLine).map(l=>l.product.bulk.lead_minutes||0))}
-export function supplierDelivered(quotes){return quotes.length>0&&quotes.every(l=>bulkLine(l)&&l.product.bulk.supplier_delivers===true)}
+// Owner 24.10: very dear bottles are also delivered by the supplier himself (profile supplier_delivers).
+const bySupplier=l=>bulkLine(l)&&l.product.bulk.supplier_delivers===true||l.product?.supplier_delivers===true;
+export function supplierDelivered(quotes){return quotes.length>0&&quotes.every(bySupplier)}
 export async function slots(db,city,day,products='',lead=0){const c=await q(db,'SELECT * FROM cities WHERE id=? AND active=1',city).first();if(!c)fail('NOT_FOUND',404);const ids=String(products||'').split(',').filter(Boolean).slice(0,200),vendors=ids.length?(await q(db,`SELECT DISTINCT vendor_id FROM products WHERE id IN (${ids.map(()=>'?').join(',')})`,...ids).all()).results.map(r=>r.vendor_id):[],{minutes,...w}=await slotWindow(db,c.id,vendors),result=[];const ahead=Math.min(1440,Math.max(0,Number.parseInt(lead,10)||0)),now=clock(c.timezone);for(const m of minutes){try{validateSlot(c,day,m);if(ahead&&day===now.day&&m<now.minute+ahead)continue;const s=await q(db,'SELECT * FROM slots WHERE city_id=? AND day=? AND minute=?',city,day,m).first();result.push({minute:m,available:s?s.capacity-s.reserved:8})}catch{}}return {slots:result,window:w};}
 export async function priceBasket(db,b,credits=new Map()){
  const c=await q(db,'SELECT * FROM cities WHERE id=? AND active=1',text(b.city_id,80,true)).first();if(!c)fail('NOT_FOUND',404);
