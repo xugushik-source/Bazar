@@ -1567,5 +1567,176 @@
     "author": "shopsk.com",
     "file": "public/media/ararat-erebuni-30.jpg",
     "sha256": "2d642a85e918e6a40ab7c785621411054a58089fb9ced1eb53a9cd582e9f2b4a"
+  },
+  {
+    "key": "mado-artashat10-050",
+    "source": "https://www.sas.am/ru/catalog/armyanskiy_konyak/676778/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/235/058/0589271521737008.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-artashat10-050.jpg",
+    "sha256": "3d496381901fba0c065586d4c8073af06be612db74ab9272957bbd7ce317f613"
+  },
+  {
+    "key": "mado-artashat5-050",
+    "source": "https://www.sas.am/ru/catalog/armyanskiy_konyak/676779/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/194/520/5206793589482640.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-artashat5-050.jpg",
+    "sha256": "06be102054d4fdf0fa2f11454a8f76be1505dc7641d2b1a3604254a476e164b4"
+  },
+  {
+    "key": "mado-artashat7-050",
+    "source": "https://www.sas.am/ru/catalog/armyanskiy_konyak/676780/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/641/096/096470544443984.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-artashat7-050.jpg",
+    "sha256": "ce415a1d200776fbe86c48c93532ae30137f1c483932427c61a0361874d3fccb"
+  },
+  {
+    "key": "mado-basturma-slice-060",
+    "source": "https://www.sas.am/ru/catalog/myasnaya_narezka/114340/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/337/111/111476571370509.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-basturma-slice-060.jpg",
+    "sha256": "5c84ca294eea42e656028e6bf43363c8f8fc9d932df3a8abc042c86c929ad73f"
+  },
+  {
+    "key": "mado-cognac-200",
+    "source": "https://www.sas.am/ru/catalog/syrokopchenaya_kolbasa/66176/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/137/493/4933722967504289.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-cognac-200.jpg",
+    "sha256": "e660f507d0cd4a059852fdb0c47b2511af37be93eb3dc1e64c8a59f4dd4d7774"
+  },
+  {
+    "key": "mado-cognac-400",
+    "source": "https://www.sas.am/ru/catalog/syrokopchenaya_kolbasa/66175/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/211/807/8078792563109349.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-cognac-400.jpg",
+    "sha256": "a8d3834b35fccd1793ef6b8f1c5ed520e0939145173ec7f2dd934d414cfff561"
+  },
+  {
+    "key": "mado-druzhba-classic-050",
+    "source": "https://www.sas.am/ru/catalog/armyanskoe_vodka/924560/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/333/485/4859001909853255.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-druzhba-classic-050.jpg",
+    "sha256": "060910d58a116c738c0c35868e634640e2fb8a5634982f76c07459ffcfe4c161"
+  },
+  {
+    "key": "mado-gubernator-070",
+    "source": "https://www.sas.am/ru/catalog/armyanskoe_vodka/600542/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/388/662/662487578564361.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-gubernator-070.jpg",
+    "sha256": "8d2c6518ab1035c996402bbc27a2eb7f1764d40816fade0b31be3772e42320df"
+  },
+  {
+    "key": "mado-hunter-cheese",
+    "source": "https://www.sas.am/ru/catalog/meatsnack/445332/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/312/958/958194963120864.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-hunter-cheese.jpg",
+    "sha256": "e271014680e770d76fb51f8d1e2d530bae4651525f8054f678e72ab23175919f"
+  },
+  {
+    "key": "mado-hunter-spicy",
+    "source": "https://www.sas.am/ru/catalog/meatsnack/445331/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/293/515/5156063141048625.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-hunter-spicy.jpg",
+    "sha256": "f1b2ff8d2332675cc1e2af9f424cb038ece0ce958787eb0d34a8635927aa0ac4"
+  },
+  {
+    "key": "mado-jerky-beef-030",
+    "source": "https://www.sas.am/ru/catalog/dzherki/635389/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/382/471/4710074069693949.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-jerky-beef-030.jpg",
+    "sha256": "55aeb0f7f898c6d1c00b56b3389cb211d0740cb68dbdda1dc8925ac6dcdd5e12"
+  },
+  {
+    "key": "mado-leninakan-190",
+    "source": "https://www.sas.am/ru/catalog/syrokopchenaya_kolbasa/66178/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/262/398/398208538696773.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-leninakan-190.jpg",
+    "sha256": "ef32fb6860e47262abcdad54bab0582c5e56b9f7fbf1774b33fab6023d1271b4"
+  },
+  {
+    "key": "mado-leninakan-380",
+    "source": "https://www.sas.am/ru/catalog/syrokopchenaya_kolbasa/66177/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/380/077/0774852424740917.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-leninakan-380.jpg",
+    "sha256": "8e19d40dca0fbb83365f1e95b6c1e7f6d27fd88d937ba7224db7095e051d865f"
+  },
+  {
+    "key": "mado-piquant-200",
+    "source": "https://www.sas.am/ru/catalog/syrokopchenaya_kolbasa/66859/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/356/482/4823192520277326.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-piquant-200.jpg",
+    "sha256": "b676f9ad8a7a4326549eef391158956a602c70d54f4f3cc3da0921ce232ab3d2"
+  },
+  {
+    "key": "mado-piquant-400",
+    "source": "https://www.sas.am/ru/catalog/syrokopchenaya_kolbasa/66860/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/256/308/3089191954371225.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-piquant-400.jpg",
+    "sha256": "7bd9d5635985e349d69417e20113db2c50be76741ac474cff7b5ec5feeca4fa8"
+  },
+  {
+    "key": "mado-sausages-milk-500",
+    "source": "https://www.sas.am/ru/catalog/sosiski_sordelki/168413/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/130/228/2287421934437238.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-sausages-milk-500.jpg",
+    "sha256": "5b0c85367f389e40807d79747d92cc08a17fe6a246f74e024a4e87d4dcba4004"
+  },
+  {
+    "key": "mado-sausages-vienna-500",
+    "source": "https://www.sas.am/ru/catalog/sosiski_sordelki/168604/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/243/459/4593303243362018.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-sausages-vienna-500.jpg",
+    "sha256": "9051fe3c1c52958c17cbeada8b1e4dc185295a79aa2f8a328d38894ce0939760"
+  },
+  {
+    "key": "mado-sticks-chicken",
+    "source": "https://www.sas.am/ru/catalog/meatsnack/4990/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/104/995/9956821637808664.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-sticks-chicken.jpg",
+    "sha256": "67414402c71e8b01d48b83b4b4eed907935fdd18b13ebbad41456a951186c351"
+  },
+  {
+    "key": "mado-sticks-pork",
+    "source": "https://www.sas.am/ru/catalog/pivnik_dzherki/4991/",
+    "cdn": "https://www.sas.am/upload/Sh/imageCache/306/266/2666853494022395.webp",
+    "license": "retailer product photo, used at the owner's request 24.10; replace with the owner's own photo when available",
+    "author": "sas.am",
+    "file": "public/media/mado-sticks-pork.jpg",
+    "sha256": "2bf0cb6afa3150b8ddef4623a5c981797b6f6de65c90c64e319ae2192bd2db02"
   }
 ]
