@@ -1,11 +1,11 @@
-import {entryReady}from './entry.js?v=2c00b34e66';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=2c00b34e66';
-import {botWords}from './bot-words.js?v=2c00b34e66';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=2c00b34e66';
-import {salesWords}from './sales-i18n.js?v=2c00b34e66';
-import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=2c00b34e66';import {mediaVersions}from './media-versions.js?v=2c00b34e66';import {transferLinks}from './payments.js?v=2c00b34e66';import {ledger}from './ledger.js?v=2c00b34e66';import {sound,soundButton,watchOrders}from './sounds.js?v=2c00b34e66';
-import {words,statuses} from './i18n.js?v=2c00b34e66';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=2c00b34e66';
-import {quote as makeQuote,assess} from './weight-policy.js?v=2c00b34e66';
+import {entryReady}from './entry.js?v=81869d37fa';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=81869d37fa';
+import {botWords}from './bot-words.js?v=81869d37fa';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=81869d37fa';
+import {salesWords}from './sales-i18n.js?v=81869d37fa';
+import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=81869d37fa';import {mediaVersions}from './media-versions.js?v=81869d37fa';import {transferLinks}from './payments.js?v=81869d37fa';import {ledger}from './ledger.js?v=81869d37fa';import {sound,soundButton,watchOrders}from './sounds.js?v=81869d37fa';
+import {words,statuses} from './i18n.js?v=81869d37fa';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=81869d37fa';
+import {quote as makeQuote,assess} from './weight-policy.js?v=81869d37fa';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 const chipArt={meat:'meat',alcohol:'mado-gubernator-050'};
 // Home page sections (owner 22.10, after the storefront study): six larger sections, meat first; a category with one product
@@ -27,7 +27,7 @@ const subOf=p=>{const k=p.id.split('--')[1]||'',n=p.names?.ru||'';
 const subLabel=(s,p)=>words[lang]['sub_'+s]?t('sub_'+s):name(data.categories.find(c=>c.id===p.category));
 // Bottles inside a brand (owner 24.10): Ararat by line from simple to aged, then by volume, gift sets last; other brands by age.
 const araratLines=['3*','5*','Ани','Отборный','Армения','Абрикос','Кофе','Ахтамар','Двин','Васпуракан','Наири','Азнавур','Эребуни'];
-const bottleRank=p=>{const n=p.names?.ru||'',line=p.category!=='alcohol'?0:/Водка/.test(n)?['Дружба','Губернатор','Питон','Absolut','Fortuna','Tchaikovsky','Углёвка','Царская','Чистые росы'].findIndex(l=>n.includes(l))+1:araratLines.findIndex(l=>n.includes(l))+1||Number(n.match(/(\d+)\s*(?:год|лет)|Арташат (\d+)|Хосров (\d+)/)?.slice(1).find(Boolean)||0),v=n.match(/(\d+(?:,\d+)?)\s*л(?![а-яё])/i),ml=v?Math.round(parseFloat(v[1].replace(',','.'))*1000):9999;return p.category==='alcohol'?[line,ml,/стакан/.test(n)?1:0]:[0,0,0]};
+const bottleRank=p=>{const n=p.names?.ru||'',line=p.category!=='alcohol'?0:/Водка/.test(n)?['Fortuna','Губернатор','Царская','Дружба','Питон','Absolut','Tchaikovsky','Углёвка','Чистые росы'].findIndex(l=>n.includes(l))+1:araratLines.findIndex(l=>n.includes(l))+1||Number(n.match(/(\d+)\s*(?:год|лет)|Арташат (\d+)|Хосров (\d+)/)?.slice(1).find(Boolean)||0),v=n.match(/(\d+(?:,\d+)?)\s*л(?![а-яё])/i),ml=v?Math.round(parseFloat(v[1].replace(',','.'))*1000):9999;return p.category==='alcohol'?[line,ml,/стакан/.test(n)?1:0]:[0,0,0]};
 const groupKey=p=>{const i=chipGroups.findIndex(([,cs])=>cs.includes(p.category)),g=i<0?99:i,s=subOf(p),order=subOrder[chipGroups[i]?.[0]]||chipGroups[i]?.[1]||[],j=order.indexOf(s);return [g,j<0?order.length:j,firstInSection.some(k=>p.id.endsWith('--'+k))?0:1,...bottleRank(p),hasPhoto(p)?0:1]};
 const byGroup=(a,b)=>{const x=groupKey(a),y=groupKey(b);for(let i=0;i<x.length;i++)if(x[i]!==y[i])return x[i]-y[i];return 0};
 // Products whose own photo has not arrived go to the end of their section.
