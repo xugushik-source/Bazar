@@ -24,3 +24,6 @@ export function karoVarietySql(profileFor){const v=karoVendor,s=x=>"'"+String(x)
  return [...karoVarietiesRetired.map(k=>`UPDATE products SET active=0,version=version+1 WHERE id=${id(k)} AND active=1;`),
   ...karoVarietyRenames.map(([k,ru,hy,ka,art])=>`UPDATE products SET names=${j({ru,hy,ka})},art=${s(art)},version=version+1 WHERE id=${id(k)} AND vendor_id=${s(v.id)} AND (names<>${j({ru,hy,ka})} OR art<>${s(art)});`),
   ...karoVarieties.map(r=>{const [k,ru,hy,ka,category,art,,cost]=r;return `INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${id(k)},${s(v.id)},${j({ru,hy,ka})},${s(category)},${s(art)},${j({...profileFor(k),...produceMinimum})},${karoVarietyPrice(r)},${cost},100000 WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`})]}
+// Owner 24.10, later: «Помидоры, второй сорт» is no longer sold — tomatoes are light, dark and Azerbaijani.
+export const karoVarietiesRetired2=['tomato_second_loose'];
+export function karoRetire2Sql(){const id=k=>`'${karoVendor.city_id}--${k}'`;return karoVarietiesRetired2.map(k=>`UPDATE products SET active=0,version=version+1 WHERE id=${id(k)} AND active=1;`)}

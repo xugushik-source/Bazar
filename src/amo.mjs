@@ -97,3 +97,6 @@ export function amoHoursSql(){return [`UPDATE vendors SET open_minute=${amoHours
 // Owner 24.10: «Говядина на кости» is called «Говядина с костями».
 export const amoNames24={beef_bone_in:{ru:'Говядина с костями',hy:'Տավարի միս ոսկորներով',ka:'საქონლის ხორცი ძვლებით'}};
 export function amoNames24Sql(){const v=amoVendor,j=o=>"'"+JSON.stringify(o).replaceAll("'","''")+"'";return Object.entries(amoNames24).map(([key,n])=>`UPDATE products SET names=${j(n)},version=version+1 WHERE id='${v.city_id}--${key}' AND vendor_id='${v.id}' AND names<>${j(n)};`)}
+// Owner 24.10, later: lyulya by the piece at new prices — chicken bought at 5 ₾, sold at 6 ₾; beef bought at 6 ₾, sold at 7 ₾.
+export const amoLyulya24={lyulya_chicken_each:{cost:500,price:600},lyulya_beef_pork_each:{cost:600,price:700}};
+export function amoLyulya24Sql(){const v=amoVendor;return Object.entries(amoLyulya24).map(([key,{cost,price}])=>`UPDATE products SET price=${price},cost=${cost},version=version+1 WHERE id='${v.city_id}--${key}' AND vendor_id='${v.id}' AND (price<>${price} OR cost IS NOT ${cost});`)}
