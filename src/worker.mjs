@@ -1,4 +1,4 @@
-import {advertising,saveAdvertising}from './advertising.mjs';
+import {advertising,saveAdvertising}from './advertising.mjs';import {sourceReport}from './sources.mjs';
 import {listPromotions,savePromotion,referralInfo,referralManage}from './promotions.mjs';
 import {configured,telegramWebhook,telegramManage,botInvite,drainTelegram}from './telegram.mjs';import {savePhoto,listPhotos,photoFile}from './order-photos.mjs';
 import {courierSummary,shift,cashReport,cashReview,remit}from './couriers.mjs';
@@ -41,6 +41,7 @@ export async function handle(req,env){try{
  if(p==='/api/manage/promotions'&&req.method==='GET'){if(!user.owner)fail('FORBIDDEN',403);return reply(await listPromotions(db,url.searchParams.get('city'),true))}
  if(p==='/api/manage/promotion'&&b)return reply(await savePromotion(db,b,user));
  if(p.startsWith('/api/manage/referral/')){if(p.split('/').pop()==='status'?req.method!=='GET':!b)fail('METHOD_NOT_ALLOWED',405);return reply(await referralManage(db,b,user,p.split('/').pop()));}
+ if(p==='/api/manage/sources'&&req.method==='GET'){if(!user.owner)fail('FORBIDDEN',403);const days=Math.min(365,Math.max(1,Number(url.searchParams.get('days'))||30));return reply(await sourceReport(db,url.searchParams.get('city'),days))}
  if(p==='/api/manage/operations'&&req.method==='GET'){if(!user.owner)fail('FORBIDDEN',403);const city=url.searchParams.get('city');return reply({events:(await q(db,'SELECT e.*,o.city_id FROM events e JOIN orders o ON o.id=e.order_id WHERE o.city_id=? ORDER BY e.at DESC LIMIT 200',city).all()).results,audit:(await db.prepare('SELECT * FROM operations_audit ORDER BY at DESC LIMIT 100').all()).results,customers:(await q(db,"SELECT json_extract(customer,'$.phone') phone,json_extract(customer,'$.name') name,COUNT(*) orders,SUM(CASE WHEN status='COMPLETED' THEN total ELSE 0 END) revenue FROM orders WHERE city_id=? GROUP BY json_extract(customer,'$.phone') ORDER BY MAX(created_at) DESC LIMIT 200",city).all()).results,payments:(await q(db,'SELECT p.* FROM payments p JOIN orders o ON o.id=p.order_id WHERE o.city_id=? ORDER BY p.at DESC LIMIT 200',city).all()).results})}
  if(p==='/api/manage/couriers'&&req.method==='GET')return reply(await courierSummary(db,user,url.searchParams.get('city')));
  if(p==='/api/manage/shift'&&b)return reply(await shift(db,b,user));
