@@ -88,3 +88,5 @@ a.button.primary{background:var(--green);color:var(--white);border-color:var(--g
 .free-delivery.first-order{background:#fff6e0;color:#5a4300}
 .src-qr{margin:6px 0 14px}
 .qr-art svg{display:block;width:220px;height:220px;background:#fff;border-radius:8px}
+.category-row button[data-filter="all"]:nth-child(3n+1){grid-column:1/-1}
+.category-row button[data-filter="all"]:nth-child(3n+1) .tile-all{aspect-ratio:auto;flex:1;min-height:64px}
