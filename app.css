@@ -90,3 +90,13 @@ a.button.primary{background:var(--green);color:var(--white);border-color:var(--g
 .qr-art svg{display:block;width:220px;height:220px;background:#fff;border-radius:8px}
 .category-row button[data-filter="all"]:nth-child(3n+1){grid-column:1/-1}
 .category-row button[data-filter="all"]:nth-child(3n+1) .tile-all{aspect-ratio:auto;flex:1;min-height:64px}
+
+/* Owner 29.10: install БАЗАР from Instagram. */
+.install-banner{display:flex;gap:12px;align-items:flex-start;margin:10px 0 4px;padding:12px 14px;border-radius:14px;background:#254637;color:#f2e8d5;position:relative}
+.install-banner img{border-radius:12px;flex:none}
+.install-banner p{margin:0 0 8px;font-weight:600;line-height:1.35}
+.install-banner .install-steps{font-weight:700;color:#f6d58a}
+.install-banner small{display:block;margin-top:8px;opacity:.85}
+.install-banner .button,.install-banner button.primary{background:#f2e8d5;color:#254637;border:0;display:inline-block;padding:10px 16px;border-radius:999px;font-weight:700;text-decoration:none}
+.install-banner .install-close{position:absolute;top:4px;right:6px;background:transparent;border:0;color:#f2e8d5;font-size:0;padding:8px}
+.install-banner .install-close::after{content:'×';font-size:22px}
