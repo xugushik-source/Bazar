@@ -18,3 +18,6 @@ export function pauseReopenSql(categories=pausedCategories){const list=categorie
  `UPDATE categories SET active=1 WHERE id IN (${list}) AND active=0;`,
  `UPDATE products SET active=1,version=version+1 WHERE id IN (SELECT id FROM paused_products WHERE category IN (${list})) AND active=0;`,
  `DELETE FROM paused_products WHERE category IN (${list});`]}
+// Owner 30.10: «Алкоголь 18+» open again, exactly what was on sale on 29.10; the herbs stay closed. Migration 0054 is unchanged.
+export const reopenedCategories=['alcohol'];
+export function reopenAlcoholSql(){return pauseReopenSql(reopenedCategories)}
