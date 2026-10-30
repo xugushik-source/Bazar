@@ -1,0 +1,22 @@
+-- Owner 30.10: all test orders wiped before the real start. Generated from src/reset-orders.mjs (resetOrdersSql).
+UPDATE products SET reserved=0 WHERE reserved>0;
+UPDATE products SET stock=stock+(SELECT -SUM(delta) FROM inventory i WHERE i.product_id=products.id AND i.reason='SALE') WHERE EXISTS(SELECT 1 FROM inventory i WHERE i.product_id=products.id AND i.reason='SALE');
+DELETE FROM inventory WHERE reason='SALE';
+UPDATE slots SET reserved=0 WHERE reserved>0;
+DELETE FROM tg_jobs;
+DELETE FROM tg_buttons WHERE order_id IS NOT NULL;
+DELETE FROM tg_dialogs;
+DELETE FROM referral_ledger;
+DELETE FROM courier_cash;
+DELETE FROM courier_remittances;
+DELETE FROM vendor_statement_lines;
+DELETE FROM vendor_statements;
+DELETE FROM vendor_payments;
+DELETE FROM order_photos;
+DELETE FROM settlements;
+DELETE FROM payments;
+DELETE FROM outbox;
+DELETE FROM events;
+DELETE FROM order_lines;
+DELETE FROM order_groups;
+DELETE FROM orders;

@@ -1,0 +1,2 @@
+-- Owner 24.10: «Говядина на кости» is called «Говядина с костями». Generated from src/amo.mjs (amoNames24Sql).
+UPDATE products SET names='{"ru":"Говядина с костями","hy":"Տավարի միս ոսկորներով","ka":"საქონლის ხორცი ძვლებით"}',version=version+1 WHERE id='akhalkalaki--beef_bone_in' AND vendor_id='akhalkalaki-amo' AND names<>'{"ru":"Говядина с костями","hy":"Տավարի միս ոսկորներով","ka":"საქონლის ხორცი ძვლებით"}';
