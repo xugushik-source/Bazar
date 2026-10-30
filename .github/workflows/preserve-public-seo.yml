@@ -1,0 +1,48 @@
+name: Preserve Bazar SEO on GitHub Pages
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'seo-public/**'
+      - 'scripts/restore-public-seo.mjs'
+      - '.github/workflows/preserve-public-seo.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bazar-seo-overlay
+  cancel-in-progress: false
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Get durable SEO files and overlay script
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Fetch current published storefront without resetting it
+        run: |
+          git fetch origin gh-pages
+          git worktree add --detach "$RUNNER_TEMP/bazar-published" origin/gh-pages
+      - name: Restore SEO assets without touching orders, prices, or APIs
+        run: node scripts/restore-public-seo.mjs "$RUNNER_TEMP/bazar-published"
+      - name: Commit and publish only if content changed
+        run: |
+          cd "$RUNNER_TEMP/bazar-published"
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "SEO is intact; no commit required."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- sitemap.xml hy/index.html ka/index.html google205ea606b7e2a9e2.html index.html app.js
+          git commit -m "Restore Bazar public SEO after storefront deployment"
+          git push origin HEAD:gh-pages
