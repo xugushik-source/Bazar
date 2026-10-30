@@ -104,9 +104,9 @@ Object.assign(words.ka,{fillerTitle:'რით შეავსოთ უფა�
 Object.assign(words.ru,{group_bread:'Хлеб и лаваш',upsellLavash:'Лаваш к мясу'});
 Object.assign(words.hy,{group_bread:'Հաց և լավաշ',upsellLavash:'Լավաշ մսի հետ'});
 Object.assign(words.ka,{group_bread:'პური და ლავაში',upsellLavash:'ლავაში ხორცთან'});
-Object.assign(words.ru,{group_deli:'Колбасы и деликатесы',group_drinks:'Напитки',group_alcohol:'Крепкие напитки',adultOnly:'18+',adultNotice:'🔞 В заказе крепкие напитки: продаём только с 18 лет — курьер попросит документ.'});
-Object.assign(words.hy,{group_deli:'Երշիկ և նրբերշիկ',group_drinks:'Ըմպելիքներ',group_alcohol:'Թունդ խմիչքներ',adultOnly:'18+',adultNotice:'🔞 Պատվերում թունդ խմիչքներ կան. վաճառում ենք միայն 18 տարեկանից — առաքիչը կխնդրի փաստաթուղթ։'});
-Object.assign(words.ka,{group_deli:'ძეხვეული და დელიკატესები',group_drinks:'სასმელები',group_alcohol:'მაგარი სასმელები',adultOnly:'18+',adultNotice:'🔞 შეკვეთაში მაგარი სასმელებია: ვყიდით მხოლოდ 18 წლიდან — კურიერი მოგთხოვთ დოკუმენტს.'});
+Object.assign(words.ru,{group_deli:'Колбасы и деликатесы',group_drinks:'Напитки',group_alcohol:'Вино и крепкие напитки',adultOnly:'18+',adultNotice:'🔞 В заказе вино или крепкие напитки: продаём только с 18 лет — курьер попросит документ.'});
+Object.assign(words.hy,{group_deli:'Երշիկ և նրբերշիկ',group_drinks:'Ըմպելիքներ',group_alcohol:'Գինի և թունդ խմիչքներ',adultOnly:'18+',adultNotice:'🔞 Պատվերում գինի կամ թունդ խմիչքներ կան. վաճառում ենք միայն 18 տարեկանից — առաքիչը կխնդրի փաստաթուղթ։'});
+Object.assign(words.ka,{group_deli:'ძეხვეული და დელიკატესები',group_drinks:'სასმელები',group_alcohol:'ღვინო და მაგარი სასმელები',adultOnly:'18+',adultNotice:'🔞 შეკვეთაში ღვინო ან მაგარი სასმელებია: ვყიდით მხოლოდ 18 წლიდან — კურიერი მოგთხოვთ დოკუმენტს.'});
 Object.assign(words.ru,{supplierDelivers:'🚚 Доставляет поставщик · оплата переводом'});
 Object.assign(words.hy,{supplierDelivers:'🚚 Առաքում է մատակարարը · վճարում փոխանցումով'});
 Object.assign(words.ka,{supplierDelivers:'🚚 აწვდის მომწოდებელი · გადახდა გადარიცხვით'});
