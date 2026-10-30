@@ -100,3 +100,7 @@ a.button.primary{background:var(--green);color:var(--white);border-color:var(--g
 .install-banner .button,.install-banner button.primary{background:#f2e8d5;color:#254637;border:0;display:inline-block;padding:10px 16px;border-radius:999px;font-weight:700;text-decoration:none}
 .install-banner .install-close{position:absolute;top:4px;right:6px;background:transparent;border:0;color:#f2e8d5;font-size:0;padding:8px}
 .install-banner .install-close::after{content:'×';font-size:22px}
+/* Indexable description under the shop (SEO 30.10): quiet, below the catalogue, links to the hy/ka pages. */
+.seo-about{max-width:960px;margin:8px auto 0;padding:20px 16px 28px;color:#52665c;font-size:14px;line-height:1.55}
+.seo-about h2{font-size:16px;margin:0 0 6px;color:#254637}.seo-about p{margin:0 0 8px}
+.seo-about nav{display:flex;flex-wrap:wrap;gap:6px 18px}.seo-about a{color:#254637}
