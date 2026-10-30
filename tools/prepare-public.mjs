@@ -6,3 +6,6 @@ const path=new URL('../public/index.html',import.meta.url),title=config.seoTitle
 
 fs.copyFileSync(new URL('../src/bot-words.mjs',import.meta.url),new URL('../public/bot-words.js',import.meta.url));
 fs.writeFileSync(new URL('../public/media-versions.js',import.meta.url),mediaVersionsSource());
+// Personal data documents (owner 30.10, Law of Georgia No. 3144): built from the template in src/legal.mjs, so the owner fills the
+// operator's details in one place and both pages, in three languages, follow.
+{const {consentPage,privacyPage}=await import('../src/legal.mjs');fs.writeFileSync(new URL('../public/consent.html',import.meta.url),consentPage());fs.writeFileSync(new URL('../public/privacy.html',import.meta.url),privacyPage())}
