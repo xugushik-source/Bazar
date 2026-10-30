@@ -24,7 +24,7 @@ export async function handle(req,env){try{
  if(p==='/api/promotions'&&req.method==='GET')return reply(await listPromotions(db,url.searchParams.get('city')));
  if(p==='/api/order/referral'&&b)return reply(await referralInfo(db,b));
  if(p==='/api/sheet/prices.tsv'&&req.method==='GET')return new Response(await priceSheet(db,url.searchParams.get('key')),{headers:{'Content-Type':'text/tab-separated-values; charset=utf-8','Cache-Control':'no-store','X-Robots-Tag':'noindex'}});
- if(p==='/api/quote'&&b){const quote=await priceBasket(db,b),fee=deliveryFee(quote.city,b.fulfillment,quote.estimate_minor);if(!['pickup','delivery'].includes(b.fulfillment))fail('INVALID_INPUT');return reply({quotes:customerQuotes(quote.lines),items_total:quote.estimate_minor,total:quote.estimate_minor+fee,maximum_total:quote.maximum_minor+fee,delivery_fee:fee,currency:quote.city.currency});}
+ if(p==='/api/quote'&&b){const quote=await priceBasket(db,b),fee=deliveryFee(quote.city,b.fulfillment,quote.estimate_minor,b.zone);if(!['pickup','delivery'].includes(b.fulfillment))fail('INVALID_INPUT');return reply({quotes:customerQuotes(quote.lines),items_total:quote.estimate_minor,total:quote.estimate_minor+fee,maximum_total:quote.maximum_minor+fee,delivery_fee:fee,currency:quote.city.currency});}
  if(p==='/api/order/telegram'&&b)return reply(await botInvite(db,b,null,env,true));
  if(p==='/api/orders'&&b)return reply(await createOrder(db,b),201);
  if(p==='/api/hit'&&b)return reply(await recordHit(db,b));
