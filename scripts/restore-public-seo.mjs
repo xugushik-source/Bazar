@@ -1,5 +1,8 @@
 #!/usr/bin/env node
-// Idempotent SEO overlay on the published gh-pages tree.
+// Safety net for the published gh-pages tree, not a second source of SEO.
+// Since 30.10 the storefront build (public/ on feature/bazar-store → tools/build-pages.mjs) ships the hy/ka pages, sitemap,
+// Google verification and the search head itself and refuses to build without them. This script only puts back what is
+// MISSING (a publish from an old build); it never rewrites a page the build produced, so the two cannot fight each other.
 // Run from a GitHub Actions checkout of the MAIN branch, passing the gh-pages worktree.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -20,10 +23,11 @@ for (const relative of files) {
   const target = path.join(published, relative);
   fs.mkdirSync(path.dirname(target), {recursive: true});
   const bytes = fs.readFileSync(source);
-  if (!fs.existsSync(target) || !fs.readFileSync(target).equals(bytes)) fs.writeFileSync(target, bytes);
+  if (!fs.existsSync(target)) fs.writeFileSync(target, bytes);
 }
 const homepage = path.join(published, 'index.html');
 let html = fs.readFileSync(homepage, 'utf8');
+const builtWithSeo = html.includes('<link rel="canonical" href="https://xugushik-source.github.io/Bazar/">');
 const title = 'Базар — доставка продуктов в Ахалкалаки';
 const description = 'Базар — онлайн-рынок с доставкой продуктов в Ахалкалаки. Овощи, фрукты, сыр, хлеб и продукты местных поставщиков. Заказы на русском, армянском и грузинском.';
 const tags = [
@@ -36,6 +40,9 @@ const tags = [
   ['property="og:image"', '<meta property="og:image" content="https://xugushik-source.github.io/Bazar/media/bazar-opening-market.jpg">'],
   ['"@type":"WebSite"', '<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Базар","alternateName":["Բազար","ბაზარი"],"url":"https://xugushik-source.github.io/Bazar/","inLanguage":["ru","hy","ka"]}</script>']
 ];
+if (builtWithSeo) {
+  console.log('Homepage was built with its SEO head; left untouched.');
+} else {
 if (!html.includes('</head>') || !/<title>[^<]*<\/title>/.test(html)) {
   throw new Error('Unexpected homepage head: refusing to modify storefront');
 }
@@ -54,6 +61,7 @@ if (!html.includes('aria-label="Информация на других язык�
   html = html.replace('<dialog id="modal"', languages + '<dialog id="modal"');
 }
 fs.writeFileSync(homepage, html);
+}
 const appFile = path.join(published, 'app.js');
 if (fs.existsSync(appFile)) {
   let app = fs.readFileSync(appFile, 'utf8');
