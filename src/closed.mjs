@@ -21,3 +21,7 @@ export function pauseReopenSql(categories=pausedCategories){const list=categorie
 // Owner 30.10: «Алкоголь 18+» open again, exactly what was on sale on 29.10; the herbs stay closed. Migration 0054 is unchanged.
 export const reopenedCategories=['alcohol'];
 export function reopenAlcoholSql(){return pauseReopenSql(reopenedCategories)}
+// Owner 30.10: «Удали поставщика Ферма Базара». A placeholder vendor from the first demo, not a real supplier; switched off
+// with its goods (past orders keep their rows). Seed inserts vendors with DO NOTHING, so it never comes back.
+export const removedVendors=['akhalkalaki-farm','tbilisi-farm'];
+export function removeFarmSql(){return [`UPDATE vendors SET active=0 WHERE id IN (${removedVendors.map(v=>`'${v}'`).join(',')}) AND active=1;`]}

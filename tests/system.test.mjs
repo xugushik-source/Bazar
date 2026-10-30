@@ -135,3 +135,8 @@ test('alcohol reopened (owner 30.10): the paused alcohol is back on sale and ord
  for(const s of [...pauseSql(),...reopenAlcoholSql(),...reopenAlcoholSql()])DB.exec(s);const c=await call(e,'catalog?city='+cid);
  assert.deepEqual(c.products.filter(p=>p.category==='alcohol').map(p=>p.id).sort(),alcohol);assert.ok(c.categories.some(x=>x.id==='alcohol'));assert.ok(!c.products.some(p=>p.category==='herbs'));assert.ok(!c.categories.some(x=>x.id==='herbs'));
  assert.equal((await call(e,'quote',{city_id:cid,items:[{product_id:alcohol[0],selection:{count:1}}],fulfillment:'pickup'})).http,200)}finally{DB.close()}});
+test('farm removed (owner 30.10): «Ферма Базара» and its goods leave the storefront and cannot be ordered; migration equals the generator',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);try{const fs=await import('node:fs'),{removeFarmSql}=await import('../src/closed.mjs');
+ assert.ok(fs.readFileSync(new URL('../migrations/0057_remove_farm.sql',import.meta.url),'utf8').endsWith(removeFarmSql().join('\n')+'\n'));const e={DB},farm=(await call(e,'catalog?city='+cid)).products.filter(p=>p.vendor_id===cid+'-farm').map(p=>p.id);assert.ok(farm.length>0);
+ for(const s of [...removeFarmSql(),...removeFarmSql()])DB.exec(s);const c=await call(e,'catalog?city='+cid);
+ assert.ok(!c.vendors.some(v=>v.id===cid+'-farm'));assert.ok(!c.products.some(p=>farm.includes(p.id)));assert.ok(c.vendors.some(v=>v.id===cid+'-amo'));
+ assert.notEqual((await call(e,'quote',{city_id:cid,items:[{product_id:farm[0],selection:{count:1}}],fulfillment:'pickup'})).http,200)}finally{DB.close()}});
