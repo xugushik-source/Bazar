@@ -1,5 +1,6 @@
 // Where orders come from (owner 28.10: «система привлечения новых»). A link like …/?src=instagram is remembered by the buyer's
 // browser for 30 days and sent with the order; ?ref= friend links count as «friend». Only a short code is stored, nothing personal.
+import {trafficReport}from './traffic.mjs';
 export const sourceCode=v=>typeof v==='string'&&/^[a-z0-9_-]{2,32}$/.test(v)?v:null;
 // Databases before migration 0052 have no orders.source; orders there are simply unmarked.
 const known=new WeakSet();
@@ -12,4 +13,7 @@ export async function sourceReport(db,city,days=30,at=Date.now()){
  const since=new Date(at-days*86400000).toISOString(),seen=new Set(),by=new Map();
  for(const o of rows){const key=digits(o.phone),first=!!key&&!seen.has(key);if(key)seen.add(key);if(o.created_at<since||o.status==='CANCELLED')continue;
   const s=o.source||'direct',r=by.get(s)||{source:s,orders:0,completed:0,revenue:0,new_customers:0};r.orders++;if(first)r.new_customers++;if(o.status==='COMPLETED'){r.completed++;r.revenue+=o.total}by.set(s,r)}
- return {days,sources:[...by.values()].sort((a,b)=>b.new_customers-a.new_customers||b.orders-a.orders||a.source.localeCompare(b.source))}}
+ // Owner 30.10: the funnel before the order — people who came by the link, put something in the cart, opened checkout (src/traffic.mjs).
+ const t=await trafficReport(db,city,days,at),blank={visitors:0,visits:0,cart:0,checkout:0};for(const [src,v]of t.by){if(!by.has(src))by.set(src,{source:src,orders:0,completed:0,revenue:0,new_customers:0})}
+ for(const r of by.values())Object.assign(r,blank,t.by.get(r.source)||{});
+ return {days,langs:t.langs,devices:t.devices,sources:[...by.values()].sort((a,b)=>b.new_customers-a.new_customers||b.orders-a.orders||b.visitors-a.visitors||a.source.localeCompare(b.source))}}

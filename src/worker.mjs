@@ -1,4 +1,4 @@
-import {advertising,saveAdvertising}from './advertising.mjs';import {sourceReport}from './sources.mjs';import {priceSheet,sheetKey}from './price-sheet.mjs';import {setFirstOrderFree}from './first-order.mjs';
+import {advertising,saveAdvertising}from './advertising.mjs';import {sourceReport}from './sources.mjs';import {recordHit}from './traffic.mjs';import {customerBase,marketingOptOut,customersCsv}from './customers.mjs';import {priceSheet,sheetKey}from './price-sheet.mjs';import {setFirstOrderFree}from './first-order.mjs';
 import {listPromotions,savePromotion,referralInfo,referralManage}from './promotions.mjs';
 import {configured,telegramWebhook,telegramManage,botInvite,drainTelegram,notifyStatement}from './telegram.mjs';import {botDomain}from './supplier-bot.mjs';import {savePhoto,listPhotos,photoFile}from './order-photos.mjs';
 import {courierSummary,shift,cashReport,cashReview,remit}from './couriers.mjs';
@@ -27,6 +27,7 @@ export async function handle(req,env){try{
  if(p==='/api/quote'&&b){const quote=await priceBasket(db,b),fee=deliveryFee(quote.city,b.fulfillment,quote.estimate_minor);if(!['pickup','delivery'].includes(b.fulfillment))fail('INVALID_INPUT');return reply({quotes:customerQuotes(quote.lines),items_total:quote.estimate_minor,total:quote.estimate_minor+fee,maximum_total:quote.maximum_minor+fee,delivery_fee:fee,currency:quote.city.currency});}
  if(p==='/api/order/telegram'&&b)return reply(await botInvite(db,b,null,env,true));
  if(p==='/api/orders'&&b)return reply(await createOrder(db,b),201);
+ if(p==='/api/hit'&&b)return reply(await recordHit(db,b));
  if(p==='/api/order/view'&&b)return reply(await orderView(db,b.id,user,b.key));if(p==='/api/order/receipt'&&b)return reply(await savePhoto(db,env,{...b,kind:'RECEIPT'},null,text(b.key,100,true)));if(p==='/api/manage/photo'&&b)return reply(await savePhoto(db,env,{...b,kind:'COLLECTED'},user));if(p==='/api/manage/photos'&&req.method==='GET')return reply(await listPhotos(db,url.searchParams.get('order'),user));if(p==='/api/manage/photo-file'&&req.method==='GET')return await photoFile(db,env,url.searchParams.get('id'),user);
  if(p==='/api/order/approve'&&b)return reply(await approve(db,b));
  if(p==='/api/order/confirm'&&b)return reply(await confirmCollection(db,b));
@@ -44,6 +45,9 @@ export async function handle(req,env){try{
  if(p.startsWith('/api/manage/referral/')){if(p.split('/').pop()==='status'?req.method!=='GET':!b)fail('METHOD_NOT_ALLOWED',405);return reply(await referralManage(db,b,user,p.split('/').pop()));}
  if(p==='/api/manage/sheet'){if(!user.owner)fail('FORBIDDEN',403);const key=await sheetKey(db,req.method==='POST'&&b?.rotate===true);return reply({url:new URL(req.url).origin+'/api/sheet/prices.tsv?key='+key})}
  if(p==='/api/manage/first-order'&&b)return reply(await setFirstOrderFree(db,user,b));
+ if(p==='/api/manage/customers'&&req.method==='GET'){if(!user.owner)fail('FORBIDDEN',403);return reply(await customerBase(db,url.searchParams.get('city')))}
+ if(p==='/api/manage/customers.csv'&&req.method==='GET'){if(!user.owner)fail('FORBIDDEN',403);return new Response(customersCsv((await customerBase(db,url.searchParams.get('city'))).customers),{headers:{'Content-Type':'text/csv; charset=utf-8','Content-Disposition':'attachment; filename="bazar-customers.csv"','Cache-Control':'no-store','X-Robots-Tag':'noindex'}})}
+ if(p==='/api/manage/customers/optout'&&b)return reply(await marketingOptOut(db,b,user));
  if(p==='/api/manage/sources'&&req.method==='GET'){if(!user.owner)fail('FORBIDDEN',403);const days=Math.min(365,Math.max(1,Number(url.searchParams.get('days'))||30));return reply(await sourceReport(db,url.searchParams.get('city'),days))}
  if(p==='/api/manage/operations'&&req.method==='GET'){if(!user.owner)fail('FORBIDDEN',403);const city=url.searchParams.get('city');return reply({events:(await q(db,'SELECT e.*,o.city_id FROM events e JOIN orders o ON o.id=e.order_id WHERE o.city_id=? ORDER BY e.at DESC LIMIT 200',city).all()).results,audit:(await db.prepare('SELECT * FROM operations_audit ORDER BY at DESC LIMIT 100').all()).results,customers:(await q(db,"SELECT json_extract(customer,'$.phone') phone,json_extract(customer,'$.name') name,COUNT(*) orders,SUM(CASE WHEN status='COMPLETED' THEN total ELSE 0 END) revenue FROM orders WHERE city_id=? GROUP BY json_extract(customer,'$.phone') ORDER BY MAX(created_at) DESC LIMIT 200",city).all()).results,payments:(await q(db,'SELECT p.* FROM payments p JOIN orders o ON o.id=p.order_id WHERE o.city_id=? ORDER BY p.at DESC LIMIT 200',city).all()).results})}
  if(p==='/api/manage/couriers'&&req.method==='GET')return reply(await courierSummary(db,user,url.searchParams.get('city')));
