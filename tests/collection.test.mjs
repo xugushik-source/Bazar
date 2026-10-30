@@ -117,6 +117,8 @@ test('Telegram mock: personal cards for collector and controller, buttons by rol
 
 test('migration 0006 keeps existing orders unchanged and the server works on a database without it',async()=>{const DB=new LocalD1(),dir=new URL('../migrations/',import.meta.url);try{
  DB.exec('CREATE TABLE IF NOT EXISTS _local_migrations(name TEXT PRIMARY KEY,applied_at TEXT NOT NULL)');for(const f of fs.readdirSync(dir).filter(f=>/^000[1-5]_/.test(f)).sort()){DB.exec(fs.readFileSync(new URL(f,dir),'utf8'));DB.sqlite.prepare('INSERT INTO _local_migrations VALUES(?,?)').run(f,'x')}
+ // 0058 is the owner's one-time wipe of the test orders (30.10), deliberately not order-preserving; it is tested on its own.
+ DB.sqlite.prepare('INSERT INTO _local_migrations VALUES(?,?)').run('0058_reset_orders.sql','x');
  await seed(DB,{karo:false});const e={DB,sent:[]};e.owner={id:await createUser(DB,{email:'owner@test.invalid',name:'Владелец',password:'test-password-123456',owner:true})};
  const health=await call(e,'health');assert.equal(health.collection,false,'health reports the missing schema honestly');
  const o=await order(e);assert.equal((await customer(e,o)).status,'NEW');assert.equal((await view(e,o,e.owner)).status,'NEW');

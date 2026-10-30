@@ -140,3 +140,10 @@ test('farm removed (owner 30.10): «Ферма Базара» and its goods leav
  for(const s of [...removeFarmSql(),...removeFarmSql()])DB.exec(s);const c=await call(e,'catalog?city='+cid);
  assert.ok(!c.vendors.some(v=>v.id===cid+'-farm'));assert.ok(!c.products.some(p=>farm.includes(p.id)));assert.ok(c.vendors.some(v=>v.id===cid+'-amo'));
  assert.notEqual((await call(e,'quote',{city_id:cid,items:[{product_id:farm[0],selection:{count:1}}],fulfillment:'pickup'})).http,200)}finally{DB.close()}});
+test('orders reset (owner 30.10): every test order and what hangs off it is gone, reservations freed, test sales back on stock, ordering works again; migration equals the generator',async()=>{const e=await env();try{const fs=await import('node:fs'),{resetOrdersSql}=await import('../src/reset-orders.mjs');
+ assert.ok(fs.readFileSync(new URL('../migrations/0058_reset_orders.sql',import.meta.url),'utf8').endsWith(resetOrdersSql().join('\n')+'\n'));const stock=id=>q(e.DB,'SELECT stock,reserved FROM products WHERE id=?',id).first(),before=await stock(pid('apple_loose'));
+ const {o}=await order(e);await order(e,[{product_id:pid('apple_loose'),selection:{grams:1000}}]);await q(e.DB,"UPDATE products SET stock=stock-700,reserved=reserved-700 WHERE id=?",pid('apple_loose')).run();await q(e.DB,"INSERT INTO inventory(id,product_id,at,actor,delta,reason) VALUES('t1',?,'x','t',-700,'SALE')",pid('apple_loose')).run();await q(e.DB,"INSERT INTO payments(id,order_id,at,actor,amount,currency,command,reason) VALUES('p1',?,'x','t',100,'GEL','c1','test')",o.id).run();
+ assert.ok((await q(e.DB,'SELECT COUNT(*) n FROM events').first()).n>0);for(const s of [...resetOrdersSql(),...resetOrdersSql()])e.DB.exec(s);
+ for(const t of ['orders','order_lines','order_groups','events','payments','outbox','tg_jobs'])assert.equal((await q(e.DB,`SELECT COUNT(*) n FROM ${t}`).first()).n,0,t);
+ assert.equal((await q(e.DB,'SELECT COUNT(*) n FROM products WHERE reserved>0').first()).n,0);assert.equal((await q(e.DB,'SELECT COUNT(*) n FROM slots WHERE reserved>0').first()).n,0);assert.deepEqual({...await stock(pid('apple_loose'))},{...before});
+ await order(e)}finally{e.DB.close()}});
