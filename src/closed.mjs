@@ -25,3 +25,6 @@ export function reopenAlcoholSql(){return pauseReopenSql(reopenedCategories)}
 // with its goods (past orders keep their rows). Seed inserts vendors with DO NOTHING, so it never comes back.
 export const removedVendors=['akhalkalaki-farm','tbilisi-farm'];
 export function removeFarmSql(){return [`UPDATE vendors SET active=0 WHERE id IN (${removedVendors.map(v=>`'${v}'`).join(',')}) AND active=1;`]}
+// Owner 30.10: «не пиши алкоголь, а напиши крепкие напитки» — the section keeps its id, only the shown name changes.
+export const strongDrinksNames={ru:'Крепкие напитки',hy:'Թունդ խմիչքներ',ka:'მაგარი სასმელები'};
+export function strongDrinksSql(){return [`UPDATE categories SET names='${JSON.stringify(strongDrinksNames)}' WHERE id='alcohol';`]}
