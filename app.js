@@ -1,11 +1,11 @@
-import {entryReady}from './entry.js?v=bcc078dd41';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=bcc078dd41';import {sources}from './sources.js?v=bcc078dd41';
-import {botWords}from './bot-words.js?v=bcc078dd41';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=bcc078dd41';
-import {salesWords}from './sales-i18n.js?v=bcc078dd41';
-import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=bcc078dd41';import {mediaVersions}from './media-versions.js?v=bcc078dd41';import {transferLinks}from './payments.js?v=bcc078dd41';import {ledger}from './ledger.js?v=bcc078dd41';import {sound,soundButton,watchOrders}from './sounds.js?v=bcc078dd41';
-import {words,statuses} from './i18n.js?v=bcc078dd41';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=bcc078dd41';
-import {quote as makeQuote,assess} from './weight-policy.js?v=bcc078dd41';
+import {entryReady}from './entry.js?v=ed371d4c64';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=ed371d4c64';import {sources}from './sources.js?v=ed371d4c64';
+import {botWords}from './bot-words.js?v=ed371d4c64';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=ed371d4c64';
+import {salesWords}from './sales-i18n.js?v=ed371d4c64';
+import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=ed371d4c64';import {mediaVersions}from './media-versions.js?v=ed371d4c64';import {transferLinks}from './payments.js?v=ed371d4c64';import {ledger}from './ledger.js?v=ed371d4c64';import {sound,soundButton,watchOrders}from './sounds.js?v=ed371d4c64';
+import {words,statuses} from './i18n.js?v=ed371d4c64';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=ed371d4c64';
+import {quote as makeQuote,assess} from './weight-policy.js?v=ed371d4c64';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 // Tile photos for the section grid: one clear, recognisable picture per section; bottles are shown whole.
 const chipArt={meat:'meat',vegetables:'tomato',fruit:'apple',bread:'lavash',deli:'sausage',nuts:'dried-apricot',market:'honey',grains:'buckwheat',drinks:'kri-cola-050',alcohol:'mado-gubernator-050'},chipWhole=['drinks','alcohol'];
