@@ -123,3 +123,6 @@ Object.assign(words.ka,{privacyAgree:'ვეთანხმები ჩემ�
 Object.assign(words.ru,{zone:'Район доставки',zoneCity:'город',zoneHint:'{zone}: туда плохая дорога, поэтому доставка дороже. Бесплатная доставка от {free} и на первый заказ — только по городу.',areaLine:'📍 Доставляем только по {city} и в {zone}. Скоро — Ниноцминда и Ахалцихе.',soonCities:'Ниноцминда|Ахалцихе',soon:'скоро'});
 Object.assign(words.hy,{zone:'Առաքման տարածք',zoneCity:'քաղաք',zoneHint:'{zone}. ճանապարհը վատն է, ուստի առաքումն ավելի թանկ է։ Անվճար առաքումը {free}-ից և առաջին պատվերի համար՝ միայն քաղաքում։',areaLine:'📍 Առաքում ենք միայն {city}-ում և {zone}։ Շուտով՝ Նինոծմինդա և Ախալցխա։',soonCities:'Նինոծմինդա|Ախալցխա',soon:'շուտով'});
 Object.assign(words.ka,{zone:'მიწოდების ზონა',zoneCity:'ქალაქი',zoneHint:'{zone}: იქ ცუდი გზაა, ამიტომ მიწოდება უფრო ძვირია. უფასო მიწოდება {free}-დან და პირველ შეკვეთაზე — მხოლოდ ქალაქში.',areaLine:'📍 ვაწვდით მხოლოდ {city}-ში და {zone}. მალე — ნინოწმინდა და ახალციხე.',soonCities:'ნინოწმინდა|ახალციხე',soon:'მალე'});
+Object.assign(words.ru,{liveCancelled:'Заказ отменён'});
+Object.assign(words.hy,{liveCancelled:'Պատվերը չեղարկվել է'});
+Object.assign(words.ka,{liveCancelled:'შეკვეთა გაუქმდა'});
