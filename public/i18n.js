@@ -126,3 +126,6 @@ Object.assign(words.ka,{zone:'მიწოდების ზონა',zoneCity
 Object.assign(words.ru,{liveCancelled:'Заказ отменён'});
 Object.assign(words.hy,{liveCancelled:'Պատվերը չեղարկվել է'});
 Object.assign(words.ka,{liveCancelled:'შეკვეთა გაუქმდა'});
+Object.assign(words.ru,{closesAt:'В этот день последняя доставка — в {t}.'});
+Object.assign(words.hy,{closesAt:'Այս օրը վերջին առաքումը՝ ժամը {t}-ին։'});
+Object.assign(words.ka,{closesAt:'ამ დღეს ბოლო მიწოდება — {t}-ზე.'});
