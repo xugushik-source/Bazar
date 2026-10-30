@@ -28,3 +28,6 @@ export function removeFarmSql(){return [`UPDATE vendors SET active=0 WHERE id IN
 // Owner 30.10: «не пиши алкоголь, а напиши крепкие напитки» — the section keeps its id, only the shown name changes.
 export const strongDrinksNames={ru:'Крепкие напитки',hy:'Թունդ խմիչքներ',ka:'მაგარი სასმელები'};
 export function strongDrinksSql(){return [`UPDATE categories SET names='${JSON.stringify(strongDrinksNames)}' WHERE id='alcohol';`]}
+// Owner 30.10, later: the section holds wine too, so «Вино и крепкие напитки». Test expenses are wiped with the test orders.
+export const wineDrinksNames={ru:'Вино и крепкие напитки',hy:'Գինի և թունդ խմիչքներ',ka:'ღვინო და მაგარი სასმელები'};
+export function wineDrinksSql(){return [`UPDATE categories SET names='${JSON.stringify(wineDrinksNames)}' WHERE id='alcohol';`,'DELETE FROM expenses;']}
