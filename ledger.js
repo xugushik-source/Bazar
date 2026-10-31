@@ -5,7 +5,7 @@ const words={
  ka:{method:'მეთოდი',debt:'ვალი',agreed:'შეთანხმებული',paid:'გადახდილი',pending:'ელოდება მომწოდებლის თანხმობას',open:'დაუფიქსირებელი დღეები',fix:'დღის დაფიქსირება',noCost:'პროდუქტს არ აქვს შესყიდვის ფასი — შეიყვანეთ ფასი, შემდეგ დააფიქსირეთ',lines:'პროდუქტი',days:'დაფიქსირებული დღეები',PROPOSED:'ელოდება თანხმობას',AGREED:'შეთანხმებული',DISPUTED:'არ ეთანხმება',agree:'ვეთანხმები',disagree:'არ ვეთანხმები',record:'მომწოდებლის პასუხი ტელეფონით',recordAgree:'ჩაწერა: ეთანხმება',recordDisagree:'ჩაწერა: არ ეთანხმება',noteAsk:'მიზეზი ან კომენტარი',phoneAsk:'როგორ უპასუხა მომწოდებელმა (მაგ.: „ტელეფონით, კარენი“)',payments:'გადახდები',pay:'გადახდის შეტანა',amount:'თანხა, ₾',cash:'ნაღდი',transfer:'გადარიცხვა',reason:'კომენტარი',save:'შენახვა',reverse:'გადახდის გაუქმება',reverseAsk:'რატომ აუქმებთ გადახდას?',reversal:'გადახდის გაუქმება',none:'ჩანაწერები არ არის',hint:'ითვლება მხოლოდ მიწოდებული შეკვეთები შესყიდვის ფასით. გაუქმებული შეკვეთები არ ითვლება.',kg:'კგ',pcs:'ც',fixAsk:'დავაფიქსიროთ დღის თანხა? მომწოდებლის თანხმობის შემდეგ თანხა აღარ იცვლება.',PAYMENT_EXCEEDS_DEBT:'გადახდა აღემატება შეთანხმებულ ვალს',COST_UNKNOWN:'პროდუქტს არ აქვს შესყიდვის ფასი',NOTHING_TO_FIX:'ამ დღისთვის დასაფიქსირებელი არაფერია'}
 };
 export const ledgerWords=words;
-import {sound}from './sounds.js?v=5f290534e8';
+import {sound}from './sounds.js?v=6ded223b2a';
 let c=null;
 const W=k=>(words[c.lang]||words.ru)[k]??k,x=s=>c.esc(s),id=()=>crypto.randomUUID(),WEIGHED=['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'];
 const qty=l=>WEIGHED.includes(l.mode)?`${(l.quantity/1000).toLocaleString(c.lang,{maximumFractionDigits:3})} ${W('kg')}`:`${l.quantity} ${W('pcs')}`;
