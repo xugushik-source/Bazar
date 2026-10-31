@@ -31,3 +31,7 @@ export function strongDrinksSql(){return [`UPDATE categories SET names='${JSON.s
 // Owner 30.10, later: the section holds wine too, so «Вино и крепкие напитки». Test expenses are wiped with the test orders.
 export const wineDrinksNames={ru:'Вино и крепкие напитки',hy:'Գինի և թունդ խմիչքներ',ka:'ღვინო და მაგარი სასმელები'};
 export function wineDrinksSql(){return [`UPDATE categories SET names='${JSON.stringify(wineDrinksNames)}' WHERE id='alcohol';`,'DELETE FROM expenses;']}
+// Owner 31.10: «Ферма Базара — фейковый поставщик, сними всё; оставляем Каро». Its demo twin «Сад Базара» was still on sale with
+// 8 placeholder goods; switched off the same way (past orders keep their rows, seed never re-enables a vendor).
+export const removedVendors2=['akhalkalaki-garden','tbilisi-garden'];
+export function removeGardenSql(){return [`UPDATE vendors SET active=0 WHERE id IN (${removedVendors2.map(v=>`'${v}'`).join(',')}) AND active=1;`]}
