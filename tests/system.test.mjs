@@ -194,12 +194,12 @@ test('visit statistics (owner 30.10): anonymous counters per link, language and 
  assert.deepEqual([boris.visitors,boris.visits,boris.cart,boris.checkout,boris.orders],[2,3,1,1,0]);assert.equal(direct.visitors,1);assert.deepEqual({...r.langs},{hy:1,ru:1,ka:1});assert.equal(r.devices.app,1);
  const rows=(await q(e.DB,'SELECT * FROM traffic_daily').all()).results;assert.ok(rows.every(x=>Object.keys(x).every(k=>['day','city_id','src','event','lang','device','hits','uniques'].includes(k))),'nothing personal is stored')}finally{e.DB.close()}});
 test('delivery zones (owner 30.10): «Городок» is 8 GEL whatever the basket, no free first order there, the courier sees it in the address; the city keeps its rules',async()=>{const e=await env({firstFree:true});try{
- const c=await call(e,'catalog?city='+cid);assert.deepEqual(c.city.zones.map(z=>[z.id,z.fee,z.names.ru]),[['gorodok',800,'Городок']]);
+ const c=await call(e,'catalog?city='+cid);assert.deepEqual(c.city.zones.map(z=>[z.id,z.fee,z.names.ru]),[['gorodok',600,'1 Городок']]);
  const items=[{product_id:pid('apple_loose'),selection:{grams:1000}}],base={city_id:cid,items,fulfillment:'delivery'},day=new Date(Date.now()+86400000).toISOString().slice(0,10);
  const city=await call(e,'quote',base),far=await call(e,'quote',{...base,zone:'gorodok'}),odd=await call(e,'quote',{...base,zone:'moon'});
- assert.equal(far.delivery_fee,800);assert.equal(odd.delivery_fee,city.delivery_fee);
+ assert.equal(far.delivery_fee,600);assert.equal(odd.delivery_fee,city.delivery_fee);
  const o=await call(e,'orders',{...base,zone:'gorodok',idem:crypto.randomUUID(),day,minute:600,method:'cash',customer:{name:'Карен',phone:'+995555777888',address:'ул. Тестовая, 1'},expected_total:far.total,maximum_total:far.maximum_total,accepted_weight_rules:true,privacy_consent:true});
- assert.equal(o.http,201,JSON.stringify(o));const row=await q(e.DB,'SELECT delivery_fee,customer FROM orders WHERE id=?',o.id).first();assert.equal(row.delivery_fee,800,'no free first order in Городок');assert.equal(JSON.parse(row.customer).address,'Городок: ул. Тестовая, 1');
+ assert.equal(o.http,201,JSON.stringify(o));const row=await q(e.DB,'SELECT delivery_fee,customer FROM orders WHERE id=?',o.id).first();assert.equal(row.delivery_fee,600,'no free first order in Городок');assert.equal(JSON.parse(row.customer).address,'1 Городок: ул. Тестовая, 1');
  const app=(await import('node:fs')).readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');for(const k of ['areaLine','zoneHint','soonCities'])assert.equal((app.match(new RegExp(k+":'",'g'))||[]).length,3,k)}finally{e.DB.close()}});
 test('cancel reason (owner 30.10): the buyer sees «не дозвонились» on the order; a typed reason that says so counts too; anything else is a neutral notice',async()=>{const e=await env();try{const {cancelReason}=await import('../src/commerce.mjs');
  for(const [code,reason,want]of [['NO_ANSWER','Не дозвонились','NO_ANSWER'],[undefined,'не отвечает на звонки','NO_ANSWER'],[undefined,'дубль заказа','OTHER'],['CUSTOMER_ASKED','просил','CUSTOMER_ASKED']]){
