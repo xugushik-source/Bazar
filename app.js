@@ -1,17 +1,17 @@
-import {entryReady}from './entry.js?v=625e5314a5';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=625e5314a5';import {sources}from './sources.js?v=625e5314a5';import {customers}from './customers.js?v=625e5314a5';
-import {botWords}from './bot-words.js?v=625e5314a5';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=625e5314a5';
-import {salesWords}from './sales-i18n.js?v=625e5314a5';
-import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=625e5314a5';import {mediaVersions}from './media-versions.js?v=625e5314a5';import {transferLinks}from './payments.js?v=625e5314a5';import {ledger}from './ledger.js?v=625e5314a5';import {sound,soundButton,watchOrders}from './sounds.js?v=625e5314a5';
-import {words,statuses} from './i18n.js?v=625e5314a5';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=625e5314a5';
-import {quote as makeQuote,assess} from './weight-policy.js?v=625e5314a5';
+import {entryReady}from './entry.js?v=771bbe8492';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=771bbe8492';import {sources}from './sources.js?v=771bbe8492';import {customers}from './customers.js?v=771bbe8492';
+import {botWords}from './bot-words.js?v=771bbe8492';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=771bbe8492';
+import {salesWords}from './sales-i18n.js?v=771bbe8492';
+import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=771bbe8492';import {mediaVersions}from './media-versions.js?v=771bbe8492';import {transferLinks}from './payments.js?v=771bbe8492';import {ledger}from './ledger.js?v=771bbe8492';import {sound,soundButton,watchOrders}from './sounds.js?v=771bbe8492';
+import {words,statuses} from './i18n.js?v=771bbe8492';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=771bbe8492';
+import {quote as makeQuote,assess} from './weight-policy.js?v=771bbe8492';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 // Tile photos for the section grid: one clear, recognisable picture per section; bottles are shown whole.
-const chipArt={meat:'meat',vegetables:'tomato',fruit:'apple',bread:'lavash',deli:'sausage',nuts:'dried-apricot',market:'honey',grains:'buckwheat',drinks:'kri-cola-050',alcohol:'mado-gubernator-050'},chipWhole=['drinks','alcohol'];
+const chipArt={meat:'meat',vegetables:'tomato',fruit:'apple',bread:'lavash',deli:'sausage',nuts:'dried-apricot',market:'honey',grains:'buckwheat',drinks:'kri-cola-050',alcohol:'mado-gubernator-050',sweets:'artur-alenka'},chipWhole=['drinks','alcohol'];
 // Home page sections (owner 22.10, after the storefront study): six larger sections, meat first; a category with one product
 // (household) has no chip and is found through «All» and search.
-const chipGroups=[['meat',['meat','trout']],['vegetables',['vegetables','herbs']],['fruit',['fruit','berries']],['bread',['bread']],['deli',['deli']],['nuts',['nuts','dried']],['market',['market','preserves']],['grains',['grains']],['drinks',['drinks']],['alcohol',['alcohol']]];
+const chipGroups=[['meat',['meat','trout']],['vegetables',['vegetables','herbs']],['fruit',['fruit','berries']],['bread',['bread']],['deli',['deli']],['nuts',['nuts','dried']],['market',['market','preserves']],['sweets',['sweets']],['grains',['grains']],['drinks',['drinks']],['alcohol',['alcohol']]];
 const inFilter=p=>filter==='all'||p.category===filter||chipGroups.find(([g])=>g===filter)?.[1].includes(p.category);
 // Products the owner wants first in their section (owner 24.10: beef boneless opens «Мясо и рыба»).
 const firstInSection=['beef_boneless'];
