@@ -29,12 +29,12 @@ const homepage = path.join(published, 'index.html');
 let html = fs.readFileSync(homepage, 'utf8');
 const builtWithSeo = html.includes('<link rel="canonical" href="https://xugushik-source.github.io/Bazar/">');
 const title = 'Базар — доставка продуктов в Ахалкалаки';
-const description = 'Базар — онлайн-рынок с доставкой продуктов в Ахалкалаки. Овощи, фрукты, сыр, хлеб и продукты местных поставщиков. Заказы на русском, армянском и грузинском.';
+const description = 'Базар — онлайн-рынок с доставкой продуктов в Ахалкалаки. Овощи, фрукты, сыр, хлеб и свежие продукты с рынка. Заказы на русском, армянском и грузинском.';
 const tags = [
   ['canonical', '<link rel="canonical" href="https://xugushik-source.github.io/Bazar/">'],
   ['name="robots"', '<meta name="robots" content="index,follow">'],
   ['property="og:title"', '<meta property="og:title" content="Базар — доставка продуктов в Ахалкалаки">'],
-  ['property="og:description"', '<meta property="og:description" content="Онлайн-рынок Ахалкалаки: продукты местных поставщиков с доставкой.">'],
+  ['property="og:description"', '<meta property="og:description" content="Онлайн-рынок Ахалкалаки: свежие продукты с рынка с доставкой.">'],
   ['property="og:type"', '<meta property="og:type" content="website">'],
   ['property="og:url"', '<meta property="og:url" content="https://xugushik-source.github.io/Bazar/">'],
   ['property="og:image"', '<meta property="og:image" content="https://xugushik-source.github.io/Bazar/media/bazar-opening-market.jpg">'],
