@@ -1,11 +1,11 @@
-import {entryReady}from './entry.js?v=fa68574d84';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=fa68574d84';import {sources}from './sources.js?v=fa68574d84';import {customers}from './customers.js?v=fa68574d84';
-import {botWords}from './bot-words.js?v=fa68574d84';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=fa68574d84';
-import {salesWords}from './sales-i18n.js?v=fa68574d84';
-import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=fa68574d84';import {mediaVersions}from './media-versions.js?v=fa68574d84';import {transferLinks}from './payments.js?v=fa68574d84';import {ledger}from './ledger.js?v=fa68574d84';import {sound,soundButton,watchOrders}from './sounds.js?v=fa68574d84';
-import {words,statuses} from './i18n.js?v=fa68574d84';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=fa68574d84';
-import {quote as makeQuote,assess} from './weight-policy.js?v=fa68574d84';
+import {entryReady}from './entry.js?v=e613041c3c';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=e613041c3c';import {sources}from './sources.js?v=e613041c3c';import {customers}from './customers.js?v=e613041c3c';
+import {botWords}from './bot-words.js?v=e613041c3c';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=e613041c3c';
+import {salesWords}from './sales-i18n.js?v=e613041c3c';
+import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=e613041c3c';import {mediaVersions}from './media-versions.js?v=e613041c3c';import {transferLinks}from './payments.js?v=e613041c3c';import {ledger}from './ledger.js?v=e613041c3c';import {sound,soundButton,watchOrders}from './sounds.js?v=e613041c3c';
+import {words,statuses} from './i18n.js?v=e613041c3c';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=e613041c3c';
+import {quote as makeQuote,assess} from './weight-policy.js?v=e613041c3c';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 // Tile photos for the section grid: one clear, recognisable picture per section; bottles are shown whole.
 const chipArt={meat:'meat',vegetables:'tomato',fruit:'apple',bread:'lavash',deli:'sausage',nuts:'dried-apricot',market:'honey',grains:'buckwheat',drinks:'kri-cola-050',alcohol:'mado-gubernator-050',sweets:'artur-alenka',belarus:'artur-smetana-gorki26',frozen:'artur-shrimp-vanoni'},chipWhole=['drinks','alcohol'];
