@@ -235,3 +235,7 @@ test('Artur (owner 02.11): new section «Конфеты», 37 sweets by the kilo
  const v=c.vendors.find(x=>x.id==='akhalkalaki-artur');assert.deepEqual([v.open_minute,v.close_minute],[540,1080]);
  for(const a of arturArts)assert.ok(fs.existsSync(new URL('../public/media/'+a+'.jpg',import.meta.url)),a);
  await seed(DB);const again=await call({DB},'catalog?city='+cid);assert.equal(again.products.filter(p=>p.category==='sweets').length,37)}finally{DB.close?.()}});
+
+test('Artur (owner 02.11): the sweet is named «Sorini» as on the wrapper; migration equals the generator',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);try{const fs=await import('node:fs'),{arturSoriniSql}=await import('../src/artur.mjs');
+ assert.ok(fs.readFileSync(new URL('../migrations/0069_artur_sorini.sql',import.meta.url),'utf8').endsWith(arturSoriniSql().join('\n')+'\n'));const c=await call({DB},'catalog?city='+cid),p=c.products.find(p=>p.id===pid('artur_soreni'));
+ assert.deepEqual(p.names,{ru:'Конфеты Sorini',hy:'Կոնֆետ Sorini',ka:'კანფეტი Sorini'})}finally{DB.close?.()}});

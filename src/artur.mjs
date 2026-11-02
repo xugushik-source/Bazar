@@ -53,3 +53,7 @@ export function arturSql(){const v=arturVendor,c=sweets,s=x=>"'"+String(x).repla
   `INSERT INTO vendors(id,city_id,names) SELECT ${s(v.id)},${s(v.city_id)},${j(v.names)} WHERE EXISTS(SELECT 1 FROM cities WHERE id=${s(v.city_id)}) ON CONFLICT(id) DO NOTHING;`,
   `UPDATE vendors SET open_minute=${arturHours.open_minute},close_minute=${arturHours.close_minute} WHERE id=${s(v.id)} AND (open_minute IS NOT ${arturHours.open_minute} OR close_minute IS NOT ${arturHours.close_minute});`,
   ...arturProducts.map(([key,ru,hy,ka,cost])=>`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--artur_'+key)},${s(v.id)},${j({ru,hy,ka})},${s(c.id)},${s('artur-'+key.replaceAll('_','-'))},${j(arturProfile)},${saleOf(cost)},${cost},100000 WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(c.id)}) ON CONFLICT(id) DO NOTHING;`)]}
+// Owner 02.11, later: the wrapper says «Sorini». Migration 0068 is applied, so the name is changed by an update of its own.
+export const sorini={ru:'Конфеты Sorini',hy:'Կոնֆետ Sorini',ka:'კანფეტი Sorini'};
+export function arturSoriniSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'";
+ return [`UPDATE products SET names=${s(JSON.stringify(sorini))} WHERE id='akhalkalaki--artur_soreni' AND names IS NOT ${s(JSON.stringify(sorini))};`]}
