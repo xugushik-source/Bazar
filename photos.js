@@ -1,4 +1,4 @@
-import {mediaVersions}from './media-versions.js?v=49ecf70157';
+import {mediaVersions}from './media-versions.js?v=fa68574d84';
 // Most images are local; two source-hosted photographs retain their original license links.
 export const remotePhotos={
  prunes:'https://images.pexels.com/photos/11828235/pexels-photo-11828235.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -13,7 +13,7 @@ export const artLabels={
  pickles:{ru:'Соленья',hy:'Թթու',ka:'მწნილი'},flour:{ru:'Мука, бакалея',hy:'Ալյուր, նպարեղեն',ka:'ფქვილი, ბაკალეა'},drinks:{ru:'Вода, напитки',hy:'Ջուր, ըմպելիքներ',ka:'წყალი, სასმელები'},household:{ru:'Хозтовары',hy:'Տնտեսական ապրանքներ',ka:'სამეურნეო საქონელი'}
 };
 // Picture for a department that has no products yet (shown with «Скоро»).
-export const categoryArt={dairy:'cheese',eggs:'eggs',bread:'bread',meat:'meat',trout:'trout',deli:'sausage',preserves:'pickles',pantry:'flour',drinks:'drinks',alcohol:'alcohol-generic',sweets:'artur-alenka',household:'household'};
+export const categoryArt={dairy:'cheese',eggs:'eggs',bread:'bread',meat:'meat',trout:'trout',deli:'sausage',preserves:'pickles',pantry:'flour',drinks:'drinks',alcohol:'alcohol-generic',sweets:'artur-alenka',belarus:'artur-smetana-gorki26',frozen:'artur-shrimp-vanoni',household:'household'};
 // Photos whose licence asks to name the author (CC BY-SA 4.0): the credit sits on the product's own card (owner 24.10: not in the
 // footer).
 export const photoCredits={'radish-black':'📷 San Juan del Sur · CC BY-SA 4.0','radish-green':'📷 Emőke Dénes · CC BY-SA 4.0'};

@@ -1,28 +1,28 @@
-import {entryReady}from './entry.js?v=49ecf70157';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=49ecf70157';import {sources}from './sources.js?v=49ecf70157';import {customers}from './customers.js?v=49ecf70157';
-import {botWords}from './bot-words.js?v=49ecf70157';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=49ecf70157';
-import {salesWords}from './sales-i18n.js?v=49ecf70157';
-import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=49ecf70157';import {mediaVersions}from './media-versions.js?v=49ecf70157';import {transferLinks}from './payments.js?v=49ecf70157';import {ledger}from './ledger.js?v=49ecf70157';import {sound,soundButton,watchOrders}from './sounds.js?v=49ecf70157';
-import {words,statuses} from './i18n.js?v=49ecf70157';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=49ecf70157';
-import {quote as makeQuote,assess} from './weight-policy.js?v=49ecf70157';
+import {entryReady}from './entry.js?v=fa68574d84';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=fa68574d84';import {sources}from './sources.js?v=fa68574d84';import {customers}from './customers.js?v=fa68574d84';
+import {botWords}from './bot-words.js?v=fa68574d84';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=fa68574d84';
+import {salesWords}from './sales-i18n.js?v=fa68574d84';
+import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=fa68574d84';import {mediaVersions}from './media-versions.js?v=fa68574d84';import {transferLinks}from './payments.js?v=fa68574d84';import {ledger}from './ledger.js?v=fa68574d84';import {sound,soundButton,watchOrders}from './sounds.js?v=fa68574d84';
+import {words,statuses} from './i18n.js?v=fa68574d84';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=fa68574d84';
+import {quote as makeQuote,assess} from './weight-policy.js?v=fa68574d84';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 // Tile photos for the section grid: one clear, recognisable picture per section; bottles are shown whole.
-const chipArt={meat:'meat',vegetables:'tomato',fruit:'apple',bread:'lavash',deli:'sausage',nuts:'dried-apricot',market:'honey',grains:'buckwheat',drinks:'kri-cola-050',alcohol:'mado-gubernator-050',sweets:'artur-alenka'},chipWhole=['drinks','alcohol'];
+const chipArt={meat:'meat',vegetables:'tomato',fruit:'apple',bread:'lavash',deli:'sausage',nuts:'dried-apricot',market:'honey',grains:'buckwheat',drinks:'kri-cola-050',alcohol:'mado-gubernator-050',sweets:'artur-alenka',belarus:'artur-smetana-gorki26',frozen:'artur-shrimp-vanoni'},chipWhole=['drinks','alcohol'];
 // Home page sections (owner 22.10, after the storefront study): six larger sections, meat first; a category with one product
 // (household) has no chip and is found through «All» and search.
-const chipGroups=[['meat',['meat','trout']],['vegetables',['vegetables','herbs']],['fruit',['fruit','berries']],['bread',['bread']],['deli',['deli']],['nuts',['nuts','dried']],['market',['market','preserves']],['sweets',['sweets']],['grains',['grains']],['drinks',['drinks']],['alcohol',['alcohol']]];
+const chipGroups=[['meat',['meat','trout']],['vegetables',['vegetables','herbs']],['fruit',['fruit','berries']],['bread',['bread']],['deli',['deli']],['nuts',['nuts','dried']],['market',['market','preserves']],['sweets',['sweets']],['belarus',['belarus']],['frozen',['frozen']],['grains',['grains']],['drinks',['drinks']],['alcohol',['alcohol']]];
 const inFilter=p=>filter==='all'||p.category===filter||chipGroups.find(([g])=>g===filter)?.[1].includes(p.category);
 // Products the owner wants first in their section (owner 24.10: beef boneless opens «Мясо и рыба»).
 const firstInSection=['beef_boneless'];
 // Subsections inside a section (owner 24.10): meat by animal, sausages by kind, alcohol brandy / vodka; elsewhere the categories
 // a section is made of (vegetables / herbs and so on). A product's subsection comes from its category and Russian name.
-const subOrder={meat:['beef','pork','semi','lard','fish','dogs'],deli:['raw','half','sausages','sliced','snacks'],alcohol:['vodka','ararat','noy','artashat','khosrov','whisky','liqueur','wine'],drinks:['soda','juice','water','energy','coffee']};
+const subOrder={meat:['beef','pork','semi','lard','fish','dogs'],deli:['raw','half','sausages','sliced','snacks'],alcohol:['vodka','ararat','noy','artashat','khosrov','whisky','beer','liqueur','wine'],drinks:['soda','juice','water','energy','coffee']};
 const subOf=p=>{const k=p.id.split('--')[1]||'',n=p.names?.ru||'';
  if(p.category==='trout')return 'fish';
  if(p.category==='meat')return /^(lyulya|cutlet|kupaty|shashlik)/.test(k)?'semi':/^lard/.test(k)?'lard':/^pork/.test(k)?'pork':k==='dog_bones'?'dogs':'beef';
  if(p.category==='deli')return /сырокопч|Пепперони/i.test(n)?'raw':/полукопч|Сервелат/i.test(n)?'half':/Сосиски/.test(n)?'sausages':/нарезка/i.test(n)?'sliced':'snacks';
- if(p.category==='alcohol')return /Водка/.test(n)?'vodka':/^Виски/.test(n)?'whisky':/^(Ликёр|Вермут)/.test(n)?'liqueur':/^Вино/.test(n)?'wine':/Ной/.test(n)?'noy':/Арташат/.test(n)?'artashat':/Хосров/.test(n)?'khosrov':'ararat';
+ if(p.category==='alcohol')return /^Пиво/.test(n)?'beer':/Водка/.test(n)?'vodka':/^Виски/.test(n)?'whisky':/^(Ликёр|Вермут)/.test(n)?'liqueur':/^Вино/.test(n)?'wine':/Ной/.test(n)?'noy':/Арташат/.test(n)?'artashat':/Хосров/.test(n)?'khosrov':'ararat';
  if(p.category==='drinks')return /Энергетик/.test(n)?'energy':/кофе/i.test(n)?'coffee':/вода/i.test(n)?'water':/^(Сок|Компот)/.test(n)?'juice':'soda';
  return p.category};
 const subLabel=(s,p)=>words[lang]['sub_'+s]?t('sub_'+s):name(data.categories.find(c=>c.id===p.category));
