@@ -57,3 +57,30 @@ export function arturSql(){const v=arturVendor,c=sweets,s=x=>"'"+String(x).repla
 export const sorini={ru:'Конфеты Sorini',hy:'Կոնֆետ Sorini',ka:'კანფეტი Sorini'};
 export function arturSoriniSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'";
  return [`UPDATE products SET names=${s(JSON.stringify(sorini))} WHERE id='akhalkalaki--artur_soreni' AND names IS NOT ${s(JSON.stringify(sorini))};`]}
+// Owner 02.11, later: two new sections — «Белорусские продукты» (dairy) and «Заморозка» (shrimp, octopus) — and beer in the
+// alcohol section. Dairy and beer: cost + 15% rounded up to 50 tetri (as the sweets); shrimp and octopus at the owner's own prices.
+// Sold by the piece. Photos: beer from the brewers' sites, the rest cut from the owner's shelf photos (no price tags visible).
+export const belarus={id:'belarus',names:{ru:'Белорусские продукты',hy:'Բելառուսական ապրանքներ',ka:'ბელარუსული პროდუქტები'},sort:76};
+export const frozen={id:'frozen',names:{ru:'Заморозка',hy:'Սառեցված ապրանքներ',ka:'გაყინული პროდუქცია'},sort:77};
+// [key, ru, hy, ka, category, art, cost (tetri), sale (tetri) or null = cost + 15%]
+export const arturProducts3=[
+ ['greco','Йогурт греческий GRECO 2%, 310 г','Հունական յոգուրտ GRECO 2%, 310 գ','ბერძნული იოგურტი GRECO 2%, 310 გ','belarus','artur-greco',400,null],
+ ['tvorog_svezhie','Творог «Деревенский» «Свежие новости» 7%, 350 г','Կաթնաշոռ «Դերևենսկի» «Свежие новости» 7%, 350 գ','ხაჭო „დერევენსკი“ „Свежие новости“ 7%, 350 გ','belarus','artur-tvorog-svezhie',850,null],
+ ['tvorog_babushkina','Творог «Деревенский» «Бабушкина крынка» 5%','Կաթնաշոռ «Դերևենսկի» «Бабушкина крынка» 5%','ხაჭო „დერევენსკი“ „Бабушкина крынка“ 5%','belarus','artur-tvorog-babushkina',850,null],
+ ['smetana_danke15','Сметана Danke 15%','Թթվասեր Danke 15%','არაჟანი Danke 15%','belarus','artur-smetana-danke15',600,null],
+ ['smetana_svezhie20','Сметана «Свежие новости» 20%','Թթվասեր «Свежие новости» 20%','არაჟანი „Свежие новости“ 20%','belarus','artur-smetana-svezhie20',600,null],
+ ['smetana_danke_lf20','Сметана Danke безлактозная 20%','Թթվասեր Danke առանց լակտոզի 20%','არაჟანი Danke ულაქტოზო 20%','belarus','artur-smetana-danke-lf20',600,null],
+ ['smetana_gorki26','Сметана «Молочные горки» 26%, 380 г','Թթվասեր «Молочные горки» 26%, 380 գ','არაჟანი „Молочные горки“ 26%, 380 გ','belarus','artur-smetana-gorki26',650,null],
+ ['smetana_svezhie23','Сметана «Свежие новости» 23%, 380 г','Թթվասեր «Свежие новости» 23%, 380 գ','არაჟანი „Свежие новости“ 23%, 380 გ','belarus','artur-smetana-svezhie23',650,null],
+ ['smetana_babushkina25','Сметана «Бабушкина крынка» 25%, 380 г','Թթվասեր «Бабушкина крынка» 25%, 380 գ','არაჟანი „Бабушкина крынка“ 25%, 380 გ','belarus','artur-smetana-babushkina25',650,null],
+ ['beer_corona','Пиво Corona Extra 0,355 л','Գարեջուր Corona Extra 0,355 լ','ლუდი Corona Extra 0,355 ლ','alcohol','artur-beer-corona',500,null],
+ ['beer_paulaner_weiss','Пиво Paulaner Weissbier 0,5 л','Գարեջուր Paulaner Weissbier 0,5 լ','ლუდი Paulaner Weissbier 0,5 ლ','alcohol','artur-beer-paulaner-weiss',700,null],
+ ['beer_paulaner_hell','Пиво Paulaner Münchner Hell 0,5 л','Գարեջուր Paulaner Münchner Hell 0,5 լ','ლუდი Paulaner Münchner Hell 0,5 ლ','alcohol','artur-beer-paulaner-hell',700,null],
+ ['shrimp_vanoni','Креветки Vanoni’s 16/20, 1 кг','Ծովախեցգետին Vanoni’s 16/20, 1 կգ','კრევეტი Vanoni’s 16/20, 1 კგ','frozen','artur-shrimp-vanoni',3500,4300],
+ ['shrimp_king','Креветки в панировке King Torpedo 26/30, 1 кг','Ծովախեցգետին պանիրովկայով King Torpedo 26/30, 1 կգ','პანირებული კრევეტი King Torpedo 26/30, 1 კგ','frozen','artur-shrimp-king',4500,5300],
+ ['octopus','Осьминог замороженный, лоток 5,45 кг','Ութոտնուկ սառեցված, սկուտեղ 5,45 կգ','რვაფეხა გაყინული, ლანგარი 5,45 კგ','frozen','artur-octopus',10000,12000]
+];
+export const arturArts3=arturProducts3.map(r=>r[5]);
+export function arturSql3(){const v=arturVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));
+ return [...[belarus,frozen].map(c=>`INSERT INTO categories(id,names,sort) VALUES(${s(c.id)},${j(c.names)},${c.sort}) ON CONFLICT(id) DO NOTHING;`),
+  ...arturProducts3.map(([key,ru,hy,ka,category,art,cost,sale])=>`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--artur_'+key)},${s(v.id)},${j({ru,hy,ka})},${s(category)},${s(art)},${j({mode:'EACH',policy_version:1})},${sale??saleOf(cost)},${cost},100 WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`)]}
