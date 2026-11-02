@@ -1,0 +1,2 @@
+-- Owner 02.11: kvass «Хатні» dark 1.4 l, cost 5.50, sale 6.50. Generated from src/artur.mjs (arturKvasSql).
+INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT 'akhalkalaki--artur_kvas_hatni','akhalkalaki-artur','{"ru":"Квас «Хатні» тёмный, 1,4 л","hy":"Կվաս «Хатні» մուգ, 1,4 լ","ka":"კვასი „Хатні“ მუქი, 1,4 ლ"}','belarus','artur-kvas-hatni','{"mode":"EACH","policy_version":1}',650,550,100 WHERE EXISTS(SELECT 1 FROM vendors WHERE id='akhalkalaki-artur') AND EXISTS(SELECT 1 FROM categories WHERE id='belarus') ON CONFLICT(id) DO NOTHING;
