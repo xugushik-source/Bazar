@@ -8,10 +8,10 @@ import {words,statuses} from './i18n.js';import {progressHTML,linesHTML,stageHTM
 import {quote as makeQuote,assess} from './weight-policy.js';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 // Tile photos for the section grid: one clear, recognisable picture per section; bottles are shown whole.
-const chipArt={meat:'meat',vegetables:'tomato',fruit:'apple',bread:'lavash',deli:'sausage',nuts:'dried-apricot',market:'honey',grains:'buckwheat',drinks:'kri-cola-050',alcohol:'mado-gubernator-050'},chipWhole=['drinks','alcohol'];
+const chipArt={meat:'meat',vegetables:'tomato',fruit:'apple',bread:'lavash',deli:'sausage',nuts:'dried-apricot',market:'honey',grains:'buckwheat',drinks:'kri-cola-050',alcohol:'mado-gubernator-050',sweets:'artur-alenka'},chipWhole=['drinks','alcohol'];
 // Home page sections (owner 22.10, after the storefront study): six larger sections, meat first; a category with one product
 // (household) has no chip and is found through «All» and search.
-const chipGroups=[['meat',['meat','trout']],['vegetables',['vegetables','herbs']],['fruit',['fruit','berries']],['bread',['bread']],['deli',['deli']],['nuts',['nuts','dried']],['market',['market','preserves']],['grains',['grains']],['drinks',['drinks']],['alcohol',['alcohol']]];
+const chipGroups=[['meat',['meat','trout']],['vegetables',['vegetables','herbs']],['fruit',['fruit','berries']],['bread',['bread']],['deli',['deli']],['nuts',['nuts','dried']],['market',['market','preserves']],['sweets',['sweets']],['grains',['grains']],['drinks',['drinks']],['alcohol',['alcohol']]];
 const inFilter=p=>filter==='all'||p.category===filter||chipGroups.find(([g])=>g===filter)?.[1].includes(p.category);
 // Products the owner wants first in their section (owner 24.10: beef boneless opens «Мясо и рыба»).
 const firstInSection=['beef_boneless'];

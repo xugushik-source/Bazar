@@ -13,7 +13,7 @@ export const artLabels={
  pickles:{ru:'Соленья',hy:'Թթու',ka:'მწნილი'},flour:{ru:'Мука, бакалея',hy:'Ալյուր, նպարեղեն',ka:'ფქვილი, ბაკალეა'},drinks:{ru:'Вода, напитки',hy:'Ջուր, ըմպելիքներ',ka:'წყალი, სასმელები'},household:{ru:'Хозтовары',hy:'Տնտեսական ապրանքներ',ka:'სამეურნეო საქონელი'}
 };
 // Picture for a department that has no products yet (shown with «Скоро»).
-export const categoryArt={dairy:'cheese',eggs:'eggs',bread:'bread',meat:'meat',trout:'trout',deli:'sausage',preserves:'pickles',pantry:'flour',drinks:'drinks',alcohol:'alcohol-generic',household:'household'};
+export const categoryArt={dairy:'cheese',eggs:'eggs',bread:'bread',meat:'meat',trout:'trout',deli:'sausage',preserves:'pickles',pantry:'flour',drinks:'drinks',alcohol:'alcohol-generic',sweets:'artur-alenka',household:'household'};
 // Photos whose licence asks to name the author (CC BY-SA 4.0): the credit sits on the product's own card (owner 24.10: not in the
 // footer).
 export const photoCredits={'radish-black':'📷 San Juan del Sur · CC BY-SA 4.0','radish-green':'📷 Emőke Dénes · CC BY-SA 4.0'};
