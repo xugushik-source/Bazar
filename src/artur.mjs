@@ -148,3 +148,7 @@ export const arturArts4=[...new Set(arturProducts4.map(r=>r[5]).filter(Boolean))
 export function arturSql4(){const v=arturVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));
  return [...kristallOffSql(),...arturProducts4.map(([key,ru,hy,ka,category,art,cost])=>`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--artur_'+key)},${s(v.id)},${j({ru,hy,ka})},${s(category)},${s(art||'artur-'+key.replaceAll('_','-'))},${j({mode:'EACH',policy_version:1})},${saleOf(cost)},${cost},100 WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`)]}
 export const arturArtsWithoutPhoto4=arturProducts4.filter(r=>!r[5]).map(r=>'artur-'+r[0].replaceAll('_','-'));
+// Owner 03.11, later: Artur has the same vodkas — Fortuna Gold, Fortuna Premium, «Царская» Gold and Original (0.5 l) move
+// from Kristall to Artur with the same cost and sale prices, photos and names; only the supplier changes.
+export const arturVodkas=['kri_fortuna_gold_050','kri_fortuna_premium_050','kri_tsarskaya_gold_050','kri_tsarskaya_original_050'];
+export const arturVodkaSql=()=>[`UPDATE products SET vendor_id='akhalkalaki-artur',version=version+1 WHERE id IN (${arturVodkas.map(k=>`'akhalkalaki--${k}'`).join(',')}) AND vendor_id='akhalkalaki-kristall';`];
