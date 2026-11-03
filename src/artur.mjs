@@ -88,3 +88,63 @@ export function arturSql3(){const v=arturVendor,s=x=>"'"+String(x).replaceAll("'
 export const kvas=['kvas_hatni','Квас «Хатні» тёмный, 1,4 л','Կվաս «Хатні» մուգ, 1,4 լ','კვასი „Хатні“ მუქი, 1,4 ლ','belarus','artur-kvas-hatni',550,null];
 export function arturKvasSql(){const v=arturVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));const [key,ru,hy,ka,category,art,cost]=kvas;
  return [`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--artur_'+key)},${s(v.id)},${j({ru,hy,ka})},${s(category)},${s(art)},${j({mode:'EACH',policy_version:1})},${saleOf(cost)},${cost},100 WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`]}
+// Owner 03.11: Kristall closes for now (vendor switched off, nothing deleted — switch back on to return its goods); all
+// drinks and alcohol come from Artur instead. Artur's «Новые фото 1» folder: prices from the owner's sheet are the cost,
+// sale = cost + 15% rounded up to 50 tetri. Volumes and weights the owner has not given yet stay out of the names.
+// Photos: makers' sites (Mikoyan, CAMPA, Bellini, Rémy Martin, Bahçivan), large wine shops, Belarusian online shops;
+// six items without a found photo show their section's picture until one is found.
+export const kristallOffSql=()=>[`UPDATE vendors SET active=0 WHERE id='akhalkalaki-kristall' AND active=1;`];
+// [key, ru, hy, ka, category, art (null = section picture), cost (tetri)]
+export const arturProducts4=[
+ ['hennessy_vsop_priv','Коньяк Hennessy V.S.O.P Privilège 0,5 л','Կոնյակ Hennessy V.S.O.P Privilège 0,5 լ','კონიაკი Hennessy V.S.O.P Privilège 0,5 ლ','alcohol','artur-hennessy-vsop-priv',19000],
+ ['hennessy_vs','Коньяк Hennessy Very Special 1 л','Կոնյակ Hennessy Very Special 1 լ','კონიაკი Hennessy Very Special 1 ლ','alcohol','artur-hennessy-vs',20000],
+ ['hennessy_vsop','Коньяк Hennessy V.S.O.P','Կոնյակ Hennessy V.S.O.P','კონიაკი Hennessy V.S.O.P','alcohol','artur-hennessy-vsop',35000],
+ ['remy_vsop','Коньяк Rémy Martin V.S.O.P','Կոնյակ Rémy Martin V.S.O.P','კონიაკი Rémy Martin V.S.O.P','alcohol','artur-remy-vsop',20500],
+ ['hennessy_xo','Коньяк Hennessy X.O 0,7 л','Կոնյակ Hennessy X.O 0,7 լ','კონიაკი Hennessy X.O 0,7 ლ','alcohol','artur-hennessy-xo',85000],
+ ['bottega_latte','Ликёр Bottega Latte Macchiato 0,5 л','Լիկյոր Bottega Latte Macchiato 0,5 լ','ლიქიორი Bottega Latte Macchiato 0,5 ლ','alcohol','artur-bottega-latte',5000],
+ ['bottega_nero','Ликёр Bottega Nero шоколадный 0,5 л','Լիկյոր Bottega Nero շոկոլադե 0,5 լ','ლიქიორი Bottega Nero შოკოლადის 0,5 ლ','alcohol','artur-bottega-nero',5000],
+ ['bottega_espresso','Ликёр Bottega Espresso 0,5 л','Լիկյոր Bottega Espresso 0,5 լ','ლიქიორი Bottega Espresso 0,5 ლ','alcohol','artur-bottega-espresso',5000],
+ ['bottega_limoncino','Ликёр Bottega Limoncino 0,5 л','Լիկյոր Bottega Limoncino 0,5 լ','ლიქიორი Bottega Limoncino 0,5 ლ','alcohol','artur-bottega-limoncino',5000],
+ ['bottega_meloncino','Ликёр Bottega Meloncino дынный 0,5 л','Լիկյոր Bottega Meloncino սեխի 0,5 լ','ლიქიორი Bottega Meloncino ნესვის 0,5 ლ','alcohol','artur-bottega-meloncino',5000],
+ ['moet_imperial','Шампанское Moët & Chandon Impérial Brut 0,75 л','Շամպայն Moët & Chandon Impérial Brut 0,75 լ','შამპანური Moët & Chandon Impérial Brut 0,75 ლ','alcohol','artur-moet-imperial',18000],
+ ['moet_red','Шампанское Moët & Chandon Impérial, красная бутылка в коробке 0,75 л','Շամպայն Moët & Chandon Impérial, կարմիր շիշ տուփով 0,75 լ','შამპანური Moët & Chandon Impérial, წითელი ბოთლი ყუთში 0,75 ლ','alcohol','artur-moet-red',18000],
+ ['jager_1l','Ликёр Jägermeister 1 л','Լիկյոր Jägermeister 1 լ','ლიქიორი Jägermeister 1 ლ','alcohol','artur-jager-1l',6500],
+ ['jager_07','Ликёр Jägermeister 0,7 л','Լիկյոր Jägermeister 0,7 լ','ლიქიორი Jägermeister 0,7 ლ','alcohol','artur-jager-07',6000],
+ ['bellini_fragola','Ликёр-крем Bellini Fragola клубничный 0,5 л','Լիկյոր-կրեմ Bellini Fragola ելակի 0,5 լ','ლიქიორ-კრემი Bellini Fragola მარწყვის 0,5 ლ','alcohol','artur-bellini-fragola',3300],
+ ['bellini_limone','Ликёр-крем Bellini Limone лимонный 0,5 л','Լիկյոր-կրեմ Bellini Limone կիտրոնի 0,5 լ','ლიქიორ-კრემი Bellini Limone ლიმონის 0,5 ლ','alcohol','artur-bellini-limone',3300],
+ ['bellini_cioccolato','Ликёр-крем Bellini Cioccolato шоколадный 0,5 л','Լիկյոր-կրեմ Bellini Cioccolato շոկոլադե 0,5 լ','ლიქიორ-კრემი Bellini Cioccolato შოკოლადის 0,5 ლ','alcohol','artur-bellini-cioccolato',3300],
+ ['martini_asti','Игристое Martini Asti 0,75 л','Փրփրուն գինի Martini Asti 0,75 լ','ცქრიალა Martini Asti 0,75 ლ','alcohol','artur-martini-asti',4000],
+ ['martini_prosecco','Игристое Martini Prosecco 0,75 л','Փրփրուն գինի Martini Prosecco 0,75 լ','ცქრიალა Martini Prosecco 0,75 ლ','alcohol','artur-martini-prosecco',4000],
+ ['martini_rose','Игристое Martini Rosé 0,75 л','Փրփրուն գինի Martini Rosé 0,75 լ','ცქრიალა Martini Rosé 0,75 ლ','alcohol','artur-martini-rose',5000],
+ ['fanta_glass','Fanta, стекло 0,33 л','Fanta, ապակե շիշ 0,33 լ','Fanta, მინის ბოთლი 0,33 ლ','drinks','artur-fanta-glass',170],
+ ['coke_glass','Coca-Cola Classic, стекло 0,33 л','Coca-Cola Classic, ապակե շիշ 0,33 լ','Coca-Cola Classic, მინის ბოთლი 0,33 ლ','drinks','artur-coke-glass',170],
+ ['coke_zero_glass','Coca-Cola Zero, стекло 0,33 л','Coca-Cola Zero, ապակե շիշ 0,33 լ','Coca-Cola Zero, მინის ბოთლი 0,33 ლ','drinks','artur-coke-zero-glass',170],
+ ['campa_apple','Сок CAMPA яблочный 100% 0,75 л','Հյութ CAMPA խնձորի 100% 0,75 լ','წვენი CAMPA ვაშლის 100% 0,75 ლ','drinks','artur-campa-apple',750],
+ ['campa_cherry','Нектар CAMPA вишнёвый 0,75 л','Նեկտար CAMPA բալի 0,75 լ','ნექტარი CAMPA ალუბლის 0,75 ლ','drinks','artur-campa-cherry',750],
+ ['campa_orange','Сок CAMPA апельсиновый 0,75 л','Հյութ CAMPA նարնջի 0,75 լ','წვენი CAMPA ფორთოხლის 0,75 ლ','drinks','artur-campa-orange',750],
+ ['mikoyan_moskovskiy','Сервелат «Московский» Микоян','Սերվելատ «Մոսկովսկի» Միկոյան','სერველატი „მოსკოვსკი“ მიქოიანი','deli','artur-mikoyan-moskovskiy',2000],
+ ['mikoyan_rublenaya','Колбаса варёно-копчёная «Рубленая» Микоян','Երշիկ եփած-ապխտած «Ռուբլենայա» Միկոյան','ძეხვი მოხარშულ-შებოლილი „რუბლენაია“ მიქოიანი','deli','artur-mikoyan-rublenaya',2500],
+ ['brest_kremlevskaya','Колбаса «Кремлёвская» Брестский мясокомбинат','Երշիկ «Կրեմլյովսկայա» Բրեստի մսկոմբինատ','ძეხვი „კრემლიოვსკაია“ ბრესტის ხორცკომბინატი','belarus','artur-brest-kremlevskaya',1700],
+ ['mikoyan_belorusskaya','Колбаса сырокопчёная «Белорусская» Микоян','Երշիկ հում ապխտած «Բելոռուսսկայա» Միկոյան','ნედლად შებოლილი ძეხვი „ბელორუსკაია“ მიქოიანი','deli','artur-mikoyan-belorusskaya',2000],
+ ['alan_ukrainska','Колбаса сырокопчёная «Українська» АЛАН','Երշիկ հում ապխտած «Ուկրաինսկա» ԱԼԱՆ','ნედლად შებოლილი ძეხვი „უკრაინსკა“ ალანი','deli',null,2200],
+ ['mikoyan_shpikachki','Шпикачки «Мясные» Микоян','Շպիկաչկի «Միասնիե» Միկոյան','შპიკაჩკები „მიასნიე“ მიქოიანი','deli','artur-mikoyan-shpikachki',2200],
+ ['mikoyan_sosiski','Сосиски «Кремлёвские» Микоян','Նրբերշիկ «Կրեմլյովսկիե» Միկոյան','სოსისი „კრემლიოვსკიე“ მიქოიანი','deli','artur-mikoyan-sosiski-kremlevskie',2200],
+ ['grodno_minskaya','Колбаса сырокопчёная «Минская» Гродненский мясокомбинат','Երշիկ հում ապխտած «Մինսկայա» Գրոդնոյի մսկոմբինատ','ნედლად შებოლილი ძეხვი „მინსკაია“ გროდნოს ხორცკომბინატი','belarus','artur-grodno-minskaya',3000],
+ ['brest_nikolskie','Сосиски «Никольские» Брестский мясокомбинат','Նրբերշիկ «Նիկոլսկիե» Բրեստի մսկոմբինատ','სოსისი „ნიკოლსკიე“ ბრესტის ხორცკომბინატი','belarus','artur-brest-nikolskie',2600],
+ ['brest_sardelki','Сардельки «С телятиной» Брестский мясокомбинат','Սարդելկա «Հորթի մսով» Բրեստի մսկոմբինատ','სარდელი „ხბოს ხორცით“ ბრესტის ხორცკომბინატი','belarus',null,2600],
+ ['sb_seledochka','Селёдочка «А-ля лосось» Санта Бремор','Ծովատառեխ «Ա-լյա սաղմոն» Սանտա Բրեմոր','ქაშაყი „ა-ლია ორაგული“ სანტა ბრემორი','belarus','artur-sb-seledochka',600],
+ ['sb_krevetki','Королевские креветки в заливке Санта Бремор','Արքայական ծովախեցգետին լցոնով Սանտա Բրեմոր','სამეფო კრევეტი ჩასხმაში სანტა ბრემორი','belarus','artur-sb-krevetki',1200],
+ ['sb_osminogi','Осьминоги в заливке Санта Бремор','Ութոտնուկներ լցոնով Սանտա Բրեմոր','რვაფეხები ჩასხმაში სანტა ბრემორი','belarus','artur-sb-osminogi',1200],
+ ['sb_mix','Морской микс в масле Санта Բремор'.replace('Բ','Б'),'Ծովային միքս ձեթով Սանտա Բրեմոր','ზღვის მიქსი ზეთში სანტა ბრემორი','belarus','artur-sb-mix-oil',1000],
+ ['gouda_mlekpol','Сыр Gouda в нарезке Mlekpol 1 кг','Պանիր Gouda կտրատած Mlekpol 1 կգ','ყველი Gouda დაჭრილი Mlekpol 1 კგ','dairy',null,3300],
+ ['bonfesto_slivochny','Крем-сыр Bonfesto сливочный','Կրեմ-պանիր Bonfesto սերուցքային','კრემ-ყველი Bonfesto ნაღების','belarus','artur-bonfesto-slivochny',700],
+ ['bonfesto_truffle','Крем-сыр Bonfesto с трюфелем','Կրեմ-պանիր Bonfesto տրյուֆելով','კრემ-ყველი Bonfesto ტრიუფელით','belarus','artur-bonfesto-truffle',700],
+ ['kefir_35','Кефир «Бабушкина крынка» 3,5%','Կեֆիր «Բաբուշկինա կրինկա» 3,5%','კეფირი „ბაბუშკინა კრინკა“ 3,5%','belarus','artur-kefir-35',500],
+ ['kefir_1','Кефир «Бабушкина крынка» 1%','Կեֆիր «Բաբուշկինա կրինկա» 1%','კეფირი „ბაბუშკინა კრინკა“ 1%','belarus','artur-kefir-1',500],
+ ['bonfesto_mascarpone','Маскарпоне Bonfesto Cooking','Մասկարպոնե Bonfesto Cooking','მასკარპონე Bonfesto Cooking','belarus',null,1600],
+ ['bahcivan_toplar','Сырные шарики Bahçivan 200 г','Պանրի գնդիկներ Bahçivan 200 գ','ყველის ბურთულები Bahçivan 200 გ','dairy','artur-bahcivan-toplar',1000]
+];
+export const arturArts4=[...new Set(arturProducts4.map(r=>r[5]).filter(Boolean))];
+export function arturSql4(){const v=arturVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));
+ return [...kristallOffSql(),...arturProducts4.map(([key,ru,hy,ka,category,art,cost])=>`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--artur_'+key)},${s(v.id)},${j({ru,hy,ka})},${s(category)},${s(art||'artur-'+key.replaceAll('_','-'))},${j({mode:'EACH',policy_version:1})},${saleOf(cost)},${cost},100 WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`)]}
+export const arturArtsWithoutPhoto4=arturProducts4.filter(r=>!r[5]).map(r=>'artur-'+r[0].replaceAll('_','-'));
