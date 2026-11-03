@@ -1,0 +1,2 @@
+-- Owner 03.11: Absolut, Fortuna Gold, Fortuna Premium, «Царская» Gold and Original move from Kristall to Artur, same prices. Generated from src/artur.mjs (arturVodkaSql).
+UPDATE products SET vendor_id='akhalkalaki-artur',version=version+1 WHERE id IN ('akhalkalaki--kri_absolut_050','akhalkalaki--kri_fortuna_gold_050','akhalkalaki--kri_fortuna_premium_050','akhalkalaki--kri_tsarskaya_gold_050','akhalkalaki--kri_tsarskaya_original_050') AND vendor_id='akhalkalaki-kristall';
