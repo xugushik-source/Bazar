@@ -78,3 +78,10 @@ test('supplier morning check (owner 29.10): «нет сегодня» hides a pr
  await press(g,await btn(g,p=>p.action==='sc_price'&&p.pid===apple),777);await say(-200,777,'5');r=await q(f.DB,"SELECT * FROM price_requests WHERE product_id=? AND state='PROPOSED'",apple).first();await press(ol,await btn(ol,p=>p.action==='pr_own'&&p.id===r.id),1);await say(1,1,'6.20');assert.deepEqual({...await q(f.DB,'SELECT cost,price FROM products WHERE id=?',apple).first()},{cost:500,price:620});
  await press(g,await btn(g,p=>p.action==='sc_price'&&p.pid===apple),777);await say(-200,777,'9');r=await q(f.DB,"SELECT * FROM price_requests WHERE product_id=? AND state='PROPOSED'",apple).first();await press(ol,await btn(ol,p=>p.action==='pr_no'&&p.id===r.id),1);assert.equal((await q(f.DB,'SELECT state FROM price_requests WHERE id=?',r.id).first()).state,'REJECTED');assert.equal((await q(f.DB,'SELECT cost FROM products WHERE id=?',apple).first()).cost,500);
  assert.ok(await q(f.DB,"SELECT 1 FROM operations_audit WHERE event='PRICE_CHANGE'").first())}finally{f.DB.close()}});
+test('owner 04.11: every order message tells couriers and suppliers to call Арутюн (+995 591 244 075); couriers are told not to contact the buyer; buyers never see it',async()=>{const f=await fixture();try{
+ const group=await bind(f,f.owner,1,'DRIVER',null,-100),sup=await bind(f,f.owner,2,'SUPPLIER','akhalkalaki-garden',-200),o=await order(f);await act(f,o,'confirm');await drain(f);
+ const of=chat=>f.sent.filter(x=>x.chat_id===chat&&x.text);
+ assert.ok(of(group.chat_id).length&&of(group.chat_id).every(x=>x.text.includes('591 244 075')&&x.text.includes('Клиенту не звоните')),'courier group');
+ assert.ok(of(sup.chat_id).length&&of(sup.chat_id).every(x=>x.text.includes('591 244 075')&&x.text.includes('на месте никого нет')),'supplier group');
+ assert.ok(f.sent.filter(x=>![group.chat_id,sup.chat_id].includes(x.chat_id)&&x.text?.includes('Клиенту не звоните')).length===0,'nobody else gets the courier reminder');
+}finally{f.DB.close()}});
