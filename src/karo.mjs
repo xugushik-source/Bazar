@@ -73,6 +73,9 @@ export const karoJarNames={
  tomato_pickled_jar:{ru:'Помидоры маринованные · банка 3 л',hy:'Մարինացված լոլիկ · տարա 3 լ',ka:'მარინადში პომიდორი · ქილა 3 ლ'},
  cucumber_pickled_jar:{ru:'Огурцы маринованные · банка 3 л',hy:'Մարինացված վարունգ · տարա 3 լ',ka:'მარინადში კიტრი · ქილა 3 ლ'}
 };
+// Owner 04.11: «Хурма» is sold as the «Королёк» variety.
+export const karoKorolekNames={ru:'Королёк',hy:'Կորոլյոկ (խուրմա)',ka:'კოროლიოკი (ხურმა)'};
+export function karoKorolekSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'",n=s(JSON.stringify(karoKorolekNames));return [`UPDATE products SET names=${n},version=version+1 WHERE id=${s(karoVendor.city_id+'--persimmon_loose')} AND names<>${n};`]}
 export function karoJarSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'";return Object.entries(karoJarNames).map(([key,names])=>`UPDATE products SET names=${s(JSON.stringify(names))},version=version+1 WHERE id=${s(karoVendor.city_id+'--'+key)} AND names<>${s(JSON.stringify(names))};`)}
 // Owner 18.10: Karo's red apples are fully dark red (Red Delicious type) — own photo for Akhalkalaki; Tbilisi keeps the general apple photo.
 export function karoPhotoSql(){return [`UPDATE products SET art='apple-red',version=version+1 WHERE id='${karoVendor.city_id}--apple_loose' AND art='apple';`]}
