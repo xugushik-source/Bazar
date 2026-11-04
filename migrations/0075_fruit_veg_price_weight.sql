@@ -1,0 +1,4 @@
+-- Owner 04.11: fruit and vegetables +25% selling price, weighed ones from 1 kg in 200 g steps. Generated from src/fruit-veg.mjs (fruitVegSql).
+INSERT INTO inventory(id,product_id,at,actor,delta,reason) SELECT 'fv25-'||id,id,'2026-11-04T00:00:00.000Z','owner',price,'CATALOG: owner 04.11 fruit/veg +25%' FROM products WHERE id LIKE 'akhalkalaki--%' AND category IN ('fruit','vegetables') ON CONFLICT(id) DO NOTHING;
+UPDATE products SET price=((price*125+999)/1000)*10 WHERE id LIKE 'akhalkalaki--%' AND category IN ('fruit','vegetables') AND price=(SELECT delta FROM inventory WHERE id='fv25-'||products.id);
+UPDATE products SET profile=json_set(profile,'$.minimum_g',1000,'$.order_step_g',200) WHERE id LIKE 'akhalkalaki--%' AND category IN ('fruit','vegetables') AND json_extract(profile,'$.mode')='WEIGHED' AND json_extract(profile,'$.minimum_g')=500 AND json_extract(profile,'$.order_step_g')=100;
