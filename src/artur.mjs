@@ -152,3 +152,6 @@ export const arturArtsWithoutPhoto4=arturProducts4.filter(r=>!r[5]).map(r=>'artu
 // from Kristall to Artur with the same cost and sale prices, photos and names; only the supplier changes.
 export const arturVodkas=['kri_absolut_050','kri_fortuna_gold_050','kri_fortuna_premium_050','kri_tsarskaya_gold_050','kri_tsarskaya_original_050'];
 export const arturVodkaSql=()=>[`UPDATE products SET vendor_id='akhalkalaki-artur',version=version+1 WHERE id IN (${arturVodkas.map(k=>`'akhalkalaki--${k}'`).join(',')}) AND vendor_id='akhalkalaki-kristall';`];
+// Owner 05.11: the frozen octopus tray weighs 1.7 kg, not 5.45 kg — name fixed in all three languages, price kept (120 ₾).
+export const arturOctopusNames={ru:'Осьминог замороженный, лоток 1,7 кг',hy:'Ութոտնուկ սառեցված, սկուտեղ 1,7 կգ',ka:'რვაფეხა გაყინული, ლანგარი 1,7 კგ'};
+export function arturOctopusSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'",n=s(JSON.stringify(arturOctopusNames));return [`UPDATE products SET names=${n},version=version+1 WHERE id=${s(arturVendor.city_id+'--artur_octopus')} AND names<>${n};`]}
