@@ -155,3 +155,15 @@ export const arturVodkaSql=()=>[`UPDATE products SET vendor_id='akhalkalaki-artu
 // Owner 05.11: the frozen octopus tray weighs 1.7 kg, not 5.45 kg — name fixed in all three languages, price kept (120 ₾).
 export const arturOctopusNames={ru:'Осьминог замороженный, лоток 1,7 кг',hy:'Ութոտնուկ սառեցված, սկուտեղ 1,7 կգ',ka:'რვაფეხა გაყინული, ლანგარი 1,7 კგ'};
 export function arturOctopusSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'",n=s(JSON.stringify(arturOctopusNames));return [`UPDATE products SET names=${n},version=version+1 WHERE id=${s(arturVendor.city_id+'--artur_octopus')} AND names<>${n};`]}
+// Owner 05.11: Artur's fish and whole carcasses, by the kilo (owner's own sale prices). Whole rabbit and piglet ship
+// whatever they weigh — one wide range so any real weight is accepted; the customer pays the weighed kilos.
+const W=(min_g,max_g,estimate_g)=>({mode:'WHOLE_BY_WEIGHT',policy_version:1,ranges:[{id:'whole',min_g,max_g,estimate_g}]});
+export const arturProducts5=[
+ ['salmon_steak','Сёмга, стейк','Սաղմոն, սթեյք','ორაგული, სტეიკი','frozen','artur-salmon-steak',4000,5000,{mode:'WEIGHED',policy_version:1,minimum_g:500,order_step_g:500,tolerance_bps:1000,tolerance_cap_g:200}],
+ ['salmon_salted','Сёмга малосольная','Սաղմոն թեթև աղած','ორაგული მსუბუქად დამარილებული','deli','artur-salmon-salted',7000,9000,{mode:'WEIGHED',policy_version:1,minimum_g:300,order_step_g:100,tolerance_bps:1000,tolerance_cap_g:50}],
+ ['butterfish','Масляная рыба копчёная','Յուղաձուկ ապխտած','ზეთოვანი თევზი შებოლილი','deli','artur-butterfish',5000,6000,{mode:'WEIGHED',policy_version:1,minimum_g:300,order_step_g:100,tolerance_bps:1000,tolerance_cap_g:50}],
+ ['rabbit_whole','Кролик целый','Ճագար ամբողջական','კურდღელი მთლიანი','frozen','artur-rabbit',2600,3300,W(800,4000,2000)],
+ ['piglet_whole','Поросёнок целый (Испания)','Խոճկոր ամբողջական (Իսպանիա)','გოჭი მთლიანი (ესპანეთი)','frozen','artur-piglet',3000,3700,W(6000,12000,9000)]];
+export const arturArts5=arturProducts5.map(r=>r[5]);
+export function arturSql5(){const v=arturVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));
+ return arturProducts5.map(([key,ru,hy,ka,category,art,cost,sale,profile])=>`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--artur_'+key)},${s(v.id)},${j({ru,hy,ka})},${s(category)},${s(art)},${j(profile)},${sale},${cost},100000 WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`)}
