@@ -1,4 +1,4 @@
-import {mediaVersions}from './media-versions.js?v=a8fbb2e811';
+import {mediaVersions}from './media-versions.js?v=d21a624518';
 // Most images are local; two source-hosted photographs retain their original license links.
 export const remotePhotos={
  prunes:'https://images.pexels.com/photos/11828235/pexels-photo-11828235.jpeg?auto=compress&cs=tinysrgb&w=600',
