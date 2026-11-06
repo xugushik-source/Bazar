@@ -1,11 +1,11 @@
-import {entryReady}from './entry.js?v=d21a624518';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=d21a624518';import {sources}from './sources.js?v=d21a624518';import {customers}from './customers.js?v=d21a624518';
-import {botWords}from './bot-words.js?v=d21a624518';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=d21a624518';
-import {salesWords}from './sales-i18n.js?v=d21a624518';
-import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=d21a624518';import {mediaVersions}from './media-versions.js?v=d21a624518';import {transferLinks}from './payments.js?v=d21a624518';import {ledger}from './ledger.js?v=d21a624518';import {sound,soundButton,watchOrders}from './sounds.js?v=d21a624518';
-import {words,statuses} from './i18n.js?v=d21a624518';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=d21a624518';
-import {quote as makeQuote,assess} from './weight-policy.js?v=d21a624518';
+import {entryReady}from './entry.js?v=1b33750861';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=1b33750861';import {sources}from './sources.js?v=1b33750861';import {customers}from './customers.js?v=1b33750861';
+import {botWords}from './bot-words.js?v=1b33750861';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=1b33750861';
+import {salesWords}from './sales-i18n.js?v=1b33750861';
+import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=1b33750861';import {mediaVersions}from './media-versions.js?v=1b33750861';import {transferLinks}from './payments.js?v=1b33750861';import {ledger}from './ledger.js?v=1b33750861';import {sound,soundButton,watchOrders}from './sounds.js?v=1b33750861';
+import {words,statuses} from './i18n.js?v=1b33750861';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=1b33750861';
+import {quote as makeQuote,assess} from './weight-policy.js?v=1b33750861';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 // Tile photos for the section grid: one clear, recognisable picture per section; bottles are shown whole.
 const chipArt={meat:'meat',vegetables:'tomato',fruit:'apple',bread:'lavash',deli:'sausage',nuts:'dried-apricot',market:'honey',grains:'buckwheat',drinks:'artur-coke-glass',alcohol:'mado-gubernator-050',sweets:'artur-alenka',belarus:'artur-smetana-gorki26',frozen:'artur-shrimp-vanoni'},chipWhole=['drinks','alcohol'];
@@ -59,7 +59,7 @@ function total(){let n=0;for(const b of basket){const p=data?.products.find(p=>p
 function saveBasket(){const before=read('bazar.basket.'+city,[]).length;write('bazar.basket.'+city,basket);updateBag();if(basket.length>before)hit('cart')}
 function updateBag(){$$('[data-bag]').forEach(el=>el.textContent=t('cart')+' · '+basket.length);const c=$('.sticky-cart');if(c){c.classList.toggle('hidden',!basket.length);c.innerHTML=`<span>${esc(t('cart'))} · ${basket.length}</span><span>${money(total())}</span>`}}
 // Wholesale rate under the price (owner 22.10: trout from 10 kg at 18 ₾/kg).
-const bulkHint=p=>p.profile?.supplier_delivers===true?`<p class="bulk-hint">${esc(t('supplierDelivers'))}</p>`:p.profile?.bulk?`<p class="bulk-hint">${esc(t('bulkFrom').replace('{kg}',p.profile.bulk.from_g/1000).replace('{price}',money(p.profile.bulk.price_per_kg_minor)))}</p>`:'';
+const bulkHint=p=>p.profile?.mode==='WHOLE_BY_WEIGHT'?`<p class="bulk-hint">${esc(t('wholeNote'))}</p>`:p.profile?.supplier_delivers===true?`<p class="bulk-hint">${esc(t('supplierDelivers'))}</p>`:p.profile?.bulk?`<p class="bulk-hint">${esc(t('bulkFrom').replace('{kg}',p.profile.bulk.from_g/1000).replace('{price}',money(p.profile.bulk.price_per_kg_minor)))}</p>`:'';
 // Alcohol (owner 24.10): «18+» on the card, a notice in the cart and at checkout, and the courier checks the buyer's age.
 const adultHTML=()=>basket.some(b=>data.products.find(x=>x.id===b.product_id)?.category==='alcohol')?`<p class="hint warning">${esc(t('adultNotice'))}</p>`:'';
 function productCard(p){const inCart=basket.find(b=>b.product_id===p.id);return `<article class="product"><div class="art"><img src="${esc(photoPath(p.art,p.category))}" alt="${esc(name(p))}" width="230" height="230" loading="lazy">${p.category==='alcohol'&&subOf(p)==='vodka'?`<span class="adult-badge">${esc(t('adultOnly'))}</span>`:''}${inCart?`<div class="quantity-picker"><button data-do="less" data-id="${esc(p.id)}" aria-label="${esc(t('remove')+' '+name(p))}">−</button><button class="qty-value" data-do="product" data-id="${esc(p.id)}">${esc(inCart.selection.grams?inCart.selection.grams+' '+t('g'):inCart.selection.count+' '+t(p.profile.mode==='BUNCH'?'bunch':p.profile.mode==='FIXED_PACK'?'pack':'each'))}</button><button data-do="more" data-id="${esc(p.id)}" aria-label="${esc(t('add')+' '+name(p))}">+</button></div>`:`<button class="add" data-do="quickadd" data-id="${esc(p.id)}" aria-label="${esc(t('add')+' '+name(p))}" ${p.available<=0?'disabled':''}>+</button>`}</div><p class="supplier">${vendorHoursOf(data.vendors.find(v=>v.id===p.vendor_id))?`🕘 ${esc(vendorHoursOf(data.vendors.find(v=>v.id===p.vendor_id)))}`:''}</p><h3><button class="product-name" data-do="product" data-id="${esc(p.id)}">${esc(name(p))}</button></h3><div class="product-foot"><span class="price">${p.promotion_id?`<del>${money(p.regular_price)}</del> `:''}${money(p.price)}<small>${esc(unit(p))}</small></span>${inCart?`<span class="inbasket">${esc(t('cart'))}</span>`:''}</div>${bulkHint(p)}</article>`}
