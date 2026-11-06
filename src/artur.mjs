@@ -167,3 +167,7 @@ export const arturProducts5=[
 export const arturArts5=arturProducts5.map(r=>r[5]);
 export function arturSql5(){const v=arturVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));
  return arturProducts5.map(([key,ru,hy,ka,category,art,cost,sale,profile])=>`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(v.city_id+'--artur_'+key)},${s(v.id)},${j({ru,hy,ka})},${s(category)},${s(art)},${j(profile)},${sale},${cost},100000 WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(v.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`)}
+// Owner 05.11, later: Artur's fish by weight from 200 g in 50 g steps (applied once: only rows still on the first rule).
+export const arturFish200=['salmon_steak','salmon_salted','butterfish'];
+export function arturFish200Sql(){const ids=arturFish200.map(k=>`'${arturVendor.city_id}--artur_${k}'`).join(',');
+ return [`UPDATE products SET profile=json_set(profile,'$.minimum_g',200,'$.order_step_g',50),version=version+1 WHERE id IN (${ids}) AND json_extract(profile,'$.mode')='WEIGHED' AND ((json_extract(profile,'$.minimum_g')=500 AND json_extract(profile,'$.order_step_g')=500) OR (json_extract(profile,'$.minimum_g')=300 AND json_extract(profile,'$.order_step_g')=100));`]}
