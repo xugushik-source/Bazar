@@ -3,7 +3,7 @@
 // changes by itself: the owner gets the request with the new retail price (src/price-rules.mjs) and accepts, rejects or types
 // his own retail price. Group membership is the trust boundary, as for orders (src/supplier-bot.mjs).
 import {q,parse,clock,own}from './commerce.mjs';import {fail,uuid,now,token,text}from './security.mjs';import {botWords}from './bot-words.mjs';
-import {retailFor}from './price-rules.mjs';import {journalPrice}from './price-journal.mjs';import {closedToday}from './supplier-day.mjs';
+import {retailFor,retailOnCost}from './price-rules.mjs';import {journalPrice}from './price-journal.mjs';import {closedToday}from './supplier-day.mjs';
 const TZ='Asia/Tbilisi',PAGE=8,W=l=>botWords[l]||botWords.ru,money=n=>n==null?'—':(n/100).toFixed(2)+' ₾';
 export const supplierActions=['sc_all','sc_list','sc_close','sc_price','sc_done','pr_ok','pr_no','pr_own'];
 const weighted=p=>['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'].includes(parse(p.profile,{}).mode);
@@ -48,7 +48,7 @@ export async function supplierDialog(db,env,call,m,l,d,user){const w=W(l.lang),v
  if(d.action==='pr_own'){if(l.kind!=='OWNER'||!user?.owner)fail('FORBIDDEN',403);if(!value){await again(w.prOwnAsk);return true}const r=await q(db,'SELECT * FROM price_requests WHERE id=?',d.order_id).first();await q(db,'DELETE FROM tg_dialogs WHERE telegram_user=?',String(m.from.id)).run();if(!r||r.state!=='PROPOSED'){await call(env,'sendMessage',{chat_id:l.chat_id,text:w.prDecided});return true}await decide(db,env,call,r,value,user);return true}
  if(l.kind!=='SUPPLIER'||!own(user,l.ref_id))fail('FORBIDDEN',403);const p=await q(db,'SELECT * FROM products WHERE id=? AND vendor_id=? AND active=1',d.order_id,l.ref_id).first();if(!p)fail('NOT_FOUND',404);if(!value){await again(w.scPriceAgain);return true}
  await q(db,'DELETE FROM tg_dialogs WHERE telegram_user=?',String(m.from.id)).run();if(value===p.cost){await call(env,'sendMessage',{chat_id:l.chat_id,text:w.scSame});return true}
- const id=uuid(),retail=retailFor(p,value);await db.batch([q(db,"UPDATE price_requests SET state='STALE',decided_at=? WHERE product_id=? AND state='PROPOSED'",now(),p.id),q(db,'INSERT INTO price_requests(id,product_id,vendor_id,product_version,old_cost,new_cost,old_price,new_price,rule,requested_by,requested_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)',id,p.id,p.vendor_id,p.version,p.cost,value,p.price,retail.price,retail.rule,user.id,now())]);
+ const id=uuid(),retail=retailOnCost(p,value);await db.batch([q(db,"UPDATE price_requests SET state='STALE',decided_at=? WHERE product_id=? AND state='PROPOSED'",now(),p.id),q(db,'INSERT INTO price_requests(id,product_id,vendor_id,product_version,old_cost,new_cost,old_price,new_price,rule,requested_by,requested_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)',id,p.id,p.vendor_id,p.version,p.cost,value,p.price,retail.price,retail.rule,user.id,now())]);
  await call(env,'sendMessage',{chat_id:l.chat_id,text:w.scPriceSent.replace('{name}',label(p,l.lang)).replace('{old}',money(p.cost)).replace('{new}',money(value))});
  // Owner 06.11: a change of up to ±30 % applies by itself with the product's own markup — the owner is told; a bigger one
  // (a typo such as 400 instead of 40) waits for him.
