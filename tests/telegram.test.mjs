@@ -85,3 +85,14 @@ test('owner 04.11: every order message tells couriers and suppliers to call Ар
  assert.ok(of(sup.chat_id).length&&of(sup.chat_id).every(x=>x.text.includes('591 244 075')&&x.text.includes('на месте никого нет')),'supplier group');
  assert.ok(f.sent.filter(x=>![group.chat_id,sup.chat_id].includes(x.chat_id)&&x.text?.includes('Клиенту не звоните')).length===0,'nobody else gets the courier reminder');
 }finally{f.DB.close()}});
+test('owner 06.11: the supplier weighs item by item in the bot (kg or grams), sees the tolerance at once, confirms the summary; out of tolerance goes to the buyer',async()=>{const f=await fixture();try{f.DB.exec('UPDATE cities SET simple_flow=1');
+ const g=await bind(f,f.owner,1,'SUPPLIER','akhalkalaki-garden',-200);await bind(f,f.owner,1,'OWNER');const o=await order(f);await act(f,o,'confirm');await drain(f);
+ const last=()=>f.sent.filter(x=>x.method==='sendMessage').at(-1),say=async text=>{const data={update_id:++f.update,message:{message_id:f.update,text,chat:{id:-200,type:'supergroup'},from:{id:777,first_name:'Каро'}}};assert.equal((await webhook(f,data)).status,200)};
+ await click(f,g,o,'weigh',777);assert.match(last().text,/1\/1 · Яблоки — заказано 1 кг/);
+ await say('абв');assert.match(last().text,/Не понял число/);
+ await say('1,05');assert.match(last().text,/✅ Яблоки: 1,05 кг — в допуске/);assert.match(last().text,/Проверьте вес/);
+ await click(f,g,o,'weigh_redo',777);assert.match(last().text,/1\/1 · Яблоки/);
+ await say('1500');assert.match(last().text,/⚠️ Яблоки: 1,5 кг — вне допуска \(0,9 кг–1,1 кг\)/);
+ await click(f,g,o,'weigh_ok',777);assert.match(last().text,/Вес записан/);
+ const w=JSON.parse((await q(f.DB,'SELECT weighing FROM orders WHERE id=?',o.id).first()).weighing);assert.deepEqual(w.map(a=>[a.line_id,a.net_g]),[['akhalkalaki--apple_loose',1500]]);
+ await drain(f);await click(f,g,o,'ready',777);assert.equal((await q(f.DB,"SELECT status FROM order_groups WHERE order_id=? AND vendor_id='akhalkalaki-garden'",o.id).first()).status,'READY')}finally{f.DB.close()}});

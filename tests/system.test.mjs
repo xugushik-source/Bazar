@@ -147,10 +147,10 @@ test('orders reset (owner 30.10): every test order and what hangs off it is gone
  for(const t of ['orders','order_lines','order_groups','events','payments','outbox','tg_jobs'])assert.equal((await q(e.DB,`SELECT COUNT(*) n FROM ${t}`).first()).n,0,t);
  assert.equal((await q(e.DB,'SELECT COUNT(*) n FROM products WHERE reserved>0').first()).n,0);assert.equal((await q(e.DB,'SELECT COUNT(*) n FROM slots WHERE reserved>0').first()).n,0);assert.deepEqual({...await stock(pid('apple_loose'))},{...before});
  await order(e)}finally{e.DB.close()}});
-test('simple flow (owner 30.10): the order goes to suppliers at once, piece goods need one «Готово», weighed goods a weight first, the last «Готово» hands it to the courier; a stuck order reminds the owner once',async()=>{const e=await env({simple:true});try{const {stuckOrders,stuckTick,stuckText}=await import('../src/stuck-orders.mjs');
+test('simple flow (owner 30.10; 06.11: after the owner\'s confirmation): the order goes to suppliers, piece goods need one «Готово», weighed goods a weight first, the last «Готово» hands it to the courier; a stuck order reminds the owner once',async()=>{const e=await env({simple:true});try{const {stuckOrders,stuckTick,stuckText}=await import('../src/stuck-orders.mjs');
  const garden=await member(e,'ADMIN','g',cid+'-garden'),farm=await member(e,'ADMIN','f',cid+'-farm');
  const {o}=await order(e,[{product_id:pid('avocado_each'),selection:{count:2}},{product_id:pid('apple_loose'),selection:{grams:1000}},{product_id:pid('mango_each'),selection:{count:1}}]);
- let v=await view(e,o);assert.equal(v.status,'WEIGHING');assert.ok(v.confirmed);
+ let v=await view(e,o);assert.equal(v.status,'NEW','owner 06.11: the supplier waits for the owner\'s confirmation call');assert.ok(!v.confirmed);await act(e,o,'confirm');v=await view(e,o);assert.equal(v.status,'WEIGHING');assert.ok(v.confirmed);
  await act(e,o,'ready',{vendor_id:cid+'-farm'},farm);v=await view(e,o);assert.equal(v.status,'WEIGHING');assert.equal(v.groups.find(g=>g.vendor_id===cid+'-farm').status,'READY');
  const early=await call(e,'manage/action',{id:o.id,version:v.version,command:crypto.randomUUID(),action:'ready',vendor_id:cid+'-garden'},garden);assert.equal(early.http,409);assert.match(JSON.stringify(early),/WEIGHING_REQUIRED/);
  const apple=v.quotes.find(x=>x.product_id===pid('apple_loose'));await act(e,o,'weigh',{actuals:[{line_id:apple.line_id,net_g:1000}]},garden);
