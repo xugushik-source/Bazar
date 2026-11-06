@@ -2553,5 +2553,12 @@
     "license": "brand packshot supplied by the owner",
     "file": "public/media/artur-stew-pork-338.jpg",
     "sha256": "b5e3cbe5e56fab5eb0eee1665e5c09df5a6c3e100f0e540efdd643a783c18ff8"
+  },
+  {
+    "key": "rafo-trout-caviar",
+    "source": "owner: photo of red caviar in a 100 g jar sent by the owner, 06.11",
+    "license": "owner-provided product image for selling this product",
+    "file": "public/media/rafo-trout-caviar.jpg",
+    "sha256": "440faa9526fa8ed432a9f3ad29481b8b366ed5f4cdcece75852a2be4a97bb594"
   }
 ]
