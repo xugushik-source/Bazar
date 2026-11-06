@@ -136,6 +136,6 @@ Object.assign(words.ru,{freeFromShort:'бесплатно от {sum}'});
 Object.assign(words.hy,{freeFromShort:'անվճար {sum}-ից'});
 Object.assign(words.ka,{freeFromShort:'უფასოდ {sum}-დან'});
 // Owner 05.11: whole carcasses and other whole-by-weight goods — sold whole, the price is settled after weighing.
-Object.assign(words.ru,{wholeNote:'Продаётся целиком. Цена уточняется после взвешивания.'});
-Object.assign(words.hy,{wholeNote:'Վաճառվում է ամբողջությամբ։ Գինը ճշտվում է կշռելուց հետո։'});
-Object.assign(words.ka,{wholeNote:'იყიდება მთლიანად. ფასი დაზუსტდება აწონვის შემდეგ.'});
+Object.assign(words.ru,{wholeNote:'Продаётся целиком, примерно {kg} кг. Цена уточняется после взвешивания.'});
+Object.assign(words.hy,{wholeNote:'Վաճառվում է ամբողջությամբ, մոտ {kg} կգ։ Գինը ճշտվում է կշռելուց հետո։'});
+Object.assign(words.ka,{wholeNote:'იყიდება მთლიანად, დაახლოებით {kg} კგ. ფასი დაზუსტდება აწონვის შემდეგ.'});
