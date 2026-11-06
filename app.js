@@ -1,11 +1,11 @@
-import {entryReady}from './entry.js?v=d36df7dfcb';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=d36df7dfcb';import {sources}from './sources.js?v=d36df7dfcb';import {customers}from './customers.js?v=d36df7dfcb';
-import {botWords}from './bot-words.js?v=d36df7dfcb';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=d36df7dfcb';
-import {salesWords}from './sales-i18n.js?v=d36df7dfcb';
-import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=d36df7dfcb';import {mediaVersions}from './media-versions.js?v=d36df7dfcb';import {transferLinks}from './payments.js?v=d36df7dfcb';import {ledger}from './ledger.js?v=d36df7dfcb';import {sound,soundButton,watchOrders}from './sounds.js?v=d36df7dfcb';
-import {words,statuses} from './i18n.js?v=d36df7dfcb';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=d36df7dfcb';
-import {quote as makeQuote,assess} from './weight-policy.js?v=d36df7dfcb';
+import {entryReady}from './entry.js?v=f1403e70d7';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=f1403e70d7';import {sources}from './sources.js?v=f1403e70d7';import {customers}from './customers.js?v=f1403e70d7';
+import {botWords}from './bot-words.js?v=f1403e70d7';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=f1403e70d7';
+import {salesWords}from './sales-i18n.js?v=f1403e70d7';
+import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=f1403e70d7';import {mediaVersions}from './media-versions.js?v=f1403e70d7';import {transferLinks}from './payments.js?v=f1403e70d7';import {ledger}from './ledger.js?v=f1403e70d7';import {sound,soundButton,watchOrders}from './sounds.js?v=f1403e70d7';
+import {words,statuses} from './i18n.js?v=f1403e70d7';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=f1403e70d7';
+import {quote as makeQuote,assess} from './weight-policy.js?v=f1403e70d7';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 // Tile photos for the section grid: one clear, recognisable picture per section; bottles are shown whole.
 const chipArt={meat:'meat',vegetables:'tomato',fruit:'apple',bread:'lavash',deli:'sausage',nuts:'dried-apricot',market:'honey',grains:'buckwheat',drinks:'artur-coke-glass',alcohol:'mado-gubernator-050',sweets:'artur-alenka',belarus:'artur-smetana-gorki26',frozen:'artur-shrimp-vanoni'},chipWhole=['drinks','alcohol'];
@@ -29,7 +29,7 @@ const subLabel=(s,p)=>words[lang]['sub_'+s]?t('sub_'+s):name(data.categories.fin
 // Bottles inside a brand (owner 24.10): Ararat by line from simple to aged, then by volume, gift sets last; other brands by age.
 const araratLines=['3*','5*','Ани','Отборный','Армения','Абрикос','Кофе','Ахтамар','Двин','Васпуракан','Наири','Азнавур','Эребуни'];
 const bottleRank=p=>{const n=p.names?.ru||'',line=p.category!=='alcohol'?0:/Водка/.test(n)?['Fortuna','Губернатор','Царская','Дружба','Питон','Absolut','Tchaikovsky','Углёвка','Чистые росы'].findIndex(l=>n.includes(l))+1:araratLines.findIndex(l=>n.includes(l))+1||Number(n.match(/(\d+)\s*(?:год|лет)|Арташат (\d+)|Хосров (\d+)/)?.slice(1).find(Boolean)||0),v=n.match(/(\d+(?:,\d+)?)\s*л(?![а-яё])/i),ml=v?Math.round(parseFloat(v[1].replace(',','.'))*1000):9999;return p.category==='alcohol'?[line,ml,/стакан/.test(n)?1:0]:[0,0,0]};
-const groupKey=p=>{const i=chipGroups.findIndex(([,cs])=>cs.includes(p.category)),g=i<0?99:i,s=subOf(p),order=subOrder[chipGroups[i]?.[0]]||chipGroups[i]?.[1]||[],j=order.indexOf(s);return [g,j<0?order.length:j,firstInSection.some(k=>p.id.endsWith('--'+k))?0:1,...bottleRank(p),hasPhoto(p)?0:1]};
+const groupKey=p=>{const i=chipGroups.findIndex(([,cs])=>cs.includes(p.category)),g=i<0?99:i,s=subOf(p),order=subOrder[chipGroups[i]?.[0]]||chipGroups[i]?.[1]||[],j=order.indexOf(s);return [g,j<0?order.length:j,/* owner 06.11: Artur's goods always first in their section */String(p.vendor_id).endsWith('-artur')?0:1,firstInSection.some(k=>p.id.endsWith('--'+k))?0:1,...bottleRank(p),hasPhoto(p)?0:1]};
 const byGroup=(a,b)=>{const x=groupKey(a),y=groupKey(b);for(let i=0;i<x.length;i++)if(x[i]!==y[i])return x[i]-y[i];return 0};
 // Products whose own photo has not arrived go to the end of their section.
 const hasPhoto=p=>!!(remotePhotos[p.art]||mediaVersions[p.art]);
