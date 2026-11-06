@@ -2534,13 +2534,6 @@
     "sha256": "34f42eed9f414540cebceedf7c144f4fe257a05a2397e64996a7f99f2234eeb7"
   },
   {
-    "key": "artur-stew-beef-500",
-    "source": "owner: brand packshot found by the owner (Google Lens), 06.11",
-    "license": "brand packshot supplied by the owner",
-    "file": "public/media/artur-stew-beef-500.jpg",
-    "sha256": "4b1cd2074ad528687947339ef2cf32b17063da7867bf117b500b607bbd93913f"
-  },
-  {
     "key": "artur-stew-pork-525",
     "source": "owner: brand packshot found by the owner (Google Lens), 06.11",
     "license": "brand packshot supplied by the owner",
@@ -2560,5 +2553,19 @@
     "license": "owner-provided product image for selling this product",
     "file": "public/media/rafo-trout-caviar.jpg",
     "sha256": "440faa9526fa8ed432a9f3ad29481b8b366ed5f4cdcece75852a2be4a97bb594"
+  },
+  {
+    "key": "artur-avocado-oil-oliricco",
+    "source": "owner: Oliricco avocado oil bottle (marketplace card) sent by the owner, 06.11, cropped",
+    "license": "owner-provided product image for selling this product",
+    "file": "public/media/artur-avocado-oil-oliricco.jpg",
+    "sha256": "4bdc001e8747df8325ca8f85299a2727605f56b8afea985fb7d81b96693cbf0a"
+  },
+  {
+    "key": "artur-stew-beef-500",
+    "source": "owner: stewed beef 500 g glass jar packshot sent by the owner, 06.11",
+    "license": "owner-provided product image for selling this product",
+    "file": "public/media/artur-stew-beef-500.jpg",
+    "sha256": "e8cf6beef6f9151b78c35f9017d11f39501533d2d6d26cb1a252f1fdafec781a"
   }
 ]
