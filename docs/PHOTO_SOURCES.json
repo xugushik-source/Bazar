@@ -2060,5 +2060,213 @@
     "download_url": "https://images.pexels.com/photos/1350964/pexels-photo-1350964.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
     "file": "public/media/strawberry-fresh.jpg",
     "sha256": "94ca2174d1799a58891c18bb1b9e276d87f8fcb3b9b09d1456a66e0d0285a663"
+  },
+  {
+    "key": "artur-baileys-1l",
+    "source": "https://www.thebottleclub.com/products/baileys-cream-liqueur-1-l",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/baileys-cream-liqueur-1-l-liqueurs-other-spirits-1156150212.jpg",
+    "file": "public/media/artur-baileys-1l.jpg",
+    "sha256": "9ce47bf1b4f275797191e25cf566c8155290febcabad0fba264ef28f8668d81b"
+  },
+  {
+    "key": "artur-amarula-coffee-1l",
+    "source": "https://www.thebottleclub.com/products/amarula-ethiopian-coffee-cream-liqueur-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/amarula-ethiopian-coffee-cream-liqueur-70-cl-liqueurs-other-spirits-32841706373235.jpg",
+    "file": "public/media/artur-amarula-coffee-1l.jpg",
+    "sha256": "062eae080e693034ebfcc2a3fb34ccaddc71b3412133686cb19e2d7b4eb38314"
+  },
+  {
+    "key": "artur-amarula-07",
+    "source": "https://www.thebottleclub.com/products/amarula-cream-liqueur-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/amarula-cream-liqueur-70-cl-liqueurs-other-spirits-28383413338227.jpg",
+    "file": "public/media/artur-amarula-07.jpg",
+    "sha256": "5c4e95ea653edc4f232f311e540f6c9a4aca39d594313567159aacd47e956503"
+  },
+  {
+    "key": "artur-meukow-vs-07",
+    "source": "https://www.homeofmalts.com/en/27272/meukow-vs",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://www.homeofmalts.com/media/cc/bd/09/1764227253/27272-meukow-vs-91e567a8b85efde896aaa16150ced1ea85793df0.webp.webp",
+    "file": "public/media/artur-meukow-vs-07.jpg",
+    "sha256": "285c524653f87540adc5f0c6ead1c4ecdca0629dedcb5f5f7740b5fa25aa10e5"
+  },
+  {
+    "key": "artur-frangelico-1l",
+    "source": "https://www.thebottleclub.com/products/frangelico-hazelnut-liqueur-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/frangelico-hazelnut-liqueur-70-cl-liqueurs-other-spirits-1157126173.jpg",
+    "file": "public/media/artur-frangelico-1l.jpg",
+    "sha256": "be287e06811bb8f0540e7421630b8b0865ce4e6b8648a338a5bc4f48401dc1c6"
+  },
+  {
+    "key": "artur-macallan-night",
+    "source": "https://www.thebottleclub.com/products/the-macallan-a-night-on-earth-the-first-light-whisky-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/the-macallan-a-night-on-earth-the-first-light-whisky-70-cl-whisky-1210593771.jpg",
+    "file": "public/media/artur-macallan-night.jpg",
+    "sha256": "f7311d2c616d451d21e8086de3c0c27cbe58aba672f8778b731efc3710fb0017"
+  },
+  {
+    "key": "artur-macallan-12",
+    "source": "https://daydram.com/products/the-macallan-12-year",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0623/8902/6906/files/The_Macallan_Sherry_Oak_12_Year.png",
+    "file": "public/media/artur-macallan-12.jpg",
+    "sha256": "53f77807e1bb1ad5123ecccbd1bcbb0b846adb997e73fc52964f6921f0bcf3f5"
+  },
+  {
+    "key": "artur-macallan-15",
+    "source": "https://www.thewhiskybarrel.com/products/macallan-15-year-old-double-cask",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0853/3272/1929/files/macallan15-doublecask.jpg",
+    "file": "public/media/artur-macallan-15.jpg",
+    "sha256": "66c2995fa644794f7d9d2260ccd882560b6779b97c718d464c5c2df68f8351f5"
+  },
+  {
+    "key": "artur-macallan-18",
+    "source": "https://www.thebottleclub.com/products/macallan-18-year-old-double-cask-2023-release-whisky-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/macallan-18-year-old-double-cask-2023-release-whisky-70-cl-whisky-32841789702259.jpg",
+    "file": "public/media/artur-macallan-18.jpg",
+    "sha256": "49bb9f75de147d28c62c3f6a3f665b6cd0352bb673a598fb92ab9fb1e4fc0f71"
+  },
+  {
+    "key": "artur-beluga-1l",
+    "source": "https://www.thebottleclub.com/products/beluga-noble-russian-plain-vodka-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/beluga-noble-russian-plain-vodka-70-cl-vodka-32826804764787.jpg",
+    "file": "public/media/artur-beluga-1l.jpg",
+    "sha256": "79e9404056602fa5a280d5f57988e76a114beea53ba9cbee1d1b9a16ac00c7dd"
+  },
+  {
+    "key": "artur-beluga-07",
+    "source": "https://www.thebottleclub.com/products/beluga-noble-russian-plain-vodka-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/beluga-noble-russian-plain-vodka-70-cl-vodka-32826804764787.jpg",
+    "file": "public/media/artur-beluga-07.jpg",
+    "sha256": "79e9404056602fa5a280d5f57988e76a114beea53ba9cbee1d1b9a16ac00c7dd"
+  },
+  {
+    "key": "artur-beluga-05",
+    "source": "https://www.thebottleclub.com/products/beluga-noble-russian-plain-vodka-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/beluga-noble-russian-plain-vodka-70-cl-vodka-32826804764787.jpg",
+    "file": "public/media/artur-beluga-05.jpg",
+    "sha256": "79e9404056602fa5a280d5f57988e76a114beea53ba9cbee1d1b9a16ac00c7dd"
+  },
+  {
+    "key": "artur-beluga-celebration-1l",
+    "source": "https://www.thebottleclub.com/products/beluga-celebration-vodka-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/beluga-celebration-vodka-70-cl-vodka-32846224654451.jpg",
+    "file": "public/media/artur-beluga-celebration-1l.jpg",
+    "sha256": "80c14683065d173f351043759d1460833c527c765c476c945da88c4663bbb31c"
+  },
+  {
+    "key": "artur-beluga-transatlantic-1l",
+    "source": "https://woodencork.com/products/beluga-noble-transatlantic-racing-vodka-1-75l",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0276/1621/5176/files/medium-_750x750_33bf79d9-c418-4ca5-85f4-08f27b04167c.png",
+    "file": "public/media/artur-beluga-transatlantic-1l.jpg",
+    "sha256": "caeb4cc154a1e5706fe50ebcf87042ceb45804c5c911a4c1fddbf4da0d8fe53d"
+  },
+  {
+    "key": "artur-onegin-1l",
+    "source": "https://bottleofitaly.com/en-us/products/vodka-st-petersburg-70cl-onegin",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0538/2268/5356/files/Vodka-St.-Petersburg-Big-Size-1_5lt-Onegin-Bottle-of-Italy-min_783f344e-e1be-4a80-a583-90a79f1576e6.jpg",
+    "file": "public/media/artur-onegin-1l.jpg",
+    "sha256": "6fc1941021b1ddaee7a70101d4ee942298439d3223597562f8c7147a3f43b03f"
+  },
+  {
+    "key": "artur-onegin-07",
+    "source": "https://bottleofitaly.com/en-us/products/vodka-st-petersburg-70cl-onegin",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0538/2268/5356/files/Vodka-St.-Petersburg-Big-Size-1_5lt-Onegin-Bottle-of-Italy-min_783f344e-e1be-4a80-a583-90a79f1576e6.jpg",
+    "file": "public/media/artur-onegin-07.jpg",
+    "sha256": "6fc1941021b1ddaee7a70101d4ee942298439d3223597562f8c7147a3f43b03f"
+  },
+  {
+    "key": "artur-greygoose-1l",
+    "source": "https://www.thebottleclub.com/products/grey-goose-vodka-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/grey-goose-vodka-70-cl-vodka-1157126155.jpg",
+    "file": "public/media/artur-greygoose-1l.jpg",
+    "sha256": "10ed22b062d257f65172daf8e94aae37deb99edbde7ff2b96b43454e03722941"
+  },
+  {
+    "key": "artur-greygoose-05",
+    "source": "https://www.thebottleclub.com/products/grey-goose-vodka-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/grey-goose-vodka-70-cl-vodka-1157126155.jpg",
+    "file": "public/media/artur-greygoose-05.jpg",
+    "sha256": "10ed22b062d257f65172daf8e94aae37deb99edbde7ff2b96b43454e03722941"
+  },
+  {
+    "key": "artur-absolut-1l",
+    "source": "https://www.thebottleclub.com/products/absolut-vodka-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/absolut-vodka-70-cl-vodka-1156100549.jpg",
+    "file": "public/media/artur-absolut-1l.jpg",
+    "sha256": "5f4af1faf093259adfca4466e05de3988d94309889dad37340309f139a1175a7"
+  },
+  {
+    "key": "artur-mamont-1l",
+    "source": "https://www.thebottleclub.com/products/mamont-siberian-vodka-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/mamont-siberian-vodka-70-cl-vodka-32840920531059.jpg",
+    "file": "public/media/artur-mamont-1l.jpg",
+    "sha256": "d7aee35139c5d3bbd0619b01091b84d6dde12311cc3b25723566c91f4b4953e5"
+  },
+  {
+    "key": "artur-mamont-075",
+    "source": "https://www.thebottleclub.com/products/mamont-siberian-vodka-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/mamont-siberian-vodka-70-cl-vodka-32840920531059.jpg",
+    "file": "public/media/artur-mamont-075.jpg",
+    "sha256": "d7aee35139c5d3bbd0619b01091b84d6dde12311cc3b25723566c91f4b4953e5"
+  },
+  {
+    "key": "artur-mamont-05",
+    "source": "https://www.thebottleclub.com/products/mamont-siberian-vodka-70-cl",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0078/7038/2195/files/mamont-siberian-vodka-70-cl-vodka-32840920531059.jpg",
+    "file": "public/media/artur-mamont-05.jpg",
+    "sha256": "d7aee35139c5d3bbd0619b01091b84d6dde12311cc3b25723566c91f4b4953e5"
+  },
+  {
+    "key": "artur-borjomi-05",
+    "source": "https://europeanfoodandgifts.com/products/borjomi-glass-carbonated-mineral-water-0-5l",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0673/5586/9416/files/BORJOMI_GLASS_CARBONATED_MINERAL_WATER_0.5L.png",
+    "file": "public/media/artur-borjomi-05.jpg",
+    "sha256": "9abd9ed7d76e03ae8bcd3006047bafcd7af974144e7819360d1119119e96ef59"
+  },
+  {
+    "key": "artur-nabeglavi-05",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (nabeglavi-050.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/artur-nabeglavi-05.jpg",
+    "sha256": "2a80e1f1925fbd62ed525a4fd6ede090bb7a525e4a401df32c720785fbed0741"
+  },
+  {
+    "key": "artur-redbull-025",
+    "source": "owner: product photo from the owner's «Пивка для рывка» catalogue (red-bull-025.jpg; origin not recorded); fitted to the card on white",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/artur-redbull-025.jpg",
+    "sha256": "64ea3f509f3e7dc376400d07db93b9e8b28e9fcab79737960c2187e0ce4a1af4"
+  },
+  {
+    "key": "artur-redbull-yellow-025",
+    "source": "https://axiastation.ca/products/red-bull-energy-drink-yellow-edition-250ml",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://cdn.shopify.com/s/files/1/0358/5264/8581/files/2935.webp",
+    "file": "public/media/artur-redbull-yellow-025.jpg",
+    "sha256": "6f645a3f983a1ecc56ee7c3db15945d8bea4055e0d520714c169e07fbcfd46aa"
   }
 ]
