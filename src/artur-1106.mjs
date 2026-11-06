@@ -51,7 +51,7 @@ export const arturProducts1106=[
  A('baltika_6','Пиво «Балтика 6» портер','Գարեջուր «Балтика 6» պորտեր','ლუდი „Балтика 6“ პორტერი','0,5','artur-baltika-6',280),
  A('baltika_7','Пиво «Балтика 7» экспортное','Գարեջուր «Балтика 7» էքսպորտային','ლუდი „Балтика 7“ საექსპორტო','0,5','artur-baltika-7',320),
  A('baltika_8','Пиво «Балтика 8» пшеничное','Գարեջուր «Балтика 8» ցորենի','ლუდი „Балтика 8“ ხორბლის','0,5','artur-baltika-8',280),
- ['avocado_oil_oliricco',L('Масло авокадо Oliricco 1 л','Ավոկադոյի յուղ Oliricco 1 լ','ავოკადოს ზეთი Oliricco 1 ლ'),'pantry',null,2000],
+ ['avocado_oil_oliricco',L('Масло авокадо Oliricco 1 л','Ավոկադոյի յուղ Oliricco 1 լ','ავოკადოს ზეთი Oliricco 1 ლ'),'pantry','artur-avocado-oil-oliricco',2000],
  ['avocado_oil_cratos',L('Масло авокадо Cratos 1 л','Ավոկադոյի յուղ Cratos 1 լ','ავოკადოს ზეთი Cratos 1 ლ'),'pantry','artur-avocado-oil-cratos',2000],
  ['olives_coopoliva_pitted_850',L('Маслины Coopoliva без косточки 850 г','Ձիթապտուղ սև Coopoliva առանց կորիզի 850 գ','შავი ზეთისხილი Coopoliva უკურკო 850 გ'),'preserves','artur-olives-coopoliva-pitted-850',1100],
  ['olives_coopoliva_plain_850',L('Маслины Coopoliva с косточкой 850 г','Ձիթապտուղ սև Coopoliva կորիզով 850 գ','შავი ზეთისხილი Coopoliva კურკით 850 გ'),'preserves','artur-olives-coopoliva-plain-850',1100],
