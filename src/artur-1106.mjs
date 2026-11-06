@@ -70,11 +70,11 @@ export const arturProducts1106=[
  ['natakhtari_pear',L('Лимонад «Натахтари» груша, стекло 0,5 л','Լիմոնադ «Նատախտարի» տանձ, ապակի 0,5 լ','ლიმონათი „ნატახტარი“ მსხალი, მინა 0,5 ლ'),'drinks','artur-natakhtari-pear',250],
  ['redbull_025',L('Red Bull 250 мл','Red Bull 250 մլ','Red Bull 250 მლ'),'drinks','kri-redbull-025',400],
  ['redbull_yellow_025',L('Red Bull The Yellow Edition (тропик) 250 мл','Red Bull The Yellow Edition (արևադարձային) 250 մլ','Red Bull The Yellow Edition (ტროპიკული) 250 მლ'),'drinks','artur-redbull-yellow',400],
- ['juice_mango_15',L('Сок манго 1,5 л','Մանգոյի հյութ 1,5 լ','მანგოს წვენი 1,5 ლ'),'drinks',null,1000],
- ['juice_mango_1',L('Сок манго 1 л','Մանգոյի հյութ 1 լ','მანგოს წვენი 1 ლ'),'drinks',null,800],
- ['juice_mango_025',L('Сок манго 250 мл','Մանգոյի հյութ 250 մլ','მანგოს წვენი 250 მლ'),'drinks',null,300],
- ['sauerkraut',L('Капуста квашеная','Թթու կաղամբ','მჟავე კომბოსტო'),'preserves',null,600,W],
- ['garlic_pickled',L('Чеснок маринованный','Սխտոր մարինացված','ნიორი მარინადში'),'preserves',null,1200,W]];
+ ['juice_mango_15',L('Сок манго Maaza 1,5 л','Մանգոյի հյութ Maaza 1,5 լ','მანგოს წვენი Maaza 1,5 ლ'),'drinks','artur-juice-mango-15',1000],
+ ['juice_mango_1',L('Сок манго Maaza 1 л','Մանգոյի հյութ Maaza 1 լ','მანგოს წვენი Maaza 1 ლ'),'drinks','artur-juice-mango-1',800],
+ ['juice_mango_025',L('Сок манго Maaza 250 мл','Մանգոյի հյութ Maaza 250 մլ','მანგოს წვენი Maaza 250 მლ'),'drinks','artur-juice-mango-025',300],
+ ['sauerkraut',L('Капуста квашеная','Թթու կաղամբ','მჟავე კომბოსტო'),'preserves','artur-sauerkraut',600,W],
+ ['garlic_pickled',L('Чеснок маринованный','Սխտոր մարինացված','ნიორი მარინადში'),'preserves','artur-garlic-pickled',1200,W]];
 // every product has its own picture file (artur-<key>.jpg), a copy of the brand photo for each size
 const artOf=key=>'artur-'+key.replaceAll('_','-');
 export const arturArts1106=arturProducts1106.map(r=>artOf(r[0]));
@@ -83,4 +83,6 @@ export const arturPhotoFrom1106=Object.fromEntries(arturProducts1106.filter(r=>r
 export const antoToArtur=[['anto_tsitsak',1000],['anto_jonjoli',2000]];
 export function arturSql1106(){const V=arturVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));
  return [...arturProducts1106.map(([key,[ru,hy,ka],category,art,cost,profile])=>`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(V.city_id+'--artur_'+key)},${s(V.id)},${j({ru,hy,ka})},${s(category)},${s(artOf(key))},${j(profile||{mode:'EACH',policy_version:1})},${arturRetail1106(cost,category)},${cost},${profile?100000:100} WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(V.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`),
-  ...antoToArtur.map(([key,cost])=>`UPDATE products SET vendor_id=${s(V.id)},cost=${cost},price=${tierRetail(cost,20)},version=version+1 WHERE id=${s(V.city_id+'--'+key)} AND vendor_id='akhalkalaki-anto';`)]}
+  ...antoToArtur.map(([key,cost])=>`UPDATE products SET vendor_id=${s(V.id)},cost=${cost},price=${tierRetail(cost,20)},version=version+1 WHERE id=${s(V.city_id+'--'+key)} AND vendor_id='akhalkalaki-anto';`),...arturMaazaSql()]}
+// Owner 06.11: the mango juice is Maaza — the brand goes into the names of products created before that.
+export function arturMaazaSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'";return arturProducts1106.filter(r=>r[0].startsWith('juice_mango_')).map(([key,[ru,hy,ka]])=>`UPDATE products SET names=${s(JSON.stringify({ru,hy,ka}))},version=version+1 WHERE id=${s(arturVendor.city_id+'--artur_'+key)} AND names NOT LIKE '%Maaza%';`)}

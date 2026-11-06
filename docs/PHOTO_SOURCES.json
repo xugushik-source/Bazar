@@ -2420,5 +2420,45 @@
     "download_url": "https://frutoss.ru/image/cache/catalog/banka/maslo_avokado1-360x288-720x576.png",
     "file": "public/media/artur-avocado-oil-cratos.jpg",
     "sha256": "fb3d3b81376adc439c35c396fcc4002b14bef1b0573cf399bf379943ec8d0647"
+  },
+  {
+    "key": "artur-juice-mango-15",
+    "source": "https://www.bigbasket.com/pd/40197903/",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://www.bbassets.com/media/uploads/p/xxl/40197903_1-maaza-juice-mango.jpg",
+    "file": "public/media/artur-juice-mango-15.jpg",
+    "sha256": "af3dd44d3885da590bba0fb13a6671b40d926c799f251a021ef6bb6ae8cbfb66"
+  },
+  {
+    "key": "artur-juice-mango-1",
+    "source": "https://www.flipkart.com/maaza-mango-250-ml/p/itmf9n2zbgpexhz8",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://rukminim2.flixcart.com/image/832/832/xif0q/drinks-juice/9/y/p/-enriched-transparent-original-imagehgy7ryguthh.png",
+    "file": "public/media/artur-juice-mango-1.jpg",
+    "sha256": "0f6056748dfcabddceb9b54bfdc3b1dde47d9c88795e6d8599e579e39f3b0d53"
+  },
+  {
+    "key": "artur-juice-mango-025",
+    "source": "https://www.flipkart.com/maaza-mango-250-ml/p/itmf9n2zbgpexhz8",
+    "license": "product photo from the retailer page (brand packshot)",
+    "download_url": "https://rukminim2.flixcart.com/image/832/832/xif0q/drinks-juice/9/y/p/-enriched-transparent-original-imagehgy7ryguthh.png",
+    "file": "public/media/artur-juice-mango-025.jpg",
+    "sha256": "0f6056748dfcabddceb9b54bfdc3b1dde47d9c88795e6d8599e579e39f3b0d53"
+  },
+  {
+    "key": "artur-sauerkraut",
+    "source": "https://www.pexels.com/photo/delicious-mouthwatering-sauerkraut-10310676/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/10310676/pexels-photo-10310676.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "file": "public/media/artur-sauerkraut.jpg",
+    "sha256": "de49c61a9c00113f92294887b1c84dca8bd92bff7ee6c438f7e9984a72557a48"
+  },
+  {
+    "key": "artur-garlic-pickled",
+    "source": "https://unsplash.com/photos/bowl-of-pickled-garlic-with-decorative-blue-and-white-pattern-58SOrJ1Hi50",
+    "license": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1765291478422-bc2ff96c2527?fm=jpg&q=80&w=1200",
+    "file": "public/media/artur-garlic-pickled.jpg",
+    "sha256": "52a6eccade0e38c288a9ba4e649777aee05f778c0884efa2170015e2d635c0d3"
   }
 ]
