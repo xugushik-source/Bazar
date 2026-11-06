@@ -58,3 +58,10 @@ Object.assign(botWords.ka,{dispName:'🎧 შეკვეთა {id}: ვინ 
 Object.assign(botWords.ru,{cash:'💵 Нал — деньги у меня',transfer:'💳 Безнал — перевод на карту Арутюна',pay:'✅ Деньги пришли',declinePay:'❌ Денег нет'});
 Object.assign(botWords.hy,{cash:'💵 Կանխիկ — գումարը ինձ մոտ է',transfer:'💳 Անկանխիկ — փոխանցում Հարությունի քարտին',pay:'✅ Գումարը եկավ',declinePay:'❌ Գումար չկա'});
 Object.assign(botWords.ka,{cash:'💵 ნაღდი — ფული ჩემთანაა',transfer:'💳 უნაღდო — გადარიცხვა არუთინის ბარათზე',pay:'✅ ფული მოვიდა',declinePay:'❌ ფული არ არის'});
+Object.assign(botWords.ru,{prAuto:'💲 {vendor} ({who}) сменил закуп — применено автоматически (изменение до ±30 %)\n«{name}» {unit}\nЗакуп: {oldCost} → {newCost}\nНа сайте: {oldPrice} → {newPrice}'});
+Object.assign(botWords.hy,{prAuto:'💲 {vendor} ({who}) փոխեց գնման գինը — կիրառված է ավտոմատ (մինչև ±30 %)\n«{name}» {unit}\nԳնում՝ {oldCost} → {newCost}\nԿայքում՝ {oldPrice} → {newPrice}'});
+Object.assign(botWords.ka,{prAuto:'💲 {vendor} ({who}) შეცვალა შესყიდვის ფასი — გამოყენებულია ავტომატურად (±30 %-მდე)\n«{name}» {unit}\nშესყიდვა: {oldCost} → {newCost}\nსაიტზე: {oldPrice} → {newPrice}'});
+// Owner 06.11: the morning post lists every product with its cost; silence means «всё есть, цены те же».
+Object.assign(botWords.ru,{scMorning:'🌅 Доброе утро! {vendor}: сегодня всё есть по этим ценам?\nЕсли до {until} ничего не отметите — считаем, что всё есть и цены те же.\nЧего нет — «Список» → ❌. Цена поменялась — «Список» → 💲.',scFullHead:'📋 {vendor} — товары и закуп на {day} ({p}/{n}):'});
+Object.assign(botWords.hy,{scMorning:'🌅 Բարի լույս։ {vendor}՝ այսօր ամեն ինչ կա՞ այս գներով։\nԵթե մինչև {until} ոչինչ չնշեք՝ համարում ենք, որ ամեն ինչ կա և գները նույնն են։\nԻնչ չկա՝ «Ցուցակ» → ❌։ Գինը փոխվել է՝ «Ցուցակ» → 💲։',scFullHead:'📋 {vendor} — ապրանքներ և գնման գին {day} ({p}/{n})․'});
+Object.assign(botWords.ka,{scMorning:'🌅 დილა მშვიდობისა! {vendor}: დღეს ყველაფერი არის ამ ფასებით?\nთუ {until}-მდე არაფერს მონიშნავთ — ვთვლით, რომ ყველაფერი არის და ფასები იგივეა.\nრაც არ არის — «სია» → ❌. ფასი შეიცვალა — «სია» → 💲.',scFullHead:'📋 {vendor} — პროდუქტები და შესყიდვა {day} ({p}/{n}):'});
