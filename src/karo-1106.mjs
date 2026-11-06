@@ -21,3 +21,8 @@ export function karoCost1106Sql(){return [
  ...karoCosts1106.map(([key,old,cost])=>`UPDATE products SET cost=${cost},version=version+1 WHERE id=${id(key)} AND vendor_id='${V}' AND cost=${old};`),
  `INSERT INTO inventory(id,product_id,at,actor,delta,reason) SELECT 'k1106-'||id,id,'2026-11-06T00:00:00.000Z','owner',price,'${karoMark1106}' FROM products WHERE vendor_id='${V}' AND cost>0 ON CONFLICT(id) DO NOTHING;`,
  `UPDATE products SET price=${retail},version=version+1 WHERE vendor_id='${V}' AND cost>0 AND price=(SELECT delta FROM inventory WHERE id='k1106-'||products.id) AND (price*100>cost*130 OR price<${retail});`]}
+// The 04.11 +25 % rule marked the cherry tomatoes too (they arrived after it) and raised 12.50 to 15.70 on the live site.
+// Its marker for them is made unusable and the price goes back to +25 % on the cost.
+export function karoCherryFixSql(){const c=id('tomato_cherry_loose');return [
+ `INSERT INTO inventory(id,product_id,at,actor,delta,reason) SELECT 'fv25-'||id,id,'2026-11-06T00:00:00.000Z','owner',-1,'CATALOG: owner 04.11 fruit/veg +25%' FROM products WHERE id=${c} ON CONFLICT(id) DO UPDATE SET delta=-1;`,
+ `UPDATE products SET price=1250,version=version+1 WHERE id=${c} AND cost=1000 AND price=1570;`]}
