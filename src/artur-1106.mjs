@@ -51,7 +51,7 @@ export const arturProducts1106=[
  A('baltika_6','Пиво «Балтика 6» портер','Գարեջուր «Балтика 6» պորտեր','ლუდი „Балтика 6“ პორტერი','0,5','artur-baltika-6',280),
  A('baltika_7','Пиво «Балтика 7» экспортное','Գարեջուր «Балтика 7» էքսպորտային','ლუდი „Балтика 7“ საექსპორტო','0,5','artur-baltika-7',320),
  A('baltika_8','Пиво «Балтика 8» пшеничное','Գարեջուր «Балтика 8» ցորենի','ლუდი „Балтика 8“ ხორბლის','0,5','artur-baltika-8',280),
- ['avocado_oil_oliricco',L('Масло оливковое Oliricco 1 л','Ձիթապտղի յուղ Oliricco 1 լ','ზეითუნის ზეთი Oliricco 1 ლ'),'pantry',null,2000],
+ ['avocado_oil_oliricco',L('Масло авокадо Oliricco 1 л','Ավոկադոյի յուղ Oliricco 1 լ','ავოკადოს ზეთი Oliricco 1 ლ'),'pantry',null,2000],
  ['avocado_oil_cratos',L('Масло авокадо Cratos 1 л','Ավոկադոյի յուղ Cratos 1 լ','ავოკადოს ზეთი Cratos 1 ლ'),'pantry','artur-avocado-oil-cratos',2000],
  ['olives_coopoliva_pitted_850',L('Маслины Coopoliva без косточки 850 г','Ձիթապտուղ սև Coopoliva առանց կորիզի 850 գ','შავი ზეთისხილი Coopoliva უკურკო 850 გ'),'preserves','artur-olives-coopoliva-pitted-850',1100],
  ['olives_coopoliva_plain_850',L('Маслины Coopoliva с косточкой 850 г','Ձիթապտուղ սև Coopoliva կորիզով 850 գ','შავი ზეთისხილი Coopoliva კურკით 850 გ'),'preserves','artur-olives-coopoliva-plain-850',1100],
@@ -59,9 +59,9 @@ export const arturProducts1106=[
  ['olives_coopoliva_plain_425',L('Маслины Coopoliva с косточкой 425 г','Ձիթապտուղ սև Coopoliva կորիզով 425 գ','შავი ზეთისხილი Coopoliva კურკით 425 გ'),'preserves','artur-olives-coopoliva-plain-425',500],
  ['olives_markesa_green',L('Оливки Markesa de Oliva без косточки 420 г','Ձիթապտուղ կանաչ Markesa de Oliva առանց կորիզի 420 գ','მწვანე ზეთისხილი Markesa de Oliva უკურკო 420 გ'),'preserves',null,550],
  ['olives_markesa_black',L('Маслины Markesa de Oliva без косточки 420 г','Ձիթապտուղ սև Markesa de Oliva առանց կորիզի 420 գ','შავი ზეთისხილი Markesa de Oliva უკურკო 420 გ'),'preserves',null,550],
- ['stew_pork_525',L('Свинина тушёная «Белорусские консервы» 525 г','Խոզի միս շոգեխաշած «Белорусские консервы» 525 գ','ღორის ჩაშუშული „Белорусские консервы“ 525 გ'),'belarus',null,1750],
- ['stew_beef_500',L('Говядина тушёная «Белорусские консервы», стекло 500 г','Տավարի միս շոգեխաշած «Белорусские консервы», ապակի 500 գ','საქონლის ჩაშუშული „Белорусские консервы“, მინა 500 გ'),'belarus',null,1750],
- ['stew_pork_338',L('Свинина тушёная «Белорусские консервы» 338 г','Խոզի միս շոգեխաշած «Белорусские консервы» 338 գ','ღორის ჩაშუშული „Белорусские консервы“ 338 გ'),'belarus',null,1100],
+ ['stew_pork_525',L('Свинина тушёная «Белорусские консервы» 525 г','Խոզի միս շոգեխաշած «Белорусские консервы» 525 գ','ღორის ჩაშუშული „Белорусские консервы“ 525 გ'),'belarus','artur-stew-pork-525',1750],
+ ['stew_beef_500',L('Говядина тушёная «Белорусские консервы», стекло 500 г','Տավարի միս շոգեխաշած «Белорусские консервы», ապակի 500 գ','საქონლის ჩაშუშული „Белорусские консервы“, მინა 500 გ'),'belarus','artur-stew-beef-500',1750],
+ ['stew_pork_338',L('Свинина тушёная «Белорусские консервы» 338 г','Խոզի միս շոգեխաշած «Белорусские консервы» 338 գ','ღორის ჩაშუშული „Белорусские консервы“ 338 გ'),'belarus','artur-stew-pork-338',1100],
  ['condensed_alekseevskoe',L('Сгущённое молоко «Алексеевское» 8,5% 380 г','Խտացրած կաթ «Алексеевское» 8,5% 380 գ','შესქელებული რძე „Алексеевское“ 8,5% 380 გ'),'pantry','artur-condensed-alekseevskoe',500],
  ['condensed_rogachev',L('Сгущённое молоко «Рогачёвъ» 8,5% 380 г','Խտացրած կաթ «Рогачёвъ» 8,5% 380 գ','შესქელებული რძე „Рогачёвъ“ 8,5% 380 გ'),'belarus','artur-condensed-rogachev',500],
  ['borjomi_05',L('Минеральная вода Borjomi, стекло 0,5 л','Հանքային ջուր Borjomi, ապակի 0,5 լ','მინერალური წყალი ბორჯომი, მინა 0,5 ლ'),'drinks','artur-borjomi',220],
@@ -84,5 +84,5 @@ export const antoToArtur=[['anto_tsitsak',1000],['anto_jonjoli',2000]];
 export function arturSql1106(){const V=arturVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));
  return [...arturProducts1106.map(([key,[ru,hy,ka],category,art,cost,profile])=>`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(V.city_id+'--artur_'+key)},${s(V.id)},${j({ru,hy,ka})},${s(category)},${s(artOf(key))},${j(profile||{mode:'EACH',policy_version:1})},${arturRetail1106(cost,category)},${cost},${profile?100000:100} WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(V.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`),
   ...antoToArtur.map(([key,cost])=>`UPDATE products SET vendor_id=${s(V.id)},cost=${cost},price=${tierRetail(cost,20)},version=version+1 WHERE id=${s(V.city_id+'--'+key)} AND vendor_id='akhalkalaki-anto';`),...arturMaazaSql()]}
-// Owner 06.11: the mango juice is Maaza, and Oliricco is olive oil — names of products created before that are corrected.
-export function arturMaazaSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'";return arturProducts1106.filter(r=>r[0].startsWith('juice_mango_')||r[0]==='avocado_oil_oliricco').map(([key,[ru,hy,ka]])=>`UPDATE products SET names=${s(JSON.stringify({ru,hy,ka}))},version=version+1 WHERE id=${s(arturVendor.city_id+'--artur_'+key)} AND names NOT LIKE ${s(key==='avocado_oil_oliricco'?'%оливковое%':'%Maaza%')};`)}
+// Owner 06.11: the mango juice is Maaza (names of products created before that are corrected); Oliricco is avocado oil after all — the short-lived olive-oil name is undone of products created before that are corrected.
+export function arturMaazaSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'";return arturProducts1106.filter(r=>r[0].startsWith('juice_mango_')||r[0]==='avocado_oil_oliricco').map(([key,[ru,hy,ka]])=>`UPDATE products SET names=${s(JSON.stringify({ru,hy,ka}))},version=version+1 WHERE id=${s(arturVendor.city_id+'--artur_'+key)} AND names NOT LIKE ${s(key==='avocado_oil_oliricco'?'%авокадо%':'%Maaza%')};`)}
