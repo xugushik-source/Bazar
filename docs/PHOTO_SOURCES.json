@@ -2036,5 +2036,29 @@
     "author": "owner",
     "file": "public/media/honey-linden.jpg",
     "sha256": "c106d7d4221da2570c48b87be5931dfb3a45eec97fcb7aa8f5ea0e49ca23fecf"
+  },
+  {
+    "key": "pitahaya",
+    "source": "https://www.pexels.com/photo/red-dragon-fruits-5232860/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/5232860/pexels-photo-5232860.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/pitahaya.jpg",
+    "sha256": "4c2190348f86db00fac611d1ba441dfe53486e5026dc8b7f30b5814607a8bd2b"
+  },
+  {
+    "key": "tomato-cherry",
+    "source": "https://www.pexels.com/photo/red-tomatoes-on-a-bowl-7801106/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/7801106/pexels-photo-7801106.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/tomato-cherry.jpg",
+    "sha256": "66b63f33769f718603d13fb56f4212aeba42c655e5030550ae4cdc8d46c0406b"
+  },
+  {
+    "key": "strawberry-fresh",
+    "source": "https://www.pexels.com/photo/bunch-of-strawberries-on-white-surface-1350964/",
+    "license": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/1350964/pexels-photo-1350964.jpeg?auto=compress&cs=tinysrgb&w=600&h=520&fit=crop",
+    "file": "public/media/strawberry-fresh.jpg",
+    "sha256": "94ca2174d1799a58891c18bb1b9e276d87f8fcb3b9b09d1456a66e0d0285a663"
   }
 ]
