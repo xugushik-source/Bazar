@@ -7,3 +7,7 @@ export function retailFor(p,cost){const key=p.id.split('--')[1]||'',variety=karo
  if(cognacs.some(r=>r[0]===key))return {price:tierRetail(cost,cognacPct(cost)),rule:cognacPct(cost)+'%'};
  if(p.cost>0&&p.price>0){const pct=Math.round((p.price/p.cost-1)*100);return {price:tierRetail(cost,pct),rule:pct+'%'}}
  return {price:null,rule:'manual'}}
+// Owner 06.11: a new cost. Up — retail by the product's group (Karo 15/20/30 %, others their own markup), never below today's
+// price. Down — today's price stays while it is at most 30 % above the new cost; above that it comes down to the group's markup.
+export function retailOnCost(p,cost){const r=retailFor(p,cost);if(r.price==null||!p.cost||!p.price)return r;
+ if(cost>=p.cost)return {...r,price:Math.max(p.price,r.price)};return {...r,price:p.price*100<=cost*130?p.price:r.price}}
