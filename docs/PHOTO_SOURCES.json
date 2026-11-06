@@ -2532,5 +2532,33 @@
     "download_url": "https://cdn.insales-shop.ru/images/products/1/1631/1016129119/Жигулевское_Хмельное_0_5л..jpg",
     "file": "public/media/artur-zhigulevskoe-05.jpg",
     "sha256": "34f42eed9f414540cebceedf7c144f4fe257a05a2397e64996a7f99f2234eeb7"
+  },
+  {
+    "key": "artur-stew-beef-500",
+    "source": "owner: brand packshot found by the owner (Google Lens), 06.11",
+    "license": "brand packshot supplied by the owner",
+    "file": "public/media/artur-stew-beef-500.jpg",
+    "sha256": "4b1cd2074ad528687947339ef2cf32b17063da7867bf117b500b607bbd93913f"
+  },
+  {
+    "key": "artur-stew-pork-525",
+    "source": "owner: brand packshot found by the owner (Google Lens), 06.11",
+    "license": "brand packshot supplied by the owner",
+    "file": "public/media/artur-stew-pork-525.jpg",
+    "sha256": "b5e3cbe5e56fab5eb0eee1665e5c09df5a6c3e100f0e540efdd643a783c18ff8"
+  },
+  {
+    "key": "artur-stew-pork-338",
+    "source": "owner: brand packshot found by the owner (Google Lens), 06.11",
+    "license": "brand packshot supplied by the owner",
+    "file": "public/media/artur-stew-pork-338.jpg",
+    "sha256": "b5e3cbe5e56fab5eb0eee1665e5c09df5a6c3e100f0e540efdd643a783c18ff8"
+  },
+  {
+    "key": "rafo-trout-caviar",
+    "source": "owner: photo of red caviar in a 100 g jar sent by the owner, 06.11",
+    "license": "owner-provided product image for selling this product",
+    "file": "public/media/rafo-trout-caviar.jpg",
+    "sha256": "440faa9526fa8ed432a9f3ad29481b8b366ed5f4cdcece75852a2be4a97bb594"
   }
 ]
