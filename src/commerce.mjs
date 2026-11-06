@@ -1,4 +1,4 @@
-import {promotionMap,promotionPrice,referralStage}from './promotions.mjs';import {sourceCode,hasSourceColumn}from './sources.mjs';import {firstOrder}from './first-order.mjs';import {closedToday}from './supplier-day.mjs';
+import {ownerProfile}from './tolerance.mjs';import {promotionMap,promotionPrice,referralStage}from './promotions.mjs';import {sourceCode,hasSourceColumn}from './sources.mjs';import {firstOrder}from './first-order.mjs';import {closedToday}from './supplier-day.mjs';
 import {CONSENT_VERSION}from './legal.mjs';import {zones,zoneOf,zoneFee}from './zones.mjs';
 // Databases before migration 0063 have no consent columns; the consent is still required, it is just not stored there.
 const consentKnown=new WeakSet();async function hasConsentColumns(db){if(consentKnown.has(db))return true;try{await db.prepare('SELECT consent_version,marketing FROM orders LIMIT 0').all();consentKnown.add(db);return true}catch{return false}}
@@ -11,7 +11,7 @@ export const parse=jsonParse;
 export const own=(user,vendor,roles=['ADMIN','STAFF','SUPPLIER'])=>!!user&&(user.owner||user.memberships?.some(m=>m.vendor_id===vendor&&roles.includes(m.role)));
 // Delivery: the city's fee, free once the estimated goods total reaches free_delivery_from (when set). Pickup costs nothing.
 export const deliveryFee=(c,fulfillment,items,zone='')=>fulfillment!=='delivery'?0:zoneOf(c,zone)?zoneFee(zoneOf(c,zone),items):c.free_delivery_from!=null&&items>=c.free_delivery_from?0:c.delivery_fee;
-export function publicProduct(p){const profile=parse(p.profile,{});return {id:p.id,vendor_id:p.vendor_id,names:parse(p.names),category:p.category,art:p.art,profile,price:p.price,...(p.promotion_id?{regular_price:p.regular_price,promotion_id:p.promotion_id,promotion_kind:p.promotion_kind}:{}),available:p.stock-p.reserved,version:p.version,active:!!p.active};}
+export function publicProduct(p){const profile=ownerProfile(parse(p.profile,{}),p.category);return {id:p.id,vendor_id:p.vendor_id,names:parse(p.names),category:p.category,art:p.art,profile,price:p.price,...(p.promotion_id?{regular_price:p.regular_price,promotion_id:p.promotion_id,promotion_kind:p.promotion_kind}:{}),available:p.stock-p.reserved,version:p.version,active:!!p.active};}
 export async function catalog(db,city){const c=await q(db,'SELECT * FROM cities WHERE id=? AND active=1',city).first();if(!c)fail('NOT_FOUND',404);const promos=await promotionMap(db,city),closed=await closedToday(db,clock(c.timezone).day);return {city:{...c,names:parse(c.names),zones:zones[c.id]||[]},categories:(await db.prepare('SELECT * FROM categories WHERE active=1 ORDER BY sort,id').all()).results.map(c=>({...c,names:parse(c.names)})),vendors:(await q(db,'SELECT * FROM vendors WHERE city_id=? AND active=1 ORDER BY id',city).all()).results.map(v=>({...v,names:parse(v.names)})),products:(await q(db,'SELECT p.* FROM products p JOIN vendors v ON v.id=p.vendor_id WHERE v.city_id=? AND p.active=1 AND v.active=1 ORDER BY p.category,p.id',city).all()).results.filter(p=>!closed.has(p.id)).map(p=>publicProduct(promotionPrice(p,promos)))};}
 export function clock(zone,date=new Date()){const a=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(date).map(p=>[p.type,p.value]));return {day:`${a.year}-${a.month}-${a.day}`,minute:+a.hour*60+(+a.minute)};}
 // Owner 30.10: delivery 30 to 60 minutes after the order — the nearest half-hour slot at least min_lead_minutes away (60 on an old DB).
@@ -43,7 +43,7 @@ export async function priceBasket(db,b,credits=new Map()){
  const promos=await promotionMap(db,c.id),seen=new Set(),lines=[];
  for(const item of b.items){if(seen.has(item.product_id))fail('DUPLICATE_LINE');seen.add(item.product_id);
  let p=await q(db,'SELECT p.* FROM products p JOIN vendors v ON v.id=p.vendor_id WHERE p.id=? AND v.city_id=? AND p.active=1 AND v.active=1',item.product_id,c.id).first();if(p)p=promotionPrice(p,promos);if(!p)fail('PRODUCT_UNAVAILABLE',409);
- const profile=parse(p.profile,{}),product={...profile,id:p.id,variant_id:p.id,currency:c.currency,...(weighted(profile.mode)?{price_per_kg_minor:p.price}:{price_per_unit_minor:p.price})};
+ const profile=ownerProfile(parse(p.profile,{}),p.category),product={...profile,id:p.id,variant_id:p.id,currency:c.currency,...(weighted(profile.mode)?{price_per_kg_minor:p.price}:{price_per_unit_minor:p.price})};
  let line;try{line=quote(product,item.selection,p.id)}catch(e){fail(e.message||'INVALID_SELECTION')}
  const reserve=weighted(line.mode)?line.max_g:line.count;
  if(reserve>p.stock-p.reserved+(credits.get(p.id)||0))fail('OUT_OF_STOCK',409);

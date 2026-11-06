@@ -94,7 +94,7 @@ test('owner 06.11: the supplier weighs item by item in the bot (kg or grams), se
  await say('абв');assert.match(last().text,/Не понял число/);
  await say('1,05');assert.match(last().text,/✅ Яблоки: 1,05 кг — в допуске/);assert.match(last().text,/Проверьте вес/);
  await click(f,g,o,'weigh_redo',777);assert.match(last().text,/1\/1 · Яблоки/);
- await say('1500');assert.match(last().text,/⚠️ Яблоки: 1,5 кг — вне допуска \(0,9 кг–1,1 кг\)/);
+ await say('1500');assert.match(last().text,/⚠️ Яблоки: 1,5 кг — вне допуска \(0,8 кг–1,2 кг\)/);
  await click(f,g,o,'weigh_ok',777);assert.match(last().text,/Вес записан/);
  const w=JSON.parse((await q(f.DB,'SELECT weighing FROM orders WHERE id=?',o.id).first()).weighing);assert.deepEqual(w.map(a=>[a.line_id,a.net_g]),[['akhalkalaki--apple_loose',1500]]);
  await drain(f);await click(f,g,o,'ready',777);assert.equal((await q(f.DB,"SELECT status FROM order_groups WHERE order_id=? AND vendor_id='akhalkalaki-garden'",o.id).first()).status,'READY')}finally{f.DB.close()}});
