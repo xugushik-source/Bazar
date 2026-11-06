@@ -2294,14 +2294,6 @@
     "sha256": "1efed313e5412084d980efd81954de310adb97f046b1948a35828e84a3d9778a"
   },
   {
-    "key": "artur-baltika-7",
-    "source": "https://www.sas.am/en/catalog/brand_baltika/",
-    "license": "product photo from the retailer page (brand packshot)",
-    "download_url": "https://www.sas.am/upload/Sh/imageCache/190/148/148132814171435.webp",
-    "file": "public/media/artur-baltika-7.jpg",
-    "sha256": "ae208dc772d75f9896fa24ed64d913340d345435d090b8098a61f11b026fffa8"
-  },
-  {
     "key": "artur-baltika-3",
     "source": "https://okolo.market/product/pivo-baltika-3-klassicheskoe-svetloe-st-b-0-45-l/",
     "license": "product photo from the retailer page (brand packshot)",
@@ -2460,5 +2452,85 @@
     "download_url": "https://images.unsplash.com/photo-1765291478422-bc2ff96c2527?fm=jpg&q=80&w=1200",
     "file": "public/media/artur-garlic-pickled.jpg",
     "sha256": "52a6eccade0e38c288a9ba4e649777aee05f778c0884efa2170015e2d635c0d3"
+  },
+  {
+    "key": "artur-baltika-6",
+    "source": "https://baltika4you.ru/baltika-6-butylka-0-5/",
+    "license": "product photo from the retailer/maker page (brand packshot)",
+    "download_url": "https://baltika4you.ru/images/detailed/10/б6.png",
+    "file": "public/media/artur-baltika-6.jpg",
+    "sha256": "2315ffd74f39dca901cc16d3e22747c9ca4ba858dd7ec10531b39f534c541635"
+  },
+  {
+    "key": "artur-baltika-8",
+    "source": "https://baltika4you.ru/baltika-8-butylka-0-5/",
+    "license": "product photo from the retailer/maker page (brand packshot)",
+    "download_url": "https://baltika4you.ru/images/detailed/9/балтика_8.png",
+    "file": "public/media/artur-baltika-8.jpg",
+    "sha256": "fc57c13cfc28225012246206107992707c69664bd5dc4a1f56f4f4656a1f8117"
+  },
+  {
+    "key": "artur-baltika-7",
+    "source": "https://baltika4you.ru/baltika-7-butylka-0-5/",
+    "license": "product photo from the retailer/maker page (brand packshot)",
+    "download_url": "https://baltika4you.ru/images/detailed/9/б7_бут_0.5.jpg",
+    "file": "public/media/artur-baltika-7.jpg",
+    "sha256": "620517759bdfa145a40ac01f09ae6a7e262a7a265be58f0ed3c6719ca74cfe61"
+  },
+  {
+    "key": "artur-partner-1l",
+    "source": "https://xn--80adbglhr4a.xn--p1ai/product/partner/",
+    "license": "product photo from the retailer/maker page (brand packshot)",
+    "download_url": "https://xn--80adbglhr4a.xn--p1ai/wp-content/uploads/2023/01/partner_1000.png",
+    "file": "public/media/artur-partner-1l.jpg",
+    "sha256": "3bfda701afc224edba0939e99cbdb2210e142782ecac17cb8fd1dad50c7ba26a"
+  },
+  {
+    "key": "artur-partner-07",
+    "source": "https://xn--80adbglhr4a.xn--p1ai/product/partner/",
+    "license": "product photo from the retailer/maker page (brand packshot)",
+    "download_url": "https://xn--80adbglhr4a.xn--p1ai/wp-content/uploads/2023/01/partner_1000.png",
+    "file": "public/media/artur-partner-07.jpg",
+    "sha256": "3bfda701afc224edba0939e99cbdb2210e142782ecac17cb8fd1dad50c7ba26a"
+  },
+  {
+    "key": "artur-partner-05",
+    "source": "https://xn--80adbglhr4a.xn--p1ai/product/partner/",
+    "license": "product photo from the retailer/maker page (brand packshot)",
+    "download_url": "https://xn--80adbglhr4a.xn--p1ai/wp-content/uploads/2023/01/partner_1000.png",
+    "file": "public/media/artur-partner-05.jpg",
+    "sha256": "3bfda701afc224edba0939e99cbdb2210e142782ecac17cb8fd1dad50c7ba26a"
+  },
+  {
+    "key": "artur-crown-1l",
+    "source": "https://decanter.ru/gold-russian-crown-vodka",
+    "license": "product photo from the retailer/maker page (brand packshot)",
+    "download_url": "https://static.decanter.ru/upload/images/463603/463603-vodka-gold-russian-crown-special-0-5-l-sq.jpg",
+    "file": "public/media/artur-crown-1l.jpg",
+    "sha256": "d6d55cc316e7491574d6e803d7700740b857d62d95dc9a9e5f7dbead0a58b534"
+  },
+  {
+    "key": "artur-crown-07",
+    "source": "https://decanter.ru/gold-russian-crown-vodka",
+    "license": "product photo from the retailer/maker page (brand packshot)",
+    "download_url": "https://static.decanter.ru/upload/images/463603/463603-vodka-gold-russian-crown-special-0-5-l-sq.jpg",
+    "file": "public/media/artur-crown-07.jpg",
+    "sha256": "d6d55cc316e7491574d6e803d7700740b857d62d95dc9a9e5f7dbead0a58b534"
+  },
+  {
+    "key": "artur-crown-05",
+    "source": "https://decanter.ru/gold-russian-crown-vodka",
+    "license": "product photo from the retailer/maker page (brand packshot)",
+    "download_url": "https://static.decanter.ru/upload/images/463603/463603-vodka-gold-russian-crown-special-0-5-l-sq.jpg",
+    "file": "public/media/artur-crown-05.jpg",
+    "sha256": "d6d55cc316e7491574d6e803d7700740b857d62d95dc9a9e5f7dbead0a58b534"
+  },
+  {
+    "key": "artur-zhigulevskoe-05",
+    "source": "https://www.belprodykt.ru/collection/lidskoe-pivo/product/pivo-zhygulyouskae-hmelnae-05l-lidskoe-pivo",
+    "license": "product photo from the retailer/maker page (brand packshot)",
+    "download_url": "https://cdn.insales-shop.ru/images/products/1/1631/1016129119/Жигулевское_Хмельное_0_5л..jpg",
+    "file": "public/media/artur-zhigulevskoe-05.jpg",
+    "sha256": "34f42eed9f414540cebceedf7c144f4fe257a05a2397e64996a7f99f2234eeb7"
   }
 ]

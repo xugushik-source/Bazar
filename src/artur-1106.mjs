@@ -26,9 +26,9 @@ export const arturProducts1106=[
  A('beluga_transatlantic_1l','Водка Beluga Transatlantic Racing','Օղի Beluga Transatlantic Racing','არაყი Beluga Transatlantic Racing','1','artur-beluga-transatlantic',14000),
  A('chistye_rosy_07','Водка «Чистые росы» органик','Օղի «Чистые росы» օրգանիկ','არაყი „Чистые росы“ ორგანული','0,7','artur-chistye-rosy-07',7000),
  A('chistye_rosy_05','Водка «Чистые росы» органик','Օղի «Чистые росы» օրգանիկ','არაყი „Чистые росы“ ორგანული','0,5','artur-chistye-rosy-05',5700),
- A('crown_1l','Водка Gold Russian Crown','Օղի Gold Russian Crown','არაყი Gold Russian Crown','1',null,5300),
- A('crown_07','Водка Gold Russian Crown','Օղի Gold Russian Crown','არაყი Gold Russian Crown','0,7',null,3800),
- A('crown_05','Водка Gold Russian Crown','Օղի Gold Russian Crown','არაყი Gold Russian Crown','0,5',null,3100),
+ A('crown_1l','Водка Gold Russian Crown','Օղի Gold Russian Crown','არაყი Gold Russian Crown','1','artur-crown-1l',5300),
+ A('crown_07','Водка Gold Russian Crown','Օղի Gold Russian Crown','არაყი Gold Russian Crown','0,7','artur-crown-07',3800),
+ A('crown_05','Водка Gold Russian Crown','Օղի Gold Russian Crown','არაყი Gold Russian Crown','0,5','artur-crown-05',3100),
  A('onegin_1l','Водка Onégin','Օղի Onégin','არაყი Onégin','1','artur-onegin',18000),
  A('onegin_07','Водка Onégin','Օղի Onégin','არაყი Onégin','0,7','artur-onegin',12500),
  A('greygoose_1l','Водка Grey Goose','Օղի Grey Goose','არაყი Grey Goose','1','artur-greygoose',12000),
@@ -38,20 +38,20 @@ export const arturProducts1106=[
  A('mamont_075','Водка Mamont Original','Օղի Mamont Original','არაყი Mamont Original','0,75','artur-mamont',7000),
  A('mamont_05','Водка Mamont','Օղի Mamont','არაყი Mamont','0,5','artur-mamont',5400),
  A('mamont_northman_07','Водка Mamont Northman','Օղի Mamont Northman','არაყი Mamont Northman','0,7','artur-mamont-northman-07',7300),
- A('partner_1l','Водка Partner Premium Export','Օղի Partner Premium Export','არაყი Partner Premium Export','1',null,6500),
- A('partner_07','Водка Partner Premium Export','Օղի Partner Premium Export','არაყი Partner Premium Export','0,7',null,5000),
- A('partner_05','Водка Partner Premium Export','Օղի Partner Premium Export','არაყი Partner Premium Export','0,5',null,4000),
+ A('partner_1l','Водка Partner Premium Export','Օղի Partner Premium Export','არაყი Partner Premium Export','1','artur-partner-1l',6500),
+ A('partner_07','Водка Partner Premium Export','Օղի Partner Premium Export','არაყი Partner Premium Export','0,7','artur-partner-07',5000),
+ A('partner_05','Водка Partner Premium Export','Օղի Partner Premium Export','არაყი Partner Premium Export','0,5','artur-partner-05',4000),
  A('dargett_weizen_05','Пиво Dargett Weizen','Գարեջուր Dargett Weizen','ლუდი Dargett Weizen','0,5','artur-dargett-weizen-05',400),
  A('dargett_weizen_033','Пиво Dargett Weizen','Գարեջուր Dargett Weizen','ლუდი Dargett Weizen','0,33','artur-dargett-weizen-033',350),
- A('zhigulevskoe_05','Пиво «Жыгулёўскае Хмельнае» (Лида)','Գարեջուր «Жыгулёўскае Хмельнае» (Լիդա)','ლუდი „Жыгулёўскае Хмельнае“ (ლიდა)','0,5',null,400),
+ A('zhigulevskoe_05','Пиво «Жыгулёўскае Хмельнае» (Лида)','Գարեջուր «Жыгулёўскае Хмельнае» (Լիդա)','ლუდი „Жыгулёўскае Хмельнае“ (ლიდა)','0,5','artur-zhigulevskoe-05',400),
  A('heineken_05','Пиво Heineken','Գարեջուր Heineken','ლუდი Heineken','0,5','artur-heineken-05',500),
  A('heineken_033','Пиво Heineken','Գարեջուր Heineken','ლუდი Heineken','0,33','artur-heineken-033',400),
  A('baltika_0','Пиво «Балтика 0» безалкогольное','Գարեջուր «Балтика 0» ոչ ալկոհոլային','ლუდი „Балтика 0“ უალკოჰოლო','0,5','artur-baltika-0',350),
  A('baltika_3','Пиво «Балтика 3» классическое','Գարեջուր «Балтика 3» դասական','ლუდი „Балтика 3“ კლასიკური','0,5','artur-baltika-3',280),
- A('baltika_6','Пиво «Балтика 6» портер','Գարեջուր «Балтика 6» պորտեր','ლუდი „Балтика 6“ პორტერი','0,5',null,280),
+ A('baltika_6','Пиво «Балтика 6» портер','Գարեջուր «Балтика 6» պորտեր','ლუდი „Балтика 6“ პორტერი','0,5','artur-baltika-6',280),
  A('baltika_7','Пиво «Балтика 7» экспортное','Գարեջուր «Балтика 7» էքսպորտային','ლუდი „Балтика 7“ საექსპორტო','0,5','artur-baltika-7',320),
- A('baltika_8','Пиво «Балтика 8» пшеничное','Գարեջուր «Балтика 8» ցորենի','ლუდი „Балтика 8“ ხორბლის','0,5',null,280),
- ['avocado_oil_oliricco',L('Масло авокадо Oliricco 1 л','Ավոկադոյի յուղ Oliricco 1 լ','ავოკადოს ზეთი Oliricco 1 ლ'),'pantry',null,2000],
+ A('baltika_8','Пиво «Балтика 8» пшеничное','Գարեջուր «Балтика 8» ցորենի','ლუდი „Балтика 8“ ხორბლის','0,5','artur-baltika-8',280),
+ ['avocado_oil_oliricco',L('Масло оливковое Oliricco 1 л','Ձիթապտղի յուղ Oliricco 1 լ','ზეითუნის ზეთი Oliricco 1 ლ'),'pantry',null,2000],
  ['avocado_oil_cratos',L('Масло авокадо Cratos 1 л','Ավոկադոյի յուղ Cratos 1 լ','ავოკადოს ზეთი Cratos 1 ლ'),'pantry','artur-avocado-oil-cratos',2000],
  ['olives_coopoliva_pitted_850',L('Маслины Coopoliva без косточки 850 г','Ձիթապտուղ սև Coopoliva առանց կորիզի 850 գ','შავი ზეთისხილი Coopoliva უკურკო 850 გ'),'preserves','artur-olives-coopoliva-pitted-850',1100],
  ['olives_coopoliva_plain_850',L('Маслины Coopoliva с косточкой 850 г','Ձիթապտուղ սև Coopoliva կորիզով 850 գ','შავი ზეთისხილი Coopoliva კურკით 850 გ'),'preserves','artur-olives-coopoliva-plain-850',1100],
@@ -84,5 +84,5 @@ export const antoToArtur=[['anto_tsitsak',1000],['anto_jonjoli',2000]];
 export function arturSql1106(){const V=arturVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));
  return [...arturProducts1106.map(([key,[ru,hy,ka],category,art,cost,profile])=>`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock) SELECT ${s(V.city_id+'--artur_'+key)},${s(V.id)},${j({ru,hy,ka})},${s(category)},${s(artOf(key))},${j(profile||{mode:'EACH',policy_version:1})},${arturRetail1106(cost,category)},${cost},${profile?100000:100} WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(V.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id=${s(category)}) ON CONFLICT(id) DO NOTHING;`),
   ...antoToArtur.map(([key,cost])=>`UPDATE products SET vendor_id=${s(V.id)},cost=${cost},price=${tierRetail(cost,20)},version=version+1 WHERE id=${s(V.city_id+'--'+key)} AND vendor_id='akhalkalaki-anto';`),...arturMaazaSql()]}
-// Owner 06.11: the mango juice is Maaza — the brand goes into the names of products created before that.
-export function arturMaazaSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'";return arturProducts1106.filter(r=>r[0].startsWith('juice_mango_')).map(([key,[ru,hy,ka]])=>`UPDATE products SET names=${s(JSON.stringify({ru,hy,ka}))},version=version+1 WHERE id=${s(arturVendor.city_id+'--artur_'+key)} AND names NOT LIKE '%Maaza%';`)}
+// Owner 06.11: the mango juice is Maaza, and Oliricco is olive oil — names of products created before that are corrected.
+export function arturMaazaSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'";return arturProducts1106.filter(r=>r[0].startsWith('juice_mango_')||r[0]==='avocado_oil_oliricco').map(([key,[ru,hy,ka]])=>`UPDATE products SET names=${s(JSON.stringify({ru,hy,ka}))},version=version+1 WHERE id=${s(arturVendor.city_id+'--artur_'+key)} AND names NOT LIKE ${s(key==='avocado_oil_oliricco'?'%оливковое%':'%Maaza%')};`)}
