@@ -81,7 +81,7 @@ test('supplier morning check (owner 29.10): «нет сегодня» hides a pr
 test('owner 04.11: every order message tells couriers and suppliers to call Арутюн (+995 591 244 075); couriers are told not to contact the buyer; buyers never see it',async()=>{const f=await fixture();try{
  const group=await bind(f,f.owner,1,'DRIVER',null,-100),sup=await bind(f,f.owner,2,'SUPPLIER','akhalkalaki-garden',-200),o=await order(f);await act(f,o,'confirm');await drain(f);
  const of=chat=>f.sent.filter(x=>x.chat_id===chat&&x.text);
- assert.ok(of(group.chat_id).length&&of(group.chat_id).every(x=>x.text.includes('591 244 075')&&x.text.includes('Клиенту не звоните')),'courier group');
+ assert.ok(of(group.chat_id).length&&of(group.chat_id).every(x=>x.text.includes('591 244 075')&&x.text.includes('Клиенту звоните только когда приехали')&&x.text.includes('Никаких вопросов')),'courier group');
  assert.ok(of(sup.chat_id).length&&of(sup.chat_id).every(x=>x.text.includes('591 244 075')&&x.text.includes('на месте никого нет')),'supplier group');
  assert.ok(f.sent.filter(x=>![group.chat_id,sup.chat_id].includes(x.chat_id)&&x.text?.includes('Клиенту не звоните')).length===0,'nobody else gets the courier reminder');
 }finally{f.DB.close()}});
@@ -96,3 +96,13 @@ test('owner 06.11: the supplier weighs item by item in the bot (kg or grams), se
  await click(f,g,o,'weigh_ok',777);assert.match(last().text,/Вес записан/);
  const w=JSON.parse((await q(f.DB,'SELECT weighing FROM orders WHERE id=?',o.id).first()).weighing);assert.deepEqual(w.map(a=>[a.line_id,a.net_g]),[['akhalkalaki--apple_loose',1500]]);
  await drain(f);await click(f,g,o,'ready',777);assert.equal((await q(f.DB,"SELECT status FROM order_groups WHERE order_id=? AND vendor_id='akhalkalaki-garden'",o.id).first()).status,'READY')}finally{f.DB.close()}});
+test('owner 06.11: out of tolerance the buyer sees every item ordered → weighed with its sum; the courier sees «ждём подтверждения», after the buyer agrees the courier\'s chat gets a new message',async()=>{const f=await fixture();try{const {renderMessage}=await import('../src/telegram.mjs');
+ const o=await order(f);await act(f,o,'confirm');await act(f,o,'weigh',f.owner,{actuals:[{line_id:'akhalkalaki--apple_loose',net_g:1500},{line_id:'akhalkalaki--pear_loose',net_g:1000}]});
+ assert.equal((await q(f.DB,'SELECT status FROM orders WHERE id=?',o.id).first()).status,'AWAITING_APPROVAL');
+ for(const [id,kind,ref,chat]of [['fake-buyer','CUSTOMER',o.id,'901'],['fake-group','DRIVER','akhalkalaki','-901']])await q(f.DB,"INSERT INTO tg_links(id,kind,ref_id,city_id,chat_id,title,lang,created_at) VALUES(?,?,?,'akhalkalaki',?,'t','ru','2026-11-06')",id,kind,ref,chat).run();
+ const buyer=await renderMessage(f.DB,{id:'fake-buyer',kind:'CUSTOMER',ref_id:o.id,lang:'ru'},o.id,'https://bazar.test');
+ assert.match(buyer.text,/⚠️ Яблоки: заказано 1 кг → факт 1,5 кг = \d+\.\d\d GEL/);assert.match(buyer.text,/• Груши: заказано 1 кг → факт 1 кг/);assert.match(buyer.text,/Итого: /);
+ const group=await renderMessage(f.DB,{id:'fake-group',kind:'DRIVER',city_id:'akhalkalaki',lang:'ru'},o.id,'https://bazar.test');assert.match(group.text,/Ждём подтверждения клиента/);
+ const d=await member(f,'DRIVER','d');await bind(f,d,11);await act(f,o,'claim',d);await drain(f);const personal="SELECT j.message_id FROM tg_jobs j JOIN tg_links l ON l.id=j.link_id WHERE l.kind='PERSONAL' AND j.order_id=?";await q(f.DB,"UPDATE tg_jobs SET message_id=555 WHERE order_id=? AND link_id IN (SELECT id FROM tg_links WHERE kind='PERSONAL')",o.id).run();assert.ok((await q(f.DB,personal,o.id).all()).results.length,'the courier has a personal chat');
+ const v=await orderView(f.DB,o.id,f.owner);await approve(f.DB,{id:o.id,version:v.version,proposal_id:v.proposal.id,approved:true,reason:'по телефону'},f.owner);
+ assert.ok((await q(f.DB,personal,o.id).all()).results.every(r=>r.message_id===null),'the courier gets a new message, not a silent edit')}finally{f.DB.close()}});
