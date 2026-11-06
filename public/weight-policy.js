@@ -18,7 +18,7 @@ export function quote(product, selection, lineId) {
   if(mode==='WEIGHED') {
     const target=int(s.grams,1),step=int(p.order_step_g,1),min=int(p.minimum_g,1);
     if(target<min||target%step)throw Error('INVALID_ORDER_STEP');
-    const bps=int(p.tolerance_bps,0,1000),cap=int(p.tolerance_cap_g,0);
+    const bps=int(p.tolerance_bps,0,2000),cap=int(p.tolerance_cap_g,0);// owner 06.11: fruit and vegetables up to ±20 %
     const tolerance=Math.min(Math.floor(target*bps/10000),cap);
     q.target_g=target;q.min_g=Math.max(1,target-tolerance);q.max_g=target+tolerance;
     const rate=kgRate(p,target);if(p.bulk)q.price_per_kg_minor=rate;
