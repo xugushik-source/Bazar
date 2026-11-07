@@ -139,3 +139,7 @@ Object.assign(words.ka,{freeFromShort:'უფასოდ {sum}-დან'});
 Object.assign(words.ru,{wholeNote:'Продаётся целиком, примерно {kg} кг. Цена уточняется после взвешивания.'});
 Object.assign(words.hy,{wholeNote:'Վաճառվում է ամբողջությամբ, մոտ {kg} կգ։ Գինը ճշտվում է կշռելուց հետո։'});
 Object.assign(words.ka,{wholeNote:'იყიდება მთლიანად, დაახლოებით {kg} კგ. ფასი დაზუსტდება აწონვის შემდეგ.'});
+// Owner 07.11: order hours.
+Object.assign(words.ru,{ordersClosed:'🌙 Заказы принимаем с {a} до {b}. Товары можно выбрать сейчас — оформите заказ утром!',ordersClosedShort:'Сейчас заказы не принимаем: мы работаем с 9:00 до 18:00.'});
+Object.assign(words.hy,{ordersClosed:'🌙 Պատվերներն ընդունում ենք {a}-ից {b}։ Ապրանքներն ընտրիր հիմա, պատվիրիր առավոտյան։',ordersClosedShort:'Հիմա պատվերներ չենք ընդունում․ աշխատում ենք 9:00-ից 18:00։'});
+Object.assign(words.ka,{ordersClosed:'🌙 შეკვეთებს ვიღებთ {a}-დან {b}-მდე. პროდუქტები ახლავე აირჩიეთ — შეკვეთა დილით გააფორმეთ!',ordersClosedShort:'ახლა შეკვეთებს არ ვიღებთ: ვმუშაობთ 9:00-დან 18:00-მდე.'});
