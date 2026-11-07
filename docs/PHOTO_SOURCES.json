@@ -2567,5 +2567,19 @@
     "license": "owner-provided product image for selling this product",
     "file": "public/media/artur-stew-beef-500.jpg",
     "sha256": "e8cf6beef6f9151b78c35f9017d11f39501533d2d6d26cb1a252f1fdafec781a"
+  },
+  {
+    "key": "artur-olives-markesa-black",
+    "source": "owner: Markesa de Oliva pitted black olives can, sent by the owner 07.11",
+    "license": "owner-provided product image for selling this product",
+    "file": "public/media/artur-olives-markesa-black.jpg",
+    "sha256": "d9bf3820860d396de6b076231654b8fc12da1edad2a90719a6428c877d23b65b"
+  },
+  {
+    "key": "artur-olives-markesa-green",
+    "source": "owner: Maestro de Oliva pitted green olives can, sent by the owner 07.11",
+    "license": "owner-provided product image for selling this product",
+    "file": "public/media/artur-olives-markesa-green.jpg",
+    "sha256": "3c48ce581b09251a3df4a098d33e7430f4059d731cb1cef22d60c2346cb79471"
   }
 ]
