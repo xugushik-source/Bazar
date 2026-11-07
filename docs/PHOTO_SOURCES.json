@@ -2581,5 +2581,13 @@
     "license": "owner-provided product image for selling this product",
     "file": "public/media/artur-olives-markesa-green.jpg",
     "sha256": "3c48ce581b09251a3df4a098d33e7430f4059d731cb1cef22d60c2346cb79471"
+  },
+  {
+    "key": "grapes-ladyfinger",
+    "source": "https://vkusvill.ru/goods/vinograd-damskie-palchiki-27144/",
+    "license": "product photo from the retailer page (packshot)",
+    "download_url": "https://img.vkusvill.ru/pim/images/site/site_LargeWebP/ababd6ea-d7eb-4775-ae29-0d4ec288bac8.webp",
+    "file": "public/media/grapes-ladyfinger.jpg",
+    "sha256": "1ae5a25dd7aea386525004fd3b77f1f6b92220cd8d9a81bdb7ec8e4d2a29d46b"
   }
 ]
