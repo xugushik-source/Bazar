@@ -12,12 +12,14 @@ const unit=(p,lang)=>weighted(p)?W(lang).perKg:W(lang).perPiece;
 async function button(db,l,caption,payload){const id=token().slice(0,32);await q(db,'INSERT INTO tg_buttons(id,link_id,order_id,version,payload,expires) VALUES(?,?,NULL,NULL,?,?)',id,l.id,JSON.stringify(payload),Date.now()+3*86400000).run();return {text:caption,callback_data:'bz:'+id}}
 const vendorName=async(db,id,lang)=>{const v=await q(db,'SELECT names FROM vendors WHERE id=?',id).first(),n=parse(v?.names,{});return n[lang]||n.ru||id};
 const goods=async(db,vendor)=>(await q(db,'SELECT * FROM products WHERE vendor_id=? AND active=1 ORDER BY category,id',vendor).all()).results;
-// The morning question, once a day per group, from the supplier's opening time (09:00 when unknown) for three hours.
+// The morning question, once a day per group. Owner 07.11: asked at 08:00 and answered by 09:00, before orders open — silence
+// means everything is there at the listed costs.
+export const ASK_FROM=480,ASK_UNTIL=540;
 export async function supplierCheckTick(db,env,call,at=new Date()){const c=clock(TZ,at);for(const l of(await db.prepare("SELECT * FROM tg_links WHERE kind='SUPPLIER' AND active=1").all()).results){let open=540;try{open=(await q(db,'SELECT open_minute FROM vendors WHERE id=?',l.ref_id).first())?.open_minute??540}catch{}
- if(c.minute<open||c.minute>=open+180)continue;const claim=await q(db,'INSERT INTO supplier_checks(link_id,day) VALUES(?,?) ON CONFLICT DO NOTHING',l.id,c.day).run();if(!claim.meta.changes)continue;
+ if(c.minute<ASK_FROM||c.minute>=ASK_UNTIL)continue;const claim=await q(db,'INSERT INTO supplier_checks(link_id,day) VALUES(?,?) ON CONFLICT DO NOTHING',l.id,c.day).run();if(!claim.meta.changes)continue;
  try{const m=await morning(db,env,call,l);await q(db,'UPDATE supplier_checks SET message_id=? WHERE link_id=? AND day=?',m.message_id,l.id,c.day).run()}catch{await q(db,'DELETE FROM supplier_checks WHERE link_id=? AND day=?',l.id,c.day).run()}}}
 export async function morning(db,env,call,l){const w=W(l.lang),vendor=await vendorName(db,l.ref_id,l.lang),day=clock(TZ).day;let open=540;try{open=(await q(db,'SELECT open_minute FROM vendors WHERE id=?',l.ref_id).first())?.open_minute??540}catch{}
- const until=String(Math.floor((open+180)/60)%24).padStart(2,'0')+':'+String((open+180)%60).padStart(2,'0'),rows=(await goods(db,l.ref_id)).map(p=>'• '+label(p,l.lang)+' — '+money(p.cost)+' '+unit(p,l.lang)),chunks=[];
+ const until=String(Math.floor(ASK_UNTIL/60)).padStart(2,'0')+':'+String(ASK_UNTIL%60).padStart(2,'0'),rows=(await goods(db,l.ref_id)).map(p=>'• '+label(p,l.lang)+' — '+money(p.cost)+' '+unit(p,l.lang)),chunks=[];
  for(let i=0,cur=[];i<=rows.length;i++){if(i===rows.length||cur.join('\n').length+rows[i].length>3500){if(cur.length)chunks.push(cur);cur=[]}if(i<rows.length)cur.push(rows[i])}
  for(const [i,c]of chunks.entries())await call(env,'sendMessage',{chat_id:l.chat_id,text:w.scFullHead.replace('{vendor}',vendor).replace('{day}',day).replace('{p}',i+1).replace('{n}',chunks.length)+'\n'+c.join('\n')});
  return call(env,'sendMessage',{chat_id:l.chat_id,text:w.scMorning.replace('{vendor}',vendor).replace('{until}',until),reply_markup:{inline_keyboard:[[await button(db,l,w.scAll,{action:'sc_all'}),await button(db,l,w.scList,{action:'sc_list',page:0})]]}})}
