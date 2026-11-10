@@ -1,4 +1,4 @@
-// Owner 10.11: Artur's household goods and hygiene (369 rows of his list, 353 with a clear name; the 16 unclear rows wait for the owner).
+// Owner 10.11: Artur's household goods and hygiene (369 rows of his list; the 16 unclear rows and 4 exact duplicates are left out — owner: «хватит и этого»).
 // Sold singly (the list shows wholesale boxes). Hidden until the owner gives the purchase price: price 0, cost unknown (null), inactive.
 // Names: only the kind of product is translated; the brand and variant stay as on the pack (owner 10.11).
 // Photos: brand packshots from shops (docs/PHOTO_SOURCES.json); where none fitted (wrong brand or variant, tiny, watermarked) the section picture shows.
@@ -26,7 +26,6 @@ export const arturHousehold=[
 [19,["Стиральный порошок Persil Beyaz, 5 кг", "Լվացքի փոշի Persil Beyaz, 5 կգ", "სარეცხი ფხვნილი Persil Beyaz, 5 კგ"],1],
 [20,["Стиральный порошок Persil Color, 5 кг", "Լվացքի փոշի Persil Color, 5 կգ", "სარეცხი ფხვნილი Persil Color, 5 კგ"],1],
 [21,["Гель для стирки Persil Beyaz, 3,9 л, 60 стирок", "Լվացքի գել Persil Beyaz, 3,9 լ, 60 լվացք", "სარეცხი გელი Persil Beyaz, 3,9 ლ, 60 რეცხვა"],1],
-[22,["Гель для стирки Persil Beyaz, 3,9 л, 60 стирок", "Լվացքի գել Persil Beyaz, 3,9 լ, 60 լվացք", "სარეცხი გელი Persil Beyaz, 3,9 ლ, 60 რეცხვა"],0],
 [23,["Средство для мытья посуды Fairy Limon, 1 л", "Սպասք լվանալու միջոց Fairy Limon, 1 լ", "ჭურჭლის სარეცხი საშუალება Fairy Limon, 1 ლ"],0],
 [24,["Туалетная бумага, 40 рулонов", "Զուգարանի թուղթ, 40 գլան", "ტუალეტის ქაღალდი, 40 რულონი"],1],
 [25,["Туалетная бумага, 24 рулона", "Զուգարանի թուղթ, 24 գլան", "ტუალეტის ქაღალდი, 24 რულონი"],1],
@@ -241,7 +240,6 @@ export const arturHousehold=[
 [240,["Освежитель воздуха Onno, 350 мл", "Օդի թարմացուցիչ Onno, 350 մլ", "ჰაერის არომატიზატორი Onno, 350 მლ"],1],
 [241,["Средство для мытья посуды Fairy, 2,5 л", "Սպասք լվանալու միջոց Fairy, 2,5 լ", "ჭურჭლის სარეცხი საშუალება Fairy, 2,5 ლ"],1],
 [242,["Средство от накипи Cargom Kireç Önleyici, 500 г", "Կրաքարի դեմ միջոց Cargom Kireç Önleyici, 500 գ", "ნადების საწინააღმდეგო საშუალება Cargom Kireç Önleyici, 500 გ"],1],
-[244,["Стиральный порошок Ariel Color, 1,5 кг", "Լվացքի փոշի Ariel Color, 1,5 կգ", "სარეცხი ფხვნილი Ariel Color, 1,5 კგ"],1],
 [245,["Стиральный порошок Ariel White Rose, 1,5 кг", "Լվացքի փոշի Ariel White Rose, 1,5 կգ", "სარეცხი ფხვნილი Ariel White Rose, 1,5 კგ"],1],
 [246,["Стиральный порошок Ariel Color, 3 кг", "Լվացքի փոշի Ariel Color, 3 կգ", "სარეცხი ფხვნილი Ariel Color, 3 კგ"],1],
 [247,["Стиральный порошок Ariel White Rose, 3 кг", "Լվացքի փոշի Ariel White Rose, 3 կգ", "სარეცხი ფხვნილი Ariel White Rose, 3 კგ"],1],
@@ -304,7 +302,6 @@ export const arturHousehold=[
 [312,["Мыло Lexi Rose Cream, 6 × 120 г", "Օճառ Lexi Rose Cream, 6 × 120 գ", "საპონი Lexi Rose Cream, 6 × 120 გ"],1],
 [313,["Гель для стирки Sakura Color, 4 л", "Լվացքի գել Sakura Color, 4 լ", "სარეცხი გელი Sakura Color, 4 ლ"],1],
 [314,["Гель для стирки Sakura Lavanda Universal, 4 л", "Լվացքի գել Sakura Lavanda Universal, 4 լ", "სარეცხი გელი Sakura Lavanda Universal, 4 ლ"],0],
-[315,["Капсулы для стирки Ariel Leke Karşıtı, 10 шт.", "Լվացքի պարկուճներ Ariel Leke Karşıtı, 10 հատ", "სარეცხი კაფსულები Ariel Leke Karşıtı, 10 ცალი"],1],
 [316,["Капсулы для стирки Ariel Pods, 25 шт.", "Լվացքի պարկուճներ Ariel Pods, 25 հատ", "სარეცხი კაფსულები Ariel Pods, 25 ცალი"],1],
 [317,["Гель для стирки Ariel Siyah, 1,595 л, 29 стирок", "Լվացքի գել Ariel Siyah, 1,595 լ, 29 լվացք", "სარეცხი გელი Ariel Siyah, 1,595 ლ, 29 რეცხვა"],0],
 [318,["Гель для стирки Ariel Siyah, 2,2 л, 44 стирок", "Լվացքի գել Ariel Siyah, 2,2 լ, 44 լվացք", "სარეცხი გელი Ariel Siyah, 2,2 ლ, 44 რეცხვა"],1],
@@ -350,7 +347,6 @@ export const arturHousehold=[
 [359,["Туалетная бумага Aqua Bambu, 40 рулонов", "Զուգարանի թուղթ Aqua Bambu, 40 գլան", "ტუალეტის ქაღალდი Aqua Bambu, 40 რულონი"],1],
 [360,["Шампунь Head & Shoulders Kepeğe Karşı, 500 мл", "Շամպուն Head & Shoulders Kepeğe Karşı, 500 մլ", "შამპუნი Head & Shoulders Kepeğe Karşı, 500 მლ"],0],
 [361,["Гель для стирки Persil, 3,9 л, 60 стирок", "Լվացքի գել Persil, 3,9 լ, 60 լվացք", "სარეცხი გელი Persil, 3,9 ლ, 60 რეცხვა"],1],
-[362,["Гель для стирки Persil, 3,9 л, 60 стирок", "Լվացքի գել Persil, 3,9 լ, 60 լվացք", "სარეცხი გელი Persil, 3,9 ლ, 60 რეცხვა"],1],
 [363,["Средство для мытья посуды Egle Platinum, 1 л", "Սպասք լվանալու միջոց Egle Platinum, 1 լ", "ჭურჭლის სარეცხი საშუალება Egle Platinum, 1 ლ"],0],
 [364,["Средство для мытья посуды Baby, 500 мл", "Սպասք լվանալու միջոց Baby, 500 մլ", "ჭურჭლის სარეცხი საშუალება Baby, 500 მლ"],0],
 [365,["Гель для стирки Baby, 1,5 л", "Լվացքի գել Baby, 1,5 լ", "სარეცხი გელი Baby, 1,5 ლ"],0],

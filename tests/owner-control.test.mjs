@@ -62,8 +62,8 @@ test('owner 10.11: whole fresh piglet and lamb (Амо) are a pre-order — in t
  const fs=await import('node:fs'),{amoWholeSql}=await import('../src/amo-whole.mjs');assert.ok(fs.readFileSync(new URL('../migrations/0096_amo_whole_preorder.sql',import.meta.url),'utf8').endsWith(amoWholeSql().join('\n')+'\n'),'migration equals the generator')}finally{e.DB.close()}});
 
 test('owner 10.11: Artur household goods are in the base but hidden until a price is set — no price, cost unknown, one catalogue row each; migration equals the generator',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{
- const {arturHousehold,arturHouseholdSql,householdId}=await import('../src/artur-household.mjs');assert.equal(arturHousehold.length,353);
- const rows=(await q(DB,"SELECT * FROM products WHERE id LIKE 'akhalkalaki--artur_hh_%'").all()).results;assert.equal(rows.length,353);assert.ok(rows.every(r=>r.active===0&&r.price===0&&r.cost===null&&r.vendor_id==='akhalkalaki-artur'&&r.category==='household'));
+ const {arturHousehold,arturHouseholdSql,householdId}=await import('../src/artur-household.mjs');assert.equal(arturHousehold.length,349);
+ const rows=(await q(DB,"SELECT * FROM products WHERE id LIKE 'akhalkalaki--artur_hh_%'").all()).results;assert.equal(rows.length,349);assert.ok(rows.every(r=>r.active===0&&r.price===0&&r.cost===null&&r.vendor_id==='akhalkalaki-artur'&&r.category==='household'));
  const c=await call(e,'catalog?city='+cid);assert.ok(!c.products.some(p=>p.id.includes('artur_hh_')),'hidden from buyers');
  const fs=await import('node:fs');assert.ok(fs.readFileSync(new URL('../migrations/0097_artur_household.sql',import.meta.url),'utf8').endsWith(arturHouseholdSql().join('\n')+'\n'));
  const p=JSON.parse((await q(DB,'SELECT names FROM products WHERE id=?',householdId(2)).first()).names);assert.match(p.ru,/Hobby/);assert.match(p.hy,/Hobby/);assert.match(p.ka,/Hobby/);

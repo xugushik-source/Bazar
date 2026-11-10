@@ -4233,14 +4233,6 @@
     "sha256": "7f3776fdbd25a2ce5584590ed33918200c035db57a576f56dda84f67e14f44c5"
   },
   {
-    "key": "artur-hh-244",
-    "source": "https://images.migrosone.com/sanalmarket/product/30129418/30129418_1-f9b8f6.jpg",
-    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
-    "author": "https://www.migros.com.tr/ariel-dag-esintisi-renklilere-ozel-15-kg-aquapudra-toz-camasir-deterjani-p-1cbbd0a",
-    "file": "public/media/artur-hh-244.jpg",
-    "sha256": "252983e19cade05a4423766667fa046973e4081b12f7b91d66685447f56a15d8"
-  },
-  {
     "key": "artur-hh-245",
     "source": "https://images.migrosone.com/sanalmarket/product/30129415/30129415_1-b2dbcd.jpg",
     "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
@@ -4673,14 +4665,6 @@
     "sha256": "25ec7b92b33fa49f3f91441031ef8772924d8c80d4e9f8670c7aa5d7dc2407da"
   },
   {
-    "key": "artur-hh-315",
-    "source": "https://images.migrosone.com/sanalmarket/product/30530546/30530546_1-0fe01a.jpg",
-    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
-    "author": "https://www.migros.com.tr/ariel-oxi-pods-camasir-deterjani-kapsulu-10lu-239-g-p-1d1dbf2",
-    "file": "public/media/artur-hh-315.jpg",
-    "sha256": "5e2f7a5bca54364be3cb785fa7dc7a608f2d040067e8d759292b565bf011a040"
-  },
-  {
     "key": "artur-hh-316",
     "source": "https://images.migrosone.com/sanalmarket/product/30530544/30530544_1-b56cc9.jpg",
     "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
@@ -4982,14 +4966,6 @@
     "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
     "author": "retailer page",
     "file": "public/media/artur-hh-361.jpg",
-    "sha256": "707ebb66f25e89772cd578df95e5781364e4eae86494b11aca2ecb68a2bbc486"
-  },
-  {
-    "key": "artur-hh-362",
-    "source": "https://cdn.dsmcdn.com/ty992/product/media/images/jpim-outputs/assets/product/media/images/20230829/16/409015635/65134241/2/2_org_zoom.jpg",
-    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
-    "author": "retailer page",
-    "file": "public/media/artur-hh-362.jpg",
     "sha256": "707ebb66f25e89772cd578df95e5781364e4eae86494b11aca2ecb68a2bbc486"
   },
   {
