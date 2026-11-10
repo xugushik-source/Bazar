@@ -68,3 +68,10 @@ test('owner 10.11: Artur household goods are in the base but hidden until a pric
  const fs=await import('node:fs');assert.ok(fs.readFileSync(new URL('../migrations/0097_artur_household.sql',import.meta.url),'utf8').endsWith(arturHouseholdSql().join('\n')+'\n'));
  const p=JSON.parse((await q(DB,'SELECT names FROM products WHERE id=?',householdId(2)).first()).names);assert.match(p.ru,/Hobby/);assert.match(p.hy,/Hobby/);assert.match(p.ka,/Hobby/);
  for(const r of arturHousehold.filter(r=>r[2]))assert.ok(fs.existsSync(new URL('../public/media/artur-hh-'+String(r[0]).padStart(3,'0')+'.jpg',import.meta.url)),r[0])}finally{DB.close()}});
+
+test('owner 10.11: household price list — cost +20 % rounded up to 10 tetri (or the owner\'s own sale price) and the product appears on the site',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{
+ const {arturHouseholdPriceSql,householdId,householdRetail}=await import('../src/artur-household.mjs');assert.equal(householdRetail(1000),1200);assert.equal(householdRetail(1234),1490,'1234 × 1,2 = 1480,8, up to 10 tetri');
+ for(const sql of arturHouseholdPriceSql([[1,2500,null],[2,1000,1500],[3,0,null],[999,500,null]]))DB.exec(sql);
+ const c=await call(e,'catalog?city='+cid),by=id=>c.products.find(p=>p.id===householdId(id));
+ assert.equal(by(1).price,3000);assert.equal(by(2).price,1500);assert.ok(!by(3),'no cost — stays hidden');assert.equal(c.products.filter(p=>p.id.includes('artur_hh_')).length,2);
+ assert.equal((await q(DB,'SELECT cost FROM products WHERE id=?',householdId(1)).first()).cost,2500);assert.ok(!('cost'in by(1)),'cost is private')}finally{DB.close()}});

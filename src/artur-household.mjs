@@ -364,3 +364,10 @@ export const arturHouseholdArtsWithoutPhoto=arturHousehold.filter(r=>!r[2]).map(
 export const householdId=n=>arturVendor.city_id+'--artur_hh_'+String(n).padStart(3,'0');
 export function arturHouseholdSql(){const V=arturVendor,s=x=>"'"+String(x).replaceAll("'","''")+"'",j=o=>s(JSON.stringify(o));
  return arturHousehold.map(([n,[ru,hy,ka]])=>`INSERT INTO products(id,vendor_id,names,category,art,profile,price,cost,stock,active) SELECT ${s(householdId(n))},${s(V.id)},${j({ru,hy,ka})},'household',${s(artOf(n))},${j({mode:'EACH',policy_version:1})},0,NULL,100,0 WHERE EXISTS(SELECT 1 FROM vendors WHERE id=${s(V.id)}) AND EXISTS(SELECT 1 FROM categories WHERE id='household') ON CONFLICT(id) DO NOTHING;`)}
+// Owner 10.11: markup on household goods is 20 % over the purchase price (rounded up to 10 tetri), unless the owner gives his own sale price.
+// prices: [[n, costTetri, saleTetri|null], ...] from the owner's filled sheet — the product gets its cost and price and appears on the site.
+import {tierRetail}from './karo.mjs';
+export const householdPct=20;
+export const householdRetail=cost=>tierRetail(cost,householdPct);
+export function arturHouseholdPriceSql(prices){const s=x=>"'"+String(x).replaceAll("'","''")+"'";
+ return prices.filter(([n,cost])=>cost>0&&arturHousehold.some(r=>r[0]===n)).map(([n,cost,sale])=>`UPDATE products SET cost=${Math.round(cost)},price=${sale>0?Math.round(sale):householdRetail(Math.round(cost))},active=1,version=version+1 WHERE id=${s(householdId(n))} AND vendor_id=${s(arturVendor.id)};`)}
