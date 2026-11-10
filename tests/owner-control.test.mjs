@@ -43,7 +43,9 @@ test('owner 10.11: a stuck order reminds the supplier after 3 minutes, the owner
  ago(7);assert.equal(await stuckTick(e.DB,{},tg,now,addButton),1);assert.deepEqual(sent.map(s=>s.chat_id),['200','100'],'6 min: the owner, the supplier is not nagged again');
  assert.ok(sent[1].reply_markup.inline_keyboard.flat().some(b=>b.text.startsWith('✋ Готово за:')));assert.equal(await stuckTick(e.DB,{},tg,now,addButton),0);
  e.DB.exec("UPDATE app_config SET value='480-1080' WHERE key='order_hours'");e.DB.exec('DELETE FROM stuck_alerts');
- assert.equal(await stuckTick(e.DB,{},tg,now,addButton),0,'06:00, outside order hours and far from the slot: quiet')}finally{e.DB.close()}});
+ assert.equal(await stuckTick(e.DB,{},tg,now,addButton),0,'06:00, outside order hours and far from the slot: quiet');
+ e.DB.exec('DELETE FROM stuck_alerts');const later=new Date(now.getTime()+2*86400000);e.DB.exec(`UPDATE orders SET updated_at='${new Date(later.getTime()-60*60000).toISOString()}'`);e.DB.exec("UPDATE app_config SET value='0-1440' WHERE key='order_hours'");
+ assert.equal(await stuckTick(e.DB,{},tg,later,addButton),0,'an order of an earlier day (a forgotten test order) never reminds')}finally{e.DB.close()}});
 
 test('owner 10.11: after the owner confirms, the supplier sees the receipt sum at our purchase price, approximate then exact; never the address',async()=>{const e=await env();try{
  e.DB.exec(`UPDATE products SET cost=400 WHERE id='${pid('apple_loose')}'`);e.DB.exec(`UPDATE order_lines SET cost=400 WHERE product_id='${pid('apple_loose')}'`);

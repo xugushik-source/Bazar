@@ -16,6 +16,7 @@ export const NUDGE_MINUTES=3,OWNER_MINUTES=6;
 export async function stuckOrders(db,at=new Date()){const since=new Date(at.getTime()-NUDGE_MINUTES*60000).toISOString(),out=[],h=await orderHours(db),c=clock('Asia/Tbilisi',at);
  for(const o of(await q(db,"SELECT * FROM orders WHERE status NOT IN('COMPLETED','CANCELLED') AND updated_at<=?",since).all()).results){
   const today=!!h&&o.day===c.day&&c.minute>=h.from&&c.minute<h.to;
+  if(o.day<c.day)continue;// owner 10.11: a test order of 08.11 must not remind on the 10th — only today's (or upcoming) orders
   if(!waitFor[o.status]||!today&&slotAt(o)-at.getTime()>AHEAD_MINUTES*60000)continue;
   const minutes=Math.floor((at.getTime()-Date.parse(o.updated_at))/60000),level=minutes>=OWNER_MINUTES?2:1;
   const seen=await q(db,'SELECT version,level FROM stuck_alerts WHERE order_id=?',o.id).first();if(seen?.version===o.version&&(seen.level??2)>=level)continue;
