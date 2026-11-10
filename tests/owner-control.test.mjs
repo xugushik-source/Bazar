@@ -53,3 +53,8 @@ test('owner 10.11: after the owner confirms, the supplier sees the receipt sum a
  await act(e,o,'confirm');t=await text();assert.match(t,/🧾 Чек для БАЗАРА: ≈4\.00 GEL/);assert.ok(!t.includes('Тестовый адрес')&&!t.includes('+995555000000'));
  const apple=(await view(e,o)).quotes.find(x=>x.product_id===pid('apple_loose'));await act(e,o,'weigh',{actuals:[{line_id:apple.line_id,net_g:1100}]});
  t=await text();assert.match(t,/🧾 Чек для БАЗАРА: 4\.40 GEL/)}finally{e.DB.close()}});
+
+test('owner 10.11: whole fresh piglet and lamb (Амо) are a pre-order — in the catalog without a price, never in a quote or an order',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{
+ const c=await call(e,'catalog?city='+cid);for(const k of ['amo_piglet_fresh_whole','amo_lamb_fresh_whole']){const p=c.products.find(p=>p.id===pid(k));assert.ok(p,k);assert.equal(p.profile.mode,'REQUEST');assert.equal(p.vendor_id,cid+'-amo')}
+ const r=await call(e,'quote',{city_id:cid,items:[{product_id:pid('amo_lamb_fresh_whole'),selection:{count:1}}],fulfillment:'delivery'});assert.equal(r.http,409);assert.match(JSON.stringify(r),/PRODUCT_UNAVAILABLE/);
+ const fs=await import('node:fs'),{amoWholeSql}=await import('../src/amo-whole.mjs');assert.ok(fs.readFileSync(new URL('../migrations/0096_amo_whole_preorder.sql',import.meta.url),'utf8').endsWith(amoWholeSql().join('\n')+'\n'),'migration equals the generator')}finally{e.DB.close()}});

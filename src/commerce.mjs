@@ -42,7 +42,7 @@ export async function priceBasket(db,b,credits=new Map()){
  if(!Array.isArray(b.items)||!b.items.length||b.items.length>30)fail('INVALID_ITEMS');
  const promos=await promotionMap(db,c.id),seen=new Set(),lines=[];
  for(const item of b.items){if(seen.has(item.product_id))fail('DUPLICATE_LINE');seen.add(item.product_id);
- let p=await q(db,'SELECT p.* FROM products p JOIN vendors v ON v.id=p.vendor_id WHERE p.id=? AND v.city_id=? AND p.active=1 AND v.active=1',item.product_id,c.id).first();if(p)p=promotionPrice(p,promos);if(!p)fail('PRODUCT_UNAVAILABLE',409);
+ let p=await q(db,'SELECT p.* FROM products p JOIN vendors v ON v.id=p.vendor_id WHERE p.id=? AND v.city_id=? AND p.active=1 AND v.active=1',item.product_id,c.id).first();if(p)p=promotionPrice(p,promos);if(!p)fail('PRODUCT_UNAVAILABLE',409);if(parse(p.profile,{}).mode==='REQUEST')fail('PRODUCT_UNAVAILABLE',409);// owner 10.11: pre-order only, price by season and weight
  const profile=ownerProfile(parse(p.profile,{}),p.category),product={...profile,id:p.id,variant_id:p.id,currency:c.currency,...(weighted(profile.mode)?{price_per_kg_minor:p.price}:{price_per_unit_minor:p.price})};
  let line;try{line=quote(product,item.selection,p.id)}catch(e){fail(e.message||'INVALID_SELECTION')}
  const reserve=weighted(line.mode)?line.max_g:line.count;
