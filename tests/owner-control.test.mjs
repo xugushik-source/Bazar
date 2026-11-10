@@ -60,3 +60,11 @@ test('owner 10.11: whole fresh piglet and lamb (Амо) are a pre-order — in t
  const c=await call(e,'catalog?city='+cid);for(const k of ['amo_piglet_fresh_whole','amo_lamb_fresh_whole']){const p=c.products.find(p=>p.id===pid(k));assert.ok(p,k);assert.equal(p.profile.mode,'REQUEST');assert.equal(p.vendor_id,cid+'-amo')}
  const r=await call(e,'quote',{city_id:cid,items:[{product_id:pid('amo_lamb_fresh_whole'),selection:{count:1}}],fulfillment:'delivery'});assert.equal(r.http,409);assert.match(JSON.stringify(r),/PRODUCT_UNAVAILABLE/);
  const fs=await import('node:fs'),{amoWholeSql}=await import('../src/amo-whole.mjs');assert.ok(fs.readFileSync(new URL('../migrations/0096_amo_whole_preorder.sql',import.meta.url),'utf8').endsWith(amoWholeSql().join('\n')+'\n'),'migration equals the generator')}finally{e.DB.close()}});
+
+test('owner 10.11: Artur household goods are in the base but hidden until a price is set — no price, cost unknown, one catalogue row each; migration equals the generator',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{
+ const {arturHousehold,arturHouseholdSql,householdId}=await import('../src/artur-household.mjs');assert.equal(arturHousehold.length,353);
+ const rows=(await q(DB,"SELECT * FROM products WHERE id LIKE 'akhalkalaki--artur_hh_%'").all()).results;assert.equal(rows.length,353);assert.ok(rows.every(r=>r.active===0&&r.price===0&&r.cost===null&&r.vendor_id==='akhalkalaki-artur'&&r.category==='household'));
+ const c=await call(e,'catalog?city='+cid);assert.ok(!c.products.some(p=>p.id.includes('artur_hh_')),'hidden from buyers');
+ const fs=await import('node:fs');assert.ok(fs.readFileSync(new URL('../migrations/0097_artur_household.sql',import.meta.url),'utf8').endsWith(arturHouseholdSql().join('\n')+'\n'));
+ const p=JSON.parse((await q(DB,'SELECT names FROM products WHERE id=?',householdId(2)).first()).names);assert.match(p.ru,/Hobby/);assert.match(p.hy,/Hobby/);assert.match(p.ka,/Hobby/);
+ for(const r of arturHousehold.filter(r=>r[2]))assert.ok(fs.existsSync(new URL('../public/media/artur-hh-'+String(r[0]).padStart(3,'0')+'.jpg',import.meta.url)),r[0])}finally{DB.close()}});
