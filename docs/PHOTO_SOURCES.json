@@ -2598,5 +2598,14 @@
     "note": "owner 10.11: whole lamb, cropped to the carcasses",
     "file": "public/media/amo-lamb-whole.jpg",
     "sha256": "79f197ba1f04842c7df72ac8d019c8ad374f74241aab2b414218ef7837ee4d67"
+  },
+  {
+    "key": "amo-piglet-fresh",
+    "source": "owner: photo sent by the owner on 2026-11-10 for the whole fresh piglet (placed on white)",
+    "license": "owner-provided",
+    "author": "owner",
+    "note": "whole fresh piglet, placed on white 600x520",
+    "file": "public/media/amo-piglet-fresh.jpg",
+    "sha256": "f68792f3b8a109df13bc1e40c2dc9316ed95558c9cec94c23ec5208880270436"
   }
 ]
