@@ -60,3 +60,19 @@ test('owner 10.11: whole fresh piglet and lamb (Амо) are a pre-order — in t
  const c=await call(e,'catalog?city='+cid);for(const k of ['amo_piglet_fresh_whole','amo_lamb_fresh_whole']){const p=c.products.find(p=>p.id===pid(k));assert.ok(p,k);assert.equal(p.profile.mode,'REQUEST');assert.equal(p.vendor_id,cid+'-amo')}
  const r=await call(e,'quote',{city_id:cid,items:[{product_id:pid('amo_lamb_fresh_whole'),selection:{count:1}}],fulfillment:'delivery'});assert.equal(r.http,409);assert.match(JSON.stringify(r),/PRODUCT_UNAVAILABLE/);
  const fs=await import('node:fs'),{amoWholeSql}=await import('../src/amo-whole.mjs');assert.ok(fs.readFileSync(new URL('../migrations/0096_amo_whole_preorder.sql',import.meta.url),'utf8').endsWith(amoWholeSql().join('\n')+'\n'),'migration equals the generator')}finally{e.DB.close()}});
+
+test('owner 10.11: Artur household goods show «Ожидается» with no price and cannot be ordered; migration equals the generator',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{
+ const {arturHousehold,arturHouseholdSql,householdId}=await import('../src/artur-household.mjs');assert.equal(arturHousehold.length,349);
+ const rows=(await q(DB,"SELECT * FROM products WHERE id LIKE 'akhalkalaki--artur_hh_%'").all()).results;assert.equal(rows.length,349);assert.ok(rows.every(r=>r.active===1&&r.price===0&&r.cost===null&&r.vendor_id==='akhalkalaki-artur'&&r.category==='household'&&JSON.parse(r.profile).mode==='SOON'));
+ const c=await call(e,'catalog?city='+cid);assert.equal(c.products.filter(p=>p.id.includes('artur_hh_')).length,349);assert.ok(c.products.filter(p=>p.id.includes('artur_hh_')).every(p=>p.profile.mode==='SOON'&&!('cost'in p)));
+ const r=await call(e,'quote',{city_id:cid,items:[{product_id:householdId(1),selection:{count:1}}],fulfillment:'delivery'});assert.equal(r.http,409);assert.match(JSON.stringify(r),/PRODUCT_UNAVAILABLE/);
+ const fs=await import('node:fs');assert.ok(fs.readFileSync(new URL('../migrations/0097_artur_household.sql',import.meta.url),'utf8').endsWith(arturHouseholdSql().join('\n')+'\n'));
+ const p=JSON.parse((await q(DB,'SELECT names FROM products WHERE id=?',householdId(2)).first()).names);assert.match(p.ru,/Hobby/);assert.match(p.hy,/Hobby/);assert.match(p.ka,/Hobby/);
+ for(const r of arturHousehold.filter(r=>r[2]))assert.ok(fs.existsSync(new URL('../public/media/artur-hh-'+String(r[0]).padStart(3,'0')+'.jpg',import.meta.url)),r[0])}finally{DB.close()}});
+
+test('owner 10.11: household price list — cost +20 % rounded up to 10 tetri (or the owner\'s own sale price) and the product appears on the site',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{
+ const {arturHouseholdPriceSql,householdId,householdRetail}=await import('../src/artur-household.mjs');assert.equal(householdRetail(1000),1200);assert.equal(householdRetail(1234),1490,'1234 × 1,2 = 1480,8, up to 10 tetri');
+ for(const sql of arturHouseholdPriceSql([[1,2500,null],[2,1000,1500],[3,0,null],[999,500,null]]))DB.exec(sql);
+ const c=await call(e,'catalog?city='+cid),by=id=>c.products.find(p=>p.id===householdId(id));
+ assert.equal(by(1).price,3000);assert.equal(by(2).price,1500);assert.ok(by(3));assert.equal(c.products.filter(p=>p.id.includes('artur_hh_')&&p.profile.mode==='EACH').length,2,'priced items become ordinary');assert.equal(by(3).profile.mode,'SOON','no cost — still «Ожидается»');
+ assert.equal((await q(DB,'SELECT cost FROM products WHERE id=?',householdId(1)).first()).cost,2500);assert.ok(!('cost'in by(1)),'cost is private')}finally{DB.close()}});

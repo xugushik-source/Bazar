@@ -2607,5 +2607,2373 @@
     "note": "whole fresh piglet, placed on white 600x520",
     "file": "public/media/amo-piglet-fresh.jpg",
     "sha256": "f68792f3b8a109df13bc1e40c2dc9316ed95558c9cec94c23ec5208880270436"
+  },
+  {
+    "key": "artur-hh-001",
+    "source": "https://www.alliance-tr.com/files/urunler/household_chemicals/detergent/powder/persil_7kg/663ff524_ccca_4376_ae9d_03bf11a0d29c.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-001.jpg",
+    "sha256": "395020b8d38fd6aabfec81dc41b70a0ff0f51ae3c83878ec3df83cadce7caa1c"
+  },
+  {
+    "key": "artur-hh-002",
+    "source": "https://productimages.hepsiburada.net/s/777/424-600/110001790286801.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-002.jpg",
+    "sha256": "64486fd508ac5183396784211d9b4e15c93e8318c9aaf40f7e41b2f1031df7ab"
+  },
+  {
+    "key": "artur-hh-003",
+    "source": "https://cdn.dsmcdn.com/ty667/product/media/images/20221228/21/248374689/662647060/1/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-003.jpg",
+    "sha256": "e9846825b2518dba5a1bfc2930060926aa79c75016a2403708bdcf46a324d5f6"
+  },
+  {
+    "key": "artur-hh-004",
+    "source": "https://static.ticimax.cloud/35880/Uploads/UrunResimleri/thumb/sabun-cesitleri-5-879b.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-004.jpg",
+    "sha256": "e095fe5482870c179b468e9a69f756e94fecfaa84156e0f71ec96f4a3f3ee7fa"
+  },
+  {
+    "key": "artur-hh-006",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530018/30530018_1-7ef8bf.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/perwoll-cicek-cazibesi-renkliler-sivi-deterjan-275-l-p-1d1d9e2",
+    "file": "public/media/artur-hh-006.jpg",
+    "sha256": "0db5357889265e40e275e88e38d0038a33c481f64fc224462ac196d6a1d78e16"
+  },
+  {
+    "key": "artur-hh-007",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530012/30530012_1-f6fc7b.png",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/perwoll-siyah-sivi-deterjan-297-l-p-1d1d9dc",
+    "file": "public/media/artur-hh-007.jpg",
+    "sha256": "2e74aa5b178e46abdddbf4d33137551621327d7d4f927e0720c6a1d3f33f5b3e"
+  },
+  {
+    "key": "artur-hh-011",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-x/7631294937.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-011.jpg",
+    "sha256": "2d56a73e4bf25dfe8e6109f56020bbdc257a5f8adc00bcfe4694365842f09e8d"
+  },
+  {
+    "key": "artur-hh-014",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-e/10828257422.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-014.jpg",
+    "sha256": "be374d9fac69fda89c32df19e1f187d37a3ddfafd28125d32f405d23bf1144fd"
+  },
+  {
+    "key": "artur-hh-015",
+    "source": "https://cdn.dsmcdn.com/ty1750/prod/QC_ENRICHMENT/20250908/00/5c179aca-7b8b-3a18-86dc-fef3c5ec16ba/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-015.jpg",
+    "sha256": "ec627555d3556ee5793969e73a4eaf6f9e79037534195d8a8ea2afe94229627b"
+  },
+  {
+    "key": "artur-hh-016",
+    "source": "https://productimages.hepsiburada.net/s/777/424-600/110001809734302.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-016.jpg",
+    "sha256": "ccb726a5b9219f19a62e6cdc505f84905d6b2b32232ff928fcf2fa1f0a8b8e81"
+  },
+  {
+    "key": "artur-hh-017",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-a/10240245442.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-017.jpg",
+    "sha256": "b1bcde18dd5fc21ba1e33d00bad687bdcc6a8da5cee50606342bb9b0064176ee"
+  },
+  {
+    "key": "artur-hh-018",
+    "source": "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=99/36626/uploads/urunresimleri/buyuk/finish-tablet-80-li-pw-quantum-ozel-se-70-89b.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-018.jpg",
+    "sha256": "05113dadb9d934393859792f74e23d9b6fcea51480ac3b7a920b2a205d35d01e"
+  },
+  {
+    "key": "artur-hh-019",
+    "source": "https://sc04.alicdn.com/kf/Aa88648109ea946a7b13de2bf45015868O/Persil-Megaperls-18-Load-Imported-Lavender-Scented-Universal-Disposable-Detergent-From-the-Netherlands.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-019.jpg",
+    "sha256": "a204611828c1bdc395acc6b8c8fd20c01c997c4ba37d96e7e264723206fbb9d9"
+  },
+  {
+    "key": "artur-hh-020",
+    "source": "https://cdn.dsmcdn.com/ty1660/prod/QC/20250407/18/0013d9fe-7d4f-3f06-9e6a-41ecbc93cd2b/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-020.jpg",
+    "sha256": "d3b9c93b31feb62ca9f280a404f73e8f9be71c4ebf5cb30c693f14070144dc21"
+  },
+  {
+    "key": "artur-hh-021",
+    "source": "https://cdn.dsmcdn.com/ty992/product/media/images/jpim-outputs/assets/product/media/images/20230829/16/409015635/65134241/2/2_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-021.jpg",
+    "sha256": "20c9a7a2f7cee548c580675970f4f8da5e561f4de0adfc8a7855df3052fba7aa"
+  },
+  {
+    "key": "artur-hh-024",
+    "source": "https://images.migrosone.com/sanalmarket/product/31010095/31010095_1-f5af26.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/super-maylo-bambu-katkili-tuvalet-kagidi-40li-p-1d92d2f",
+    "file": "public/media/artur-hh-024.jpg",
+    "sha256": "069a61cb2a1b55c3ea28f36920d7af3a14759d16dde34ebd30dc77158be6f7ab"
+  },
+  {
+    "key": "artur-hh-025",
+    "source": "https://images.migrosone.com/sanalmarket/product/31010013/31010013_1-1b809c.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/selpak-deluxe-tuvalet-kagidi-24lu-p-1d92cdd",
+    "file": "public/media/artur-hh-025.jpg",
+    "sha256": "60b57fcefcda8c7469fd878c46a89e33f4068ee7c689f8653557a5409d7175b5"
+  },
+  {
+    "key": "artur-hh-032",
+    "source": "https://ir.ozone.ru/s3/multimedia-y/6600000778.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-032.jpg",
+    "sha256": "fdfc3b6e42bc9f7e1a6ac8b17f7e87fdf19cc34bfe549468ed0b8400e8a6c2fc"
+  },
+  {
+    "key": "artur-hh-033",
+    "source": "https://ir.ozone.ru/s3/multimedia-d/6623584537.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-033.jpg",
+    "sha256": "c456593ff228ad2a2ff70c870c6947e34710328037f822287d25d16545b4973f"
+  },
+  {
+    "key": "artur-hh-034",
+    "source": "https://basket-32.wbbasket.ru/vol6573/part657307/657307147/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-034.jpg",
+    "sha256": "e654972dee5e4de89dfbf6e10d058178d6e756777340e4f4bf96f38778b72517"
+  },
+  {
+    "key": "artur-hh-036",
+    "source": "https://images.migrosone.com/sanalmarket/product/31020017/31020017_1-ff86b4-1650x1650.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-036.jpg",
+    "sha256": "f964f252740e6ca09a5cc7855855f0959b934cf994ba68a0e1389fe4b46602c9"
+  },
+  {
+    "key": "artur-hh-039",
+    "source": "https://productimages.hepsiburada.net/s/527/600/110000584916446.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-039.jpg",
+    "sha256": "e28a4b084c36431f52ca2ad95ef44a2b1cefe02975f17285f9fcde507dd2eb22"
+  },
+  {
+    "key": "artur-hh-041",
+    "source": "https://ir.ozone.ru/s3/multimedia-t/6639749165.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-041.jpg",
+    "sha256": "647e62e5b0bed57a0c16f2fcfe150fad43349b366caeb010867163531d6f7ba6"
+  },
+  {
+    "key": "artur-hh-042",
+    "source": "https://cdn.dsmcdn.com/ty1763/prod/QC_PREP/20250921/11/25615fa7-0a06-3419-919a-67f0dcb759e0/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-042.jpg",
+    "sha256": "b9d67402da5753d80bf44769a7bb3711572f4e65f6d4572b62eae3f364b0b8b5"
+  },
+  {
+    "key": "artur-hh-044",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530556/30530556_1-67b8c1-1650x1650.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-044.jpg",
+    "sha256": "006645fcbbe446d19ae6a48d113ccf2bae62d6db706259e0af7833eba98cde23"
+  },
+  {
+    "key": "artur-hh-045",
+    "source": "https://cdn.dsmcdn.com/ty1829/prod/QC_PREP/20260223/16/0286cd8d-fe13-3cae-ab71-52a07bbffada/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-045.jpg",
+    "sha256": "fa217ac7df97b3333b463e0265f9ceb870438b1860f9723be9c49ab568fe42f5"
+  },
+  {
+    "key": "artur-hh-046",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-k/10240210676.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-046.jpg",
+    "sha256": "a5931c14c3ac69306bd4b4476944d3f6b4610cab3ccdfa259ab7593ea1b83641"
+  },
+  {
+    "key": "artur-hh-047",
+    "source": "https://cdn.dsmcdn.com/mnresize/1200/1800/ty1320/product/media/images/prod/QC/20240520/09/27fcb11d-7163-3060-b332-77f6fa385a77/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-047.jpg",
+    "sha256": "d113a935e5b8d69f72180b55c44343a0435c258334aff5135a82536c7f45a528"
+  },
+  {
+    "key": "artur-hh-048",
+    "source": "https://static.ticimax.cloud/14805/uploads/urunresimleri/buyuk/hobby-sivi-sabun-3600-ml-orkide-6171-4.jpeg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-048.jpg",
+    "sha256": "bd52d4517724a8522e9bfddb150cf06cbd245bd8eae8dfe34cb2aacc3655c5ad"
+  },
+  {
+    "key": "artur-hh-049",
+    "source": "https://productimages.hepsiburada.net/s/777/424-600/110001799982081.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-049.jpg",
+    "sha256": "5ecdb13e578a271fa8c7ccc95fe4f940f27ef5ce709a40a300f72c77cb84eb7d"
+  },
+  {
+    "key": "artur-hh-051",
+    "source": "https://static.ticimax.cloud/68728/uploads/urunresimleri/buyuk/onno-sivi-sabun-400-ml-gulun-buyusu-x1-3c-d14.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-051.jpg",
+    "sha256": "ad6fea0de0cb8eb6a82157f84cc8e9f22a36066fe70b9807bba598be79de0448"
+  },
+  {
+    "key": "artur-hh-052",
+    "source": "https://cdn.dsmcdn.com/ty1748/prod/QC_PREP/20250909/14/ef62b685-13f6-3617-9c3f-992ed592543f/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-052.jpg",
+    "sha256": "bf82a6c38ba7e5845a3cbf8580868812083779f16150ed0a6d23b18fedc4bc4d"
+  },
+  {
+    "key": "artur-hh-053",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-p/11926409065.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-053.jpg",
+    "sha256": "5b8610eee40fcec252c7efd9a6b65cb5540ffd89912c9fe2ea8858374c156811"
+  },
+  {
+    "key": "artur-hh-055",
+    "source": "https://productimages.hepsiburada.net/s/777/424-600/110001449560008.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-055.jpg",
+    "sha256": "67a5974458b973d712bf86180231bd6e4c8254769f2084ca77304966d3e54817"
+  },
+  {
+    "key": "artur-hh-058",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-2/10507564946.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-058.jpg",
+    "sha256": "316394c8b342565d596f03d467d1443c679d459bda55a67bec720e526be0d06f"
+  },
+  {
+    "key": "artur-hh-059",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-w/10240245500.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-059.jpg",
+    "sha256": "0016f2c6437c35b0dc64efc225e686f1dd7ce997fab081b8fd8aa1660bc8f40f"
+  },
+  {
+    "key": "artur-hh-060",
+    "source": "https://productimages.hepsiburada.net/s/777/424-600/110002173813926.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-060.jpg",
+    "sha256": "9518c16ec9ff22de6ed7179581c09fe57f9a67501833d4520b39611356905715"
+  },
+  {
+    "key": "artur-hh-061",
+    "source": "https://ir.ozone.ru/s3/multimedia-s/6533570680.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-061.jpg",
+    "sha256": "277e86151df0b3af16e18b230426a5bbd4d87fd079a3629e7a275d5adb30ccea"
+  },
+  {
+    "key": "artur-hh-062",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-v/10449854779.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-062.jpg",
+    "sha256": "01721e2af506a7ce588b1c04dfcebdc9708a89a67645fe0cd307ff15f9c5d007"
+  },
+  {
+    "key": "artur-hh-063",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-j/11515082671.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-063.jpg",
+    "sha256": "1bebbaadc6b13c815d95dfcdd9608bd07dcbf498de83cc9e26a1665098a47967"
+  },
+  {
+    "key": "artur-hh-065",
+    "source": "https://cdn.dsmcdn.com/ty1526/product/media/images/prod/QC/20240904/13/1ca4e544-b930-3372-af78-d89e494cb4c7/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-065.jpg",
+    "sha256": "cbb6da9882df06718ef7b92d4ebff19a2019e35a7e6191de0cc19871ad87b266"
+  },
+  {
+    "key": "artur-hh-067",
+    "source": "https://cdn.dsmcdn.com/ty960/product/media/images/20230707/10/391829645/899977228/1/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-067.jpg",
+    "sha256": "848f7338b8b562d932007f82fc637a41618ce77b351c9b26a78f581e26a895b9"
+  },
+  {
+    "key": "artur-hh-068",
+    "source": "https://images.migrosone.com/sanalmarket/product/30719710/30719710_1-1b2fae.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/asperox-yuzey-temizleyici-menekse-yasemin-25-l-p-1d4bede",
+    "file": "public/media/artur-hh-068.jpg",
+    "sha256": "dacf1376760a33b30c182091778cd6830eda8328754558c43cb8ee620c20ef99"
+  },
+  {
+    "key": "artur-hh-069",
+    "source": "https://images.migrosone.com/sanalmarket/product/30719711/30719711_1-ee6354.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/asperox-yuzey-temizleyici-beyaz-sabun-25-l-p-1d4bedf",
+    "file": "public/media/artur-hh-069.jpg",
+    "sha256": "7bc1207e374d5905b9dddbebb0a543cc3b8f9c13f6ac7141f75953e3be5cb354"
+  },
+  {
+    "key": "artur-hh-070",
+    "source": "https://images.migrosone.com/sanalmarket/product/30710225/30710225_1-eecadb.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/asperox-yuzey-temizleyici-okyanus-maviligi-25-l-p-1d499d1",
+    "file": "public/media/artur-hh-070.jpg",
+    "sha256": "35269f4792905ceaa47a4a1708b254cc7c1afe956e00b559dd0f6b83edb689cc"
+  },
+  {
+    "key": "artur-hh-071",
+    "source": "https://images.migrosone.com/sanalmarket/product/30638706/30638706_1-f152c6.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/finish-bulasik-makinesi-parlatici-800-ml-p-1d38272",
+    "file": "public/media/artur-hh-071.jpg",
+    "sha256": "9bdfe977c47e9e47f713cdddc7dd47862464a55df429a9863d9e7219ecb4f48b"
+  },
+  {
+    "key": "artur-hh-073",
+    "source": "https://cdn.dsmcdn.com/ty1678/prod/QC/20250516/15/b295ce4f-5b7e-3367-80d7-f336f7a5f133/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-073.jpg",
+    "sha256": "e7f5aada8b14153e3a47173820f513f7dfe4dcc02eb7fe65264517df0cc90a89"
+  },
+  {
+    "key": "artur-hh-074",
+    "source": "https://productimages.hepsiburada.net/s/777/600/110001253386444.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-074.jpg",
+    "sha256": "1e2a6024cae7f3abc9d2cac6377e3be0656ca6f3b6576aeec3c17fd74fd1a517"
+  },
+  {
+    "key": "artur-hh-075",
+    "source": "https://cdn.dsmcdn.com/ty1661/prod/QC/20250410/13/a19fc79b-fc52-3831-9087-bd82bff754e4/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-075.jpg",
+    "sha256": "46e3d14738917cf38743ff93ede51b71ee063491f46758886ef8c17e23c9824f"
+  },
+  {
+    "key": "artur-hh-076",
+    "source": "https://images.migrosone.com/sanalmarket/product/34250139/34250139_1-ec590f.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/clear-men-legends-vini-sampuan-350-ml-p-20a9d9b",
+    "file": "public/media/artur-hh-076.jpg",
+    "sha256": "a4654cc3500e0c6fac3668d036d1185598a07506f58e2ccf9c781312941dd1e1"
+  },
+  {
+    "key": "artur-hh-077",
+    "source": "https://images.migrosone.com/sanalmarket/product/34255976/34255976_1-633811.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/clear-men-kepege-karsi-etkili-sampuan-cool-sport-menthol-ferahlatici-mentol-etkisi-350-ml-p-20ab468",
+    "file": "public/media/artur-hh-077.jpg",
+    "sha256": "1727cd76e9d99e38625b324fd2f25a146dec7e4dd8929e42110716cc5e993478"
+  },
+  {
+    "key": "artur-hh-078",
+    "source": "https://images.migrosone.com/sanalmarket/product/34251295/34251295_1-ccc17f.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/pantene-onarici-koruyucu-sampuan-625-ml-p-20aa21f",
+    "file": "public/media/artur-hh-078.jpg",
+    "sha256": "eef00830053aa8c6d605c5ed17b616dd53dc9f5f5f149421e14c889f5b998ce7"
+  },
+  {
+    "key": "artur-hh-079",
+    "source": "https://images.migrosone.com/sanalmarket/product/34260490/34260490_1-371b21.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/pantene-onarici-koruyucu-sampuan-800-ml-p-20ac60a",
+    "file": "public/media/artur-hh-079.jpg",
+    "sha256": "9b5218e95d2cfcb6859aebacb258b5b24eb7538c6870af81de38c8ea581a40df"
+  },
+  {
+    "key": "artur-hh-080",
+    "source": "https://basket-47.wbbasket.ru/vol14383/part1438394/1438394914/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-080.jpg",
+    "sha256": "008f02b6da2fb15cbefd4a72c5f5202fcb90a649ee26b9fa3f553e2b3675d03c"
+  },
+  {
+    "key": "artur-hh-081",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-s/7044349744.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-081.jpg",
+    "sha256": "9d921ca9c6e927aeee52f7f401ec6ccc77b745e5adf2e04b81af92d0ae191010"
+  },
+  {
+    "key": "artur-hh-082",
+    "source": "https://images.migrosone.com/sanalmarket/product/30573023/30573023_1-43dd40.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/yumos-extra-lilyum-1008-ml-camasir-parfumu-mavi-sakayik-200-g-p-1d281df",
+    "file": "public/media/artur-hh-082.jpg",
+    "sha256": "cbf8ac9b3d542a28a37edeb2a637659654d63450ecfbe87ab6a274d02544a304"
+  },
+  {
+    "key": "artur-hh-083",
+    "source": "https://images.migrosone.com/sanalmarket/product/30570164/30570164_1-525f62.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/yumos-extra-konsantre-camasir-yumusatici-orkide-1008-ml-42-yikama-p-1d276b4",
+    "file": "public/media/artur-hh-083.jpg",
+    "sha256": "42ea8ef5859110d4a8a37bf129cc7eefbd65469f85e251d233e70f0e0e138df9"
+  },
+  {
+    "key": "artur-hh-084",
+    "source": "https://images.migrosone.com/sanalmarket/product/30570164/30570164_1-525f62.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/yumos-extra-konsantre-camasir-yumusatici-orkide-1008-ml-42-yikama-p-1d276b4",
+    "file": "public/media/artur-hh-084.jpg",
+    "sha256": "42ea8ef5859110d4a8a37bf129cc7eefbd65469f85e251d233e70f0e0e138df9"
+  },
+  {
+    "key": "artur-hh-085",
+    "source": "https://images.migrosone.com/sanalmarket/product/30589392/30589392_1-a74a4e.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/bingo-soft-begonvil-yumusatici-1440-ml-p-1d2c1d0",
+    "file": "public/media/artur-hh-085.jpg",
+    "sha256": "60368185a6853daeb799041ecd596018680948892ef5f8466e42dc9876c216ff"
+  },
+  {
+    "key": "artur-hh-086",
+    "source": "https://images.migrosone.com/sanalmarket/product/30400967/30400967_1-ac0e18.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/finish-quantum-max-bulasik-makinesi-tableti-58li-6032-g-p-1cfe1c7",
+    "file": "public/media/artur-hh-086.jpg",
+    "sha256": "960a8933f39be2165248820adef83e74a4c8fd5992e367db54effbe94e01175e"
+  },
+  {
+    "key": "artur-hh-087",
+    "source": "https://images.migrosone.com/sanalmarket/product/30980023/30980023_1-ec6f88.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/finish-ultimate-plus-limon-60-tablet-p-1d8b7b7",
+    "file": "public/media/artur-hh-087.jpg",
+    "sha256": "46be99289a6bf51b2f3a91ef844f439da5653867a889b6cb13c862e29e04f2ff"
+  },
+  {
+    "key": "artur-hh-088",
+    "source": "https://cdn.dsmcdn.com/ty1712/prod/QC_PREP/20250714/18/620ae0a3-a3a1-3f98-bc60-cda123acb754/1_org_zoom.jpg?boutiqueId=61&merchantId=113168",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-088.jpg",
+    "sha256": "2a0ccdfaf1154e14947202023158a91d8b2ef52236b2938303548e050222e2b2"
+  },
+  {
+    "key": "artur-hh-089",
+    "source": "https://productimages.hepsiburada.net/s/777/424-600/110001794166790.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-089.jpg",
+    "sha256": "fd294b57cd75d01e871ee81902ae44e8d0a7ef8bd80d6b4fdc58149689c4b94f"
+  },
+  {
+    "key": "artur-hh-090",
+    "source": "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=99/35607/uploads/urunresimleri/buyuk/abc-yums-e67114.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-090.jpg",
+    "sha256": "a26176e966f0aee6d3ee4c2d2eb8aedfd1d3e9d8a504bcd2f1ea88fa3d1f11cb"
+  },
+  {
+    "key": "artur-hh-091",
+    "source": "https://productimages.hepsiburada.net/s/5/550/9674977312818.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-091.jpg",
+    "sha256": "9afb70b18c64936ed6ff6a8426b985f1e0ae94b885fa28de57f0b4da0f692d60"
+  },
+  {
+    "key": "artur-hh-093",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-p/14136492913.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-093.jpg",
+    "sha256": "e56c45daab0f6188ef5271f7f75f5460d6d3614e9153a003d35d5b57ab76b834"
+  },
+  {
+    "key": "artur-hh-094",
+    "source": "https://cdn.dsmcdn.com/ty580/product/media/images/20221028/13/203364205/608684011/1/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-094.jpg",
+    "sha256": "2b5c1ba21115d3e0bf47799c8f03e608a76a5f1539183ccded11317cad92e022"
+  },
+  {
+    "key": "artur-hh-095",
+    "source": "https://productimages.hepsiburada.net/s/777/600/110002012876090.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-095.jpg",
+    "sha256": "f32ccf5fe5695e07106dfe29ddb06dd8f60fd3dce79376278b6e86b8eb60ece3"
+  },
+  {
+    "key": "artur-hh-096",
+    "source": "https://productimages.hepsiburada.net/s/777/424-600/110001852085405.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-096.jpg",
+    "sha256": "46bfbaef3f6e3492e3d8a5a6575cf8b127e5fc844f89b6f8245cf9f0fd0cfefb"
+  },
+  {
+    "key": "artur-hh-097",
+    "source": "https://basket-14.wbbasket.ru/vol2117/part211732/211732447/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-097.jpg",
+    "sha256": "a6992f14fbe589fbbb4db80567b176e66a3aaa155fe0c31a065d95e98612ef40"
+  },
+  {
+    "key": "artur-hh-098",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-e/10240211210.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-098.jpg",
+    "sha256": "9438ca64e8f7b7654044e34f657da6020abbff1a8d5539ba640e8050566f3ac0"
+  },
+  {
+    "key": "artur-hh-099",
+    "source": "https://productimages.hepsiburada.net/s/777/600/110001573332606.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-099.jpg",
+    "sha256": "03091f07a8c7e533538b90c624c1e91157cdc18b12bdc2b5114930613d0a8e77"
+  },
+  {
+    "key": "artur-hh-100",
+    "source": "https://www.carmar.com.tr/idea/ei/75/myassets/products/478/ariel-matik-4-kg-parlak-renkler-11052333.png?revision=1697143329",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-100.jpg",
+    "sha256": "fc75152a07224fd3f90fe007d91b3178a9aef2d2b01224ba10a1055a55b5224e"
+  },
+  {
+    "key": "artur-hh-101",
+    "source": "https://productimages.hepsiburada.net/s/26/375/10150332891186.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-101.jpg",
+    "sha256": "f6dcfb9fe0801a2afb71cb71ce711d4e601fcd0553f266cb8ba3390541c42561"
+  },
+  {
+    "key": "artur-hh-102",
+    "source": "https://cdn.dsmcdn.com/ty1818/prod/QC_ENRICHMENT/20260203/21/7607eeef-d4c2-30b9-8172-2c11a2071d79/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-102.jpg",
+    "sha256": "abc10c7e779525cf1d927752b306abebdce74dfafc05c2705e91b7bf22bc352a"
+  },
+  {
+    "key": "artur-hh-103",
+    "source": "https://basket-16.wbbasket.ru/vol2422/part242279/242279191/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-103.jpg",
+    "sha256": "6e62ac7fac82028cd7a85101c63eb0eed1fb1cdb0bc4c8993df5409a10029184"
+  },
+  {
+    "key": "artur-hh-104",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-o/9320939700.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-104.jpg",
+    "sha256": "303d9c078be4dc199d06624590b24fa3698ba24e3c2fafbfbf2dddbc95e946c1"
+  },
+  {
+    "key": "artur-hh-105",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-e/9435150446.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-105.jpg",
+    "sha256": "a683e9939d9f475d55f87cbeb2f86bbafb7513f1fc72f9c505b7f34afce63be2"
+  },
+  {
+    "key": "artur-hh-106",
+    "source": "https://images.migrosone.com/sanalmarket/product/30720470/30720470_1-19721d.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/bingo-sprey-kirec-cozucu-900-ml-p-1d4c1d6",
+    "file": "public/media/artur-hh-106.jpg",
+    "sha256": "e574dc82c618610a26c5332702215b71409ef8c904ca755a59258505ec868114"
+  },
+  {
+    "key": "artur-hh-107",
+    "source": "https://images.migrosone.com/sanalmarket/product/30720469/30720469_1-c15bcd.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/bingo-sprey-yag-cozucu-900-ml-p-1d4c1d5",
+    "file": "public/media/artur-hh-107.jpg",
+    "sha256": "b7a67d4991db8a6be4ab0a9329f0a6f144d9839777d5fdbb225ae258489c0ba8"
+  },
+  {
+    "key": "artur-hh-108",
+    "source": "https://productimages.hepsiburada.net/s/777/424-600/110002113675223.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-108.jpg",
+    "sha256": "64f9fa5ddb8548c8d8d9f7cec920bc4ae5fc7428f4732a9fc433e608830994d3"
+  },
+  {
+    "key": "artur-hh-109",
+    "source": "https://productimages.hepsiburada.net/s/777/424-600/110002113675223.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-109.jpg",
+    "sha256": "64f9fa5ddb8548c8d8d9f7cec920bc4ae5fc7428f4732a9fc433e608830994d3"
+  },
+  {
+    "key": "artur-hh-110",
+    "source": "https://productimages.hepsiburada.net/s/777/424-600/110001541884163.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-110.jpg",
+    "sha256": "dcaa2ba8f389b3f99c7ce4a53457b53fdc373774155939d7213265c93764578f"
+  },
+  {
+    "key": "artur-hh-111",
+    "source": "https://cdn.dsmcdn.com/ty1833/prod/QC_ENRICHMENT/20260309/18/dae812a2-8356-3df9-8c1e-d4525fc23da6/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-111.jpg",
+    "sha256": "b4acd219de6118afd0bcd4fd3fb373945be734714f4caebf55da23b37e73f126"
+  },
+  {
+    "key": "artur-hh-112",
+    "source": "https://cdn.dsmcdn.com/ty1593/prod/QC/20241028/14/4a7d8453-abca-3a3c-976d-2f210ecdc9d3/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-112.jpg",
+    "sha256": "debb662d49de5339181f8b25c2bfa42530a7d24fb7b48c3c72f9241ee6be1fe2"
+  },
+  {
+    "key": "artur-hh-113",
+    "source": "https://cdn.dsmcdn.com/mnresize/400/-/ty1823/prod/QC_ENRICHMENT/20260207/14/b07ed800-f130-3b81-9210-ee6725a96f9b/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-113.jpg",
+    "sha256": "6747d617fa91bdede0d8382bd22a5031ad5eef95664a938235d779ee6e1e564e"
+  },
+  {
+    "key": "artur-hh-114",
+    "source": "https://images.hepsiburada.net/description-assets/description-prod-30/377338bd-5455-4c6c-a4d4-5c8e87332b64.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-114.jpg",
+    "sha256": "de02123f5124706da0c8ccbbd14fc65f3e963e448395aaf42557ce0af33d28c0"
+  },
+  {
+    "key": "artur-hh-115",
+    "source": "https://static.ticimax.cloud/35880/Uploads/UrunResimleri/buyuk/8-den-20-soner-1-00b129.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-115.jpg",
+    "sha256": "29a1ea0f085aa43c202b8088f41e881506a761785b43c87a78e21e0f09394030"
+  },
+  {
+    "key": "artur-hh-116",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530546/30530546_1-0fe01a-1650x1650.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-116.jpg",
+    "sha256": "1938d444ae8da2a4720cc8633f55699530381fa72a7ce46b9bceed02a1ccda6e"
+  },
+  {
+    "key": "artur-hh-117",
+    "source": "https://images.migrosone.com/sanalmarket/product/31100869/31100869_1-b88166.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/molfix-premium-paket-5-beden-junior-11-18-kg-42li-p-1da8fc5",
+    "file": "public/media/artur-hh-117.jpg",
+    "sha256": "82e446ecafbbf58aad0b9f56a6751439391fd978c2a73d0466d94d61aed3d196"
+  },
+  {
+    "key": "artur-hh-118",
+    "source": "https://images.migrosone.com/sanalmarket/product/31100792/31100792_1-27fa3f.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/molfix-sweet-dreams-maxi-4-beden-76li-p-1da8f78",
+    "file": "public/media/artur-hh-118.jpg",
+    "sha256": "3d74e28fb6e2b6fe2243efc83f531fbeda9a5c5f0f653baf1ace51e500daa1cd"
+  },
+  {
+    "key": "artur-hh-119",
+    "source": "https://basket-05.wbbasket.ru/vol991/part99196/99196427/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-119.jpg",
+    "sha256": "3277518bd1570786e2c210c500cf903bc05113d6c00d14ba3a2bdfeb26dac508"
+  },
+  {
+    "key": "artur-hh-120",
+    "source": "https://basket-31.wbbasket.ru/vol6401/part640126/640126730/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-120.jpg",
+    "sha256": "4b73c9dfd58f21bc98cadaafa5f2f811590312a565f3bfd8b14402365a5b72da"
+  },
+  {
+    "key": "artur-hh-121",
+    "source": "https://basket-14.wbbasket.ru/vol2061/part206169/206169781/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-121.jpg",
+    "sha256": "079ada7ffdef43aa11ec14868d9e6cd281d228b097dfbaace56c7eedb5a20971"
+  },
+  {
+    "key": "artur-hh-122",
+    "source": "https://basket-16.wbbasket.ru/vol2490/part249039/249039477/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-122.jpg",
+    "sha256": "e808131daa8e72e74ef1befb432772e0718214eb33279a1508544f575e60f3ef"
+  },
+  {
+    "key": "artur-hh-123",
+    "source": "https://images.migrosone.com/sanalmarket/product/31100897/31100897_1-994950.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/sleepy-natural-double-soft-super-kulot-bez-4-no-4-14-kg-52li-p-1da8fe1",
+    "file": "public/media/artur-hh-123.jpg",
+    "sha256": "9c79131a2ac927e316d2c0f1290b9693cf93b238744b6165fbf405df28a60065"
+  },
+  {
+    "key": "artur-hh-124",
+    "source": "https://images.migrosone.com/sanalmarket/product/31100903/31100903_1-2bada1.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/sleepy-natural-double-soft-super-kulot-bez-6-no-15-25-kg-32li-p-1da8fe7",
+    "file": "public/media/artur-hh-124.jpg",
+    "sha256": "94699d5cb9cc219881321f8912ccee200b154c6264c939db8221c52b7b0e0736"
+  },
+  {
+    "key": "artur-hh-125",
+    "source": "https://cdn.dsmcdn.com/ty1689/prod/QC_ENRICHMENT/20250605/13/209e212b-2e17-3bbb-a22b-4657fd587d7e/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-125.jpg",
+    "sha256": "cb53d205ff5b91581cfc82596400da8f76e3707694027c2d498f08706d5fa690"
+  },
+  {
+    "key": "artur-hh-126",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-9/10828258245.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-126.jpg",
+    "sha256": "d4a2925bb6bb84bde62ad821f9b9bfb6a5f1ac8ec4edde442e437885f3cc4505"
+  },
+  {
+    "key": "artur-hh-127",
+    "source": "https://static.ticimax.cloud/31032/uploads/urunresimleri/buyuk/baby-turco-kulot-bez-5-numara-24-adet--96a9-3.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-127.jpg",
+    "sha256": "bad6097c6cd1acff2ac720bcbf5cb74406e4938b43b621d15208fa833aec3657"
+  },
+  {
+    "key": "artur-hh-128",
+    "source": "https://basket-15.wbbasket.ru/vol2370/part237018/237018429/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-128.jpg",
+    "sha256": "6645f1acc3877c286eb45e60bc5bffb377304bfc9b9b4430f084b31e54b1af3e"
+  },
+  {
+    "key": "artur-hh-129",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-9/10828258245.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-129.jpg",
+    "sha256": "d4a2925bb6bb84bde62ad821f9b9bfb6a5f1ac8ec4edde442e437885f3cc4505"
+  },
+  {
+    "key": "artur-hh-130",
+    "source": "https://cdn.dsmcdn.com/ty1571/prod/QC/20240924/13/01aed09e-7db5-36d1-8c0f-d3030575cf68/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-130.jpg",
+    "sha256": "8bf0cffdb46a4ee74fa3a324f9f0c13c94b1ea1ca1642431a11116259c5a40dd"
+  },
+  {
+    "key": "artur-hh-131",
+    "source": "https://cdn.dsmcdn.com/ty1591/prod/QC/20241025/10/503318d1-df2c-3707-b93a-5d4fd93e9e6c/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-131.jpg",
+    "sha256": "e9dbcc14507d93650d3f17a8cfa7ac89772a3377095ba12641456089606aad2e"
+  },
+  {
+    "key": "artur-hh-132",
+    "source": "https://static.ticimax.cloud/14610/uploads/urunresimleri/buyuk/hasta-bakim-urunlerifreshlife9948fresh-a-92d4.png",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-132.jpg",
+    "sha256": "940da859abf78e0bc58fe3abbe72dc5a4ad53eb5689ff6264b389b715aa70ed5"
+  },
+  {
+    "key": "artur-hh-133",
+    "source": "https://cdn.dsmcdn.com/ty1661/prod/QC/20250409/15/96ee6b88-6b7a-378e-807c-d18457059baa/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-133.jpg",
+    "sha256": "4679f0e33a0290e1d624f51ca5b069cf8d8209ad8b2d971c66d2b85723a39449"
+  },
+  {
+    "key": "artur-hh-134",
+    "source": "https://cdn.dsmcdn.com/ty1591/prod/QC/20241025/10/cd6e9e46-2e1c-3b7c-9edb-11400c67375b/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-134.jpg",
+    "sha256": "b2d425a54845efce80d89850ce33266e6055bbaa5877be8ac00e5fc605cc8617"
+  },
+  {
+    "key": "artur-hh-135",
+    "source": "https://static.ticimax.cloud/49759/uploads/urunresimleri/buyuk/freshlife-eco-m-yetiskin-bezi-0e4563.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-135.jpg",
+    "sha256": "177bd9c5f714d7779c5615583a607e5769ea6b6c22d56887ab5e0cdcfb1a20af"
+  },
+  {
+    "key": "artur-hh-136",
+    "source": "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=99/74443/uploads/urunresimleri/buyuk/cleanped-yetiskin-hasta-bezi-medium-30-dbdb0d.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-136.jpg",
+    "sha256": "460f2cf504a44ca72045ae971b0e75b105778ff2f33b31e2a06393dcf11f2c9a"
+  },
+  {
+    "key": "artur-hh-137",
+    "source": "https://cdn.dsmcdn.com/ty1638/prod/QC/20250219/09/bde70c34-660f-32c0-b9d0-a6671bd96e4f/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-137.jpg",
+    "sha256": "4d708b0e2bcdb4d3a2458a4641b295a421eaabd07f41580923a3544c22a15799"
+  },
+  {
+    "key": "artur-hh-138",
+    "source": "https://cdn.dsmcdn.com/ty1828/prod/QC_ENRICHMENT/20260217/02/c06e8aea-327a-3a38-bd92-328f7b5ebd77/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-138.jpg",
+    "sha256": "6ff27418c1b2591ecd1887bccf8fab36332274fdd3ba15d78d56f55aa8ee97c7"
+  },
+  {
+    "key": "artur-hh-139",
+    "source": "https://cdn.dsmcdn.com/ty811/product/media/images/20230405/1/318467246/68929198/2/2_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-139.jpg",
+    "sha256": "8a725e9722680ae06cd13fe5f8c0f994f1698d0a4659b13b6f3602372f561771"
+  },
+  {
+    "key": "artur-hh-140",
+    "source": "https://images.migrosone.com/sanalmarket/product/31010095/31010095_1-f5af26.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/super-maylo-bambu-katkili-tuvalet-kagidi-40li-p-1d92d2f",
+    "file": "public/media/artur-hh-140.jpg",
+    "sha256": "069a61cb2a1b55c3ea28f36920d7af3a14759d16dde34ebd30dc77158be6f7ab"
+  },
+  {
+    "key": "artur-hh-141",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-x/10232121417.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-141.jpg",
+    "sha256": "3549e8f022f5892a1ae81af9d7d340b295127ea17084697b60841055fbdbb110"
+  },
+  {
+    "key": "artur-hh-144",
+    "source": "https://images.migrosone.com/sanalmarket/product/31604942/31604942_1-2b4796.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/johnsons-baby-bedtime-vucut-sampuani-500-ml-p-1e240ce",
+    "file": "public/media/artur-hh-144.jpg",
+    "sha256": "e1fd5b897565491e2c99dca29e512471b77081f5849ccb281ca0b959cb2f67c6"
+  },
+  {
+    "key": "artur-hh-145",
+    "source": "https://cdn.dsmcdn.com/mnresize/620/920/ty1660/prod/QC/20250410/08/a36e5358-b48d-347d-ad71-555062b03f0b/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-145.jpg",
+    "sha256": "d6ea1de624e1bf5dd432449b17c49165022e1b091d0f7b0c8fb498c4aacc7adc"
+  },
+  {
+    "key": "artur-hh-146",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-j/14856446935.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-146.jpg",
+    "sha256": "cd611b799b208dc4a27f416efe2d00eba2cdba482659a510af459cb1d02b4b54"
+  },
+  {
+    "key": "artur-hh-147",
+    "source": "https://images.migrosone.com/sanalmarket/product/30560922/30560922-44b1e0.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ace-camasir-suyu-klasik-2-l-p-1d2529a",
+    "file": "public/media/artur-hh-147.jpg",
+    "sha256": "b7b2853f429e80e147b2bc69231a8399686880306db115e718a24263c8f8adaf"
+  },
+  {
+    "key": "artur-hh-148",
+    "source": "https://productimages.hepsiburada.net/s/777/424-600/110002017314040.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-148.jpg",
+    "sha256": "a37d91c2466b839e4d76e9ccc86e463804737a4ddecf41280792144cfd8cd812"
+  },
+  {
+    "key": "artur-hh-149",
+    "source": "https://cdn.dsmcdn.com/ty1710/prod/QC_PREP/20250716/13/f2009d18-452e-30d0-84f0-47c492503aa6/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-149.jpg",
+    "sha256": "873f7d4b9ea663c1ecb138b1fb80068636863171db8a0b1e3c805489817305d3"
+  },
+  {
+    "key": "artur-hh-150",
+    "source": "https://images.migrosone.com/sanalmarket/product/30730009/30730009-f0a853.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/cif-power-shine-sprey-mutfak-yag-cozucu-2-x-750-ml-p-1d4e719",
+    "file": "public/media/artur-hh-150.jpg",
+    "sha256": "e236417e56aeb3efd3e796a622edb8c25dc63f496348c83bd02a9d967de188f0"
+  },
+  {
+    "key": "artur-hh-151",
+    "source": "https://images.migrosone.com/sanalmarket/product/30730008/30730008-2537eb.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/cif-power-shine-sprey-banyo-kirec-cozucu-2-x-750-ml-p-1d4e718",
+    "file": "public/media/artur-hh-151.jpg",
+    "sha256": "f25c7a2a048528ca2c0448ed88c37d2d54413273fbd41a6deb88cd0f8413c43e"
+  },
+  {
+    "key": "artur-hh-152",
+    "source": "https://images.migrosone.com/sanalmarket/product/30733218/30733218-ce2b05.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/cif-ultra-hiz-guc-kirec-sokucu-sprey-1000-ml-p-1d4f3a2",
+    "file": "public/media/artur-hh-152.jpg",
+    "sha256": "0e4846eb0efe8c9fafb3837c02a7db49929ca6112d8065a3fa7fe87da2b7866a"
+  },
+  {
+    "key": "artur-hh-153",
+    "source": "https://images.migrosone.com/sanalmarket/product/30733218/30733218-ce2b05.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/cif-ultra-hiz-guc-kirec-sokucu-sprey-1000-ml-p-1d4f3a2",
+    "file": "public/media/artur-hh-153.jpg",
+    "sha256": "0e4846eb0efe8c9fafb3837c02a7db49929ca6112d8065a3fa7fe87da2b7866a"
+  },
+  {
+    "key": "artur-hh-154",
+    "source": "https://images.migrosone.com/sanalmarket/product/30733236/30733236_1-d2d88e.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/cif-power-shine-sprey-mutfak-icin-temizleyici-ve-yag-cozucu-750-ml-p-1d4f3b4",
+    "file": "public/media/artur-hh-154.jpg",
+    "sha256": "cd4090f3e88290b2a5999ba30e0c8c96fd010fe9c670bd3cd15a1386cddc4694"
+  },
+  {
+    "key": "artur-hh-155",
+    "source": "https://images.migrosone.com/sanalmarket/product/30920151/30920151_1-375f16.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/cif-krem-mucizesi-yuzey-temizleyici-sakura-750-ml-p-1d7cdd7",
+    "file": "public/media/artur-hh-155.jpg",
+    "sha256": "8bbf1bc2526c281265e922876bc949db169e630d9338d1622e90ee313c2b429a"
+  },
+  {
+    "key": "artur-hh-156",
+    "source": "https://cdn.dsmcdn.com/ty1447/product/media/images/prod/QC/20240729/10/b580f2a0-6a13-39a7-a907-343012ee9225/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-156.jpg",
+    "sha256": "ff284ba315a512edaef82a2584f0050be37bba9de4363b9921d17e6bf821a5ff"
+  },
+  {
+    "key": "artur-hh-157",
+    "source": "https://productimages.hepsiburada.net/s/57/424-600/11271949746226.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-157.jpg",
+    "sha256": "a1e2a833bebd6bf48d3bb4d0b8b26360b654be0b2661afef6ebbd97501d29bd0"
+  },
+  {
+    "key": "artur-hh-158",
+    "source": "https://cdn.dsmcdn.com/ty1939/prod/QC_PREP/20260624/19/c654b187-6952-3ab1-ae8a-b393b1a6eb91/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-158.jpg",
+    "sha256": "87bb919e69c2b8948c170d4cfa542735bc91793a892541192ba0d4bab78efcae"
+  },
+  {
+    "key": "artur-hh-159",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-s/c1000/7155736588.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-159.jpg",
+    "sha256": "8139383d080e7637d784394af9790c4b677ade0bee3f2a12df5db6f67e914b48"
+  },
+  {
+    "key": "artur-hh-160",
+    "source": "https://basket-27.wbbasket.ru/vol5177/part517703/517703484/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-160.jpg",
+    "sha256": "c46b850e39bf236811f6bb6cc092501f509c2ac682250a672dbea31ca5c0268e"
+  },
+  {
+    "key": "artur-hh-161",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-p/14136484057.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-161.jpg",
+    "sha256": "0ef0478f5814bf43735a39aedd36bd65b8a8cd283d0098d6849a2f8831c7ce01"
+  },
+  {
+    "key": "artur-hh-162",
+    "source": "https://images.migrosone.com/sanalmarket/product/30712701/30712701-3591a1.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/pronto-ahsap-yuzey-temizleyici-klasik-750ml-p-1d4a37d",
+    "file": "public/media/artur-hh-162.jpg",
+    "sha256": "0cbae60909558d16c6098745f4a9e5ab7c0f4cb0dc2c3908da4cccd923ab95a4"
+  },
+  {
+    "key": "artur-hh-163",
+    "source": "https://images.migrosone.com/sanalmarket/product/30710228/30710228_1-6fc89b.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/cif-zemin-temizleyici-sakura-1500-ml-p-1d499d4",
+    "file": "public/media/artur-hh-163.jpg",
+    "sha256": "2de14c9167081162c5bec8710cb93ff20b2638753f86d2f4ad83335fba24a960"
+  },
+  {
+    "key": "artur-hh-164",
+    "source": "https://images.migrosone.com/sanalmarket/product/30719686/30719686_1-127f9c.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/domestos-yogun-kivamli-yuzey-temizleyici-okyanus-esintisi-1500-ml-p-1d4bec6",
+    "file": "public/media/artur-hh-164.jpg",
+    "sha256": "87de3d12f3513d647a3275c610425b5786b8df866bf90c5428c707d62bd2f5cd"
+  },
+  {
+    "key": "artur-hh-165",
+    "source": "https://images.migrosone.com/sanalmarket/product/30719715/30719715_1-6d2d40.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/domestos-yogun-kivamli-yuzey-temizleyici-bahar-cicekleri-1500-ml-p-1d4bee3",
+    "file": "public/media/artur-hh-165.jpg",
+    "sha256": "d43934e78641f11df3be7df3894d785ffa2302ba9dd7bebb72d9f6d1e98ff46a"
+  },
+  {
+    "key": "artur-hh-166",
+    "source": "https://images.migrosone.com/sanalmarket/product/30719685/30719685_1-0a6cb5.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/domestos-yogun-kivamli-yuzey-temizleyici-cam-ferahligi-1500-ml-p-1d4bec5",
+    "file": "public/media/artur-hh-166.jpg",
+    "sha256": "79e67d8a72e2ee4500bed4f31e9fb53ef212d3dcde7cd43a63dacc3e188f62da"
+  },
+  {
+    "key": "artur-hh-167",
+    "source": "https://www.aksanshop.com/fairy-cok-amacli-mop-uyumlu-yer-temizlik-havlusu-50-yaprak-limon-yagli-beyaz-sirke-karbonat-yer-temizleme-fairy-fairy-yuzey-temizleme-mendili-62874-11-O.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-167.jpg",
+    "sha256": "0e4c01f61574b5bf660a00cbefc090509b238c298c5aa5501008ee3ea7b12be7"
+  },
+  {
+    "key": "artur-hh-169",
+    "source": "https://cdn.dsmcdn.com/ty1769/prod/QC_PREP/20251006/18/8502e2f9-900c-3a9e-bfc0-1235db5658c6/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-169.jpg",
+    "sha256": "147eb818ddeb20407f779f190238c9a2cd9d03aabc4e9bcb3a389dbe10ade44c"
+  },
+  {
+    "key": "artur-hh-170",
+    "source": "https://images.migrosone.com/sanalmarket/product/30560920/30560920-3afd35.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ace-camasir-suyu-klasik-4-l-p-1d25298",
+    "file": "public/media/artur-hh-170.jpg",
+    "sha256": "7fe51d33661191e9033b1513859126c76ef03107e11d215bd426d23430340301"
+  },
+  {
+    "key": "artur-hh-171",
+    "source": "https://cdn.dsmcdn.com/ty1794/prod/QC_ENRICHMENT/20251203/01/2b46232b-7d5c-38bf-97aa-b38ad2576322/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-171.jpg",
+    "sha256": "620396136abb09059842bba4c8e9682472a28b944dcfabce086ba1cbed419759"
+  },
+  {
+    "key": "artur-hh-172",
+    "source": "https://images.migrosone.com/sanalmarket/product/31020038/31020038-c5066a-1650x1650.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-172.jpg",
+    "sha256": "562c0aa4a3a2bb8a31a2e5182160e3c2dfe0979c88233c1583a632e92e781e15"
+  },
+  {
+    "key": "artur-hh-173",
+    "source": "https://www.mismarsanalmarket.com/UserFiles/Fotograflar/14934-yetis-kirec-cozucu-1-kg-yetis-kirec-cozucu-1-kg-ekran-alintisi.png",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-173.jpg",
+    "sha256": "b982c7c7bf986502329d001e90f4210a4dab104da48c0e4635f3e97becd5bcbf"
+  },
+  {
+    "key": "artur-hh-174",
+    "source": "https://cdn.dsmcdn.com/ty1624/prod/QC/20250112/19/098cef40-ca2a-302b-bfee-d35f523acaed/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-174.jpg",
+    "sha256": "d04794c61f21b7a536efc24b4c7aa6dfa159e7f47e6ec5a46c905e778ba415ab"
+  },
+  {
+    "key": "artur-hh-175",
+    "source": "https://www.aksanshop.com/fairy-cok-amacli-yuzey-temizlik-havlusu-100-yaprak-lavanta-yagli-beyaz-sirke-karbonat-yuzey-temizleme-havlusu-fairy-fairy-yuzey-temizleme-mendili-62844-11-O.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-175.jpg",
+    "sha256": "f04cf5c84d286e334053ab5646a2401f989b8d49e7fd691bc64b3c12a9e60618"
+  },
+  {
+    "key": "artur-hh-176",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-p/c1000/12153161833.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-176.jpg",
+    "sha256": "1852de09f3e32a735e785180f5ce838f9a7dd2559645a02415ca803750eec53b"
+  },
+  {
+    "key": "artur-hh-177",
+    "source": "https://images.migrosone.com/sanalmarket/product/30560049/30560049-a8da5d.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/domestos-bio-active-camasir-suyu-mutfak-maksimum-hijyen-1850-ml-p-1d24f31",
+    "file": "public/media/artur-hh-177.jpg",
+    "sha256": "9a7861fa8046cbe26680a846404bdb7891ee662f20a9843ecffcd3ba5ae41b02"
+  },
+  {
+    "key": "artur-hh-178",
+    "source": "https://productimages.hepsiburada.net/s/777/300/110001154240498.jpg/format:webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-178.jpg",
+    "sha256": "062a10b7af8636ca57d91a6362b3c37a388a8f13a9550a40e5af8b2ebecebe76"
+  },
+  {
+    "key": "artur-hh-179",
+    "source": "https://images.migrosone.com/sanalmarket/product/31310020/31310020-c582af-1650x1650.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-179.jpg",
+    "sha256": "e359aea55410acbe7d6810099ccd2751f541feb02ea6c30aefdbb91150321d37"
+  },
+  {
+    "key": "artur-hh-180",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530523/30530523_1-f1c0bd-1650x1650.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-180.jpg",
+    "sha256": "c00ddff91f5764eeac07c596170a2caf1f99e015cc68c89a98747762100d0301"
+  },
+  {
+    "key": "artur-hh-181",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530523/30530523_1-f1c0bd-1650x1650.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-181.jpg",
+    "sha256": "c00ddff91f5764eeac07c596170a2caf1f99e015cc68c89a98747762100d0301"
+  },
+  {
+    "key": "artur-hh-182",
+    "source": "https://images.migrosone.com/mion/product/30539746/30539746_1-fc7f09-1650x1650.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-182.jpg",
+    "sha256": "b8c7ad27ac6a073b43ee02441453ae6987aa963f98366bd129e6befc74cd35ca"
+  },
+  {
+    "key": "artur-hh-183",
+    "source": "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=99/75637/uploads/urunresimleri/buyuk/yetis-karbeyazim-camasir-suyu-4kg-9d5bb5.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-183.jpg",
+    "sha256": "e56f8f441e3e75cc1c489da58e25ab0d01384c29af33004740c2b68178cf5147"
+  },
+  {
+    "key": "artur-hh-184",
+    "source": "https://images.migrosone.com/sanalmarket/product/30130018/30130018_1-72f5e9.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ariel-dag-esintisi-beyazlar-7-kg-p-1cbbf62",
+    "file": "public/media/artur-hh-184.jpg",
+    "sha256": "48f0f7b0a7612dd79672d164ae0a34f1f34d0bf4c202259bba67339ba9e5ad6f"
+  },
+  {
+    "key": "artur-hh-185",
+    "source": "https://images.migrosone.com/sanalmarket/product/30129415/30129415_1-b2dbcd.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ariel-dag-esintisi-15-kg-aquapudra-toz-camasir-deterjani-p-1cbbd07",
+    "file": "public/media/artur-hh-185.jpg",
+    "sha256": "e9c7e9abe4f17d9479f68b3c456fdab56665c186afc296bffc2b036fd347b5e4"
+  },
+  {
+    "key": "artur-hh-186",
+    "source": "https://images.migrosone.com/sanalmarket/product/30129418/30129418_1-f9b8f6.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ariel-dag-esintisi-renklilere-ozel-15-kg-aquapudra-toz-camasir-deterjani-p-1cbbd0a",
+    "file": "public/media/artur-hh-186.jpg",
+    "sha256": "252983e19cade05a4423766667fa046973e4081b12f7b91d66685447f56a15d8"
+  },
+  {
+    "key": "artur-hh-187",
+    "source": "https://images.migrosone.com/sanalmarket/product/30131968/30131968_1-2e4abb.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ariel-dag-esintisi-renklilere-ozel-toz-camasir-deterjani-7-kg-46-yikama-p-1cbc700",
+    "file": "public/media/artur-hh-187.jpg",
+    "sha256": "cdc2411ad09a8357681cdcc03f8e593a88dd79ab1c472266ceb18c55efbcd990"
+  },
+  {
+    "key": "artur-hh-188",
+    "source": "https://cdn.dsmcdn.com/ty1712/prod/QC_PREP/20250717/16/c64d99a8-844d-3f6e-87cc-5bffc8fa6211/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-188.jpg",
+    "sha256": "a3a47114bfc127237eeaacbb24009275ead828c52864c3bfeaf9b3050fecfb61"
+  },
+  {
+    "key": "artur-hh-189",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-6/10828260654.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-189.jpg",
+    "sha256": "7e9a68ae6d8943df6c18a94890e8b039524c016198e94c222e3c25c969f57344"
+  },
+  {
+    "key": "artur-hh-190",
+    "source": "https://images.migrosone.com/sanalmarket/product/34251320/34251320_1-22b160.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/elidor-belirgin-bukleler-sampuan-400-ml-p-20aa238",
+    "file": "public/media/artur-hh-190.jpg",
+    "sha256": "82605eb4b484a07d10489b648125bd22870a438b58fff44e4e950bdf54f67170"
+  },
+  {
+    "key": "artur-hh-191",
+    "source": "https://images.migrosone.com/sanalmarket/product/34341454/34341454_1-9b2054.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/elidor-ipek-terapisi-sac-kremi-350-ml-p-20c024e",
+    "file": "public/media/artur-hh-191.jpg",
+    "sha256": "30ff07ea532646f6e3d2515ec987bd829367da4a0da6198c8234d844563e8abf"
+  },
+  {
+    "key": "artur-hh-192",
+    "source": "https://images.migrosone.com/sanalmarket/product/30130633/30130633_1-d66111.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/persil-toz-sik-yikananlar-60-yikama-9-kg-p-1cbc1c9",
+    "file": "public/media/artur-hh-192.jpg",
+    "sha256": "c61daae1ae7d5e6fff26b04655a6e6a2385be257ed943653fbbddebbeb0d60b7"
+  },
+  {
+    "key": "artur-hh-194",
+    "source": "https://cdn.dsmcdn.com/ty1616/prod/QC/20241217/01/ff98e0c2-e026-39df-ba5b-1ce2b5726875/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-194.jpg",
+    "sha256": "9af218147141e3dec8d79d4108cce3ed6e473af2a4b447ecc4e2bed7c6805f5d"
+  },
+  {
+    "key": "artur-hh-195",
+    "source": "https://images.migrosone.com/sanalmarket/product/31049099/31049099-073d4c-1650x1650.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-195.jpg",
+    "sha256": "327d79c361eff397c69f4952473a703ccdfc88e32ea7e75efe611545fdf7eac0"
+  },
+  {
+    "key": "artur-hh-196",
+    "source": "https://cdn.dsmcdn.com/ty1704/prod/QC_PREP/20250706/17/efe080b2-48ae-3dc7-9b83-feb5d21a53d6/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-196.jpg",
+    "sha256": "c0935ee05a919e53113bed3df95446262884188bedb2ec263c8d559454fcf142"
+  },
+  {
+    "key": "artur-hh-197",
+    "source": "https://cdn.dsmcdn.com/ty1900/prod/QC_PREP/20260619/22/70b6bf62-c3dc-3e7e-9367-5e9f26a8757d/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-197.jpg",
+    "sha256": "d04e252244ec51d6012d33132a7cd264010258d5d73d4cca4fa49e689dd707af"
+  },
+  {
+    "key": "artur-hh-198",
+    "source": "https://productimages.hepsiburada.net/s/777/222-222/110001450139715.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-198.jpg",
+    "sha256": "ed71a390befee86c6597058ba765bceab1d33891135f32ee177c430867e58aac"
+  },
+  {
+    "key": "artur-hh-199",
+    "source": "https://basket-10.wbbasket.ru/vol1483/part148398/148398152/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-199.jpg",
+    "sha256": "5612fc132d7b17ad87189b383a6dd86cec77fd936abf7bed3ecd0119adc8c41a"
+  },
+  {
+    "key": "artur-hh-200",
+    "source": "https://cdn.dsmcdn.com/ty86/product/media/images/20210403/07/1a46535a/7478328/1/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-200.jpg",
+    "sha256": "182a4de34e1657e74ca0c99b66c617273182e932f192de36e996b85054d4163e"
+  },
+  {
+    "key": "artur-hh-201",
+    "source": "https://www.henkel.at/resource/blob/1034624/c5e31faa4c96f993adaf146b831f08ce/data/2020-02-26-fa-fresh-freep-jpg-4-.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-201.jpg",
+    "sha256": "f593c0184569e70ebf11b18a115f4f9984206b39497e5cadf2fd135c84e99ae8"
+  },
+  {
+    "key": "artur-hh-202",
+    "source": "https://cdn1.ozone.ru/s3/multimedia-j/6541956403.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-202.jpg",
+    "sha256": "2f478bf4e99c4c6d09d013f935acd2cb30d40516adf4a6aee7c9c5ab00b49765"
+  },
+  {
+    "key": "artur-hh-203",
+    "source": "https://ir.ozone.ru/s3/multimedia-m/6011685730.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-203.jpg",
+    "sha256": "6990d81bff848b3f12932b87ae6b13cc60d2a35cf4dab870cd560a4bf6c5b454"
+  },
+  {
+    "key": "artur-hh-205",
+    "source": "https://cdn.dsmcdn.com/ty86/product/media/images/20210403/07/1a46535a/7478328/1/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-205.jpg",
+    "sha256": "917d8d5c6f8d41283450b568dfde9a8de5a38d92f4b195a5beae745d84c62f01"
+  },
+  {
+    "key": "artur-hh-206",
+    "source": "https://basket-12.wbbasket.ru/vol1781/part178120/178120804/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-206.jpg",
+    "sha256": "89c5e26445807d3bf1e051f7510f025ea476f55a875cd30bb62a944834935af0"
+  },
+  {
+    "key": "artur-hh-208",
+    "source": "https://www.henkel.de/resource/blob/1236410/fb19a8a3fae34e489927a351f605f3fa/data/fa-deospray-150-ml-cherry-kiss-cherry-ltd-fdcp-2vkr2021-2729699png.png",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-208.jpg",
+    "sha256": "374bd5ced4fcc045b194648a9649be788ba2c157e6539ca109447c84cc9ae4a1"
+  },
+  {
+    "key": "artur-hh-209",
+    "source": "https://ir.ozone.ru/multimedia/1021691805.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-209.jpg",
+    "sha256": "934c6c410fb58a8b1b8cc7b25b8e623e466ca2bdfd8b79f199a706b4a8860503"
+  },
+  {
+    "key": "artur-hh-210",
+    "source": "https://basket-19.wbbasket.ru/vol3143/part314358/314358842/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-210.jpg",
+    "sha256": "57d638746dee8fb0e2816b6f7febf93ab0a67cf5dfbf988b454d4f572b00425c"
+  },
+  {
+    "key": "artur-hh-211",
+    "source": "https://images.migrosone.com/sanalmarket/product/35019177/35019177-678038-1650x1650.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-211.jpg",
+    "sha256": "d2aaa4e21e63f6a3c67b3f85df1682ddb691fd3a1b7f9917fc933e5bf42708ac"
+  },
+  {
+    "key": "artur-hh-215",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530538/30530538_1-9af300.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/vanish-kosla-leke-cikarici-sivi-beyaz-1-l-p-1d1dbea",
+    "file": "public/media/artur-hh-215.jpg",
+    "sha256": "069c50b2821c8827dff56be17e06b0e4995bf48ae5ea053057c510a8d9ef5124"
+  },
+  {
+    "key": "artur-hh-216",
+    "source": "https://basket-11.wbbasket.ru/vol1609/part160956/160956668/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-216.jpg",
+    "sha256": "67685cec4e1398e12cb5197fdff9d18b009ca02979f1f18e6b341774217b4d1f"
+  },
+  {
+    "key": "artur-hh-217",
+    "source": "https://image01.idefix.com/resize/1200/0/product/3743077/finish-quantum-ozel-seri-50-kapsul-bulasik-makinesi-deterjani-tableti-66cef8f21b1eb.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-217.jpg",
+    "sha256": "ca28833928238db8d348563206254c142985b06ccaaca04c6dd9e9cb2b7689a4"
+  },
+  {
+    "key": "artur-hh-218",
+    "source": "https://basket-29.wbbasket.ru/vol5744/part574474/574474861/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-218.jpg",
+    "sha256": "151fba667a8f47eef48ab1653fb2cc9711d9ab6cace6eea6dd3c3d2cc72c4224"
+  },
+  {
+    "key": "artur-hh-219",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-4/12386990272.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-219.jpg",
+    "sha256": "342933dcd225e6dcc1f00a26d88135ca8d324b259f684758e8f04d8e02177557"
+  },
+  {
+    "key": "artur-hh-220",
+    "source": "https://cdn.dsmcdn.com/ty1537/product/media/images/prod/QC/20240911/15/6c0fc20a-113e-3e1f-805a-43724a788182/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-220.jpg",
+    "sha256": "037c7a75df357a42ffacb33e814593b242169590b931904c9d819f326dd6cd09"
+  },
+  {
+    "key": "artur-hh-221",
+    "source": "https://cdn.dsmcdn.com/ty88/product/media/images/20210403/08/c4d3bf43/14356245/1/1_org_zoom.jpg?boutiqueId=61&merchantId=654988",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-221.jpg",
+    "sha256": "0a1ab324cce7f2c841e0f864e940157aec1341a5b7b78944115ca4c7cc7eb474"
+  },
+  {
+    "key": "artur-hh-222",
+    "source": "https://cdn.dsmcdn.com/ty1710/prod/QC_ENRICHMENT/20250718/22/90aa6f13-8e33-3a95-ac08-65c2d22a0670/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-222.jpg",
+    "sha256": "57f5da0121e722edf6204c5a482ec76330f6fcecfca0c14059f9976664eb3c47"
+  },
+  {
+    "key": "artur-hh-223",
+    "source": "https://ir.ozone.ru/s3/multimedia-k/6460269884.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-223.jpg",
+    "sha256": "b5191ceab0fe6968fb4c3e271743be056eebf40560c9f69aa923748940285284"
+  },
+  {
+    "key": "artur-hh-224",
+    "source": "https://basket-25.wbbasket.ru/vol4425/part442550/442550425/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-224.jpg",
+    "sha256": "ce388f0a32140238316fcad8fb0ced41e73d5c558cd9e40815ca81b5413a300b"
+  },
+  {
+    "key": "artur-hh-225",
+    "source": "https://basket-24.wbbasket.ru/vol4301/part430194/430194167/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-225.jpg",
+    "sha256": "2f6b0ef27fab8fc97c624c940987e15637a90cb7da793c89547964086ceba52d"
+  },
+  {
+    "key": "artur-hh-226",
+    "source": "https://images.migrosone.com/sanalmarket/product/29753824/29753824_1-acd379.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/fairy-sivi-sabun-lilyum-kokulu-400-ml-p-1c601e0",
+    "file": "public/media/artur-hh-226.jpg",
+    "sha256": "b9c63bc32607aac0d6e2391b124a105b2c38e99fe84ef6e262eac0f931bdb146"
+  },
+  {
+    "key": "artur-hh-227",
+    "source": "https://images.migrosone.com/sanalmarket/product/29753827/29753827_1-daeea0.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/fairy-sivi-sabun-lavanta-kokulu-400-ml-p-1c601e3",
+    "file": "public/media/artur-hh-227.jpg",
+    "sha256": "ffd371ee7d63245d313341d161a5bdb58e8241d849066636627546f0bfb9fb78"
+  },
+  {
+    "key": "artur-hh-228",
+    "source": "https://images.migrosone.com/sanalmarket/product/29753824/29753824_1-acd379.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/fairy-sivi-sabun-lilyum-kokulu-400-ml-p-1c601e0",
+    "file": "public/media/artur-hh-228.jpg",
+    "sha256": "b9c63bc32607aac0d6e2391b124a105b2c38e99fe84ef6e262eac0f931bdb146"
+  },
+  {
+    "key": "artur-hh-229",
+    "source": "https://images.migrosone.com/sanalmarket/product/30000002/30000002-0b1937.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/peros-matik-yildiz-cicegi-beyaz-ve-renkliler-10-kg-p-1c9c382",
+    "file": "public/media/artur-hh-229.jpg",
+    "sha256": "6074aa9f2a5df2a3cc2cd672bcfcbb2d2340830b72c05f69fae0ecd2287d6b6d"
+  },
+  {
+    "key": "artur-hh-231",
+    "source": "https://bb-shop.cz/269695-large_default/fairy-platinum-100-kus-vlhench-ubrousk-na-itn-povrchu.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-231.jpg",
+    "sha256": "c0c823662b45b63ea16a67afd617f3a132baa0c29b979ac94237b4a9bd4bc936"
+  },
+  {
+    "key": "artur-hh-232",
+    "source": "https://images.migrosone.com/sanalmarket/product/30020001/30020001_1-3465c7.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/vanish-multipower-toz-beyaz-480-g-p-1ca11a1",
+    "file": "public/media/artur-hh-232.jpg",
+    "sha256": "2523ea9db55b62c6a0bfa9f4135f8beb6985273d8e9c9a37a31eb4ae244fd48f"
+  },
+  {
+    "key": "artur-hh-234",
+    "source": "https://basket-41.wbbasket.ru/vol9836/part983675/983675769/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-234.jpg",
+    "sha256": "795641d941d4a56cec47ed7b7f0a08bcd9be18e8cdf8ac01b64ab128f3ea40c0"
+  },
+  {
+    "key": "artur-hh-235",
+    "source": "https://cdn.dsmcdn.com/ty1829/prod/QC_PREP/20260223/16/0286cd8d-fe13-3cae-ab71-52a07bbffada/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-235.jpg",
+    "sha256": "fa217ac7df97b3333b463e0265f9ceb870438b1860f9723be9c49ab568fe42f5"
+  },
+  {
+    "key": "artur-hh-236",
+    "source": "https://cdn.dsmcdn.com/ty1829/prod/QC_PREP/20260223/16/0286cd8d-fe13-3cae-ab71-52a07bbffada/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-236.jpg",
+    "sha256": "e3a2726b42dd7a5844b4e07d0909aa35216e41cc269cdb54258f6b2a244878da"
+  },
+  {
+    "key": "artur-hh-238",
+    "source": "https://cdn.dsmcdn.com/ty1770/prod/QC_PREP/20251014/12/bbd4748b-224c-36f3-96e1-a417e6c43620/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-238.jpg",
+    "sha256": "70435d1444093efb358d7532d848426191ce7f24de606685badb096e8ec1628c"
+  },
+  {
+    "key": "artur-hh-239",
+    "source": "https://cdn.dsmcdn.com/ty604/product/media/images/20221120/5/218491358/58305025/1/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-239.jpg",
+    "sha256": "43b716fcc57d6d0b269e1fdd115fddf9fb4606409c77ce606f18f61d98c19a91"
+  },
+  {
+    "key": "artur-hh-240",
+    "source": "https://cdn.dsmcdn.com/ty975/product/media/images/20230802/12/399350871/985391429/1/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-240.jpg",
+    "sha256": "ed225bb1769a6c62b3a6a6a0371d13f589ee4b33aac1a220f63b9d1877ec5851"
+  },
+  {
+    "key": "artur-hh-241",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-1/8215348645.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-241.jpg",
+    "sha256": "723367f0677785bc6f41a764d1e42cc287fe5e7a18a5c9de13da38bd0bb8c41f"
+  },
+  {
+    "key": "artur-hh-242",
+    "source": "https://cdn.dsmcdn.com/mnresize/1200/1800/ty846/product/media/images/20230426/1/332295214/893194474/1/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-242.jpg",
+    "sha256": "7f3776fdbd25a2ce5584590ed33918200c035db57a576f56dda84f67e14f44c5"
+  },
+  {
+    "key": "artur-hh-245",
+    "source": "https://images.migrosone.com/sanalmarket/product/30129415/30129415_1-b2dbcd.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ariel-dag-esintisi-15-kg-aquapudra-toz-camasir-deterjani-p-1cbbd07",
+    "file": "public/media/artur-hh-245.jpg",
+    "sha256": "e9c7e9abe4f17d9479f68b3c456fdab56665c186afc296bffc2b036fd347b5e4"
+  },
+  {
+    "key": "artur-hh-246",
+    "source": "https://babymarket.uz/wp-content/uploads/2020/05/stiralnyj-poroshok-ariel-color_avtomat-3-kg.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-246.jpg",
+    "sha256": "129ac6b5eae404c14bcb0635071482689b1cf03c12d8a6273d383b1193e42b38"
+  },
+  {
+    "key": "artur-hh-247",
+    "source": "https://basket-39.wbbasket.ru/vol8870/part887068/887068858/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-247.jpg",
+    "sha256": "244113ffb2e83885c6b072da957db36fb08f65cbfa8bf11bbfc3d4cac299493a"
+  },
+  {
+    "key": "artur-hh-248",
+    "source": "https://images.migrosone.com/sanalmarket/product/30131982/30131982_1-9b8cf3.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ariel-oxi-55-kg-renklilere-ozel-aquapudra-toz-camasir-deterjani-p-1cbc70e",
+    "file": "public/media/artur-hh-248.jpg",
+    "sha256": "12f770bbf19aee49b1ff8ef6a95ed819f3443a3f42d5ff7a1ec4af172360706e"
+  },
+  {
+    "key": "artur-hh-249",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530508/30530508_1-fef1c2.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ariel-sivi-camasir-deterjani-renklilere-ozel-32-yikama-1440-ml-p-1d1dbcc",
+    "file": "public/media/artur-hh-249.jpg",
+    "sha256": "ec4b995b8158b65148944254ce5bf11e5fb8489a217436f4bdec9304aa791782"
+  },
+  {
+    "key": "artur-hh-250",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530508/30530508_1-fef1c2.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ariel-sivi-camasir-deterjani-renklilere-ozel-32-yikama-1440-ml-p-1d1dbcc",
+    "file": "public/media/artur-hh-250.jpg",
+    "sha256": "ec4b995b8158b65148944254ce5bf11e5fb8489a217436f4bdec9304aa791782"
+  },
+  {
+    "key": "artur-hh-251",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530506/30530506_1-20cbc7.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ariel-sivi-camasir-deterjani-renklilere-ozel-21-yikama-945-ml-p-1d1dbca",
+    "file": "public/media/artur-hh-251.jpg",
+    "sha256": "d27d89b19122860e511ec136dbe18f28ccf0193aad26fb8c83f23bf190470473"
+  },
+  {
+    "key": "artur-hh-252",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530506/30530506_1-20cbc7.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ariel-sivi-camasir-deterjani-renklilere-ozel-21-yikama-945-ml-p-1d1dbca",
+    "file": "public/media/artur-hh-252.jpg",
+    "sha256": "d27d89b19122860e511ec136dbe18f28ccf0193aad26fb8c83f23bf190470473"
+  },
+  {
+    "key": "artur-hh-253",
+    "source": "https://basket-01.wbbasket.ru/vol132/part13238/13238412/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-253.jpg",
+    "sha256": "36e18c372dff45659f062b0d7992a865b763be1a7390929b59366bdc149b28ce"
+  },
+  {
+    "key": "artur-hh-254",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-4/14240890912.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-254.jpg",
+    "sha256": "9bd59530acf623d4f3c9686ace145d551604cddaf44cb875db0f438378483e0b"
+  },
+  {
+    "key": "artur-hh-255",
+    "source": "https://basket-12.wbbasket.ru/vol1754/part175464/175464357/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-255.jpg",
+    "sha256": "d3e736ec4d49a9b4f68dfbcbbb876f4e8fc815c2c035d13e97d8421674853e1b"
+  },
+  {
+    "key": "artur-hh-256",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-5/7180316177.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-256.jpg",
+    "sha256": "331ae1d92e7cb2e981d3bad0ace18736172a7e0bd05d77c4d6c4de3c4e15e939"
+  },
+  {
+    "key": "artur-hh-257",
+    "source": "https://basket-20.wbbasket.ru/vol3340/part334014/334014042/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-257.jpg",
+    "sha256": "e41689b3140972f7d91656a1e38fe992f7521feefd4d6ddc99998ff0aab6d981"
+  },
+  {
+    "key": "artur-hh-259",
+    "source": "https://images.migrosone.com/sanalmarket/product/31020057/31020057-66aa50.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/familia-plus-natural-havlu-12li-p-1d95419",
+    "file": "public/media/artur-hh-259.jpg",
+    "sha256": "f0f0f0ca09d57ec90c714a1fb5c01dde79f5fb21017f8bcd0a682d139222e6b1"
+  },
+  {
+    "key": "artur-hh-260",
+    "source": "https://images.migrosone.com/sanalmarket/product/31010063/31010063-42b375.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/familia-plus-natural-tuvalet-kagidi-32li-p-1d92d0f",
+    "file": "public/media/artur-hh-260.jpg",
+    "sha256": "57fd6ade016feaead162c746431338b920a4d91fec9f3a6318fae642aa911b50"
+  },
+  {
+    "key": "artur-hh-261",
+    "source": "https://cdn.dsmcdn.com/ty1764/prod/QC_ENRICHMENT/20250927/06/aceccb12-4ce4-3114-806e-ef651192647b/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-261.jpg",
+    "sha256": "a69aeffec038534dc32969696f120b0899604fcb3ac2347dd5d8f183c6978d29"
+  },
+  {
+    "key": "artur-hh-263",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-j/14136484483.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-263.jpg",
+    "sha256": "4065901cff6941699e707a7bb24aaa640d434eb5cf2d1da4272e35177f4eb493"
+  },
+  {
+    "key": "artur-hh-264",
+    "source": "https://basket-48.wbbasket.ru/vol15627/part1562743/1562743612/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-264.jpg",
+    "sha256": "c09531e187d1aeab726463f49e84e17c1b3e1752d211b363787c9a3129f8fae0"
+  },
+  {
+    "key": "artur-hh-265",
+    "source": "https://productimages.hepsiburada.net/s/777/300/110000981136410.jpg/format:webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-265.jpg",
+    "sha256": "7b1ef7b04f885f76e198f17942f6b48e5d8e2520beff021f3b5e044d4a9a2603"
+  },
+  {
+    "key": "artur-hh-266",
+    "source": "https://images.migrosone.com/sanalmarket/product/30560904/30560904-91dce6.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ace-camasir-suyu-klasik-1-l-p-1d25288",
+    "file": "public/media/artur-hh-266.jpg",
+    "sha256": "5f8d0658777e1788e93301071518e339edefc58ffe6c11320e78a2d490181f1c"
+  },
+  {
+    "key": "artur-hh-267",
+    "source": "https://www.alliance-tr.com/files/urunler/household_chemicals/detergent/powder/persil_7kg/663ff524_ccca_4376_ae9d_03bf11a0d29c.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-267.jpg",
+    "sha256": "395020b8d38fd6aabfec81dc41b70a0ff0f51ae3c83878ec3df83cadce7caa1c"
+  },
+  {
+    "key": "artur-hh-268",
+    "source": "https://images.migrosone.com/sanalmarket/product/31010032/31010032_1-b84717.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/selpak-deluxe-pamuk-katkili-tuvalet-kagidi-32li-p-1d92cf0",
+    "file": "public/media/artur-hh-268.jpg",
+    "sha256": "7311748efe6fb96637007ac38931b2777b15745fe835461d11f9bffc40b9cf6b"
+  },
+  {
+    "key": "artur-hh-269",
+    "source": "https://cdn.dsmcdn.com/ty1228/product/media/images/prod/SPM/PIM/20240328/00/d1fe8c0b-c9a5-33e6-acbc-4cd96eac398c/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-269.jpg",
+    "sha256": "fc308a83d3661eb9c0bd1ecdfea601d7a2895c8f0516600f4bbd159e48007d17"
+  },
+  {
+    "key": "artur-hh-270",
+    "source": "https://cdn.dsmcdn.com/ty1703/prod/QC_ENRICHMENT/20250702/16/5f58fcb8-0e55-3059-8da3-a8c380d2a88b/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-270.jpg",
+    "sha256": "fca8fa2c9cb85058043416c383fee4ad29795989a330ae1701364e2260cfc716"
+  },
+  {
+    "key": "artur-hh-271",
+    "source": "https://basket-20.wbbasket.ru/vol3479/part347907/347907102/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-271.jpg",
+    "sha256": "d8df3fc7ae9e6e64c24f249287bcd6fea6e6fd514da81df79b5d402cf846df8b"
+  },
+  {
+    "key": "artur-hh-272",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530012/30530012_1-f6fc7b.png",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/perwoll-siyah-sivi-deterjan-297-l-p-1d1d9dc",
+    "file": "public/media/artur-hh-272.jpg",
+    "sha256": "2e74aa5b178e46abdddbf4d33137551621327d7d4f927e0720c6a1d3f33f5b3e"
+  },
+  {
+    "key": "artur-hh-273",
+    "source": "https://images.migrosone.com/sanalmarket/product/30610382/30610382_1-1022f9.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/fairy-sivi-bulasik-deterjani-limon-1350-ml-p-1d313ce",
+    "file": "public/media/artur-hh-273.jpg",
+    "sha256": "4e8f5a0c36ac2264b21effd0a521cafe079757a59656d16fc8aa3d0df3a229ad"
+  },
+  {
+    "key": "artur-hh-274",
+    "source": "https://images.migrosone.com/sanalmarket/product/30733268/30733268_1-ee1c0b.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/fairy-power-sprey-500-ml-p-1d4f3d4",
+    "file": "public/media/artur-hh-274.jpg",
+    "sha256": "858ad401a8f6c7f6b1c5a98bc4acb9cefa260970c688cbac3f4edcf797a30427"
+  },
+  {
+    "key": "artur-hh-275",
+    "source": "https://images.migrosone.com/sanalmarket/product/30120385/30120385_1-1ab3b3.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/persil-okyanus-ferahligi-toz-deterjan-7-kg-p-1cb99c1",
+    "file": "public/media/artur-hh-275.jpg",
+    "sha256": "8984987c6a39cbf5449d357f2347b7adf4b789213ac56c6b1bdb7c4e331a7db2"
+  },
+  {
+    "key": "artur-hh-276",
+    "source": "https://images.migrosone.com/sanalmarket/product/30120386/30120386_1-98dc51.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/persil-gulun-buyusu-toz-deterjan-7-kg-p-1cb99c2",
+    "file": "public/media/artur-hh-276.jpg",
+    "sha256": "60d865571833c7e46428cacde60adba69e2f28f0375b8e6232ac3ce57d35af4e"
+  },
+  {
+    "key": "artur-hh-277",
+    "source": "https://cdn.dsmcdn.com/ty437/product/media/images/20220520/20/114265159/349638835/1/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-277.jpg",
+    "sha256": "d64d79f099fb16202f388756130eb1ddd872898f8d2a0db376143d470e99add3"
+  },
+  {
+    "key": "artur-hh-278",
+    "source": "https://images.migrosone.com/sanalmarket/product/30130633/30130633_1-d66111.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/persil-toz-sik-yikananlar-60-yikama-9-kg-p-1cbc1c9",
+    "file": "public/media/artur-hh-278.jpg",
+    "sha256": "c61daae1ae7d5e6fff26b04655a6e6a2385be257ed943653fbbddebbeb0d60b7"
+  },
+  {
+    "key": "artur-hh-282",
+    "source": "https://images.migrosone.com/sanalmarket/product/31030016/31030016_1-6d737d.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/maylo-puf-mendil-150li-p-1d97b00",
+    "file": "public/media/artur-hh-282.jpg",
+    "sha256": "e84a1f3739e99ec07d957d667ae80d76286f779051c8c41204d8f28b1db03ac8"
+  },
+  {
+    "key": "artur-hh-284",
+    "source": "https://images.migrosone.com/sanalmarket/product/31030300/31030300_1-d1175c.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/selpak-kutu-mendil-50li-p-1d97c1c",
+    "file": "public/media/artur-hh-284.jpg",
+    "sha256": "60446d8786b60223ce9e97090e84d5338c533bf420b15d63ce02e3f203469482"
+  },
+  {
+    "key": "artur-hh-285",
+    "source": "https://productimages.hepsiburada.net/s/777/600/110001063813549.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-285.jpg",
+    "sha256": "9b1950e801ec0003d3dd9b389d31314765fd86de9d1446527b5d811c01f0c779"
+  },
+  {
+    "key": "artur-hh-286",
+    "source": "https://images.migrosone.com/sanalmarket/product/31030307/31030307_1-e8adf6.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/selpak-maksi-kutu-mendil-100lu-p-1d97c23",
+    "file": "public/media/artur-hh-286.jpg",
+    "sha256": "53b1e5c183578ca4e3783f333165ba50f7ff5f31705b18c1f29f8e176f862ff2"
+  },
+  {
+    "key": "artur-hh-287",
+    "source": "https://cdn.dsmcdn.com/ty1322/product/media/images/prod/QC/20240516/22/27778885-361c-3e31-bd10-6a495dbf240b/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-287.jpg",
+    "sha256": "a1d116257eef495bf844836b369e0b8de36ada6dc70b51930bbbd7a0ebf35878"
+  },
+  {
+    "key": "artur-hh-288",
+    "source": "https://images.migrosone.com/sanalmarket/product/30920523/30920523_1-f714be.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/cif-krem-yeni-nesil-yuzey-temizleyici-amonyak-1500-ml-p-1d7cf4b",
+    "file": "public/media/artur-hh-288.jpg",
+    "sha256": "9323dff58cbdf0d289073e25e45d1056b7b44c916bcbd82886b9fbaab9773df2"
+  },
+  {
+    "key": "artur-hh-289",
+    "source": "https://images.migrosone.com/sanalmarket/product/31604937/31604937_1-1568b7.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/johnsons-kids-isildayan-parlaklik-sampuan-750-ml-p-1e240c9",
+    "file": "public/media/artur-hh-289.jpg",
+    "sha256": "8d0697116444f145ff3903d0b196da782b7d322d0198a944570c48f035c8a59b"
+  },
+  {
+    "key": "artur-hh-291",
+    "source": "https://images.migrosone.com/sanalmarket/product/34240143/34240143_1-18e7aa.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/head-shoulders-sampuan-limon-ferahligi-1in1-330-ml-p-20a768f",
+    "file": "public/media/artur-hh-291.jpg",
+    "sha256": "6f8e48f1c9ac5a7c39cb01fc3550598b218dc9e03dc2efbda7c3692ea20ebf13"
+  },
+  {
+    "key": "artur-hh-293",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-3/7041677403.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-293.jpg",
+    "sha256": "71e460f44aa2e43fab66c32dc7dd0dcc91eb7f47a4dc18dd7b3f534b3f754d96"
+  },
+  {
+    "key": "artur-hh-296",
+    "source": "https://cdn1.ozone.ru/multimedia/1029098082.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-296.jpg",
+    "sha256": "454890bf5aecbcc990f8b5ce1dab68c32a0d565c6b6bbf90f947babe3811ba65"
+  },
+  {
+    "key": "artur-hh-297",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-4/8100291496.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-297.jpg",
+    "sha256": "3c1b46ab87203f09718ed3c54a95c7e6860f538c272424cd0eea536e745f8ea4"
+  },
+  {
+    "key": "artur-hh-298",
+    "source": "https://ir.ozone.ru/s3/multimedia-5/c600/6060940229.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-298.jpg",
+    "sha256": "e412dab66dd4221497247dd6726c10d042f6104ccef35d1b6918a097be6dac05"
+  },
+  {
+    "key": "artur-hh-299",
+    "source": "https://cdn1.ozone.ru/s3/multimedia-1-h/c600/6986897837.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-299.jpg",
+    "sha256": "6fa93a9a886faa4bdd39f1f404cb30755fe780472cbb3265a76b6ab9a1a92b3b"
+  },
+  {
+    "key": "artur-hh-300",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-j/6986895823.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-300.jpg",
+    "sha256": "5808eb48b683602ea4caca1d762bd759c55b15d1c6f54facf3c5a6e89a2afdf3"
+  },
+  {
+    "key": "artur-hh-302",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-w/7031130476.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-302.jpg",
+    "sha256": "ddce56aba23ce8913994d8d028b9d1240193fa766e30aa9c1d2029bdb737aab7"
+  },
+  {
+    "key": "artur-hh-303",
+    "source": "https://cdn1.ozone.ru/s3/multimedia-1-9/6986890989.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-303.jpg",
+    "sha256": "125badad1a8da43ae8f08aa40eb65c5459e13f008efa3888394f6968af5c4f27"
+  },
+  {
+    "key": "artur-hh-307",
+    "source": "https://ir.ozone.ru/s3/multimedia-8/c600/6510185744.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-307.jpg",
+    "sha256": "1cdc0267abd30bfb76a3e27dfc345e454b14aa88a9ba63af1db947a44bb38874"
+  },
+  {
+    "key": "artur-hh-308",
+    "source": "https://basket-20.wbbasket.ru/vol3382/part338292/338292202/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-308.jpg",
+    "sha256": "e33705ad78a90ff7b2086e9f54af398e4b7fb2754a0a5532940862eee68cd387"
+  },
+  {
+    "key": "artur-hh-309",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-1/7103330677.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-309.jpg",
+    "sha256": "2bd70138f286a0acb66eb52beaaead284a69b6affbfdecf05d73aadf3639f9d8"
+  },
+  {
+    "key": "artur-hh-311",
+    "source": "https://basket-11.wbbasket.ru/vol1641/part164154/164154311/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-311.jpg",
+    "sha256": "e106b38c8077e4b127195b04f67154da102f52888e96d76473763d97f358abe0"
+  },
+  {
+    "key": "artur-hh-312",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-l/7189469085.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-312.jpg",
+    "sha256": "3a920952afc0b7f701736e9b1a32df94b4cce0813ceab40e82bbfd8e29406e2d"
+  },
+  {
+    "key": "artur-hh-313",
+    "source": "https://basket-36.wbbasket.ru/vol7798/part779893/779893991/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-313.jpg",
+    "sha256": "25ec7b92b33fa49f3f91441031ef8772924d8c80d4e9f8670c7aa5d7dc2407da"
+  },
+  {
+    "key": "artur-hh-316",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530544/30530544_1-b56cc9.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ariel-pods-camasir-deterjani-kapsulu-25li-4575-g-p-1d1dbf0",
+    "file": "public/media/artur-hh-316.jpg",
+    "sha256": "f98db42946969adc710fc69aef294a23aeefa7884de8b0ad34fd776deb4f1bcf"
+  },
+  {
+    "key": "artur-hh-318",
+    "source": "https://productimages.hepsiburada.net/s/777/600/110001371311407.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-318.jpg",
+    "sha256": "91d049d646cb28e74e4ba86ab492394ef522608ffb662ea0295a2c5cc71048bb"
+  },
+  {
+    "key": "artur-hh-319",
+    "source": "https://static.ticimax.cloud/6586/uploads/urunresimleri/buyuk/50002048-494c-9.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-319.jpg",
+    "sha256": "4895a4b47acfc2fc0df9b1b69fa369a9f25924ed48b9f5cc595ffadfcba038b4"
+  },
+  {
+    "key": "artur-hh-320",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-s/14136488236.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-320.jpg",
+    "sha256": "fc7dbc2b03f80a7d4fe9a50ede61f94888134dc62b30d12331abf630425dc438"
+  },
+  {
+    "key": "artur-hh-322",
+    "source": "https://cdn.dsmcdn.com/ty1505/product/media/images/prod/QC/20240826/22/61f656bf-18dc-3d74-995f-dc09a1fa8165/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-322.jpg",
+    "sha256": "5b16a6daf97ef80f4f129beb2a76944108327a7c221b887dbbe788bf3a0b3cf8"
+  },
+  {
+    "key": "artur-hh-323",
+    "source": "https://cdn.dsmcdn.com/ty1505/product/media/images/prod/QC/20240826/22/61f656bf-18dc-3d74-995f-dc09a1fa8165/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-323.jpg",
+    "sha256": "d8f3e472d0ea8b2a9aad504b5e23d2936634a4310a9faea9d717ebe5f25376f6"
+  },
+  {
+    "key": "artur-hh-324",
+    "source": "https://images.migrosone.com/macrocenter/product/30539793/30539793-1c0e56-1650x1650.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-324.jpg",
+    "sha256": "3c88659bc4c5880b7fceab2ab7fb934399966fab7b79e64a222c8ad55758c5b7"
+  },
+  {
+    "key": "artur-hh-325",
+    "source": "https://image01.idefix.com/resize/1000/0/product/3196136/persil-power-jel-camasir-deterjani-gulun-buyusu-2x1690-ml-52-yikama-66bc975b6310c.png",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-325.jpg",
+    "sha256": "012d1fdcf1b7d9e9be75f97fc51a016caf051904723e225aeabe724a1093bde0"
+  },
+  {
+    "key": "artur-hh-326",
+    "source": "https://cdn.dsmcdn.com/ty1613/prod/QC/20241213/16/d709ccb5-d003-326d-82ea-7820e177e3f7/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-326.jpg",
+    "sha256": "d0d4fbb9969977df5758dfc10d7a82d14dc94e1447de06b0df8b7d689137b0c7"
+  },
+  {
+    "key": "artur-hh-327",
+    "source": "https://cdn.dsmcdn.com/ty1611/prod/QC/20241213/16/6a9d837e-3cfd-3c2d-8e11-f2f310e2adac/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-327.jpg",
+    "sha256": "b174cd0e3fe058980c3d4cc3f7eb7784acb3f1a056ec593b17787cdf047f2834"
+  },
+  {
+    "key": "artur-hh-328",
+    "source": "https://cdn.dsmcdn.com/ty1628/prod/QC/20250122/17/cce4d402-dbec-31f1-a27d-f632784cbce3/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-328.jpg",
+    "sha256": "4090dd7129f0676f6f6015c8e5a6b3acaa2b4a7af6b6375bce9b367dbc7c72a1"
+  },
+  {
+    "key": "artur-hh-329",
+    "source": "https://cdn.dsmcdn.com/ty1597/prod/QC/20241104/20/138bf780-1c6b-3311-a658-29bd201db617/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-329.jpg",
+    "sha256": "fc4a4702f3671a86302b0391557f76c93d2b723f321538a3af5f9c167bb81ad5"
+  },
+  {
+    "key": "artur-hh-330",
+    "source": "https://cdn.dsmcdn.com/ty1597/prod/QC/20241104/20/8a01d985-1c52-3fb8-8a93-25bda616d57d/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-330.jpg",
+    "sha256": "80ae904c11f9705d4b8e70f0faa4fc5d292fa3b02222eb5d62a91375287da85d"
+  },
+  {
+    "key": "artur-hh-331",
+    "source": "https://cdn.dsmcdn.com/ty1725/prod/QC_PREP/20250814/10/33687506-647c-31ab-971b-be47db93465c/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-331.jpg",
+    "sha256": "4fecd2cb27b173da16b1c11a4080c30936c4ad18e93920295d4ac6ebd972cae3"
+  },
+  {
+    "key": "artur-hh-334",
+    "source": "https://cdn.dsmcdn.com/ty1718/prod/QC_ENRICHMENT/20250730/14/72176661-5558-33a4-8ec6-e320601b3939/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-334.jpg",
+    "sha256": "6326b7ba694b680899f6302b1d011e0753a550ee5344ac9a635c4d6092254ee9"
+  },
+  {
+    "key": "artur-hh-335",
+    "source": "https://static.ticimax.cloud/7594/uploads/urunresimleri/buyuk/yumusatici-637-bd.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-335.jpg",
+    "sha256": "8f4f49a4f1454910b403d9e1cd56fe01e00db55c6a9baa1793eff0460651c092"
+  },
+  {
+    "key": "artur-hh-336",
+    "source": "https://cdn.dsmcdn.com/ty1596/prod/QC/20241104/12/a3ac54b9-091f-3140-94a2-dcfa94cb275e/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-336.jpg",
+    "sha256": "783fcf432d00e7e0d5106a79739402de5ce736e5bc1dfeed29e6eea566c2f56e"
+  },
+  {
+    "key": "artur-hh-337",
+    "source": "https://images.migrosone.com/sanalmarket/product/30530504/30530504_1-f52dc7.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/ariel-sivi-camasir-deterjani-renklilere-ozel-16-yikama-720-ml-p-1d1dbc8",
+    "file": "public/media/artur-hh-337.jpg",
+    "sha256": "5c7e751c987f8805b4c686b81a5cfe3e3562a1a6ee91e33cf86d63ec9d86aa17"
+  },
+  {
+    "key": "artur-hh-338",
+    "source": "https://ir.ozone.ru/s3/multimedia-j/6563252635.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-338.jpg",
+    "sha256": "c97568266ebc7b2c18b83d74b0e47412f709925027c91d6802b2096704513e7b"
+  },
+  {
+    "key": "artur-hh-339",
+    "source": "https://ir.ozone.ru/s3/multimedia-j/6563252635.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-339.jpg",
+    "sha256": "c97568266ebc7b2c18b83d74b0e47412f709925027c91d6802b2096704513e7b"
+  },
+  {
+    "key": "artur-hh-340",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-k/10862041412.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-340.jpg",
+    "sha256": "1622aa50f55f24cf709b89008ad1f07c645f3c608413904f6007593c4cde77a6"
+  },
+  {
+    "key": "artur-hh-341",
+    "source": "https://basket-39.wbbasket.ru/vol8815/part881576/881576856/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-341.jpg",
+    "sha256": "8620f3a11abc1fbf218167b16bfb810ffade364d290f6384b064c70870001492"
+  },
+  {
+    "key": "artur-hh-342",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-k/9998100920.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-342.jpg",
+    "sha256": "4e7075586d3e1363a06362adc0115d703a2ca838c34c41acae175f777f0e7cf0"
+  },
+  {
+    "key": "artur-hh-343",
+    "source": "https://basket-39.wbbasket.ru/vol8815/part881576/881576856/images/big/1.webp",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-343.jpg",
+    "sha256": "8620f3a11abc1fbf218167b16bfb810ffade364d290f6384b064c70870001492"
+  },
+  {
+    "key": "artur-hh-344",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-c/c500/7190599296.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-344.jpg",
+    "sha256": "d37a3a6e2841bc763702634a0030da344763fa6381def0a00ad321215dccdeee"
+  },
+  {
+    "key": "artur-hh-345",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-s/7016102416.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-345.jpg",
+    "sha256": "104f9d0bcc7ef3dca54648c6502b448f0eff2d885f78c97c8a9df27bc0c94e21"
+  },
+  {
+    "key": "artur-hh-349",
+    "source": "https://images.migrosone.com/sanalmarket/product/34251286/34251286_1-14fc41.jpeg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/elseve-mucizevi-yag-sampuan-400-ml-krem-150-ml-p-20aa216",
+    "file": "public/media/artur-hh-349.jpg",
+    "sha256": "c02956486733fabbacc7e11506aeb63ea637ae2f82b5ea42cca4d60cf4c2102f"
+  },
+  {
+    "key": "artur-hh-350",
+    "source": "https://images.migrosone.com/sanalmarket/product/34251284/34251284_1-3077df.jpeg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/elseve-komple-direnc-dokulme-karsiti-bakim-sampuani-400-ml-p-20aa214",
+    "file": "public/media/artur-hh-350.jpg",
+    "sha256": "c9014d6495ae5ad31d99452bd69931253f021e12b1676dce62b4dce7b18335c1"
+  },
+  {
+    "key": "artur-hh-351",
+    "source": "https://images.migrosone.com/sanalmarket/product/34251282/34251282_2-11f669-1650x1650.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-351.jpg",
+    "sha256": "8ae861708ae64e0fae4fbde64e057a1fc8ec24ea11b6eec8f09b2d4435d3499e"
+  },
+  {
+    "key": "artur-hh-352",
+    "source": "https://images.migrosone.com/sanalmarket/product/34346369/34346369_1-9e9b59.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/pantene-dokulme-karsiti-sac-bakim-kremi-275-ml-p-20c1581",
+    "file": "public/media/artur-hh-352.jpg",
+    "sha256": "d7729de47626b07ad0f4c14e80bc08086f0afa6f98a7519167b02fe79eb71da3"
+  },
+  {
+    "key": "artur-hh-353",
+    "source": "https://images.migrosone.com/sanalmarket/product/34346367/34346367_1-004b78.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/pantene-dogal-sentez-guc-ve-parlaklik-sac-bakim-kremi-275-ml-p-20c157f",
+    "file": "public/media/artur-hh-353.jpg",
+    "sha256": "9a289943d755b5861d99882cff2092a9b0b8cd0e7d5ccc3ba3742090a9b09814"
+  },
+  {
+    "key": "artur-hh-354",
+    "source": "https://images.migrosone.com/sanalmarket/product/34346369/34346369_1-9e9b59.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/pantene-dokulme-karsiti-sac-bakim-kremi-275-ml-p-20c1581",
+    "file": "public/media/artur-hh-354.jpg",
+    "sha256": "d7729de47626b07ad0f4c14e80bc08086f0afa6f98a7519167b02fe79eb71da3"
+  },
+  {
+    "key": "artur-hh-355",
+    "source": "https://images.migrosone.com/sanalmarket/product/34346374/34346374_1-04cbf5.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/pantene-sac-kremi-onarici-koruyucu-275-ml-p-20c1586",
+    "file": "public/media/artur-hh-355.jpg",
+    "sha256": "78ef6cd9217b4c0c4072f9b39875b1086f4e62939d37e0eb6381ee11b7a60a1d"
+  },
+  {
+    "key": "artur-hh-356",
+    "source": "https://images.migrosone.com/sanalmarket/product/30619668/30619668_1-88f8dc.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "https://www.migros.com.tr/fairy-sivi-bulasik-deterjani-limon-650-ml-p-1d33814",
+    "file": "public/media/artur-hh-356.jpg",
+    "sha256": "0874909ffbf4b789d77fc3c0f7913762f4641aa6f63985bfd21172f3e4db745c"
+  },
+  {
+    "key": "artur-hh-357",
+    "source": "https://images.migrosone.com/sanalmarket/product/30551868/30551868-394103-1650x1650.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-357.jpg",
+    "sha256": "76b3681921bbb42b7fb5b5ffda893c43edda7b1b9aba4581554943a058511f93"
+  },
+  {
+    "key": "artur-hh-358",
+    "source": "https://ir.ozone.ru/s3/multimedia-1-9/10331379657.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-358.jpg",
+    "sha256": "e3debaa3634a3ed75d64f97bdde550d91cab0ba7a22c8284c018ec2e9d6cc3c7"
+  },
+  {
+    "key": "artur-hh-359",
+    "source": "https://cdn.dsmcdn.com/mnresize/620/920/ty1830/prod/QC_PREP/20260302/21/b0408641-4737-3dd6-8abe-7117eb252dfe/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-359.jpg",
+    "sha256": "383982427fffb56658e0c184884f6274fc4e4323330c7ae17260012d3bfda332"
+  },
+  {
+    "key": "artur-hh-361",
+    "source": "https://cdn.dsmcdn.com/ty992/product/media/images/jpim-outputs/assets/product/media/images/20230829/16/409015635/65134241/2/2_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-361.jpg",
+    "sha256": "707ebb66f25e89772cd578df95e5781364e4eae86494b11aca2ecb68a2bbc486"
+  },
+  {
+    "key": "artur-hh-367",
+    "source": "https://cdn.dsmcdn.com/ty483/product/media/images/20220720/13/146708589/524495996/1/1_org_zoom.jpg",
+    "license": "retailer product photo (brand packshot), used at the owner's request 10.11; replace with the owner's own photo when available",
+    "author": "retailer page",
+    "file": "public/media/artur-hh-367.jpg",
+    "sha256": "cdc3cbb24455fa9a0558d90e8425a13e27a2b6d456df80b2ae7d38ebe4140381"
   }
 ]
