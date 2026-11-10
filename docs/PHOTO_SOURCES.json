@@ -2589,5 +2589,14 @@
     "download_url": "https://img.vkusvill.ru/pim/images/site/site_LargeWebP/ababd6ea-d7eb-4775-ae29-0d4ec288bac8.webp",
     "file": "public/media/grapes-ladyfinger.jpg",
     "sha256": "1ae5a25dd7aea386525004fd3b77f1f6b92220cd8d9a81bdb7ec8e4d2a29d46b"
+  },
+  {
+    "key": "amo-lamb-whole",
+    "source": "https://commons.wikimedia.org/wiki/File:Lamb_carcasses_Kasap_Suat_Kadinlar_Carsisi_Istanbul_2026.jpg",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": "Furkan Akkurt",
+    "note": "owner 10.11: whole lamb, cropped to the carcasses",
+    "file": "public/media/amo-lamb-whole.jpg",
+    "sha256": "79f197ba1f04842c7df72ac8d019c8ad374f74241aab2b414218ef7837ee4d67"
   }
 ]
