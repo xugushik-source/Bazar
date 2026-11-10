@@ -44,3 +44,12 @@ test('owner 10.11: a stuck order reminds the supplier after 3 minutes, the owner
  assert.ok(sent[1].reply_markup.inline_keyboard.flat().some(b=>b.text.startsWith('✋ Готово за:')));assert.equal(await stuckTick(e.DB,{},tg,now,addButton),0);
  e.DB.exec("UPDATE app_config SET value='480-1080' WHERE key='order_hours'");e.DB.exec('DELETE FROM stuck_alerts');
  assert.equal(await stuckTick(e.DB,{},tg,now,addButton),0,'06:00, outside order hours and far from the slot: quiet')}finally{e.DB.close()}});
+
+test('owner 10.11: after the owner confirms, the supplier sees the receipt sum at our purchase price, approximate then exact; never the address',async()=>{const e=await env();try{
+ e.DB.exec(`UPDATE products SET cost=400 WHERE id='${pid('apple_loose')}'`);e.DB.exec(`UPDATE order_lines SET cost=400 WHERE product_id='${pid('apple_loose')}'`);
+ const o=await order(e);e.DB.exec(`UPDATE order_lines SET cost=400 WHERE product_id='${pid('apple_loose')}'`);e.DB.exec(`INSERT INTO tg_links(id,kind,ref_id,chat_id,title,created_at) VALUES('sup','SUPPLIER','${vendor}','200','Garden','x')`);
+ const l=await q(e.DB,"SELECT * FROM tg_links WHERE id='sup'").first(),text=async()=>(await renderMessage(e.DB,l,o.id,'https://bazar.test')).text;
+ let t=await text();assert.ok(!t.includes('🧾'),'before the owner\'s call: no sum');assert.match(t,/пока БАЗАР не подтвердит/);
+ await act(e,o,'confirm');t=await text();assert.match(t,/🧾 Чек для БАЗАРА: ≈4\.00 GEL/);assert.ok(!t.includes('Тестовый адрес')&&!t.includes('+995555000000'));
+ const apple=(await view(e,o)).quotes.find(x=>x.product_id===pid('apple_loose'));await act(e,o,'weigh',{actuals:[{line_id:apple.line_id,net_g:1100}]});
+ t=await text();assert.match(t,/🧾 Чек для БАЗАРА: 4\.40 GEL/)}finally{e.DB.close()}});

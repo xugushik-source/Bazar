@@ -1,7 +1,7 @@
 // Owner 10.11: «полный контроль». The owner names the courier (or changes him), presses any stuck step for whoever forgot
 // («Готово» for a supplier — the ordered weight stands for the weighed one; «Забрал / Выехал / Доставил» for the courier),
 // and a stuck order first reminds the one who has to press (3 min), then the owner (6 min) with the buttons to do it himself.
-import {q,parse,action,clock}from './commerce.mjs';import {botWords}from './bot-words.mjs';
+import {q,parse,action,clock}from './commerce.mjs';import {botWords}from './bot-words.mjs';import {lineCost}from './vendor-ledger.mjs';
 export const ctlWords={
  ru:{assign:'🚚 Назначить курьера',reassign:'🔁 Сменить курьера',pick:'Кого назначить на заказ {id}?',onShift:'на смене',none:'В этом городе нет курьеров',assigned:'Заказ {id} назначен: {name}',forReady:'✋ Готово за: {v}',forPickup:'✋ За курьера: забрал',forDepart:'✋ За курьера: выехал',forDeliver:'✋ За курьера: доставил',nudgeSupplier:'⏰ Заказ {id} ждёт вас {m} мин. Взвесьте и нажмите «Готово» (или «Нет»).',nudgeGroup:'⏰ Заказ {id} готов уже {m} мин, а курьера нет. Нажмите «Беру».',nudgeCourier:'⏰ Заказ {id} ждёт вас {m} мин: {step}.',stepPickup:'заберите и нажмите «Забрал»',stepDepart:'нажмите «Выехал»',stepDeliver:'передайте покупателю и нажмите «Передал»'},
  hy:{assign:'🚚 Նշանակել առաքիչ',reassign:'🔁 Փոխել առաքիչին',pick:'Ո՞ւմ նշանակել {id} պատվերին',onShift:'հերթափոխում',none:'Այս քաղաքում առաքիչներ չկան',assigned:'{id} պատվերը նշանակված է՝ {name}',forReady:'✋ Պատրաստ է՝ {v}-ի փոխարեն',forPickup:'✋ Առաքիչի փոխարեն՝ վերցրեց',forDepart:'✋ Առաքիչի փոխարեն՝ ճանապարհ ընկավ',forDeliver:'✋ Առաքիչի փոխարեն՝ առաքեց',nudgeSupplier:'⏰ {id} պատվերը ձեզ է սպասում {m} րոպե։ Կշռեք և սեղմեք «Պատրաստ է» (կամ «Չկա»)։',nudgeGroup:'⏰ {id} պատվերը պատրաստ է արդեն {m} րոպե, իսկ առաքիչ չկա։ Սեղմեք «Վերցնում եմ»։',nudgeCourier:'⏰ {id} պատվերը ձեզ է սպասում {m} րոպե՝ {step}։',stepPickup:'վերցրեք և սեղմեք «Վերցրի»',stepDepart:'սեղմեք «Ճանապարհ ընկա»',stepDeliver:'հանձնեք գնորդին և սեղմեք «Հանձնեցի»'},
@@ -28,3 +28,15 @@ export async function ownerCallback(db,env,call,addButton,c,l,p,o,user,base){if(
  if(p.action==='ctl_assign'){const r=await action(db,{...base,action:'assign',driver_id:p.driver_id},user),d=await q(db,'SELECT name FROM users WHERE id=?',p.driver_id).first();await afterAssign(db,env,call,o,p.driver_id);
   await call(env,'sendMessage',{chat_id:l.chat_id,text:w.assigned.replace('{id}',o.id.slice(-6)).replace('{name}',d?.name||'')}).catch(()=>{});return r}
  return action(db,{...base,action:p.action==='force_ready'?'force_ready':p.action.slice(4)},user)}
+// Owner 10.11: the supplier sees the sum to put on his receipt for BAZAR — at our purchase price (cost), never the buyer's price.
+// After the owner's «Подтвердить» it is approximate (ordered quantities), after weighing exact.
+export const receiptWords={ru:{exact:'🧾 Чек для БАЗАРА: {sum}',approx:'🧾 Чек для БАЗАРА: ≈{sum} (точная сумма — после взвешивания)',unknown:'🧾 Сумму чека уточните у БАЗАРА'},
+ hy:{exact:'🧾 Կտրոն ԲԱԶԱՐ-ի համար՝ {sum}',approx:'🧾 Կտրոն ԲԱԶԱՐ-ի համար՝ ≈{sum} (ճշգրիտ գումարը՝ կշռելուց հետո)',unknown:'🧾 Կտրոնի գումարը ճշտեք ԲԱԶԱՐ-ից'},
+ ka:{exact:'🧾 ჩეკი ბაზრისთვის: {sum}',approx:'🧾 ჩეკი ბაზრისთვის: ≈{sum} (ზუსტი თანხა — აწონვის შემდეგ)',unknown:'🧾 ჩეკის თანხა დააზუსტეთ ბაზართან'}};
+const WEIGHED_MODES=['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'];
+export async function supplierReceipt(db,order,vendor,lang){const w=receiptWords[lang]||receiptWords.ru,rows=(await q(db,'SELECT line_id,cost,reserved,quote FROM order_lines WHERE order_id=? AND vendor_id=?',order.id,vendor).all()).results;if(!rows.length)return null;
+ const done=[].concat(order.actuals||[],order.weighing||[]);let sum=0,exact=true;
+ for(const r of rows){const x=parse(r.quote,{}),a=done.find(a=>a.line_id===r.line_id),weighed=WEIGHED_MODES.includes(x.mode);let qty=weighed?(x.mode==='WHOLE_BY_WEIGHT'?x.each_estimate_g*x.count:x.target_g)??r.reserved:x.count??r.reserved;// approximate = what was ordered
+  if(a)qty=weighed?(a.each_net_g?a.each_net_g.reduce((n,v)=>n+v,0):a.net_g??qty):a.count??qty;else exact=false;
+  const amount=lineCost(x.mode,r.cost,qty);if(amount===null)return w.unknown;sum+=amount}
+ return w[exact?'exact':'approx'].replace('{sum}',(sum/100).toFixed(2)+' '+(order.currency||'GEL'))}
