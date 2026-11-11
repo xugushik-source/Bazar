@@ -133,9 +133,19 @@ test('owner 11.11: village delivery prices sit behind one «Стоимость �
  assert.ok(app.includes('<details class="terms-line area-line"><summary>'));for(const k of ['deliveryPrices','areaIntro'])assert.equal((i18n.match(new RegExp(k+':','g'))||[]).length,3,k)});
 
 test('owner 11.11: «Выпечка с любовью» 9:00–20:00, pizza 25 min and lamajo 20 min on the card, still priced and orderable; migration 0107 equals the generator',async()=>{const fs=await import('node:fs'),{food1111eSql}=await import('../src/food-1111e.mjs'),{priceBasket,vendorWindow}=await import('../src/commerce.mjs');
- assert.ok(fs.readFileSync(new URL('../migrations/0107_vypechka_hours_prep.sql',import.meta.url),'utf8').endsWith(food1111eSql().join('\n')+'\n'));
+ assert.ok(fs.readFileSync(new URL('../migrations/0107_vypechka_hours_prep.sql',import.meta.url),'utf8').endsWith(food1111eSql().join('\n')+'\n'));{const {food1111fSql}=await import('../src/food-1111e.mjs');assert.ok(fs.readFileSync(new URL('../migrations/0108_khachapuri_prep.sql',import.meta.url),'utf8').endsWith(food1111fSql().join('\n')+'\n'))}
  const DB=new LocalD1();migrate(DB);await seed(DB);try{const v=await DB.prepare('SELECT open_minute,close_minute FROM vendors WHERE id=?').bind('akhalkalaki-vypechka').first();assert.deepEqual([v.open_minute,v.close_minute],[540,1200]);
   assert.deepEqual(await vendorWindow(DB,['akhalkalaki-vypechka']),{from:600,to:1180});
-  const c=await call({DB},'catalog?city='+cid),pm=id=>c.products.find(p=>p.id===id).profile.prep_minutes;assert.deepEqual(['01','02','03','04','05'].map(n=>pm('akhalkalaki--rf_pizza_'+n)),[25,25,25,undefined,20]);
+  const c=await call({DB},'catalog?city='+cid),pm=id=>c.products.find(p=>p.id===id).profile.prep_minutes;assert.deepEqual(['01','02','03','04','05'].map(n=>pm('akhalkalaki--rf_pizza_'+n)),[25,25,25,25,20]);
   const b=await priceBasket(DB,{city_id:cid,items:[{product_id:'akhalkalaki--rf_pizza_02',selection:{count:2}},{product_id:'akhalkalaki--rf_pizza_05',selection:{count:1}}]});assert.equal(b.estimate_minor,2*3000+550);
   const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8'),i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.ok(app.includes("t('prepTime')"));assert.equal((i18n.match(/prepTime:/g)||[]).length,3)}finally{DB.close()}});
+
+test('owner 11.11: ready food is ordered until 19:30 and delivered up to the supplier closing (20:00); other goods keep 9–18',async()=>{const {readyOpen,hoursOpen,readyFoodTo,isReadyCat}=await import('../src/order-hours.mjs'),{slots}=await import('../src/commerce.mjs'),fs=await import('node:fs');
+ const was=process.env.BAZAR_IGNORE_ORDER_HOURS;delete process.env.BAZAR_IGNORE_ORDER_HOURS;try{const h={from:540,to:1080};assert.equal(readyFoodTo,1170);
+  assert.deepEqual([1079,1080,1150,1169,1170].map(m=>hoursOpen(h,m)),[true,false,false,false,false]);assert.deepEqual([539,1079,1080,1169,1170].map(m=>readyOpen(h,m)),[false,true,true,true,false])}finally{if(was!==undefined)process.env.BAZAR_IGNORE_ORDER_HOURS=was}
+ assert.ok(isReadyCat('rf_pizza')&&!isReadyCat('cakes'));
+ const DB=new LocalD1();migrate(DB);await seed(DB);try{const day=new Date(Date.now()+86400000).toLocaleDateString('en-CA',{timeZone:'Asia/Tbilisi'}),last=a=>Math.max(...a.slots.map(s=>s.minute));
+  assert.equal(last(await slots(DB,cid,day,'akhalkalaki--rf_pizza_02,akhalkalaki--rf_pizza_05')),1200,'pizza alone: 20:00');
+  assert.equal(last(await slots(DB,cid,day,'akhalkalaki--rf_pizza_02,akhalkalaki--cakes_01')),1180,'with a cake: the usual 19:40');
+  const c=await call({DB},'catalog?city='+cid);assert.equal(c.city.ready_to,1170);
+  const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8'),i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.ok(app.includes('ordersOpen(basketReady())'));for(const k of ['readyEvening','readyOnlyNow'])assert.equal((i18n.match(new RegExp(k+':','g'))||[]).length,3,k)}finally{DB.close()}});

@@ -1,0 +1,1 @@
+UPDATE products SET profile='{"mode":"EACH","policy_version":1,"prep_minutes":25}',version=version+1 WHERE id='akhalkalaki--rf_pizza_04' AND profile<>'{"mode":"EACH","policy_version":1,"prep_minutes":25}';
