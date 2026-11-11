@@ -3,7 +3,7 @@
 // changes by itself: the owner gets the request with the new retail price (src/price-rules.mjs) and accepts, rejects or types
 // his own retail price. Group membership is the trust boundary, as for orders (src/supplier-bot.mjs).
 import {q,parse,clock,own}from './commerce.mjs';import {fail,uuid,now,token,text}from './security.mjs';import {botWords}from './bot-words.mjs';
-import {retailFor,retailOnCost}from './price-rules.mjs';import {journalPrice}from './price-journal.mjs';import {closedToday}from './supplier-day.mjs';
+import {retailFor,retailOnCost}from './price-rules.mjs';import {journalPrice}from './price-journal.mjs';import {closedToday,FOREVER}from './supplier-day.mjs';
 const TZ='Asia/Tbilisi',PAGE=8,W=l=>botWords[l]||botWords.ru,money=n=>n==null?'—':(n/100).toFixed(2)+' ₾';
 export const supplierActions=['sc_all','sc_list','sc_close','sc_price','sc_done','pr_ok','pr_no','pr_own'];
 const weighted=p=>['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'].includes(parse(p.profile,{}).mode);
@@ -11,7 +11,7 @@ const label=(p,lang)=>{const n=parse(p.names,{});return n[lang]||n.ru||p.id};
 const unit=(p,lang)=>weighted(p)?W(lang).perKg:W(lang).perPiece;
 async function button(db,l,caption,payload){const id=token().slice(0,32);await q(db,'INSERT INTO tg_buttons(id,link_id,order_id,version,payload,expires) VALUES(?,?,NULL,NULL,?,?)',id,l.id,JSON.stringify(payload),Date.now()+3*86400000).run();return {text:caption,callback_data:'bz:'+id}}
 const vendorName=async(db,id,lang)=>{const v=await q(db,'SELECT names FROM vendors WHERE id=?',id).first(),n=parse(v?.names,{});return n[lang]||n.ru||id};
-const goods=async(db,vendor)=>(await q(db,'SELECT * FROM products WHERE vendor_id=? AND active=1 ORDER BY category,id',vendor).all()).results;
+const goods=async(db,vendor)=>(await q(db,'SELECT * FROM products WHERE vendor_id=? AND active=1 AND category<>? ORDER BY category,id',vendor,'household').all()).results;
 // The morning question, once a day per group. Owner 07.11: asked at 08:00 and answered by 09:00, before orders open — silence
 // means everything is there at the listed costs.
 export const ASK_FROM=480,ASK_UNTIL=540;
@@ -40,9 +40,9 @@ export async function supplierCallback(db,env,call,c,l,p,user){const w=W(l.lang)
  if(l.kind!=='SUPPLIER'||!user||!own(user,l.ref_id))fail('FORBIDDEN',403);const day=clock(TZ).day;
  if(p.action==='sc_all'){await q(db,'INSERT INTO supplier_checks(link_id,day,answered_by,answered_at) VALUES(?,?,?,?) ON CONFLICT(link_id,day) DO UPDATE SET answered_by=excluded.answered_by,answered_at=excluded.answered_at',l.id,day,user.id,now()).run();await edit(env,call,c,{text:w.scAllOk.replace('{name}',user.name)});return {ok:true}}
  if(p.action==='sc_list')return edit(env,call,c,await listBody(db,l,p.page));
- if(p.action==='sc_done'){const n=(await q(db,'SELECT COUNT(*) n FROM day_closures WHERE vendor_id=? AND day=?',l.ref_id,day).first()).n;await q(db,'INSERT INTO supplier_checks(link_id,day,answered_by,answered_at) VALUES(?,?,?,?) ON CONFLICT(link_id,day) DO UPDATE SET answered_by=excluded.answered_by,answered_at=excluded.answered_at',l.id,day,user.id,now()).run();await edit(env,call,c,{text:w.scDoneText.replace('{n}',n).replace('{name}',user.name)});return {ok:true}}
+ if(p.action==='sc_done'){const n=(await q(db,'SELECT COUNT(*) n FROM day_closures WHERE vendor_id=? AND day IN (?,?)',l.ref_id,day,FOREVER).first()).n;await q(db,'INSERT INTO supplier_checks(link_id,day,answered_by,answered_at) VALUES(?,?,?,?) ON CONFLICT(link_id,day) DO UPDATE SET answered_by=excluded.answered_by,answered_at=excluded.answered_at',l.id,day,user.id,now()).run();await edit(env,call,c,{text:w.scDoneText.replace('{n}',n).replace('{name}',user.name)});return {ok:true}}
  const prod=await q(db,'SELECT * FROM products WHERE id=? AND vendor_id=? AND active=1',p.pid,l.ref_id).first();if(!prod)fail('NOT_FOUND',404);
- if(p.action==='sc_close'){const r=await q(db,'DELETE FROM day_closures WHERE product_id=? AND day=?',prod.id,day).run();if(!r.meta.changes)await q(db,'INSERT INTO day_closures(product_id,day,vendor_id,closed_by,at) VALUES(?,?,?,?,?) ON CONFLICT DO NOTHING',prod.id,day,l.ref_id,user.id,now()).run();return edit(env,call,c,await listBody(db,l,p.page))}
+ if(p.action==='sc_close'){const r=await q(db,'DELETE FROM day_closures WHERE product_id=? AND day IN (?,?)',prod.id,day,FOREVER).run();if(!r.meta.changes)await q(db,'INSERT INTO day_closures(product_id,day,vendor_id,closed_by,at) VALUES(?,?,?,?,?) ON CONFLICT DO NOTHING',prod.id,FOREVER,l.ref_id,user.id,now()).run();return edit(env,call,c,await listBody(db,l,p.page))}
  await dialogFor(db,c,l,prod.id,'sc_price',1800000);await call(env,'sendMessage',{chat_id:l.chat_id,text:w.scPriceAsk.replace('{name}',label(prod,l.lang)).replace('{unit}',unit(prod,l.lang)).replace('{cost}',money(prod.cost)),reply_markup:{force_reply:true,selective:true}});return {ok:true}}
 // «4.5», «4,50», «4» → minor units; anything else is asked again.
 export const parseMoney=s=>{const m=String(s||'').trim().replace(/\s|₾|лари|lari/gi,'').match(/^(\d{1,5})(?:[.,](\d{1,2}))?$/);if(!m)return null;const v=Number(m[1])*100+Number((m[2]||'0').padEnd(2,'0'));return v>0?v:null};

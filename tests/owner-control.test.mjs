@@ -102,3 +102,8 @@ test('owner 11.11: home tiles use light thumbnails that exist for every tile pho
 test('owner 11.11: cake migration 0101 equals the generator and names the cakes from the owner list',async()=>{const fs=await import('node:fs'),{cakes1111Sql,cakeNames}=await import('../src/cakes-1111.mjs');
  assert.ok(fs.readFileSync(new URL('../migrations/0101_cakes_names_prices.sql',import.meta.url),'utf8').endsWith(cakes1111Sql().join('\n')+'\n'));
  assert.equal(cakeNames.length,13);assert.ok(!cakeNames.some(([,n])=>/дубль|Шоколадница/.test(n)),'the duplicate is skipped');assert.ok(cakeNames.some(([,n])=>n==='Финиковый')&&cakeNames.some(([,n])=>n==='Бакинская гата'))});
+
+test('owner 11.11: pickup addresses reach vendors; migration 0102 equals the generator',async()=>{const fs=await import('node:fs'),{pickups,pickupSql}=await import('../src/pickup.mjs');
+ assert.ok(fs.readFileSync(new URL('../migrations/0102_vendor_pickup.sql',import.meta.url),'utf8').endsWith(pickupSql().join('\n')+'\n'));
+ for(const [id,o] of Object.entries(pickups))assert.ok(o.ru&&o.hy&&o.ka,id);
+ const DB=new LocalD1();migrate(DB);await seed(DB);try{const row=await DB.prepare('SELECT pickup FROM vendors WHERE id=?').bind('akhalkalaki-vypechka').first();assert.match(JSON.parse(row.pickup).ru,/Мясникяна, 16/)}finally{DB.close()}});

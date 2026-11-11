@@ -9,7 +9,7 @@ export async function journalTick(db,at=new Date()){const c=clock(TZ,at);
  for(const {vendor_id}of(await db.prepare('SELECT DISTINCT vendor_id FROM products WHERE active=1').all()).results){let open=540;try{open=(await q(db,'SELECT open_minute FROM vendors WHERE id=?',vendor_id).first())?.open_minute??540}catch{}
   if(c.minute<open+180||await q(db,"SELECT 1 FROM price_journal WHERE kind='DAY' AND day=? AND vendor_id=? LIMIT 1",c.day,vendor_id).first())continue;
   const link=await q(db,"SELECT id FROM tg_links WHERE kind='SUPPLIER' AND active=1 AND ref_id=?",vendor_id).first(),check=link?await q(db,'SELECT * FROM supplier_checks WHERE link_id=? AND day=?',link.id,c.day).first():null,
-   closed=new Map((await q(db,'SELECT * FROM day_closures WHERE vendor_id=? AND day=?',vendor_id,c.day).all()).results.map(r=>[r.product_id,r])),who=await name(db,check?.answered_by),st=[];
+   closed=new Map((await q(db,'SELECT * FROM day_closures WHERE vendor_id=? AND day IN (?,?)',vendor_id,c.day,'9999-12-31').all()).results.map(r=>[r.product_id,r])),who=await name(db,check?.answered_by),st=[];
   for(const p of(await q(db,'SELECT * FROM products WHERE vendor_id=? AND active=1',vendor_id).all()).results){const off=closed.get(p.id);
    const how=off?'❌ нет сегодня — отметил '+(await name(db,off.closed_by))+' '+hm(off.at):check?.answered_by?'✅ подтвердил «Всё есть» — '+who+(check.answered_at?' '+hm(check.answered_at):''):link?'не ответил — по умолчанию всё есть, цены те же':'нет группы поставщика';
    st.push(q(db,"INSERT INTO price_journal(id,day,kind,vendor_id,product_id,cost,price,available,how,at) VALUES(?,?,'DAY',?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",uuid(),c.day,vendor_id,p.id,p.cost,p.price,off?0:1,how,now()))}
