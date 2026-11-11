@@ -8,11 +8,11 @@ import {words,statuses} from './i18n.js';import {progressHTML,linesHTML,stageHTM
 import {quote as makeQuote,assess} from './weight-policy.js';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 // Tile photos for the section grid: one clear, recognisable picture per section; bottles are shown whole.
-const chipArt={meat:'meat',vegetables:'tomato',fruit:'apple',bread:'lavash',deli:'sausage',nuts:'dried-apricot',market:'honey',grains:'buckwheat',drinks:'artur-coke-glass',alcohol:'mado-gubernator-050',sweets:'artur-alenka',belarus:'artur-smetana-gorki26',frozen:'artur-shrimp-vanoni',cakes:'cakes-01',household:'artur-hh-160'},chipWhole=['drinks','alcohol'];
+const chipArt={meat:'meat',vegetables:'tomato',fruit:'apple',bread:'lavash',deli:'sausage',nuts:'dried-apricot',market:'honey',grains:'buckwheat',drinks:'artur-coke-glass',alcohol:'mado-gubernator-050',sweets:'artur-alenka',belarus:'artur-smetana-gorki26',frozen:'artur-shrimp-vanoni',cakes:'cakes-01',readyfood:'rf-pizza-02',household:'artur-hh-160'},chipWhole=['drinks','alcohol'];
 // Home page sections (owner 22.10, after the storefront study): six larger sections, meat first; a category with one product
 // (household, 10.11: 350 goods «Ожидается») now has its own tile; cakes and pastry (11.11) too.
 const tileSrc=(art,cat,c)=>chipArt[c]===art?'./media-tiles/'+art+'.jpg'+(mediaVersions[art]?'?v='+mediaVersions[art]:''):photoPath(art,cat);try{for(const [g,a] of Object.entries(chipArt))(new Image).src=tileSrc(a,'',g)}catch{}// owner 11.11: light 360x270 tiles, loaded ahead
-const chipGroups=[['meat',['meat','trout']],['vegetables',['vegetables','herbs']],['fruit',['fruit','berries']],['bread',['bread']],['cakes',['cakes']],['deli',['deli']],['nuts',['nuts','dried']],['market',['market','preserves']],['sweets',['sweets']],['belarus',['belarus']],['frozen',['frozen']],['grains',['grains']],['drinks',['drinks']],['alcohol',['alcohol']],['household',['household']]];
+const chipGroups=[['meat',['meat','trout']],['vegetables',['vegetables','herbs']],['fruit',['fruit','berries']],['bread',['bread']],['cakes',['cakes']],['readyfood',['rf_pizza','rf_first','rf_second','rf_salads','rf_sides']],['deli',['deli']],['nuts',['nuts','dried']],['market',['market','preserves']],['sweets',['sweets']],['belarus',['belarus']],['frozen',['frozen']],['grains',['grains']],['drinks',['drinks']],['alcohol',['alcohol']],['household',['household']]];
 const inFilter=p=>filter==='all'||p.category===filter||chipGroups.find(([g])=>g===filter)?.[1].includes(p.category);
 // Products the owner wants first in their section (owner 24.10: beef boneless opens «Мясо и рыба»).
 const firstInSection=['beef_boneless'];

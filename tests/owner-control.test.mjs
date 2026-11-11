@@ -90,7 +90,7 @@ test('owner 11.11: «Торты и выпечка» — new section, supplier an
 test('owner 11.11: «Доставка готовой еды» — five empty subsections in three languages, separate from cakes; migration equals the generator',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{
  const {readyFoodSql,readyFoodCategories}=await import('../src/ready-food.mjs'),fs=await import('node:fs');
  const c=await call(e,'catalog?city='+cid);
- for(const [id] of readyFoodCategories){const x=c.categories.find(k=>k.id===id);assert.ok(x&&x.names.ru&&x.names.hy&&x.names.ka,id);assert.equal(c.products.filter(p=>p.category===id).length,0,'no invented dishes')}
+ for(const [id] of readyFoodCategories){const x=c.categories.find(k=>k.id===id);assert.ok(x&&x.names.ru&&x.names.hy&&x.names.ka,id);assert.equal(c.products.filter(p=>p.category===id).length,id==='rf_pizza'?4:0,'no invented dishes: only the owner\'s four (11.11)')}
  assert.ok(c.categories.find(k=>k.id==='cakes'),'cakes stay separate');const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8'),i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.ok(app.includes('ready-soon'));assert.equal((i18n.match(/readyFood:/g)||[]).length,3);
  assert.ok(fs.readFileSync(new URL('../migrations/0100_ready_food.sql',import.meta.url),'utf8').endsWith(readyFoodSql().join('\n')+'\n'))}finally{DB.close()}});
 
@@ -107,3 +107,12 @@ test('owner 11.11: pickup addresses reach vendors; migration 0102 equals the gen
  assert.ok(fs.readFileSync(new URL('../migrations/0102_vendor_pickup.sql',import.meta.url),'utf8').endsWith(pickupSql().join('\n')+'\n'));
  for(const [id,o] of Object.entries(pickups))assert.ok(o.ru&&o.hy&&o.ka,id);
  const DB=new LocalD1();migrate(DB);await seed(DB);try{const row=await DB.prepare('SELECT pickup FROM vendors WHERE id=?').bind('akhalkalaki-vypechka').first();assert.match(JSON.parse(row.pickup).ru,/Мясникяна, 16/)}finally{DB.close()}});
+
+test('owner 11.11: cakes renamed by photo, four 35 cm pizzas/khachapuri at 25 ₾ +20 % = 30 ₾; migration 0104 equals the generator',async()=>{const fs=await import('node:fs'),{food1111bSql,pizzas,pizzaArt,pizzaId}=await import('../src/food-1111b.mjs'),{cakesId}=await import('../src/vypechka.mjs');
+ assert.ok(fs.readFileSync(new URL('../migrations/0104_pizza_cake_names.sql',import.meta.url),'utf8').endsWith(food1111bSql().join('\n')+'\n'));
+ const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{const c=await call(e,'catalog?city='+cid),nm=n=>c.products.find(p=>p.id===cakesId(n)).names.ru;
+  assert.deepEqual([nm(12),nm(13),nm(6)],['Рыжик','Президент','Виагра']);
+  const pz=c.products.filter(p=>p.category==='rf_pizza');assert.equal(pz.length,4);assert.ok(pz.every(p=>p.price===3000&&p.profile.mode==='EACH'&&!('cost'in p)&&/35/.test(p.names.ru)&&p.names.hy&&p.names.ka&&p.vendor_id==='akhalkalaki-vypechka'));
+  const row=await DB.prepare('SELECT cost FROM products WHERE id=?').bind(pizzaId(1)).first();assert.equal(row.cost,2500);
+  for(const [n] of pizzas)assert.ok(fs.existsSync(new URL('../public/media/'+pizzaArt(n)+'.jpg',import.meta.url)),String(n));
+  const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8'),i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.ok(app.includes("['readyfood',['rf_pizza'"));assert.equal((i18n.match(/group_readyfood:/g)||[]).length,3)}finally{DB.close()}});
