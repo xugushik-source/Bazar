@@ -1,6 +1,6 @@
 import {advertising,saveAdvertising}from './advertising.mjs';import {sourceReport}from './sources.mjs';import {recordHit}from './traffic.mjs';import {customerBase,marketingOptOut,customersCsv}from './customers.mjs';import {priceSheet,sheetKey}from './price-sheet.mjs';import {setFirstOrderFree}from './first-order.mjs';
 import {listPromotions,savePromotion,referralInfo,referralManage}from './promotions.mjs';
-import {configured,telegramWebhook,telegramManage,botInvite,drainTelegram,notifyStatement}from './telegram.mjs';import {botDomain}from './supplier-bot.mjs';import {savePhoto,listPhotos,photoFile}from './order-photos.mjs';
+import {configured,telegramWebhook,telegramManage,botInvite,drainTelegram,notifyStatement,notifyPayment}from './telegram.mjs';import {botDomain}from './supplier-bot.mjs';import {savePhoto,listPhotos,photoFile}from './order-photos.mjs';
 import {courierSummary,shift,cashReport,cashReview,remit}from './couriers.mjs';
 import {ledgerView,fixDay,answerDay,payVendor,reversePayment}from './vendor-ledger.mjs';
 import {publicAPI}from './public-api.mjs';
@@ -58,7 +58,7 @@ export async function handle(req,env){try{
  if(p==='/api/manage/ledger'&&req.method==='GET')return reply(await ledgerView(db,user,url.searchParams.get('city')));
  if(p==='/api/manage/ledger/fix'&&b){const r=await fixDay(db,b,user);if(configured(env))await notifyStatement(db,env,r.id).catch(()=>{});return reply(r)}
  if(p==='/api/manage/ledger/answer'&&b)return reply(await answerDay(db,b,user));
- if(p==='/api/manage/ledger/pay'&&b)return reply(await payVendor(db,b,user));
+ if(p==='/api/manage/ledger/pay'&&b){const r=await payVendor(db,b,user);if(configured(env)&&r.id)await notifyPayment(db,env,r.id).catch(()=>{});return reply(r)}
  if(p==='/api/manage/ledger/reverse'&&b)return reply(await reversePayment(db,b,user));
  if(p==='/api/manage/action'&&b)return reply(await action(db,b,user));
  if(p==='/api/manage/approve-phone'&&b)return reply(await approve(db,b,user));
