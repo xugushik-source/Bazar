@@ -10,7 +10,8 @@ export async function systemStatement(db,vendor,day){const lines=(await unsettle
 export async function ledgerTick(db,env,notify,at=new Date()){const c=clock(TZ,at);if(c.minute<LEDGER_FROM||c.minute>=LEDGER_UNTIL)return {sent:0};
  const claim=await q(db,"INSERT INTO app_config(key,value) VALUES('ledger-auto-day',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value WHERE value<>excluded.value",c.day).run();if(!claim.meta.changes)return {sent:0};
  let sent=0;for(const v of(await db.prepare("SELECT DISTINCT ref_id FROM tg_links WHERE kind='SUPPLIER' AND active=1").all()).results){try{
-  const days=[...new Set((await unsettled(db,v.ref_id)).map(l=>l.day))].filter(d=>d<c.day).sort();
+  const from=new Date(Date.parse(c.day+'T00:00:00Z')-2*86400000).toISOString().slice(0,10),// only the last two days: older unsettled days stay for the owner to fix by hand, never mailed out in bulk
+   days=[...new Set((await unsettled(db,v.ref_id)).map(l=>l.day))].filter(d=>d<c.day&&d>=from).sort();
   for(const d of days){const id=await systemStatement(db,v.ref_id,d);if(id){await notify(id);sent++}}}catch{}}
  return {sent}}
 // What the supplier reads: every sold item with its quantity and amount (weighed goods in kg).

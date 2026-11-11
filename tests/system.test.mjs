@@ -339,4 +339,6 @@ test('owner 11.11: at 08:30 the system fixes yesterday for each supplier once, w
  const {ledgerTick,itemLines}=await import('../src/ledger-auto.mjs'),sent=[],early=new Date(Date.now()+2*86400000);early.setUTCHours(4,10,0,0);const at=new Date(early);at.setUTCHours(4,40,0,0);
  assert.equal((await ledgerTick(e.DB,{},id=>sent.push(id),early)).sent,0,'not before 08:30');assert.equal((await ledgerTick(e.DB,{},id=>sent.push(id),at)).sent,1);assert.equal((await ledgerTick(e.DB,{},id=>sent.push(id),at)).sent,0,'once a day');
  const st=await q(e.DB,'SELECT * FROM vendor_statements WHERE id=?',sent[0]).first();assert.deepEqual([st.created_by,st.amount,st.state],['system',440,'PROPOSED']);const lines=itemLines(JSON.parse(st.lines),'ru','кг');assert.equal(lines.length,1);assert.match(lines[0],/Яблоки.*1,1 кг = 4\.40/);
- const next=new Date(at.getTime()+86400000);assert.equal((await ledgerTick(e.DB,{},id=>sent.push(id),next)).sent,0,'a fixed day is not repeated')}finally{e.DB.close()}});
+ const next=new Date(at.getTime()+86400000);assert.equal((await ledgerTick(e.DB,{},id=>sent.push(id),next)).sent,0,'a fixed day is not repeated');
+ const old=await q(e.DB,"SELECT COUNT(*) n FROM vendor_statements WHERE command LIKE 'auto:%'").first();assert.equal(old.n,1);
+ await q(e.DB,"DELETE FROM vendor_statement_lines").run();await q(e.DB,"DELETE FROM vendor_statements").run();const late=new Date(at.getTime()+6*86400000);assert.equal((await ledgerTick(e.DB,{},id=>sent.push(id),late)).sent,0,'days older than two are never mailed out in bulk')}finally{e.DB.close()}});
