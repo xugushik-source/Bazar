@@ -93,3 +93,8 @@ test('owner 11.11: «Доставка готовой еды» — five empty sub
  for(const [id] of readyFoodCategories){const x=c.categories.find(k=>k.id===id);assert.ok(x&&x.names.ru&&x.names.hy&&x.names.ka,id);assert.equal(c.products.filter(p=>p.category===id).length,0,'no invented dishes')}
  assert.ok(c.categories.find(k=>k.id==='cakes'),'cakes stay separate');const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8'),i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.ok(app.includes('ready-soon'));assert.equal((i18n.match(/readyFood:/g)||[]).length,3);
  assert.ok(fs.readFileSync(new URL('../migrations/0100_ready_food.sql',import.meta.url),'utf8').endsWith(readyFoodSql().join('\n')+'\n'))}finally{DB.close()}});
+
+test('owner 11.11: home tiles use light thumbnails that exist for every tile photo',async()=>{const fs=await import('node:fs'),app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');
+ const arts=[...app.match(/const chipArt=\{([^}]*)\}/)[1].matchAll(/:'([^']+)'/g)].map(m=>m[1]);assert.ok(arts.length>=15);
+ for(const a of arts){const f=new URL('../public/media-tiles/'+a+'.jpg',import.meta.url);assert.ok(fs.existsSync(f),a);assert.ok(fs.statSync(f).size<60000,a+' is light')}
+ assert.ok(app.includes('media-tiles'))});
