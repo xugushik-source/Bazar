@@ -80,10 +80,10 @@ test('owner 10.11: household price list — cost +20 % rounded up to 10 tetri (o
 test('owner 11.11: «Торты и выпечка» — new section, supplier and eight cakes with photos show «Ожидается», not orderable; migration equals the generator',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{
  const {cakesSql,cakes,cakesId,cakesArt}=await import('../src/vypechka.mjs'),fs=await import('node:fs');
  const c=await call(e,'catalog?city='+cid);assert.ok(c.categories.find(x=>x.id==='cakes'&&x.names.hy&&x.names.ka),'category in three languages');assert.ok(c.vendors.find(v=>v.id==='akhalkalaki-vypechka'&&v.names.hy&&v.names.ka));
- const mine=c.products.filter(p=>p.category==='cakes');assert.equal(mine.length,8);assert.ok(mine.every(p=>p.profile.mode==='SOON'&&p.price===0&&!('cost'in p)&&p.names.ru&&p.names.hy&&p.names.ka));
- const r=await call(e,'quote',{city_id:cid,items:[{product_id:cakesId(1),selection:{count:1}}],fulfillment:'delivery'});assert.equal(r.http,409);assert.match(JSON.stringify(r),/PRODUCT_UNAVAILABLE/);
+ const mine=c.products.filter(p=>p.category==='cakes');assert.equal(mine.length,13);assert.ok(mine.every(p=>p.profile.mode==='EACH'&&p.price>0&&!('cost'in p)&&p.names.ru&&p.names.hy&&p.names.ka),'owner 11.11: thirteen priced cakes');
+ const {cakePrice,cakeCost}=await import('../src/cakes-1111.mjs');assert.deepEqual([1,2,8,9].map(cakePrice),[350,400,400,350]);assert.deepEqual([1,2,8,9].map(cakeCost),[250,300,300,250]);const price=n=>mine.find(p=>p.id===cakesId(n)).price;assert.equal(price(1),350);assert.equal(price(2),400);assert.equal(price(8),400);assert.equal(price(13),350);
  assert.ok(fs.readFileSync(new URL('../migrations/0099_vypechka_cakes.sql',import.meta.url),'utf8').endsWith(cakesSql().join('\n')+'\n'));
- for(const [n] of cakes)assert.ok(fs.existsSync(new URL('../public/media/'+cakesArt(n)+'.jpg',import.meta.url)),String(n));
+ for(const n of [...cakes.map(c=>c[0]),9,10,11,12,13])assert.ok(fs.existsSync(new URL('../public/media/'+cakesArt(n)+'.jpg',import.meta.url)),String(n));
  const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');assert.ok(app.includes("['cakes',['cakes']]")&&app.includes("['household',['household']]"),'home tiles for both sections');
  const i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.equal((i18n.match(/group_cakes:/g)||[]).length,3);assert.equal((i18n.match(/group_household:/g)||[]).length,3)}finally{DB.close()}});
 
@@ -98,3 +98,7 @@ test('owner 11.11: home tiles use light thumbnails that exist for every tile pho
  const arts=[...app.match(/const chipArt=\{([^}]*)\}/)[1].matchAll(/:'([^']+)'/g)].map(m=>m[1]);assert.ok(arts.length>=15);
  for(const a of arts){const f=new URL('../public/media-tiles/'+a+'.jpg',import.meta.url);assert.ok(fs.existsSync(f),a);assert.ok(fs.statSync(f).size<60000,a+' is light')}
  assert.ok(app.includes('media-tiles'))});
+
+test('owner 11.11: cake migration 0101 equals the generator and names the cakes from the owner list',async()=>{const fs=await import('node:fs'),{cakes1111Sql,cakeNames}=await import('../src/cakes-1111.mjs');
+ assert.ok(fs.readFileSync(new URL('../migrations/0101_cakes_names_prices.sql',import.meta.url),'utf8').endsWith(cakes1111Sql().join('\n')+'\n'));
+ assert.equal(cakeNames.length,13);assert.ok(!cakeNames.some(([,n])=>/дубль|Шоколадница/.test(n)),'the duplicate is skipped');assert.ok(cakeNames.some(([,n])=>n==='Финиковый')&&cakeNames.some(([,n])=>n==='Бакинская гата'))});
