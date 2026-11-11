@@ -4975,5 +4975,69 @@
     "author": "retailer page",
     "file": "public/media/artur-hh-367.jpg",
     "sha256": "cdc3cbb24455fa9a0558d90e8425a13e27a2b6d456df80b2ae7d38ebe4140381"
+  },
+  {
+    "key": "cakes-01",
+    "source": "owner: photo sent by the owner on 2026-11-10 for «Выпечка с любовью» (cropped to 600x520)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/cakes-01.jpg",
+    "sha256": "6186b7257eeaa7e2fc766b8cb7fa0dbfba9b7c5e7abd4c12b2db419f5415e646"
+  },
+  {
+    "key": "cakes-02",
+    "source": "owner: photo sent by the owner on 2026-11-10 for «Выпечка с любовью» (cropped to 600x520)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/cakes-02.jpg",
+    "sha256": "675adf4896fea0ff9ad83e5a97dbdad7e697739b572f64bc24bf3256da811150"
+  },
+  {
+    "key": "cakes-03",
+    "source": "owner: photo sent by the owner on 2026-11-10 for «Выпечка с любовью» (cropped to 600x520)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/cakes-03.jpg",
+    "sha256": "e980b99710c44d6e68fd9b6640fc1aaff6db223c88245a2cd9ab661694e0e65f"
+  },
+  {
+    "key": "cakes-04",
+    "source": "owner: photo sent by the owner on 2026-11-10 for «Выпечка с любовью» (cropped to 600x520)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/cakes-04.jpg",
+    "sha256": "f38e6def48bb4b6439ff9ecf8e281d052cfe3c6184ef22a549a2ebe6ab460183"
+  },
+  {
+    "key": "cakes-05",
+    "source": "owner: photo sent by the owner on 2026-11-10 for «Выпечка с любовью» (cropped to 600x520)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/cakes-05.jpg",
+    "sha256": "b126c586100529d783b321a66ce17079531513c81300c453bd42458594b17a47"
+  },
+  {
+    "key": "cakes-06",
+    "source": "owner: photo sent by the owner on 2026-11-10 for «Выпечка с любовью» (cropped to 600x520)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/cakes-06.jpg",
+    "sha256": "0d55b6521d27f9a404cdfb9753b3f56176ec04972ce3425a12a263ac88daf476"
+  },
+  {
+    "key": "cakes-07",
+    "source": "owner: photo sent by the owner on 2026-11-10 for «Выпечка с любовью» (cropped to 600x520)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/cakes-07.jpg",
+    "sha256": "e2b91629c0c9ad428f27c4b329c1802d32f0fc6e2351ed7a73fbe6e3778ed51d"
+  },
+  {
+    "key": "cakes-08",
+    "source": "owner: photo sent by the owner on 2026-11-10 for «Выпечка с любовью» (cropped to 600x520)",
+    "license": "owner-provided",
+    "author": "owner",
+    "file": "public/media/cakes-08.jpg",
+    "sha256": "c0a548271b0f7633e004ef90622794c818ba53a1fde88fa572edb184b409e8dd"
   }
 ]

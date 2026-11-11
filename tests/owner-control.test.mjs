@@ -76,3 +76,13 @@ test('owner 10.11: household price list — cost +20 % rounded up to 10 tetri (o
  const c=await call(e,'catalog?city='+cid),by=id=>c.products.find(p=>p.id===householdId(id));
  assert.equal(by(1).price,3000);assert.equal(by(2).price,1500);assert.ok(by(3));assert.equal(c.products.filter(p=>p.id.includes('artur_hh_')&&p.profile.mode==='EACH').length,2,'priced items become ordinary');assert.equal(by(3).profile.mode,'SOON','no cost — still «Ожидается»');
  assert.equal((await q(DB,'SELECT cost FROM products WHERE id=?',householdId(1)).first()).cost,2500);assert.ok(!('cost'in by(1)),'cost is private')}finally{DB.close()}});
+
+test('owner 11.11: «Торты и выпечка» — new section, supplier and eight cakes with photos show «Ожидается», not orderable; migration equals the generator',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{
+ const {cakesSql,cakes,cakesId,cakesArt}=await import('../src/vypechka.mjs'),fs=await import('node:fs');
+ const c=await call(e,'catalog?city='+cid);assert.ok(c.categories.find(x=>x.id==='cakes'&&x.names.hy&&x.names.ka),'category in three languages');assert.ok(c.vendors.find(v=>v.id==='akhalkalaki-vypechka'&&v.names.hy&&v.names.ka));
+ const mine=c.products.filter(p=>p.category==='cakes');assert.equal(mine.length,8);assert.ok(mine.every(p=>p.profile.mode==='SOON'&&p.price===0&&!('cost'in p)&&p.names.ru&&p.names.hy&&p.names.ka));
+ const r=await call(e,'quote',{city_id:cid,items:[{product_id:cakesId(1),selection:{count:1}}],fulfillment:'delivery'});assert.equal(r.http,409);assert.match(JSON.stringify(r),/PRODUCT_UNAVAILABLE/);
+ assert.ok(fs.readFileSync(new URL('../migrations/0099_vypechka_cakes.sql',import.meta.url),'utf8').endsWith(cakesSql().join('\n')+'\n'));
+ for(const [n] of cakes)assert.ok(fs.existsSync(new URL('../public/media/'+cakesArt(n)+'.jpg',import.meta.url)),String(n));
+ const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');assert.ok(app.includes("['cakes',['cakes']]")&&app.includes("['household',['household']]"),'home tiles for both sections');
+ const i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.equal((i18n.match(/group_cakes:/g)||[]).length,3);assert.equal((i18n.match(/group_household:/g)||[]).length,3)}finally{DB.close()}});
