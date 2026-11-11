@@ -6,6 +6,7 @@ const W=l=>botWords[l]||botWords.ru;
 async function ask(db,from,l,order,version,act,state,ttl=3600000){await q(db,'INSERT INTO tg_dialogs(telegram_user,link_id,order_id,version,action,expires,state) VALUES(?,?,?,?,?,?,?) ON CONFLICT(telegram_user) DO UPDATE SET link_id=excluded.link_id,order_id=excluded.order_id,version=excluded.version,action=excluded.action,expires=excluded.expires,state=excluded.state',String(from),l.id,order,version,act,Date.now()+ttl,JSON.stringify(state||{})).run()}
 const touch=(db,id)=>q(db,'UPDATE tg_jobs SET revision=revision+1,next_at=0 WHERE order_id=?',id).run();
 export async function afterClaim(db,env,call,l,o,user,from){const u=await q(db,'SELECT name,dispatcher,car FROM users WHERE id=?',user.id).first();
+ await startNudge(db,env,call,l,o,user,from,u);
  if(u?.dispatcher){await ask(db,from,l,o.id,0,'disp_name',{});await call(env,'sendMessage',{chat_id:l.chat_id,text:W(l.lang).dispName.replace('{id}',o.id.slice(-6)),reply_markup:{force_reply:true,selective:true}});
   // owner 11.11: pick a courier from the ones this dispatcher sent before instead of typing the name and the car again
   const recent=(await q(db,"SELECT courier_name,courier_car FROM orders WHERE driver_id=? AND courier_name IS NOT NULL AND courier_name<>'' GROUP BY courier_name,courier_car ORDER BY MAX(rowid) DESC LIMIT 6",user.id).all()).results;
@@ -34,3 +35,8 @@ export async function carAsk(db,env,call,c,l,p){const u=await q(db,'SELECT name 
 export async function dispPick(db,env,call,c,l,p,user){const o=await q(db,'SELECT id,driver_id FROM orders WHERE id=?',p.order_id).first();if(!o||o.driver_id!==user?.id)fail('FORBIDDEN',403);const name=text(String(p.name||''),60,true),car=String(p.car||'').slice(0,30)||null;
  await q(db,'UPDATE orders SET courier_name=?,courier_car=? WHERE id=?',name,car,o.id).run();await q(db,'DELETE FROM tg_dialogs WHERE telegram_user=?',String(c.from.id)).run();await touch(db,o.id);
  await call(env,'sendMessage',{chat_id:l.chat_id,text:W(l.lang).dispSaved.replace('{name}',name).replace('{car}',car||'—')});return {ok:true}}
+// Owner 11.11: the order card, the buyer's phone and address go to the courier's private chat, never to the group. A courier
+// who never pressed «Старт» gets nothing there, so the group is told at once, with a button to the bot. A silent «typing»
+// probe shows whether the bot may write to him; on any error the hint is posted (a hint too many is harmless).
+async function startNudge(db,env,call,l,o,user,from,u){if(l.kind!=='DRIVER')return;let ok=false;try{const p=await q(db,"SELECT chat_id FROM tg_links WHERE kind='PERSONAL' AND ref_id=? AND active=1",user.id).first();if(p){await call(env,'sendChatAction',{chat_id:p.chat_id,action:'typing'});ok=true}}catch{}
+ if(ok)return;try{const me=await call(env,'getMe',{}),w=W(l.lang);await call(env,'sendMessage',{chat_id:l.chat_id,text:w.startNudge.replace('{name}',u?.name||user.name||'').replace('{id}',o.id.slice(-6)),reply_markup:{inline_keyboard:[[{text:w.openBot,url:'https://t.me/'+me.username}]]}})}catch{}}

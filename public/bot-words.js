@@ -73,3 +73,7 @@ Object.assign(botWords.ka,{payNotice:'💵 ბაზარმა გადაი
 Object.assign(botWords.ru,{dispRecent:'Или выберите из тех, кого уже отправляли:'});
 Object.assign(botWords.hy,{dispRecent:'Կամ ընտրեք նրանցից, ում արդեն ուղարկել եք՝'});
 Object.assign(botWords.ka,{dispRecent:'ან აირჩიეთ ისინი, ვინც უკვე გაგზავნეთ:'});
+// Owner 11.11: couriers work in the group only, and the bot cannot write first to someone who never pressed «Старт».
+Object.assign(botWords.ru,{startNudge:'⚠️ {name}, заказ {id} ваш, но я не могу написать вам в личку. Откройте бота и нажмите «Старт» — там адрес и телефон клиента, адрес забора и кнопки «Забрал» / «Передал».'});
+Object.assign(botWords.hy,{startNudge:'⚠️ {name}, {id} պատվերը ձերն է, բայց չեմ կարող գրել ձեզ անձնական չատում։ Բացեք բոտը և սեղմեք «Start» — այնտեղ են հաճախորդի հասցեն և հեռախոսը, վերցնելու հասցեն և «Վերցրի» / «Հանձնեցի» կոճակները։'});
+Object.assign(botWords.ka,{startNudge:'⚠️ {name}, შეკვეთა {id} თქვენია, მაგრამ პირად ჩატში ვერ მოგწერთ. გახსენით ბოტი და დააჭირეთ „Start“-ს — იქ არის კლიენტის მისამართი და ტელეფონი, აღების მისამართი და ღილაკები „ავიღე“ / „გადავეცი“.'});
