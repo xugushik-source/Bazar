@@ -124,3 +124,10 @@ test('owner 11.11: whole cake «Пламя» 22 cm 35 → 45 ₾, lahmajo 4 → 
   const r=await DB.prepare('SELECT cost FROM products WHERE id IN (?,?) ORDER BY id').bind(cakesId(flame.n),pizzaId(lahmajo.n)).all();assert.deepEqual(r.results.map(x=>x.cost),[3500,400]);
   const v=await DB.prepare('SELECT pickup FROM vendors WHERE id=?').bind('akhalkalaki-vypechka').first();assert.match(JSON.parse(v.pickup).ru,/кондитерская Вови, у рынка/);
   for(const a of [cakesArt(flame.n),pizzaArt(lahmajo.n)])assert.ok(fs.existsSync(new URL('../public/media/'+a+'.jpg',import.meta.url)),a)}finally{DB.close()}});
+
+test('owner 11.11: «Ламаджо» as the owner writes it; migration 0106 equals the generator',async()=>{const fs=await import('node:fs'),{food1111dSql}=await import('../src/food-1111d.mjs');
+ assert.ok(fs.readFileSync(new URL('../migrations/0106_lamajo_name.sql',import.meta.url),'utf8').endsWith(food1111dSql().join('\n')+'\n'));
+ const DB=new LocalD1();migrate(DB);await seed(DB);try{const c=await call({DB},'catalog?city='+cid);assert.equal(c.products.find(p=>p.id==='akhalkalaki--rf_pizza_05').names.ru,'Ламаджо');assert.match(c.categories.find(k=>k.id==='rf_pizza').names.ru,/ламаджо/)}finally{DB.close()}});
+
+test('owner 11.11: village delivery prices sit behind one «Стоимость доставки» button, in three languages',async()=>{const fs=await import('node:fs'),app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8'),i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');
+ assert.ok(app.includes('<details class="terms-line area-line"><summary>'));for(const k of ['deliveryPrices','areaIntro'])assert.equal((i18n.match(new RegExp(k+':','g'))||[]).length,3,k)});
