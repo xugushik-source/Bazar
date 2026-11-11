@@ -80,7 +80,7 @@ test('owner 10.11: household price list — cost +20 % rounded up to 10 tetri (o
 test('owner 11.11: «Торты и выпечка» — new section, supplier and eight cakes with photos show «Ожидается», not orderable; migration equals the generator',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{
  const {cakesSql,cakes,cakesId,cakesArt}=await import('../src/vypechka.mjs'),fs=await import('node:fs');
  const c=await call(e,'catalog?city='+cid);assert.ok(c.categories.find(x=>x.id==='cakes'&&x.names.hy&&x.names.ka),'category in three languages');assert.ok(c.vendors.find(v=>v.id==='akhalkalaki-vypechka'&&v.names.hy&&v.names.ka));
- const mine=c.products.filter(p=>p.category==='cakes');assert.equal(mine.length,13);assert.ok(mine.every(p=>p.profile.mode==='EACH'&&p.price>0&&!('cost'in p)&&p.names.ru&&p.names.hy&&p.names.ka),'owner 11.11: thirteen priced cakes');
+ const mine=c.products.filter(p=>p.category==='cakes');assert.equal(mine.length,14);assert.ok(mine.every(p=>p.profile.mode==='EACH'&&p.price>0&&!('cost'in p)&&p.names.ru&&p.names.hy&&p.names.ka),'owner 11.11: thirteen priced cakes');
  const {cakePrice,cakeCost}=await import('../src/cakes-1111.mjs');assert.deepEqual([1,2,8,9].map(cakePrice),[350,400,400,350]);assert.deepEqual([1,2,8,9].map(cakeCost),[250,300,300,250]);const price=n=>mine.find(p=>p.id===cakesId(n)).price;assert.equal(price(1),350);assert.equal(price(2),400);assert.equal(price(8),400);assert.equal(price(13),350);
  assert.ok(fs.readFileSync(new URL('../migrations/0099_vypechka_cakes.sql',import.meta.url),'utf8').endsWith(cakesSql().join('\n')+'\n'));
  for(const n of [...cakes.map(c=>c[0]),9,10,11,12,13])assert.ok(fs.existsSync(new URL('../public/media/'+cakesArt(n)+'.jpg',import.meta.url)),String(n));
@@ -90,7 +90,7 @@ test('owner 11.11: «Торты и выпечка» — new section, supplier an
 test('owner 11.11: «Доставка готовой еды» — five empty subsections in three languages, separate from cakes; migration equals the generator',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{
  const {readyFoodSql,readyFoodCategories}=await import('../src/ready-food.mjs'),fs=await import('node:fs');
  const c=await call(e,'catalog?city='+cid);
- for(const [id] of readyFoodCategories){const x=c.categories.find(k=>k.id===id);assert.ok(x&&x.names.ru&&x.names.hy&&x.names.ka,id);assert.equal(c.products.filter(p=>p.category===id).length,id==='rf_pizza'?4:0,'no invented dishes: only the owner\'s four (11.11)')}
+ for(const [id] of readyFoodCategories){const x=c.categories.find(k=>k.id===id);assert.ok(x&&x.names.ru&&x.names.hy&&x.names.ka,id);assert.equal(c.products.filter(p=>p.category===id).length,id==='rf_pizza'?5:0,'no invented dishes: only the owner\'s four (11.11)')}
  assert.ok(c.categories.find(k=>k.id==='cakes'),'cakes stay separate');const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8'),i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.ok(app.includes('ready-soon'));assert.equal((i18n.match(/readyFood:/g)||[]).length,3);
  assert.ok(fs.readFileSync(new URL('../migrations/0100_ready_food.sql',import.meta.url),'utf8').endsWith(readyFoodSql().join('\n')+'\n'))}finally{DB.close()}});
 
@@ -112,7 +112,15 @@ test('owner 11.11: cakes renamed by photo, four 35 cm pizzas/khachapuri at 25 �
  assert.ok(fs.readFileSync(new URL('../migrations/0104_pizza_cake_names.sql',import.meta.url),'utf8').endsWith(food1111bSql().join('\n')+'\n'));
  const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{const c=await call(e,'catalog?city='+cid),nm=n=>c.products.find(p=>p.id===cakesId(n)).names.ru;
   assert.deepEqual([nm(12),nm(13),nm(6)],['Рыжик','Президент','Виагра']);
-  const pz=c.products.filter(p=>p.category==='rf_pizza');assert.equal(pz.length,4);assert.ok(pz.every(p=>p.price===3000&&p.profile.mode==='EACH'&&!('cost'in p)&&/35/.test(p.names.ru)&&p.names.hy&&p.names.ka&&p.vendor_id==='akhalkalaki-vypechka'));
+  const pz=c.products.filter(p=>p.category==='rf_pizza'&&p.price===3000);assert.equal(pz.length,4);assert.ok(pz.every(p=>p.price===3000&&p.profile.mode==='EACH'&&!('cost'in p)&&/35/.test(p.names.ru)&&p.names.hy&&p.names.ka&&p.vendor_id==='akhalkalaki-vypechka'));
   const row=await DB.prepare('SELECT cost FROM products WHERE id=?').bind(pizzaId(1)).first();assert.equal(row.cost,2500);
   for(const [n] of pizzas)assert.ok(fs.existsSync(new URL('../public/media/'+pizzaArt(n)+'.jpg',import.meta.url)),String(n));
   const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8'),i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.ok(app.includes("['readyfood',['rf_pizza'"));assert.equal((i18n.match(/group_readyfood:/g)||[]).length,3)}finally{DB.close()}});
+
+test('owner 11.11: whole cake «Пламя» 22 cm 35 → 45 ₾, lahmajo 4 → 5,50 ₾, pickup names Vovi\'s confectionery; migration 0105 equals the generator',async()=>{const fs=await import('node:fs'),{food1111cSql,flame,lahmajo}=await import('../src/food-1111c.mjs'),{cakesId,cakesArt}=await import('../src/vypechka.mjs'),{pizzaId,pizzaArt}=await import('../src/food-1111b.mjs');
+ assert.ok(fs.readFileSync(new URL('../migrations/0105_flame_lahmajo_pickup.sql',import.meta.url),'utf8').endsWith(food1111cSql().join('\n')+'\n'));
+ const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{const c=await call(e,'catalog?city='+cid),f=c.products.find(p=>p.id===cakesId(flame.n)),l=c.products.find(p=>p.id===pizzaId(lahmajo.n));
+  assert.deepEqual([f.price,f.category,f.names.ru],[4500,'cakes','Пламя, 22 см']);assert.deepEqual([l.price,l.category],[550,'rf_pizza']);assert.ok(l.names.hy&&l.names.ka);
+  const r=await DB.prepare('SELECT cost FROM products WHERE id IN (?,?) ORDER BY id').bind(cakesId(flame.n),pizzaId(lahmajo.n)).all();assert.deepEqual(r.results.map(x=>x.cost),[3500,400]);
+  const v=await DB.prepare('SELECT pickup FROM vendors WHERE id=?').bind('akhalkalaki-vypechka').first();assert.match(JSON.parse(v.pickup).ru,/кондитерская Вови, у рынка/);
+  for(const a of [cakesArt(flame.n),pizzaArt(lahmajo.n)])assert.ok(fs.existsSync(new URL('../public/media/'+a+'.jpg',import.meta.url)),a)}finally{DB.close()}});

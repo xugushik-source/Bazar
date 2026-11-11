@@ -7,4 +7,4 @@ export const pickups={
  'akhalkalaki-artur':{ru:'У Пло, чуть ниже по улице Свободы от рынка — магазин Партез',hy:'Պլոյի մոտ, Ազատության փողոցով շուկայից մի փոքր ներքև՝ «Պարտեզ» խանութ',ka:'პლოსთან, თავისუფლების ქუჩაზე ბაზრიდან ოდნავ დაბლა — მაღაზია „პარტეზი“'},
  'akhalkalaki-mtsco':{ru:'Угол рынка снаружи, у обменника',hy:'Շուկայի անկյունում դրսից՝ փոխանակման կետի մոտ',ka:'ბაზრის კუთხეში, გარედან, გადამცვლელთან'}};
 export const pickupColumnSql='ALTER TABLE vendors ADD COLUMN pickup TEXT;';
-export function pickupSql(){const s=x=>"'"+String(x).replaceAll("'","''")+"'";return Object.entries(pickups).map(([id,o])=>`UPDATE vendors SET pickup=${s(JSON.stringify(o))} WHERE id=${s(id)} AND (pickup IS NULL OR pickup<>${s(JSON.stringify(o))});`)}
+export function pickupSql(list=pickups){const s=x=>"'"+String(x).replaceAll("'","''")+"'";return Object.entries(list).map(([id,o])=>`UPDATE vendors SET pickup=${s(JSON.stringify(o))} WHERE id=${s(id)} AND (pickup IS NULL OR pickup<>${s(JSON.stringify(o))});`)}
