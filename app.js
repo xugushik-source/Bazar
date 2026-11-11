@@ -1,11 +1,11 @@
-import {entryReady}from './entry.js?v=0ecbbc2be2';
-import {operations,opKeys,opLabel,opText}from './operations.js?v=0ecbbc2be2';import {sources}from './sources.js?v=0ecbbc2be2';import {customers}from './customers.js?v=0ecbbc2be2';
-import {botWords}from './bot-words.js?v=0ecbbc2be2';
-import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=0ecbbc2be2';
-import {salesWords}from './sales-i18n.js?v=0ecbbc2be2';
-import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=0ecbbc2be2';import {mediaVersions}from './media-versions.js?v=0ecbbc2be2';import {transferLinks}from './payments.js?v=0ecbbc2be2';import {ledger}from './ledger.js?v=0ecbbc2be2';import {sound,soundButton,watchOrders}from './sounds.js?v=0ecbbc2be2';
-import {words,statuses} from './i18n.js?v=0ecbbc2be2';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=0ecbbc2be2';
-import {quote as makeQuote,assess} from './weight-policy.js?v=0ecbbc2be2';
+import {entryReady}from './entry.js?v=87360f86fb';
+import {operations,opKeys,opLabel,opText}from './operations.js?v=87360f86fb';import {sources}from './sources.js?v=87360f86fb';import {customers}from './customers.js?v=87360f86fb';
+import {botWords}from './bot-words.js?v=87360f86fb';
+import {occasions,kitLines,mergeKit,recommend}from './merchandising.js?v=87360f86fb';
+import {salesWords}from './sales-i18n.js?v=87360f86fb';
+import {photoPath,artLabels,remotePhotos,photoCredits}from './photos.js?v=87360f86fb';import {mediaVersions}from './media-versions.js?v=87360f86fb';import {transferLinks}from './payments.js?v=87360f86fb';import {ledger}from './ledger.js?v=87360f86fb';import {sound,soundButton,watchOrders}from './sounds.js?v=87360f86fb';
+import {words,statuses} from './i18n.js?v=87360f86fb';import {progressHTML,linesHTML,stageHTML,customerReviewHTML,routingHTML,historyHTML,collectionEvents,proposalHTML}from './collection.js?v=87360f86fb';
+import {quote as makeQuote,assess} from './weight-policy.js?v=87360f86fb';
 // A category chip shows its first product's photo unless the owner chose one for it (owner 22.10: «Мясо и птица»).
 // Tile photos for the section grid: one clear, recognisable picture per section; bottles are shown whole.
 const chipArt={meat:'meat',vegetables:'tomato',fruit:'apple',bread:'lavash',deli:'sausage',nuts:'dried-apricot',market:'honey',grains:'buckwheat',drinks:'artur-coke-glass',alcohol:'mado-gubernator-050',sweets:'artur-alenka',belarus:'artur-smetana-gorki26',frozen:'artur-shrimp-vanoni',cakes:'cakes-01',readyfood:'rf-pizza-02',household:'artur-hh-160'},chipWhole=['drinks','alcohol'];
@@ -42,7 +42,7 @@ const bw=k=>botWords[lang][k];
 let lang=read('bazar.lang','ru');if(!words[lang])lang='ru';let city=read('bazar.city','akhalkalaki'),data,boot,user,filter='all',search='',basket=read('bazar.basket.'+city,[]),view='',tab='manageOrders',stage=null,openOrder=null,moreTabs=false,tabChosen=false,focusBefore,quoteCache,fulfillment='delivery',zone='',autoZone=false,orders=[],staticMode=false;
 const sale=k=>salesWords[lang][k]||k;
 const t=k=>k==='brand'?(boot?.brand?.[lang]||words[lang].brand):(opKeys.includes(k)?opLabel(lang,k):words[lang][k]||botWords[lang][k]||k),st=k=>statuses[lang][k]||t('status'),name=o=>o?.names?.[lang]||o?.names?.ru||'',money=(v,c='GEL')=>new Intl.NumberFormat({ru:'ru-RU',hy:'hy-AM',ka:'ka-GE'}[lang],{style:'currency',currency:c,maximumFractionDigits:2}).format(v/100);
-const weighted=m=>['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'].includes(m),unit=p=>t(p.profile.mode==='BUNCH'?'perBunch':p.profile.mode==='FIXED_PACK'?'perPack':weighted(p.profile.mode)?'perKg':'perEach');
+const weighted=m=>['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'].includes(m),unit=p=>t(p.profile.mode==='BUNCH'?'perBunch':p.profile.mode==='FIXED_PACK'?'perPack':weighted(p.profile.mode)?'perKg':'perEach')+(p.profile?.prep_minutes?' · '+t('prepTime').replace('{m}',p.profile.prep_minutes):'');
 const dayAfter=()=>new Date(Date.now()+86400000).toLocaleDateString('en-CA',{timeZone:'Asia/Tbilisi'});
 // Owner 30.10: after closing time nothing can be ordered for today — say so at the top, move checkout to tomorrow, and show each supplier's hours.
 const hhmm=m=>String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0'),todayDay=()=>new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Tbilisi'});

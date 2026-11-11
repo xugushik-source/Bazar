@@ -147,3 +147,7 @@ Object.assign(words.ka,{ordersClosed:'🌙 შეკვეთებს ვიღ
 Object.assign(words.ru,{deliveryPrices:'Стоимость доставки в сёла',areaIntro:'Доставляем по {city} и в сёла ниже. Скоро — Ниноцминда и Ахалцихе.'});
 Object.assign(words.hy,{deliveryPrices:'Առաքման արժեքը գյուղերում',areaIntro:'Առաքում ենք {city}-ում և ստորև նշված գյուղերում։ Շուտով՝ Նինոծմինդա և Ախալցխա։'});
 Object.assign(words.ka,{deliveryPrices:'მიტანის ფასი სოფლებში',areaIntro:'ვაწვდით {city}-ში და ქვემოთ ჩამოთვლილ სოფლებში. მალე — ნინოწმინდა და ახალციხე.'});
+// Owner 11.11: how long a dish is cooked, shown next to the unit on the card.
+Object.assign(words.ru,{prepTime:'готовится {m} мин'});
+Object.assign(words.hy,{prepTime:'պատրաստվում է {m} րոպե'});
+Object.assign(words.ka,{prepTime:'მზადდება {m} წთ'});
