@@ -143,9 +143,9 @@ test('owner 11.11: «Выпечка с любовью» 9:00–20:00, pizza 25 m
 test('owner 11.11: ready food is ordered until 19:30 and delivered up to the supplier closing (20:00); other goods keep 9–18',async()=>{const {readyOpen,hoursOpen,readyFoodTo,isReadyCat}=await import('../src/order-hours.mjs'),{slots}=await import('../src/commerce.mjs'),fs=await import('node:fs');
  const was=process.env.BAZAR_IGNORE_ORDER_HOURS;delete process.env.BAZAR_IGNORE_ORDER_HOURS;try{const h={from:540,to:1080};assert.equal(readyFoodTo,1170);
   assert.deepEqual([1079,1080,1150,1169,1170].map(m=>hoursOpen(h,m)),[true,false,false,false,false]);assert.deepEqual([539,1079,1080,1169,1170].map(m=>readyOpen(h,m)),[false,true,true,true,false])}finally{if(was!==undefined)process.env.BAZAR_IGNORE_ORDER_HOURS=was}
- assert.ok(isReadyCat('rf_pizza')&&!isReadyCat('cakes'));
+ assert.ok(isReadyCat('rf_pizza')&&isReadyCat('cakes')&&!isReadyCat('household'));
  const DB=new LocalD1();migrate(DB);await seed(DB);try{const day=new Date(Date.now()+86400000).toLocaleDateString('en-CA',{timeZone:'Asia/Tbilisi'}),last=a=>Math.max(...a.slots.map(s=>s.minute));
   assert.equal(last(await slots(DB,cid,day,'akhalkalaki--rf_pizza_02,akhalkalaki--rf_pizza_05')),1200,'pizza alone: 20:00');
-  assert.equal(last(await slots(DB,cid,day,'akhalkalaki--rf_pizza_02,akhalkalaki--cakes_01')),1180,'with a cake: the usual 19:40');
+  assert.equal(last(await slots(DB,cid,day,'akhalkalaki--rf_pizza_02,akhalkalaki--cakes_01')),1200,'owner 11.11: cakes count as evening food');assert.ok(last(await slots(DB,cid,day,'akhalkalaki--rf_pizza_02,akhalkalaki--artur_hh_160'))<=1180,'with other goods: the usual gap before closing');
   const c=await call({DB},'catalog?city='+cid);assert.equal(c.city.ready_to,1170);
   const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8'),i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.ok(app.includes('ordersOpen(basketReady())'));for(const k of ['readyEvening','readyOnlyNow'])assert.equal((i18n.match(new RegExp(k+':','g'))||[]).length,3,k)}finally{DB.close()}});
