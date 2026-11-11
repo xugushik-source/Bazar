@@ -131,3 +131,11 @@ test('owner 11.11: «Ламаджо» as the owner writes it; migration 0106 equ
 
 test('owner 11.11: village delivery prices sit behind one «Стоимость доставки» button, in three languages',async()=>{const fs=await import('node:fs'),app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8'),i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');
  assert.ok(app.includes('<details class="terms-line area-line"><summary>'));for(const k of ['deliveryPrices','areaIntro'])assert.equal((i18n.match(new RegExp(k+':','g'))||[]).length,3,k)});
+
+test('owner 11.11: «Выпечка с любовью» 9:00–20:00, pizza 25 min and lamajo 20 min on the card, still priced and orderable; migration 0107 equals the generator',async()=>{const fs=await import('node:fs'),{food1111eSql}=await import('../src/food-1111e.mjs'),{priceBasket,vendorWindow}=await import('../src/commerce.mjs');
+ assert.ok(fs.readFileSync(new URL('../migrations/0107_vypechka_hours_prep.sql',import.meta.url),'utf8').endsWith(food1111eSql().join('\n')+'\n'));
+ const DB=new LocalD1();migrate(DB);await seed(DB);try{const v=await DB.prepare('SELECT open_minute,close_minute FROM vendors WHERE id=?').bind('akhalkalaki-vypechka').first();assert.deepEqual([v.open_minute,v.close_minute],[540,1200]);
+  assert.deepEqual(await vendorWindow(DB,['akhalkalaki-vypechka']),{from:600,to:1180});
+  const c=await call({DB},'catalog?city='+cid),pm=id=>c.products.find(p=>p.id===id).profile.prep_minutes;assert.deepEqual(['01','02','03','04','05'].map(n=>pm('akhalkalaki--rf_pizza_'+n)),[25,25,25,undefined,20]);
+  const b=await priceBasket(DB,{city_id:cid,items:[{product_id:'akhalkalaki--rf_pizza_02',selection:{count:2}},{product_id:'akhalkalaki--rf_pizza_05',selection:{count:1}}]});assert.equal(b.estimate_minor,2*3000+550);
+  const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8'),i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.ok(app.includes("t('prepTime')"));assert.equal((i18n.match(/prepTime:/g)||[]).length,3)}finally{DB.close()}});

@@ -42,7 +42,7 @@ const bw=k=>botWords[lang][k];
 let lang=read('bazar.lang','ru');if(!words[lang])lang='ru';let city=read('bazar.city','akhalkalaki'),data,boot,user,filter='all',search='',basket=read('bazar.basket.'+city,[]),view='',tab='manageOrders',stage=null,openOrder=null,moreTabs=false,tabChosen=false,focusBefore,quoteCache,fulfillment='delivery',zone='',autoZone=false,orders=[],staticMode=false;
 const sale=k=>salesWords[lang][k]||k;
 const t=k=>k==='brand'?(boot?.brand?.[lang]||words[lang].brand):(opKeys.includes(k)?opLabel(lang,k):words[lang][k]||botWords[lang][k]||k),st=k=>statuses[lang][k]||t('status'),name=o=>o?.names?.[lang]||o?.names?.ru||'',money=(v,c='GEL')=>new Intl.NumberFormat({ru:'ru-RU',hy:'hy-AM',ka:'ka-GE'}[lang],{style:'currency',currency:c,maximumFractionDigits:2}).format(v/100);
-const weighted=m=>['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'].includes(m),unit=p=>t(p.profile.mode==='BUNCH'?'perBunch':p.profile.mode==='FIXED_PACK'?'perPack':weighted(p.profile.mode)?'perKg':'perEach');
+const weighted=m=>['WEIGHED','WHOLE_BY_WEIGHT','PREWEIGHED'].includes(m),unit=p=>t(p.profile.mode==='BUNCH'?'perBunch':p.profile.mode==='FIXED_PACK'?'perPack':weighted(p.profile.mode)?'perKg':'perEach')+(p.profile?.prep_minutes?' · '+t('prepTime').replace('{m}',p.profile.prep_minutes):'');
 const dayAfter=()=>new Date(Date.now()+86400000).toLocaleDateString('en-CA',{timeZone:'Asia/Tbilisi'});
 // Owner 30.10: after closing time nothing can be ordered for today — say so at the top, move checkout to tomorrow, and show each supplier's hours.
 const hhmm=m=>String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0'),todayDay=()=>new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Tbilisi'});
