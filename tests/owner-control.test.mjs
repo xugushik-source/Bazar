@@ -86,3 +86,10 @@ test('owner 11.11: «Торты и выпечка» — new section, supplier an
  for(const [n] of cakes)assert.ok(fs.existsSync(new URL('../public/media/'+cakesArt(n)+'.jpg',import.meta.url)),String(n));
  const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');assert.ok(app.includes("['cakes',['cakes']]")&&app.includes("['household',['household']]"),'home tiles for both sections');
  const i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.equal((i18n.match(/group_cakes:/g)||[]).length,3);assert.equal((i18n.match(/group_household:/g)||[]).length,3)}finally{DB.close()}});
+
+test('owner 11.11: «Доставка готовой еды» — five empty subsections in three languages, separate from cakes; migration equals the generator',async()=>{const DB=new LocalD1();migrate(DB);await seed(DB);const e={DB};try{
+ const {readyFoodSql,readyFoodCategories}=await import('../src/ready-food.mjs'),fs=await import('node:fs');
+ const c=await call(e,'catalog?city='+cid);
+ for(const [id] of readyFoodCategories){const x=c.categories.find(k=>k.id===id);assert.ok(x&&x.names.ru&&x.names.hy&&x.names.ka,id);assert.equal(c.products.filter(p=>p.category===id).length,0,'no invented dishes')}
+ assert.ok(c.categories.find(k=>k.id==='cakes'),'cakes stay separate');const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8'),i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.ok(app.includes('ready-soon'));assert.equal((i18n.match(/readyFood:/g)||[]).length,3);
+ assert.ok(fs.readFileSync(new URL('../migrations/0100_ready_food.sql',import.meta.url),'utf8').endsWith(readyFoodSql().join('\n')+'\n'))}finally{DB.close()}});
