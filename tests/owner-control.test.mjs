@@ -149,3 +149,6 @@ test('owner 11.11: ready food is ordered until 19:30 and delivered up to the sup
   assert.equal(last(await slots(DB,cid,day,'akhalkalaki--rf_pizza_02,akhalkalaki--cakes_01')),1200,'owner 11.11: cakes count as evening food');assert.ok(last(await slots(DB,cid,day,'akhalkalaki--rf_pizza_02,akhalkalaki--artur_hh_160'))<=1180,'with other goods: the usual gap before closing');
   const c=await call({DB},'catalog?city='+cid);assert.equal(c.city.ready_to,1170);
   const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8'),i18n=fs.readFileSync(new URL('../public/i18n.js',import.meta.url),'utf8');assert.ok(app.includes('ordersOpen(basketReady())'));for(const k of ['readyEvening','readyOnlyNow'])assert.equal((i18n.match(new RegExp(k+':','g'))||[]).length,3,k)}finally{DB.close()}});
+
+test('owner 12.11: a copy served by a Cloudflare Worker (bazar.xugushik.workers.dev) uses its own API; only the GitHub copy follows deployment.json',async()=>{const fs=await import('node:fs'),app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');
+ assert.ok(app.includes("if(u.origin!==location.origin&&!location.hostname.endsWith('.workers.dev'))apiBase=u.origin"))});
