@@ -152,3 +152,10 @@ test('owner 11.11: ready food is ordered until 19:30 and delivered up to the sup
 
 test('owner 12.11: a copy served by a Cloudflare Worker (bazar.xugushik.workers.dev) uses its own API; only the GitHub copy follows deployment.json',async()=>{const fs=await import('node:fs'),app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');
  assert.ok(app.includes("if(u.origin!==location.origin&&!location.hostname.endsWith('.workers.dev'))apiBase=u.origin"))});
+
+test('owner 13.11: migration 0110 leaves «Выпечка с любовью» on sale except Тарталетка, Капучино and «Пламя»',async()=>{const fs=await import('node:fs'),DB=new LocalD1();migrate(DB);await seed(DB);try{
+ const ids=(await DB.prepare("SELECT id FROM products WHERE vendor_id='akhalkalaki-vypechka'").all()).results.map(r=>r.id),three=['akhalkalaki--cakes_05','akhalkalaki--cakes_10','akhalkalaki--cakes_14'];
+ for(const id of ids.filter(i=>!three.includes(i)))DB.exec(`INSERT INTO day_closures(product_id,day,vendor_id,closed_by,at) VALUES('${id}','9999-12-31','akhalkalaki-vypechka','x','t')`);   // the state found on 13.11
+ DB.exec(fs.readFileSync(new URL('../migrations/0110_vypechka_fix_closures.sql',import.meta.url),'utf8'));
+ const c=await call({DB},'catalog?city='+cid),on=c.products.filter(p=>p.vendor_id==='akhalkalaki-vypechka').map(p=>p.id);
+ assert.equal(on.length,ids.length-3);assert.ok(three.every(id=>!on.includes(id)));assert.ok(on.includes('akhalkalaki--rf_pizza_02')&&on.includes('akhalkalaki--rf_pizza_05'))}finally{DB.close()}});
