@@ -1,3 +1,4 @@
+import {phoneAPI} from './phone-operator.mjs';
 import {advertising,saveAdvertising}from './advertising.mjs';import {sourceReport}from './sources.mjs';import {recordHit}from './traffic.mjs';import {customerBase,marketingOptOut,customersCsv}from './customers.mjs';import {priceSheet,sheetKey}from './price-sheet.mjs';import {setFirstOrderFree}from './first-order.mjs';
 import {listPromotions,savePromotion,referralInfo,referralManage}from './promotions.mjs';
 import {configured,telegramWebhook,telegramManage,botInvite,drainTelegram,notifyStatement,notifyPayment}from './telegram.mjs';import {botDomain}from './supplier-bot.mjs';import {savePhoto,listPhotos,photoFile}from './order-photos.mjs';
@@ -37,6 +38,7 @@ export async function handle(req,env){try{
  await db.batch([q(db,'UPDATE invites SET used=1 WHERE hash=? AND used=0',invite.hash),db.prepare('INSERT INTO guards(value) VALUES(changes())'),account,q(db,'INSERT INTO memberships(user_id,vendor_id,role) VALUES(?,?,?)',id,invite.vendor_id,invite.role),db.prepare('DELETE FROM guards')]);return reply({ok:true});}
  if(p.startsWith('/api/manage/')){
  if(!user)fail('LOGIN_REQUIRED',401);
+ if(p.startsWith('/api/manage/phone/'))return reply(await phoneAPI(db,p.split('/').pop(),b||Object.fromEntries(url.searchParams),user));
  if(p==='/api/manage/advertising'&&req.method==='GET'){if(!user.owner)fail('FORBIDDEN',403);return reply(await advertising(db,true))}
  if(p==='/api/manage/advertising'&&b)return reply(await saveAdvertising(db,b,user));
  if(p.startsWith('/api/manage/telegram/')){if(p.split('/').pop()==='status'?req.method!=='GET':!b)fail('METHOD_NOT_ALLOWED',405);return reply(await telegramManage(db,b,user,env,p.split('/').pop(),url.origin));}
