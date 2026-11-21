@@ -35,7 +35,8 @@ const commandPay=deliveryId=>'sub-pay-'+deliveryId;
 const BALANCE_SQL=`((SELECT COALESCE(SUM(CASE WHEN kind='PAYMENT' THEN amount_minor ELSE -amount_minor END),0) FROM subscription_funds WHERE program_id=? AND status='CONFIRMED') - (SELECT COALESCE(SUM(allocated_minor),0) FROM subscription_deliveries WHERE program_id=?))`;
 
 // ---------- даты и график (Asia/Tbilisi задаётся городом; дни — строки YYYY-MM-DD) ----------
-export const isDay=v=>typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&new Date(v+'T00:00:00Z').toISOString().slice(0,10)===v;
+// Дата YYYY-MM-DD, которая существует в календаре. Несуществующие даты (13-й месяц) возвращают false, а не бросают исключение.
+export const isDay=v=>{if(typeof v!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(v))return false;const t=Date.parse(v+'T00:00:00Z');return !Number.isNaN(t)&&new Date(t).toISOString().slice(0,10)===v};
 export const addDays=(day,n)=>{const d=new Date(day+'T00:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)};
 const dayDiff=(a,b)=>Math.round((Date.parse(b+'T00:00:00Z')-Date.parse(a+'T00:00:00Z'))/86400000);
 const isoWeekday=day=>{const w=new Date(day+'T00:00:00Z').getUTCDay();return w===0?7:w};
