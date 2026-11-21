@@ -27,7 +27,8 @@ jobs:
         run: node tools/deploy-ci.mjs
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # Account ID is an identifier, not a credential; the secret value was rejected by Cloudflare (code 7003)
+          CLOUDFLARE_ACCOUNT_ID: 'cef193feb04757135edf67994d5e62e3'
           BAZAR_OWNER_EMAIL: ${{ secrets.BAZAR_OWNER_EMAIL }}
           BAZAR_OWNER_PASSWORD: ${{ secrets.BAZAR_OWNER_PASSWORD }}
       - uses: actions/upload-artifact@v4
