@@ -1,17 +1,18 @@
-// Напоминания и диспетчерские списки для программ «Забота о близких» и курьеров.
+// Уведомления для поставщиков и курьеров. Клиенту ничего не отправляется: он заказал и забыл,
+// доставка появляется у него в кабинете.
 //
 // Что уходит кому (время — Asia/Tbilisi):
-//  • плательщику программы: «заказ создан» (сразу), «завтра доставка» (19:00 накануне), «сегодня доставка» (09:00 в день),
-//    «нужно ваше решение» (доставка застряла), «доставлено» (только после подтверждения заказа);
-//  • общей курьерской группе: сводка на сегодня (09:00) и на завтра (19:00) — только количества по населённым пунктам,
-//    без имён, адресов и телефонов;
-//  • личному чату курьера: его назначенные заказы на сегодня с адресами и телефонами получателей.
+//  • поставщику (чат SUPPLIER, ref_id = поставщик): вечером (19:00) — что подготовить на завтра;
+//    утром (09:00) — что передать сегодня. Количества по его товарам, суммированные по всем заказам дня.
+//  • курьерской группе (чат DRIVER): вечером (19:00) — полный список доставок на завтра по времени, с адресами
+//    и телефонами; утром (09:00) — список на сегодня. Курьеры берут доставки заранее и развозят сами.
+//    Группа должна состоять только из курьеров и владельца.
+//  • личному чату курьера (PERSONAL): утром — его назначенные заказы на сегодня.
 //
 // Правила:
 //  • Одно сообщение — одна строка: dedup_key UNIQUE. Повторный запуск cron дубля не создаёт.
-//  • Нет канала (нет чата или Telegram выключен) — строка становится OPERATOR_TASK: задача оператору, а не имитация отправки.
-//  • Отправка: ошибка Telegram до доставки — повтор с паузой; неизвестный исход (ambiguous) — не повторяется автоматически,
-//    помечается AMBIGUOUS для решения оператора.
+//  • Нет чата или Telegram выключен — строка становится OPERATOR_TASK. Имитации отправки нет.
+//  • Ошибка Telegram до доставки — повтор с паузой; неизвестный исход — AMBIGUOUS, без автоповтора.
 import {q,clock,parse} from './commerce.mjs';
 import {uuid,now} from './security.mjs';
 import {addDays} from './subscriptions.mjs';
@@ -24,68 +25,59 @@ export const MAX_ATTEMPTS=5;
 const LANGS=['ru','hy','ka'];
 const DEFAULT_AREA='Ахалкалаки';
 
-// ---------- тексты (ru/hy/ka). Армянский и грузинский — черновики: нужна проверка носителем языка. ----------
+// Тексты ru/hy/ka. Армянский и грузинский — черновики: нужна проверка носителем языка.
+const UNIT={ru:{kg:'кг',g:'г',pc:'шт'},hy:{kg:'կգ',g:'գ',pc:'հատ'},ka:{kg:'კგ',g:'გ',pc:'ც'}};
 const T={
-  created:{
-    ru:d=>`Заказ на ${d.day} в ${d.time} создан. Товаров: ${d.n}. Сумма ${d.sum} ₾ оплачена из средств программы.`,
-    hy:d=>`${d.day}-ի ${d.time}-ի պատվերը ստեղծված է։ Ապրանքներ՝ ${d.n}։ Գումարը՝ ${d.sum} ₾, վճարված է ծրագրի միջոցներից։`,
-    ka:d=>`შეკვეთა ${d.day}-ისთვის, ${d.time}-ზე შეიქმნა. პროდუქტები: ${d.n}. თანხა ${d.sum} ₾, გადახდილია პროგრამის სახსრებიდან.`},
-  tomorrow:{
-    ru:d=>`Завтра, ${d.day} в ${d.time}, доставка: ${d.n} товаров, ${d.sum} ₾. Ничего делать не нужно.`,
-    hy:d=>`Վաղը, ${d.day}-ին, ժամը ${d.time}-ին, առաքում՝ ${d.n} ապրանք, ${d.sum} ₾։ Ոչինչ անելու կարիք չկա։`,
-    ka:d=>`ხვალ, ${d.day}, ${d.time}-ზე, მიტანა: ${d.n} პროდუქტი, ${d.sum} ₾. არაფრის კეთება არ გჭირდებათ.`},
-  today:{
-    ru:d=>`Сегодня доставка получателю около ${d.time}. Товаров: ${d.n}, сумма ${d.sum} ₾.`,
-    hy:d=>`Այսօր առաքում ստացողին՝ մոտ ժամը ${d.time}-ին։ Ապրանքներ՝ ${d.n}, գումար՝ ${d.sum} ₾։`,
-    ka:d=>`დღეს მიტანა მიმღებთან დაახლოებით ${d.time}-ზე. პროდუქტები: ${d.n}, თანხა ${d.sum} ₾.`},
-  action:{
-    ru:d=>`Нужно ваше решение по доставке ${d.day}: ${d.reason}. Откройте программу на сайте.`,
-    hy:d=>`Ձեր որոշումն է պետք ${d.day}-ի առաքման համար՝ ${d.reason}։ Բացեք ծրագիրը կայքում։`,
-    ka:d=>`${d.day}-ის მიტანისთვის თქვენი გადაწყვეტილებაა საჭირო: ${d.reason}. გახსენით პროგრამა საიტზე.`},
-  delivered:{
-    ru:d=>`Доставка подтверждена: ${d.day}, ${d.n} товаров, сумма ${d.sum} ₾.`,
-    hy:d=>`Առաքումը հաստատված է՝ ${d.day}, ${d.n} ապրանք, գումար՝ ${d.sum} ₾։`,
-    ka:d=>`მიტანა დადასტურებულია: ${d.day}, ${d.n} პროდუქტი, თანხა ${d.sum} ₾.`},
-  digest:{
-    ru:d=>`${d.label}: всего заказов ${d.total}.${d.lines?' По населённым пунктам: '+d.lines+'.':''}`,
-    hy:d=>`${d.label}՝ պատվերներ ընդամենը ${d.total}։${d.lines?' Բնակավայրերով՝ '+d.lines+'։':''}`,
-    ka:d=>`${d.label}: შეკვეთები სულ ${d.total}.${d.lines?' დასახლებების მიხედვით: '+d.lines+'.':''}`},
-  digestLabel:{
-    ru:{am:'Заказы на сегодня',pm:'Заказы на завтра'},
-    hy:{am:'Այսօրվա պատվերները',pm:'Վաղվա պատվերները'},
-    ka:{am:'დღევანდელი შეკვეთები',pm:'ხვალინდელი შეკვეთები'}},
-  route:{
-    ru:d=>`Ваши заказы на ${d.day}:\n${d.lines}`,
-    hy:d=>`Ձեր պատվերները ${d.day}-ի համար՝\n${d.lines}`,
-    ka:d=>`თქვენი შეკვეთები ${d.day}-ისთვის:\n${d.lines}`},
-  routeLine:{
+  supplierLabel:{ru:{am:'Сегодня передать',pm:'Завтра подготовить'},hy:{am:'Այսօր հանձնել',pm:'Վաղը պատրաստել'},ka:{am:'დღეს გადასაცემად',pm:'ხვალისთვის მოსამზადებლად'}},
+  supplier:{
+    ru:d=>`${d.label} (${d.day}): ${d.lines}. Заказов: ${d.orders}.`,
+    hy:d=>`${d.label} (${d.day})՝ ${d.lines}։ Պատվերներ՝ ${d.orders}։`,
+    ka:d=>`${d.label} (${d.day}): ${d.lines}. შეკვეთები: ${d.orders}.`},
+  driverLabel:{ru:{am:'Доставки на сегодня',pm:'Доставки на завтра'},hy:{am:'Այսօրվա առաքումները',pm:'Վաղվա առաքումները'},ka:{am:'დღევანდელი მიტანები',pm:'ხვალინდელი მიტანები'}},
+  driverList:{
+    ru:d=>`${d.label} (${d.day}): всего ${d.n}.\n${d.lines}`,
+    hy:d=>`${d.label} (${d.day})՝ ընդամենը ${d.n}։\n${d.lines}`,
+    ka:d=>`${d.label} (${d.day}): სულ ${d.n}.\n${d.lines}`},
+  driverLine:{
     ru:d=>`${d.time} · ${d.area} · ${d.address} · ${d.name} ${d.phone} · ${d.n} тов.`,
     hy:d=>`${d.time} · ${d.area} · ${d.address} · ${d.name} ${d.phone} · ${d.n} ապր.`,
     ka:d=>`${d.time} · ${d.area} · ${d.address} · ${d.name} ${d.phone} · ${d.n} პრ.`},
-};
-const REASON={
-  WAITING_APPROVAL:{ru:'новая цена выше допустимой суммы',hy:'նոր գինը գերազանցում է թույլատրելի գումարը',ka:'ახალი ფასი დასაშვებ თანხაზე მაღალია'},
-  WAITING_FUNDS:{ru:'закончились средства программы',hy:'ծրագրի միջոցները սպառվել են',ka:'პროგრამის სახსრები ამოიწურა'},
-  WAITING_STOCK:{ru:'часть товаров временно отсутствует',hy:'որոշ ապրանքներ ժամանակավորապես չկան',ka:'ზოგი პროდუქტი დროებით არ არის'},
-  WAITING_SLOT:{ru:'нет свободного времени доставки',hy:'առաքման ազատ ժամանակ չկա',ka:'მიტანის თავისუფალი დრო არ არის'},
-  WAITING_CHANGE:{ru:'не выполнено условие минимальной суммы заказа',hy:'պատվերի նվազագույն գումարի պայմանը չի կատարվել',ka:'შეკვეთის მინიმალური თანხის პირობა არ სრულდება'},
+  route:{
+    ru:d=>`Ваши назначенные заказы на ${d.day}:\n${d.lines}`,
+    hy:d=>`Ձեր նշանակված պատվերները ${d.day}-ի համար՝\n${d.lines}`,
+    ka:d=>`თქვენთვის მინიჭებული შეკვეთები ${d.day}-ისთვის:\n${d.lines}`},
 };
 
-const money=minor=>(Number(minor||0)/100).toFixed(2);
 const pad=n=>String(n).padStart(2,'0');
 const hhmm=m=>pad(Math.floor(m/60))+':'+pad(m%60);
 const lang=v=>LANGS.includes(v)?v:'ru';
-// Адрес заказа начинается с названия зоны («Бавра: ул. …»), если зона есть. Без зоны — город.
+// Адрес заказа начинается с названия зоны («Бавра: ул. …»). Без зоны — город.
 const areaOf=address=>{const a=String(address||'');const i=a.indexOf(':');return i>0?a.slice(0,i):DEFAULT_AREA};
 const streetOf=address=>String(address||'').replace(/^[^:]*:\s*/,'');
 
-// Строка создаётся один раз; dedup_key UNIQUE не даёт второго сообщения. Возвращает true, если строка новая.
-async function insertOnce(db,{key,audience,programId,chatId,lang:L,text,status,reason}){
-  const r=await q(db,'INSERT OR IGNORE INTO subscription_notifications(id,dedup_key,audience,program_id,chat_id,lang,text,status,reason,attempts,next_at,created_at) VALUES(?,?,?,?,?,?,?,?,?,0,0,?)',
-    uuid(),key,audience,programId||null,chatId||null,lang(L),text,status,reason||null,now()).run();
-  return r.meta?.changes>0;
+// Количество строки заказа: весовой товар — граммы, штучный — штуки.
+function quantityOf(quote){
+  const qt=parse(quote,{});
+  if(Number.isInteger(qt.target_g))return {g:qt.target_g,pc:0};
+  if(Number.isInteger(qt.count))return {g:0,pc:qt.count};
+  return {g:0,pc:1};
+}
+function fmtQty(g,pc,L){
+  const u=UNIT[L];
+  const parts=[];
+  if(g>=1000)parts.push((g/1000).toFixed(2).replace(/\.?0+$/,'').replace('.',',')+' '+u.kg);
+  else if(g>0)parts.push(g+' '+u.g);
+  if(pc>0)parts.push(pc+' '+u.pc);
+  return parts.join(' + ')||'1 '+u.pc;
 }
 
+// Строка создаётся один раз; dedup_key UNIQUE не даёт второго сообщения. Возвращает true, если строка новая.
+async function insertOnce(db,{key,audience,chatId,lang:L,text,status,reason}){
+  // ON CONFLICT DO NOTHING: дубль пропускаем, а нарушение схемы (CHECK, FK) остаётся видимой ошибкой. INSERT OR IGNORE скрыл бы её.
+  const r=await q(db,'INSERT INTO subscription_notifications(id,dedup_key,audience,program_id,chat_id,lang,text,status,reason,attempts,next_at,created_at) VALUES(?,?,?,?,?,?,?,?,?,0,0,?) ON CONFLICT(dedup_key) DO NOTHING',
+    uuid(),key,audience,null,chatId||null,lang(L),text,status,reason||null,now()).run();
+  return r.meta?.changes>0;
+}
 // Нет чата или Telegram выключен → задача оператору, а не имитация отправки.
 function routeFor(chatId,telegramOn){
   if(!chatId)return {status:'OPERATOR_TASK',reason:'NO_CHANNEL'};
@@ -96,62 +88,66 @@ function routeFor(chatId,telegramOn){
 // ---------- генерация ----------
 export async function buildNotifications(db,at=new Date(),{telegramOn=false}={}){
   const c=clock(TZ,at),today=c.day,minute=c.minute,tomorrow=addDays(today,1);
-  const made={payer:0,driver:0};
+  const made={supplier:0,driver:0};
   const add=async(bucket,args)=>{if(await insertOnce(db,args))made[bucket]++};
 
-  // 1) Плательщик: по доставкам программ.
-  const rows=(await db.prepare(`SELECT d.id,d.day,d.minute,d.status,d.order_id,p.id AS program_id,p.items,o.total AS order_total,o.status AS order_status
-    FROM subscription_deliveries d JOIN subscription_programs p ON p.id=d.program_id
-    LEFT JOIN orders o ON o.id=d.order_id
-    WHERE p.status='ACTIVE' AND d.day>=? ORDER BY d.day`).bind(today).all()).results;
-  for(const d of rows){
-    const ch=await db.prepare("SELECT chat_id,lang FROM subscription_channels WHERE program_id=? AND active=1").bind(d.program_id).first();
-    const L=lang(ch?.lang);
-    const route=routeFor(ch?.chat_id,telegramOn);
-    const base={audience:'PAYER',programId:d.program_id,chatId:ch?.chat_id,lang:L,...route};
-    const data={day:d.day,time:hhmm(d.minute),n:parse(d.items,[]).length,sum:money(d.order_total??0)};
-    if(d.status==='ORDERED'){
-      await add('payer',{...base,key:`PAYER:CREATED:${d.id}`,text:T.created[L](data)});
-      if(d.day===tomorrow&&minute>=EVENING_MINUTE)await add('payer',{...base,key:`PAYER:D1:${d.id}`,text:T.tomorrow[L](data)});
-      if(d.day===today&&minute>=MORNING_MINUTE)await add('payer',{...base,key:`PAYER:D0:${d.id}`,text:T.today[L](data)});
-      if(d.order_status==='COMPLETED')await add('payer',{...base,key:`PAYER:DONE:${d.order_id}`,text:T.delivered[L](data)});
-    }else if(d.status.startsWith('WAITING_')){
-      const reason=REASON[d.status]?.[L]||d.status;
-      await add('payer',{...base,key:`PAYER:ACTION:${d.id}:${d.status}`,text:T.action[L]({day:d.day,reason})});
-    }
+  // 1) Поставщики: что подготовить / передать.
+  const suppliers=(await db.prepare("SELECT * FROM tg_links WHERE kind='SUPPLIER' AND active=1").all()).results;
+  for(const s of suppliers){
+    const L=lang(s.lang);
+    if(minute>=EVENING_MINUTE)await supplierDigest(db,s,tomorrow,'pm',L,telegramOn,add);
+    if(minute>=MORNING_MINUTE)await supplierDigest(db,s,today,'am',L,telegramOn,add);
   }
 
-  // 2) Сводки общей курьерской группы: сегодня утром, завтра вечером. Только количества.
+  // 2) Курьерская группа: полный список доставок дня.
   const groups=(await db.prepare("SELECT * FROM tg_links WHERE kind='DRIVER' AND active=1").all()).results;
   for(const g of groups){
-    if(minute>=MORNING_MINUTE)await digest(db,g,today,'am',telegramOn,add);
-    if(minute>=EVENING_MINUTE)await digest(db,g,tomorrow,'pm',telegramOn,add);
+    const L=lang(g.lang);
+    if(minute>=EVENING_MINUTE)await driverList(db,g,tomorrow,'pm',L,telegramOn,add);
+    if(minute>=MORNING_MINUTE)await driverList(db,g,today,'am',L,telegramOn,add);
   }
 
-  // 3) Личный маршрут курьера на сегодня: только назначенные ему заказы, с адресами и телефонами.
+  // 3) Личный чат курьера: только назначенные ему заказы на сегодня.
   if(minute>=MORNING_MINUTE){
     const persons=(await db.prepare("SELECT * FROM tg_links WHERE kind='PERSONAL' AND active=1").all()).results;
     for(const p of persons){
       const L=lang(p.lang);
       const list=(await db.prepare("SELECT o.id,o.minute,o.customer,(SELECT COUNT(*) FROM order_lines l WHERE l.order_id=o.id) AS n FROM orders o WHERE o.day=? AND o.driver_id=? AND o.status NOT IN ('CANCELLED','COMPLETED') ORDER BY o.minute").bind(today,p.ref_id).all()).results;
       if(!list.length)continue;
-      const lines=list.map(o=>{const cu=parse(o.customer,{});return T.routeLine[L]({time:hhmm(o.minute),area:areaOf(cu.address),address:streetOf(cu.address),name:cu.name||'',phone:cu.phone||'',n:o.n})}).join('\n');
-      const route=routeFor(p.chat_id,telegramOn);
-      await add('driver',{...route,audience:'DRIVER_PERSONAL',chatId:p.chat_id,lang:L,key:`DRIVER:AM:${today}:${p.id}`,text:T.route[L]({day:today,lines})});
+      const lines=list.map(o=>{const cu=parse(o.customer,{});return T.driverLine[L]({time:hhmm(o.minute),area:areaOf(cu.address),address:streetOf(cu.address),name:cu.name||'',phone:cu.phone||'',n:o.n})}).join('\n');
+      await add('driver',{...routeFor(p.chat_id,telegramOn),audience:'DRIVER_PERSONAL',chatId:p.chat_id,lang:L,key:`DRIVER:AM:${today}:${p.id}`,text:T.route[L]({day:today,lines})});
     }
   }
   return made;
 }
 
-async function digest(db,g,day,slot,telegramOn,add){
-  const L=lang(g.lang);
-  const orders=(await db.prepare("SELECT customer FROM orders WHERE day=? AND status<>'CANCELLED' ORDER BY minute").bind(day).all()).results;
-  const areas={};
-  for(const o of orders){const a=areaOf(parse(o.customer,{}).address);areas[a]=(areas[a]||0)+1}
-  const lines=Object.entries(areas).map(([a,n])=>`${a} — ${n}`).join('; ');
-  const text=T.digest[L]({label:T.digestLabel[L][slot],total:orders.length,lines});
-  const route=routeFor(g.chat_id,telegramOn);
-  await add('driver',{...route,audience:'DRIVER_GROUP',chatId:g.chat_id,lang:L,key:`DISPATCH:${slot.toUpperCase()}:${day}:${g.id}`,text});
+// Что поставщику подготовить на день: товары его ассортимента, суммированные по всем заказам дня.
+async function supplierDigest(db,s,day,slot,L,telegramOn,add){
+  const rows=(await db.prepare(`SELECT l.quote,p.names,o.id AS order_id FROM order_lines l
+    JOIN orders o ON o.id=l.order_id JOIN products p ON p.id=l.product_id
+    WHERE l.vendor_id=? AND o.day=? AND o.status<>'CANCELLED'`).bind(s.ref_id,day).all()).results;
+  if(!rows.length)return;
+  const byProduct=new Map(),orders=new Set();
+  for(const r of rows){
+    const name=parse(r.names,{})[L]||parse(r.names,{}).ru||'';
+    const qty=quantityOf(r.quote);
+    const cur=byProduct.get(name)||{g:0,pc:0};
+    cur.g+=qty.g;cur.pc+=qty.pc;
+    byProduct.set(name,cur);
+    orders.add(r.order_id);
+  }
+  const lines=[...byProduct.entries()].sort(([a],[b])=>a.localeCompare(b)).map(([n,v])=>`${n} — ${fmtQty(v.g,v.pc,L)}`).join('; ');
+  const text=T.supplier[L]({label:T.supplierLabel[L][slot],day,lines,orders:orders.size});
+  await add('supplier',{...routeFor(s.chat_id,telegramOn),audience:'SUPPLIER',chatId:s.chat_id,lang:L,key:`SUPPLIER:${slot.toUpperCase()}:${day}:${s.id}`,text});
+}
+
+// Полный список доставок дня для курьерской группы: время, адрес, получатель, телефон.
+async function driverList(db,g,day,slot,L,telegramOn,add){
+  const list=(await db.prepare("SELECT o.minute,o.customer,(SELECT COUNT(*) FROM order_lines l WHERE l.order_id=o.id) AS n FROM orders o WHERE o.day=? AND o.status NOT IN ('CANCELLED') ORDER BY o.minute").bind(day).all()).results;
+  if(!list.length)return;
+  const lines=list.map(o=>{const cu=parse(o.customer,{});return T.driverLine[L]({time:hhmm(o.minute),area:areaOf(cu.address),address:streetOf(cu.address),name:cu.name||'',phone:cu.phone||'',n:o.n})}).join('\n');
+  const text=T.driverList[L]({label:T.driverLabel[L][slot],day,n:list.length,lines});
+  await add('driver',{...routeFor(g.chat_id,telegramOn),audience:'DRIVER_GROUP',chatId:g.chat_id,lang:L,key:`DRIVER_LIST:${slot.toUpperCase()}:${day}:${g.id}`,text});
 }
 
 // ---------- отправка ----------
@@ -188,5 +184,5 @@ export async function runNotifications(env,at=new Date(),sender=telegramCall){
 
 // Задачи оператору: всё, что не ушло автоматически.
 export async function operatorTasks(db,{limit=200}={}){
-  return (await db.prepare("SELECT id,dedup_key,audience,program_id,chat_id,lang,text,status,reason,attempts,created_at FROM subscription_notifications WHERE status IN ('OPERATOR_TASK','FAILED','AMBIGUOUS') ORDER BY created_at DESC LIMIT ?").bind(limit).all()).results;
+  return (await db.prepare("SELECT id,dedup_key,audience,chat_id,lang,text,status,reason,attempts,created_at FROM subscription_notifications WHERE status IN ('OPERATOR_TASK','FAILED','AMBIGUOUS') ORDER BY created_at DESC LIMIT ?").bind(limit).all()).results;
 }

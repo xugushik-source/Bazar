@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS subscription_channels(
 CREATE TABLE IF NOT EXISTS subscription_notifications(
   id TEXT PRIMARY KEY,
   dedup_key TEXT NOT NULL UNIQUE,
-  audience TEXT NOT NULL CHECK(audience IN ('PAYER','DRIVER_GROUP','DRIVER_PERSONAL')),
+  audience TEXT NOT NULL CHECK(audience IN ('SUPPLIER','DRIVER_GROUP','DRIVER_PERSONAL')),
   program_id TEXT REFERENCES subscription_programs(id),
   chat_id TEXT,
   lang TEXT NOT NULL DEFAULT 'ru' CHECK(lang IN ('ru','hy','ka')),
