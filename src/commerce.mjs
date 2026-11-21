@@ -182,6 +182,9 @@ export async function action(db,b,user){let cancelCode=null,insteadOf=null;if(!u
  else if(b.action==='cancel'){
  // Owner 04.11: a buyer may call and cancel even after the courier took the order — the owner can cancel until it is completed.
  if(!owner)fail('FORBIDDEN',403);text(b.reason,300,true);cancelCode=cancelReason(b);for(const l of lines)st.push(q(db,'UPDATE products SET reserved=reserved-? WHERE id=?',l.reserved,l.product_id),guard(db));st.push(q(db,'UPDATE slots SET reserved=reserved-1 WHERE city_id=? AND day=? AND minute=?',o.city_id,o.day,o.minute),guard(db));fields.status='CANCELLED';if(o.paid)fields.payment='REFUND_REVIEW';
+ // «Забота о близких»: отмена заказа программы не освобождает её деньги сама. Доставка уходит в FAILED с пометкой,
+ // деньги остаются занятыми до решения оператора (src/subscriptions.mjs, ownerResolve).
+ st.push(q(db,"UPDATE subscription_deliveries SET status='FAILED',reason='ORDER_CANCELLED',updated_at=?,version=version+1 WHERE order_id=? AND status='ORDERED'",now(),o.id));
  }else fail('INVALID_ACTION');
  orderUpdate(db,st,o,fields);event(db,st,o.id,user.id,b.action.toUpperCase(),{vendor_id:b.vendor_id||null,reason:b.reason||'',...(cancelCode?{reason_code:cancelCode}:{}),...(fields.proposal?{proposal:parse(fields.proposal)}:{}),...(b.action==='weigh'?{actuals:b.actuals}:{}),...(b.line_id?{line_id:b.line_id}:{}),...(b.action==='confirm_phone'?{source:'PHONE'}:{}),...(insteadOf?{instead_of:insteadOf}:{}),...(b.action==='assign'?{driver_id:fields.driver_id}:{}),...(b.action==='payment'?{amount:b.amount}:{})});return saveCommand(db,st,ctx,user,{ok:true,id:o.id,version:o.version+1});
 }
