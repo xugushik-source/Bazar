@@ -10,6 +10,11 @@ import {weightPrice} from './weight-policy.mjs';
 import {q,parse,own,catalog,slots,priceBasket,customerQuotes,createOrder,orderView,action,approve,settle,inventoryAction,clock,confirmCollection,deliveryFee} from './commerce.mjs';
 import {Problem,fail,text,integer,uuid,token,sha,passwordHash,constant,userSession,now,teamOf} from './security.mjs';
 import config from './config.mjs';
+import {subscriptionApi} from './subscriptions.mjs';
+import {operatorTasks} from './notifications.mjs';
+import {deliveryPlan} from './plan.mjs';
+import {syncStatus} from './sheets-sync.mjs';
+import {dispatchBoard,assignMany} from './dispatch-board.mjs';
 const headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'same-origin'};
 const STAFF_DOMAIN='@staff.bazar.local';
 const reply=(value,status=200,extra={})=>new Response(JSON.stringify(value),{status,headers:{...headers,...extra}});
@@ -36,6 +41,13 @@ export async function handle(req,env){try{
  if(p==='/api/logout'&&b){const cookie=(req.headers.get('cookie')||'').split(';').map(s=>s.trim()).find(s=>s.startsWith('bazar_session='))?.slice(14);if(cookie)await q(db,'DELETE FROM sessions WHERE hash=?',await sha(cookie)).run();return reply({ok:true},200,{'Set-Cookie':'bazar_session=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0'});}
  if(p==='/api/join'&&b){const invite=await q(db,'SELECT * FROM invites WHERE hash=? AND used=0 AND expires>?',await sha(text(b.invite,100,true)),Date.now()).first();if(!invite)fail('INVALID_INVITE',409);const password=text(b.password,200,true);if(password.length<12)fail('PASSWORD_TOO_SHORT');const id=uuid(),salt=token(),email=text(b.email,200,true).toLowerCase();if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))fail('INVALID_INPUT');const account=q(db,'INSERT INTO users(id,email,name,hash,salt) VALUES(?,?,?,?,?)',id,email,text(b.name,100,true),await passwordHash(password,salt),salt);
  await db.batch([q(db,'UPDATE invites SET used=1 WHERE hash=? AND used=0',invite.hash),db.prepare('INSERT INTO guards(value) VALUES(changes())'),account,q(db,'INSERT INTO memberships(user_id,vendor_id,role) VALUES(?,?,?)',id,invite.vendor_id,invite.role),db.prepare('DELETE FROM guards')]);return reply({ok:true});}
+ if(p==='/api/manage/dispatch/board'||p==='/api/manage/dispatch/assign'){if(!user)fail('LOGIN_REQUIRED',401);if(!user.owner)fail('FORBIDDEN',403);
+   if(p==='/api/manage/dispatch/board')return reply(await dispatchBoard(db,b||{}));
+   return reply(await assignMany(db,b||{},user))}
+ if(p==='/api/manage/sheet-sync'){if(!user)fail('LOGIN_REQUIRED',401);if(!user.owner)fail('FORBIDDEN',403);return reply(await syncStatus(db,env))}
+ if(p==='/api/manage/subscriptions/plan'){if(!user)fail('LOGIN_REQUIRED',401);if(!user.owner)fail('FORBIDDEN',403);return reply(await deliveryPlan(db,{from:b?.from,to:b?.to,today:clock('Asia/Tbilisi').day}))}
+ if(p==='/api/manage/subscriptions/tasks'){if(!user)fail('LOGIN_REQUIRED',401);if(!user.owner)fail('FORBIDDEN',403);return reply({tasks:await operatorTasks(db)})}
+ if(p.startsWith('/api/subscriptions')||p.startsWith('/api/manage/subscriptions')){const r=await subscriptionApi(db,p,b,user);return reply(r.body,r.status)}
  if(p.startsWith('/api/manage/')){
  if(!user)fail('LOGIN_REQUIRED',401);
  if(p.startsWith('/api/manage/phone/'))return reply(await phoneAPI(db,p.split('/').pop(),b||Object.fromEntries(url.searchParams),user));

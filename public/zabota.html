@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Забота о близких · БАЗАР</title>
+<link rel="stylesheet" href="./app.css?v=entry-5">
+<style>
+  .z{max-width:640px;margin:0 auto;padding:16px;font-size:17px;line-height:1.45}
+  .z h1{font-size:26px;margin:8px 0 4px}
+  .z .sub{color:var(--muted);margin:0 0 18px}
+  .z .lang{display:flex;gap:8px;margin-bottom:12px}
+  .z .lang button{min-width:52px}
+  .z .steps{color:var(--muted);font-size:14px;margin:8px 0 14px}
+  .z fieldset{border:1px solid var(--line);border-radius:12px;padding:14px;margin:0 0 14px;background:var(--white)}
+  .z legend{font-weight:700;padding:0 6px}
+  .z label{display:block;margin:8px 0 4px;font-weight:600}
+  .z input[type=text],.z input[type=tel],.z input[type=number],.z input[type=date],.z select{width:100%;box-sizing:border-box;font-size:17px;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .z .check{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin:10px 0}
+  .z .check input{width:22px;height:22px;flex:0 0 auto;margin-top:2px}
+  .z .row{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
+  .z .row:last-child{border-bottom:0}
+  .z .stepper{display:flex;align-items:center;gap:8px}
+  .z .stepper button{width:44px;height:44px;font-size:22px;border-radius:10px}
+  .z .stepper span{min-width:70px;text-align:center;font-weight:700}
+  .z .btns{display:flex;gap:10px;justify-content:space-between;margin-top:14px}
+  .z .btn{background:var(--green);color:#fff;border:0;border-radius:12px;padding:14px 18px;font-size:18px;font-weight:700;cursor:pointer;min-height:52px}
+  .z .btn.alt{background:#fff;color:var(--green);border:2px solid var(--green)}
+  .z .btn:disabled{opacity:.5;cursor:default}
+  .z .err{color:var(--accent);font-weight:700;margin:10px 0;min-height:1em}
+  .z .sum{background:var(--card);border-radius:12px;padding:12px 14px;margin:10px 0}
+  .z .sum div{display:flex;justify-content:space-between;margin:4px 0}
+  .z .hint{color:var(--muted);font-size:15px}
+  .z .ok{background:#e6f1e4;border-radius:12px;padding:14px;margin:10px 0}
+  .z table{width:100%;border-collapse:collapse;font-size:15px}
+  .z td,.z th{padding:8px 4px;border-bottom:1px solid var(--line);text-align:left}
+  .z .hidden{display:none}
+  .z .wrap{word-break:break-all;font-size:14px}
+</style>
+</head>
+<body>
+<main class="z">
+  <div class="lang" role="group" aria-label="Язык">
+    <button class="btn alt" data-lang="ru">Русский</button>
+    <button class="btn alt" data-lang="hy">Հայերեն</button>
+    <button class="btn alt" data-lang="ka">ქართული</button>
+  </div>
+  <h1 id="t-title"></h1>
+  <p class="sub" id="t-sub"></p>
+
+  <section id="view-new">
+    <div class="steps" id="t-steps"></div>
+    <div class="err" id="err" role="alert"></div>
+
+    <!-- Шаг 1 -->
+    <fieldset data-step="1">
+      <legend id="s1-title"></legend>
+      <label for="rname" id="l-rname"></label>
+      <input id="rname" type="text" autocomplete="off">
+      <label for="rphone" id="l-rphone"></label>
+      <input id="rphone" type="tel" placeholder="+995 5xx xxx xxx">
+    </fieldset>
+
+    <!-- Шаг 2 -->
+    <fieldset data-step="2">
+      <legend id="s2-title"></legend>
+      <label for="zone" id="l-zone"></label>
+      <select id="zone"></select>
+      <label for="address" id="l-address"></label>
+      <input id="address" type="text" autocomplete="off">
+      <div class="hint" id="h-address"></div>
+    </fieldset>
+
+    <!-- Шаг 3 -->
+    <fieldset data-step="3">
+      <legend id="s3-title"></legend>
+      <div class="hint" id="h-products"></div>
+      <div id="products"></div>
+    </fieldset>
+
+    <!-- Шаг 4 -->
+    <fieldset data-step="4">
+      <legend id="s4-title"></legend>
+      <label for="sched" id="l-sched"></label>
+      <select id="sched"></select>
+      <div id="sched-weekly" class="hidden">
+        <div id="days"></div>
+      </div>
+      <div id="sched-interval" class="hidden">
+        <label for="every" id="l-every"></label>
+        <input id="every" type="number" min="1" max="60" value="10">
+        <label for="start" id="l-start"></label>
+        <input id="start" type="date">
+      </div>
+      <div id="sched-dates" class="hidden">
+        <label for="dadd" id="l-dates"></label>
+        <input id="dadd" type="date">
+        <div class="btns"><button class="btn alt" id="dbtn" type="button"></button></div>
+        <div id="dlist" class="hint"></div>
+      </div>
+      <label for="time" id="l-time"></label>
+      <select id="time"></select>
+    </fieldset>
+
+    <!-- Шаг 5 -->
+    <fieldset data-step="5">
+      <legend id="s5-title"></legend>
+      <label for="budget" id="l-budget"></label>
+      <input id="budget" type="number" min="1" step="1" value="100">
+      <div class="hint" id="h-budget"></div>
+    </fieldset>
+
+    <!-- Шаг 6 -->
+    <fieldset data-step="6">
+      <legend id="s6-title"></legend>
+      <label for="pname" id="l-pname"></label>
+      <input id="pname" type="text" autocomplete="name">
+      <label for="pphone" id="l-pphone"></label>
+      <input id="pphone" type="tel" placeholder="+995 5xx xxx xxx">
+      <div class="sum" id="quote"></div>
+      <div class="hint" id="h-pay"></div>
+      <label class="check"><input type="checkbox" id="c-privacy"><span id="t-privacy"></span></label>
+      <label class="check"><input type="checkbox" id="c-weight"><span id="t-weight"></span></label>
+    </fieldset>
+
+    <div class="btns">
+      <button class="btn alt" id="prev" type="button"></button>
+      <button class="btn" id="next" type="button"></button>
+    </div>
+  </section>
+
+  <section id="view-done" class="hidden">
+    <div class="ok" id="done-text"></div>
+    <p class="hint" id="done-hint"></p>
+    <div class="wrap" id="done-link"></div>
+    <div class="btns"><a class="btn" id="open-status" href="#"></a></div>
+  </section>
+
+  <section id="view-status" class="hidden">
+    <div class="sum" id="st-summary"></div>
+    <fieldset>
+      <legend id="st-topup-title"></legend>
+      <label for="tu-amount" id="tu-l-amount"></label>
+      <input id="tu-amount" type="number" min="1" step="1">
+      <label for="tu-ref" id="tu-l-ref"></label>
+      <input id="tu-ref" type="text">
+      <div class="btns"><button class="btn" id="tu-btn" type="button"></button></div>
+      <div class="err" id="tu-err" role="alert"></div>
+    </fieldset>
+    <fieldset>
+      <legend id="st-deliv-title"></legend>
+      <table><tbody id="st-deliv"></tbody></table>
+    </fieldset>
+  </section>
+</main>
+
+<script>
+// Тексты ru/hy/ka. Армянский и грузинский — черновики, их нужно проверить носителю языка до публикации.
+const T={
+ru:{title:'Забота о близких',sub:'Выбирайте продукты для родителей и близких. Мы доставим их по вашему графику — в Ахалкалаки и сёла.',
+ steps:n=>`Шаг ${n} из 6`,prev:'Назад',next:'Далее',send:'Оформить программу',
+ s1:'Кому доставляем?',rname:'Имя получателя',rphone:'Телефон получателя',
+ s2:'Куда доставляем?',zone:'Населённый пункт',address:'Адрес',addrHint:'Улица, дом, подъезд, ориентир.',
+ s3:'Какие товары?',prodHint:'Выберите товары из каталога. Количество меняется шагом товара.',
+ s4:'Когда доставляем?',sched:'Как часто',weekly:'В определённые дни недели',every:'Каждые N дней',dates:'Конкретные даты',
+ days:['Пн','Вт','Ср','Чт','Пт','Сб','Вс'],everyN:'Каждые сколько дней',start:'Начиная с',dateAdd:'Добавить дату',dateBtn:'Добавить',time:'Время доставки',
+ s5:'Бюджет и правила',budget:'Максимум на одну доставку, ₾',budgetHint:'Если стоимость товаров станет выше, мы не спишем деньги без вашего подтверждения.',
+ s6:'Оплата и подтверждение',pname:'Ваше имя',pphone:'Ваш телефон',
+ payHint:'Оплата переводом. Программа начнёт работать после того, как оператор подтвердит оплату.',
+ privacy:'Я согласен(на) на обработку персональных данных для оформления доставок. Текст — на странице «Конфиденциальность».',
+ weight:'Я согласен(на) с правилами взвешивания: допускается отклонение веса в пределах правил, сверх — с моего согласия.',
+ oneDelivery:'Одна доставка',goods:'Товары',delivery:'Доставка',total:'Итого',
+ done:'Программа оформлена. Сохраните ссылку ниже: по ней вы будете видеть доставки и пополнять программу.',
+ doneHint:'Ссылка содержит секретный ключ. Не передавайте её посторонним.',open:'Открыть программу',
+ stTitle:'Ваша программа',paid:'Оплачено',unused:'Остаток',reserved:'Занято доставками',
+ topupTitle:'Пополнить программу',tuAmount:'Сумма, ₾',tuRef:'Комментарий к переводу (номер или дата перевода)',tuBtn:'Я перевёл(а)',tuDone:'Спасибо. Оператор проверит поступление и подтвердит пополнение.',
+ delivTitle:'Доставки',noDeliv:'Доставок пока нет.',
+ errors:{INVALID_PHONE:'Проверьте телефон.',INVALID_INPUT:'Заполните все поля.',MIN_ORDER:'Для доставки в город минимум 30 ₾ товаров.',CONSENT_REQUIRED:'Нужно согласие на обработку данных и правила взвешивания.',INVALID_SLOT:'Выберите время из списка.',INVALID_SCHEDULE:'Проверьте расписание.',INVALID_ZONE:'Выберите населённый пункт.',INVALID_ITEMS:'Добавьте хотя бы один товар.',OUT_OF_STOCK:'Этот товар сейчас недоступен.',PRODUCT_UNAVAILABLE:'Этот товар сейчас недоступен.',NETWORK:'Нет связи. Попробуйте ещё раз.'},
+ st:{ACTIVE:'Активна',PAUSED:'На паузе',CANCELLED:'Отменена'},
+ ds:{PLANNED:'Запланирована',ORDERED:'Оформлена',SKIPPED:'Пропущена',CANCELLED:'Отменена',FAILED:'Нужна помощь оператора',WAITING_FUNDS:'Ждёт пополнения',WAITING_APPROVAL:'Ждёт вашего согласия на цену',WAITING_STOCK:'Товар временно недоступен',WAITING_SLOT:'Нет свободного времени',WAITING_CHANGE:'Нужно изменить заказ'},
+ wpart:'₾'},
+hy:{title:'Հոգատարություն մերձավորների համար',sub:'Ընտրեք ապրանքներ ձեր ծնողների և մերձավորների համար։ Մենք կառաքենք դրանք ձեր ժամանակացույցով՝ Ախալքալաքում և գյուղերում։',
+ steps:n=>`Քայլ ${n} 6-ից`,prev:'Հետ',next:'Հաջորդ',send:'Ձևակերպել ծրագիրը',
+ s1:'Ում ենք առաքում?',rname:'Ստացողի անունը',rphone:'Ստացողի հեռախոսը',
+ s2:'Ուր ենք առաքում?',zone:'Բնակավայր',address:'Հասցե',addrHint:'Փողոց, տուն, մուտք, orientir։',
+ s3:'Ի՞նչ ապրանքներ',prodHint:'Ընտրեք ապրանքներ կատալոգից։ Քանակը փոխվում է ապրանքի քայլով։',
+ s4:'Ե՞րբ ենք առաքում',sched:'Որքան հաճախ',weekly:'Շաբաթվա որոշ օրերին',every:'Յուրաքանչյուր N օրը',dates:'Կոնկրետ ամսաթվեր',
+ days:['Երկ','Երք','Չրք','Հնգ','Ուրբ','Շբթ','Կիր'],everyN:'Յուրաքանչյուր քանի օրը',start:'Սկսած',dateAdd:'Ավելացնել ամսաթիվ',dateBtn:'Ավելացնել',time:'Առաքման ժամը',
+ s5:'Բյուջե և կանոններ',budget:'Առավելագույնը մեկ առաքման համար, ₾',budgetHint:'Եթե ապրանքների արժեքը բարձրանա, գումար չենք գանձի ձեր հաստատման առանց։',
+ s6:'Վճարում և հաստատում',pname:'Ձեր անունը',pphone:'Ձեր հեռախոսը',
+ payHint:'Վճարումը փոխանցումով։ Ծրագիրը կսկսի աշխատել, երբ օպերատորը հաստատի վճարումը։',
+ privacy:'Համաձայն եմ անձնական տվյալների մշակմանը պատվերների համար։ Տեքստը՝ «Գաղտնիություն» էջում։',
+ weight:'Համաձայն եմ կշռման կանոններին՝ կշռի շեղումը սահմաններում, դրանից դուրս՝ իմ համաձայնությամբ։',
+ oneDelivery:'Մեկ առաքում',goods:'Ապրանքներ',delivery:'Առաքում',total:'Ընդամենը',
+ done:'Ծրագիրը ձևակերպված է։ Պահպանեք ստորև եղած հղումը. դրանով կտեսնեք առաքումները և կլրացնեք ծրագիրը։',
+ doneHint:'Հղումը պարունակում է գաղտնի բանալի։ Մի փոխանցեք երրորդ անձանց։',open:'Բացել ծրագիրը',
+ stTitle:'Ձեր ծրագիրը',paid:'Վճարված',unused:'Մնացորդ',reserved:'Զբաղված առաքումներով',
+ topupTitle:'Լրացնել ծրագիրը',tuAmount:'Գումար, ₾',tuRef:'Փոխանցման մեկնաբանություն',tuBtn:'Փոխանցել եմ',tuDone:'Շնորհակալություն։ Օպերատորը կստուգի և կհաստատի լրացումը։',
+ delivTitle:'Առաքումներ',noDeliv:'Առաքումներ դեռ չկան։',
+ errors:{INVALID_PHONE:'Ստուգեք հեռախոսը։',INVALID_INPUT:'Լրացրեք բոլոր դաշտերը։',MIN_ORDER:'Քաղաքում առաքման համար նվազագույնը 30 ₾ ապրանք։',CONSENT_REQUIRED:'Անհրաժեշտ է համաձայնություն։',INVALID_SLOT:'Ընտրեք ժամանակը ցանկից։',INVALID_SCHEDULE:'Ստուգեք ժամանակացույցը։',INVALID_ZONE:'Ընտրեք բնակավայրը։',INVALID_ITEMS:'Ավելացրեք առնվազն մեկ ապրանք։',OUT_OF_STOCK:'Այս ապրանքը հիմա հասանելի չէ։',PRODUCT_UNAVAILABLE:'Այս ապրանքը հիմա հասանելի չէ։',NETWORK:'Կապ չկա։ Փորձեք կրկին։'},
+ st:{ACTIVE:'Ակտիվ',PAUSED:'Դադարեցված',CANCELLED:'Չեղարկված'},
+ ds:{PLANNED:'Նախատեսված',ORDERED:'Ձևակերպված',SKIPPED:'Բաց թողնված',CANCELLED:'Չեղարկված',FAILED:'Պետք է օպերատորի օգնությունը',WAITING_FUNDS:'Սպասում է լրացման',WAITING_APPROVAL:'Սպասում է ձեր համաձայնությանը գնի վերաբերյալ',WAITING_STOCK:'Ապրանքը ժամանակավոր հասանելի չէ',WAITING_SLOT:'Ազատ ժամանակ չկա',WAITING_CHANGE:'Պատվերը պետք է փոխվի'},
+ wpart:'₾'},
+ka:{title:'ზრუნვა ახლობლებზე',sub:'აირჩიეთ პროდუქტები მშობლებისა და ახლობლებისთვის. ჩვენ მივიტანთ თქვენი გრაფიკით — ახალქალაქში და სოფლებში.',
+ steps:n=>`ნაბიჯი ${n} 6-დან`,prev:'უკან',next:'შემდეგი',send:'პროგრამის გაფორმება',
+ s1:'ვისთვის ვაწვდით?',rname:'მიმღების სახელი',rphone:'მიმღების ტელეფონი',
+ s2:'სად ვაწვდით?',zone:'დასახლება',address:'მისამართი',addrHint:'ქუჩა, სახლი, სადარბაზო, ორიენტირი.',
+ s3:'რა პროდუქტები?',prodHint:'აირჩიეთ კატალოგიდან. რაოდენობა იცვლება პროდუქტის ნაბიჯით.',
+ s4:'როდის ვაწვდით?',sched:'როგორ ხშირად',weekly:'კვირის გარკვეულ დღეებში',every:'ყოველ N დღეში',dates:'კონკრეტული თარიღები',
+ days:['ორშ','სამშ','ოთხ','ხუთ','პარ','შაბ','კვი'],everyN:'ყოველ რამდენ დღეში',start:'დაწყებული',dateAdd:'თარიღის დამატება',dateBtn:'დამატება',time:'მიტანის დრო',
+ s5:'ბიუჯეტი და წესები',budget:'მაქსიმუმი ერთ მიტანაზე, ₾',budgetHint:'თუ პროდუქტების ღირებულება გაიზრდება, თანხას თქვენი დადასტურების გარეშე არ ჩამოვწერთ.',
+ s6:'გადახდა და დადასტურება',pname:'თქვენი სახელი',pphone:'თქვენი ტელეფონი',
+ payHint:'გადახდა გადარიცხვით. პროგრამა დაიწყებს მუშაობას, როცა ოპერატორი დაადასტურებს გადახდას.',
+ privacy:'ვეთანხმები პერსონალური მონაცემების დამუშავებას შეკვეთებისთვის. ტექსტი — გვერდზე „კონფიდენციალურობა“.',
+ weight:'ვეთანხმები აწონვის წესებს: წონის გადახრა წესების ფარგლებში, მეტი — ჩემი თანხმობით.',
+ oneDelivery:'ერთი მიტანა',goods:'პროდუქტები',delivery:'მიტანა',total:'სულ',
+ done:'პროგრამა გაფორმებულია. შეინახეთ ქვემოთ მოცემული ბმული: მასით დაინახავთ მიტანებს და შეავსებთ პროგრამას.',
+ doneHint:'ბმული შეიცავს საიდუმლო გასაღებს. არ გადასცეთ სხვებს.',open:'პროგრამის გახსნა',
+ stTitle:'თქვენი პროგრამა',paid:'გადახდილი',unused:'ნაშთი',reserved:'დაკავებული მიტანებით',
+ topupTitle:'პროგრამის შევსება',tuAmount:'თანხა, ₾',tuRef:'გადარიცხვის კომენტარი',tuBtn:'გადავრიცხე',tuDone:'გმადლობთ. ოპერატორი შეამოწმებს და დაადასტურებს შევსებას.',
+ delivTitle:'მიტანები',noDeliv:'მიტანები ჯერ არ არის.',
+ errors:{INVALID_PHONE:'შეამოწმეთ ტელეფონი.',INVALID_INPUT:'შეავსეთ ყველა ველი.',MIN_ORDER:'ქალაქში მიტანისთვის მინიმუმი 30 ₾ პროდუქტი.',CONSENT_REQUIRED:'საჭიროა თანხმობა.',INVALID_SLOT:'აირჩიეთ დრო სიიდან.',INVALID_SCHEDULE:'შეამოწმეთ გრაფიკი.',INVALID_ZONE:'აირჩიეთ დასახლება.',INVALID_ITEMS:'დაამატეთ მინიმუმ ერთი პროდუქტი.',OUT_OF_STOCK:'ეს პროდუქტი ახლა მიუწვდომელია.',PRODUCT_UNAVAILABLE:'ეს პროდუქტი ახლა მიუწვდომელია.',NETWORK:'კავშირი არ არის. სცადეთ თავიდან.'},
+ st:{ACTIVE:'აქტიურია',PAUSED:'შეჩერებულია',CANCELLED:'გაუქმებულია'},
+ ds:{PLANNED:'დაგეგმილი',ORDERED:'გაფორმებული',SKIPPED:'გამოტოვებული',CANCELLED:'გაუქმებული',FAILED:'საჭიროა ოპერატორის დახმარება',WAITING_FUNDS:'ელის შევსებას',WAITING_APPROVAL:'ელის თქვენს თანხმობას ფასზე',WAITING_STOCK:'პროდუქტი დროებით მიუწვდომელია',WAITING_SLOT:'თავისუფალი დრო არ არის',WAITING_CHANGE:'შეკვეთა უნდა შეიცვალოს'},
+ wpart:'₾'}
+};
+// Во всех трёх языках одни и те же ключи; проверка при загрузке, чтобы пропавший перевод сразу был виден.
+const LANG_KEYS=Object.keys(T.ru);
+for(const l of ['hy','ka'])for(const k of LANG_KEYS)if(!(k in T[l]))console.error('missing translation',l,k);
+
+let lang=(localStorage.getItem('zabota-lang')||'ru');
+if(!T[lang])lang='ru';
+const $=id=>document.getElementById(id);
+const t=()=>T[lang];
+const CITY='akhalkalaki';
+const SLOTS=[];for(let m=540;m<=1170;m+=30)SLOTS.push(m);
+const MIN_TOWN_MINOR=3000;
+
+const state={step:1,zones:[],products:[],basket:{},days:new Set(),dates:[],quote:null};
+
+function fmt(minor){return (minor/100).toFixed(2).replace('.',',')+' '+t().wpart}
+function hhmm(m){return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')}
+function say(key){return t().errors[key]||t().errors.INVALID_INPUT}
+function phoneOk(v){return /^[+0-9 ()-]{5,40}$/.test(v)}
+function minutesOfDay(){return SLOTS}
+
+async function api(path,body){
+  const init=body?{method:'POST',headers:{'Content-Type':'application/json','X-Bazar-CSRF':'1'},body:JSON.stringify(body)}:{};
+  let r;
+  try{r=await fetch('/api/'+path,init)}catch{throw Object.assign(new Error('NETWORK'),{code:'NETWORK'})}
+  const data=await r.json().catch(()=>({}));
+  if(!r.ok)throw Object.assign(new Error(data.error||'ERROR'),{code:data.error||'ERROR'});
+  return data;
+}
+
+function isWeighed(p){const m=p.profile?.mode;return m==='WEIGHED'}
+function isCounted(p){const m=p.profile?.mode;return m==='FIXED_PACK'||m==='UNIT'||!m||m==='PIECE'}
+function supported(p){return isWeighed(p)||isCounted(p)}
+
+function renderStatic(){
+  document.documentElement.lang=lang;
+  $('t-title').textContent=t().title;$('t-sub').textContent=t().sub;
+  $('s1-title').textContent=t().s1;$('l-rname').textContent=t().rname;$('l-rphone').textContent=t().rphone;
+  $('s2-title').textContent=t().s2;$('l-zone').textContent=t().zone;$('l-address').textContent=t().address;$('h-address').textContent=t().addrHint;
+  $('s3-title').textContent=t().s3;$('h-products').textContent=t().prodHint;
+  $('s4-title').textContent=t().s4;$('l-sched').textContent=t().sched;
+  $('l-every').textContent=t().everyN;$('l-start').textContent=t().start;$('l-dates').textContent=t().dateAdd;$('dbtn').textContent=t().dateBtn;
+  $('l-time').textContent=t().time;
+  $('s5-title').textContent=t().s5;$('l-budget').textContent=t().budget;$('h-budget').textContent=t().budgetHint;
+  $('s6-title').textContent=t().s6;$('l-pname').textContent=t().pname;$('l-pphone').textContent=t().pphone;$('h-pay').textContent=t().payHint;
+  $('t-privacy').textContent=t().privacy;$('t-weight').textContent=t().weight;
+  $('prev').textContent=t().prev;$('next').textContent=t().next;
+  $('done-text').textContent=t().done;$('done-hint').textContent=t().doneHint;$('open-status').textContent=t().open;
+  $('st-topup-title').textContent=t().topupTitle;$('tu-l-amount').textContent=t().tuAmount;$('tu-l-ref').textContent=t().tuRef;$('tu-btn').textContent=t().tuBtn;
+  $('st-deliv-title').textContent=t().delivTitle;
+  const sched=$('sched');sched.innerHTML='';
+  [['weekly',t().weekly],['every',t().every],['dates',t().dates]].forEach(([v,label])=>{const o=document.createElement('option');o.value=v;o.textContent=label;sched.appendChild(o)});
+  const time=$('time');time.innerHTML='';SLOTS.forEach(m=>{const o=document.createElement('option');o.value=m;o.textContent=hhmm(m);if(m===600)o.selected=true;time.appendChild(o)});
+  const days=$('days');days.innerHTML='';t().days.forEach((d,i)=>{const label=document.createElement('label');label.className='check';const cb=document.createElement('input');cb.type='checkbox';cb.value=i+1;cb.onchange=()=>{cb.checked?state.days.add(i+1):state.days.delete(i+1);updateSummary()};label.append(cb,' '+d);days.appendChild(label)});
+  $('zone').innerHTML='';
+  document.querySelectorAll('[data-lang]').forEach(b=>{b.setAttribute('aria-pressed',b.dataset.lang===lang?'true':'false')});
+  renderZones();renderProducts();renderSchedule();showStep();
+}
+
+function renderZones(){
+  // Пустое значение — сам город; сёла и «1 Городок» выбираются отдельно.
+  const z=$('zone'),keep=z.value;z.innerHTML='';
+  const town=document.createElement('option');town.value='';
+  town.textContent=lang==='ru'?'Ахалкалаки (город)':lang==='hy'?'Ախալքալաք (քաղաք)':'ახალქალაქი (ქალაქი)';
+  z.appendChild(town);
+  for(const zone of state.zones){const opt=document.createElement('option');opt.value=zone.id;opt.textContent=zone.names[lang]||zone.names.ru;z.appendChild(opt)}
+  z.value=keep;
+}
+
+function renderProducts(){
+  const box=$('products');box.innerHTML='';
+  const list=state.products.filter(supported).filter(p=>p.active!==false);
+  for(const p of list){
+    const row=document.createElement('div');row.className='row';
+    const name=document.createElement('div');name.textContent=p.names[lang]||p.names.ru;
+    const step=isWeighed(p)?(p.profile.order_step_g||100):1;
+    const unit=isWeighed(p)?(lang==='ru'?'г':lang==='hy'?'գ':'გ'):(lang==='ru'?'шт':lang==='hy'?'հատ':'ც');
+    const price=document.createElement('div');price.className='hint';
+    price.textContent=isWeighed(p)?fmt(p.price)+' / kg':fmt(p.price);
+    const st=document.createElement('div');st.className='stepper';
+    const minus=document.createElement('button');minus.type='button';minus.textContent='−';minus.setAttribute('aria-label','−');
+    const val=document.createElement('span');val.textContent='0 '+unit;
+    const plus=document.createElement('button');plus.type='button';plus.textContent='+';plus.setAttribute('aria-label','+');
+    const min=isWeighed(p)?(p.profile.minimum_g||step):1;
+    const cur=()=>state.basket[p.id]||0;
+    const set=v=>{if(v<=0)delete state.basket[p.id];else state.basket[p.id]=v;val.textContent=(cur()||0)+' '+unit;updateSummary()};
+    // Уменьшаем шагом товара; у минимума — убираем товар полностью.
+    minus.onclick=()=>{const v=cur();if(v<=min){set(0);return}set(v-step)};
+    plus.onclick=()=>{const v=cur();set(v===0?min:v+step)};
+    st.append(minus,val,plus);
+    const left=document.createElement('div');left.append(name,price);
+    row.append(left,st);box.appendChild(row);
+  }
+  if(!list.length)box.textContent='—';
+}
+
+function renderSchedule(){
+  const v=$('sched').value;
+  $('sched-weekly').classList.toggle('hidden',v!=='weekly');
+  $('sched-interval').classList.toggle('hidden',v!=='every');
+  $('sched-dates').classList.toggle('hidden',v!=='dates');
+}
+function scheduleBody(){
+  const v=$('sched').value;
+  const today=localDay();
+  if(v==='weekly'){const days=[...state.days].sort();return {type:'weekly',days}}
+  if(v==='every'){return {type:'interval',every:Number($('every').value),start:$('start').value||today}}
+  return {type:'dates',dates:[...state.dates].sort()}
+}
+function localDay(){const d=new Date();const tbs=new Date(d.getTime()+4*3600e3);return tbs.toISOString().slice(0,10)}
+
+function selectionsOf(){return Object.entries(state.basket).map(([product_id,qty])=>{const p=state.products.find(x=>x.id===product_id);return {product_id,selection:isWeighed(p)?{grams:qty}:{count:qty}}})}
+
+function updateSummary(){
+  const items=selectionsOf();
+  if(!items.length){state.quote=null;$('quote').textContent='';return}
+  api('quote',{city_id:CITY,fulfillment:'delivery',zone:$('zone').value,items}).then(q=>{
+    state.quote=q;
+    const goods=q.items_total,fee=q.delivery_fee;
+    $('quote').innerHTML='';
+    const rows=[[t().oneDelivery,''],[t().goods,fmt(goods)],[t().delivery,fmt(fee)],[t().total,fmt(q.total)]];
+    rows.forEach(([a,b])=>{const d=document.createElement('div');const x=document.createElement('span');x.textContent=a;const y=document.createElement('b');y.textContent=b;d.append(x,y);$('quote').appendChild(d)});
+  }).catch(e=>{$('quote').textContent=say(e.code)});
+}
+
+function validateStep(n){
+  $('err').textContent='';
+  if(n===1){if(!$('rname').value.trim()||!phoneOk($('rphone').value))return say('INVALID_PHONE')}
+  if(n===2){if(!$('address').value.trim()||$('address').value.trim().length<5)return say('INVALID_INPUT')}
+  if(n===3){if(!Object.keys(state.basket).length)return say('INVALID_ITEMS')}
+  if(n===4){if($('sched').value==='weekly'&&!state.days.size)return say('INVALID_SCHEDULE');if($('sched').value==='dates'&&!state.dates.length)return say('INVALID_SCHEDULE');if($('sched').value==='every'&&!($('every').value>=1))return say('INVALID_SCHEDULE')}
+  if(n===5){if(!(Number($('budget').value)>0))return say('INVALID_INPUT')}
+  if(n===6){if(!$('pname').value.trim()||!phoneOk($('pphone').value))return say('INVALID_PHONE');if(!$('c-privacy').checked||!$('c-weight').checked)return say('CONSENT_REQUIRED')}
+  return null;
+}
+
+function showStep(){
+  document.querySelectorAll('fieldset[data-step]').forEach(f=>f.classList.toggle('hidden',Number(f.dataset.step)!==state.step));
+  $('t-steps')&&($('t-steps').textContent=t().steps(state.step));
+  $('prev').classList.toggle('hidden',state.step===1);
+  $('next').textContent=state.step===6?t().send:t().next;
+  window.scrollTo({top:0});
+}
+
+async function next(){
+  const err=validateStep(state.step);
+  if(err){$('err').textContent=err;return}
+  if(state.step<6){state.step++;showStep();return}
+  $('next').disabled=true;
+  try{
+    const body={city_id:CITY,payer:{name:$('pname').value.trim(),phone:$('pphone').value.trim()},recipient:{name:$('rname').value.trim(),phone:$('rphone').value.trim()},
+      address:$('address').value.trim(),zone:$('zone').value,minute:Number($('time').value),schedule:scheduleBody(),items:selectionsOf().map(i=>({product_id:i.product_id,selection:i.selection})),
+      max_delivery_minor:Math.round(Number($('budget').value)*100),privacy_consent:true,accepted_weight_rules:true};
+    const r=await api('subscriptions/create',body);
+    showDone(r);
+  }catch(e){$('err').textContent=say(e.code)}
+  finally{$('next').disabled=false}
+}
+
+function showDone(r){
+  $('view-new').classList.add('hidden');$('view-done').classList.remove('hidden');
+  const link=location.origin+location.pathname+'#id='+r.program.id+'&key='+r.key;
+  $('done-link').textContent=link;
+  $('open-status').href=link;
+}
+
+function readHash(){const h=new URLSearchParams(location.hash.slice(1));return {id:h.get('id'),key:h.get('key')}}
+
+async function showStatus(){
+  const {id,key}=readHash();
+  if(!id||!key)return false;
+  $('view-new').classList.add('hidden');$('view-done').classList.add('hidden');$('view-status').classList.remove('hidden');
+  try{
+    const p=await api('subscriptions/view',{id,key});
+    const s=p.summary;
+    $('st-summary').innerHTML='';
+    const rows=[[t().stTitle,(t().st[p.status]||p.status)],[t().paid,fmt(s.paid_minor)],[t().reserved,fmt(s.reserved_minor)],[t().unused,fmt(s.unused_minor)]];
+    rows.forEach(([a,b])=>{const d=document.createElement('div');const x=document.createElement('span');x.textContent=a;const y=document.createElement('b');y.textContent=b;d.append(x,y);$('st-summary').appendChild(d)});
+    const tb=$('st-deliv');tb.innerHTML='';
+    if(!p.deliveries.length)tb.innerHTML='<tr><td>'+t().noDeliv+'</td></tr>';
+    for(const d of p.deliveries){const tr=document.createElement('tr');const a=document.createElement('td');a.textContent=d.day+' '+hhmm(d.minute);const b=document.createElement('td');b.textContent=t().ds[d.status]||d.status;tr.append(a,b);tb.appendChild(tr)}
+    $('tu-btn').onclick=async()=>{
+      $('tu-err').textContent='';
+      const amount=Math.round(Number($('tu-amount').value)*100),reference=$('tu-ref').value.trim();
+      if(!(amount>0)||!reference){$('tu-err').textContent=say('INVALID_INPUT');return}
+      try{await api('subscriptions/action',{id,key,version:p.version,action:'request_top_up',amount_minor:amount,reference});$('tu-err').textContent=t().tuDone}
+      catch(e){$('tu-err').textContent=say(e.code)}
+    };
+  }catch(e){$('st-summary').textContent=say(e.code)}
+  return true;
+}
+
+async function init(){
+  renderStatic();
+  $('zone').onchange=updateSummary;
+  $('sched').onchange=()=>{renderSchedule();};
+  $('dbtn').onclick=()=>{const v=$('dadd').value;if(v&&!state.dates.includes(v)){state.dates.push(v);$('dlist').textContent=state.dates.join(', ')}};
+  $('prev').onclick=()=>{if(state.step>1){state.step--;showStep()}};
+  $('next').onclick=next;
+  document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>{lang=b.dataset.lang;localStorage.setItem('zabota-lang',lang);renderStatic();updateSummary()});
+  try{
+    const c=await api('catalog?city='+CITY);
+    state.zones=c.city.zones||[];state.products=c.products||[];
+    renderStatic();
+  }catch(e){$('err').textContent=say(e.code)}
+  if(!(await showStatus())){}
+  window.addEventListener('hashchange',()=>{showStatus()});
+}
+init();
+</script>
+</body>
+</html>
