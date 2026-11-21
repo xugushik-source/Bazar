@@ -48,6 +48,9 @@ const T={
     ka:d=>`თქვენთვის მინიჭებული შეკვეთები ${d.day}-ისთვის:\n${d.lines}`},
 };
 
+// Короткий хэш текста (FNV-1a) для ключа дедупликации. Коллизия безвредна: худший случай — одно лишнее сообщение.
+export const textHash=s=>{let h=0x811c9dc5;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,0x01000193)}return (h>>>0).toString(16)};
+
 const pad=n=>String(n).padStart(2,'0');
 const hhmm=m=>pad(Math.floor(m/60))+':'+pad(m%60);
 const lang=v=>LANGS.includes(v)?v:'ru';
@@ -138,7 +141,8 @@ async function supplierDigest(db,s,day,slot,L,telegramOn,add){
   }
   const lines=[...byProduct.entries()].sort(([a],[b])=>a.localeCompare(b)).map(([n,v])=>`${n} — ${fmtQty(v.g,v.pc,L)}`).join('; ');
   const text=T.supplier[L]({label:T.supplierLabel[L][slot],day,lines,orders:orders.size});
-  await add('supplier',{...routeFor(s.chat_id,telegramOn),audience:'SUPPLIER',chatId:s.chat_id,lang:L,key:`SUPPLIER:${slot.toUpperCase()}:${day}:${s.id}`,text});
+  // Ключ содержит хэш текста: изменился состав заказов — уходит новая сводка, а не старая остаётся без обновления.
+  await add('supplier',{...routeFor(s.chat_id,telegramOn),audience:'SUPPLIER',chatId:s.chat_id,lang:L,key:`SUPPLIER:${slot.toUpperCase()}:${day}:${s.id}:${textHash(text)}`,text});
 }
 
 // Полный список доставок дня для курьерской группы: время, адрес, получатель, телефон.
@@ -147,7 +151,7 @@ async function driverList(db,g,day,slot,L,telegramOn,add){
   if(!list.length)return;
   const lines=list.map(o=>{const cu=parse(o.customer,{});return T.driverLine[L]({time:hhmm(o.minute),area:areaOf(cu.address),address:streetOf(cu.address),name:cu.name||'',phone:cu.phone||'',n:o.n})}).join('\n');
   const text=T.driverList[L]({label:T.driverLabel[L][slot],day,n:list.length,lines});
-  await add('driver',{...routeFor(g.chat_id,telegramOn),audience:'DRIVER_GROUP',chatId:g.chat_id,lang:L,key:`DRIVER_LIST:${slot.toUpperCase()}:${day}:${g.id}`,text});
+  await add('driver',{...routeFor(g.chat_id,telegramOn),audience:'DRIVER_GROUP',chatId:g.chat_id,lang:L,key:`DRIVER_LIST:${slot.toUpperCase()}:${day}:${g.id}:${textHash(text)}`,text});
 }
 
 // ---------- отправка ----------

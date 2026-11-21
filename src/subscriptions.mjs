@@ -121,7 +121,8 @@ export async function createProgram(db,b,actor=null,at=new Date()){
   if(zone&&!zoneOf(city,zone))fail('INVALID_ZONE');
   if(!zone)zone=detectZone(zones[city.id],address);   // та же логика, что в createOrder: село в адресе задаёт зону
   const minute=integer(b.minute??600,540,1439);
-  if(minute%10)fail('INVALID_SLOT',409);
+  // Время только из сетки слотов (каждые 30 минут от 09:00), как в каталоге. Иначе планировщик не найдёт точный слот.
+  if((minute-540)%30)fail('INVALID_SLOT',409);
   const today=clock(city.timezone,at).day;
   const schedule=normalizeSchedule(b.schedule,today);
   const items=await normalizeItems(db,city.id,b.items);
@@ -217,7 +218,7 @@ export async function payerAction(db,b,at=new Date()){
       if(b.recipient_name!==undefined)fields.recipient_name=text(b.recipient_name,80,true);
       if(b.recipient_phone!==undefined){const ph=text(b.recipient_phone,40,true);if(!PHONE.test(ph))fail('INVALID_PHONE');fields.recipient_phone=ph}
       if(b.zone!==undefined){const z=text(b.zone||'',40);if(z&&!zoneOf(await cityOf(db,p.city_id),z))fail('INVALID_ZONE');fields.zone=z}
-      if(b.minute!==undefined){const m=integer(b.minute,540,1439);if(m%10)fail('INVALID_SLOT',409);fields.minute=m}
+      if(b.minute!==undefined){const m=integer(b.minute,540,1439);if((m-540)%30)fail('INVALID_SLOT',409);fields.minute=m}
       if(b.max_delivery_minor!==undefined)fields.max_delivery_minor=integer(b.max_delivery_minor,1,MAX_BUDGET_MINOR);
       const keys=Object.keys(fields);if(!keys.length)fail('INVALID_INPUT');
       st.push(q(db,`UPDATE subscription_programs SET ${keys.map(k=>k+'=?').join(',')} WHERE id=?`,...keys.map(k=>fields[k]),p.id));
@@ -343,7 +344,9 @@ async function processDelivery(db,p,d,today,at){
   if(quote.total>cap){await park(db,p,d,'WAITING_APPROVAL','OVER_BUDGET',quote.total);return 'waiting'}
   const products=quote.items.map(i=>i.product_id).join(',');
   const free=(await slots(db,p.city_id,d.day,products,0)).slots.filter(s=>s.available>0);
-  const pick=free.find(s=>s.minute===d.minute)||free[0];
+  // Точный слот, если он свободен; иначе ближайший свободный (раньше при равенстве). Не самый ранний день:
+  // так клиент не получит доставку на 09:00 вместо 11:40 молча.
+  const pick=free.find(s=>s.minute===d.minute)||[...free].sort((a,b)=>Math.abs(a.minute-d.minute)-Math.abs(b.minute-d.minute)||a.minute-b.minute)[0];
   if(!pick){await park(db,p,d,'WAITING_SLOT','NO_FREE_SLOT');return 'waiting'}
   const claim=await q(db,`UPDATE subscription_deliveries SET status='CLAIMED',allocated_minor=?,claimed_at=?,updated_at=?,reason=NULL,version=version+1 WHERE id=? AND status IN (${UNLOCKED_SQL}) AND ?<=${BALANCE_SQL}`,
     quote.total,now(),now(),d.id,quote.total,p.id,p.id).run();

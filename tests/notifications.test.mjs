@@ -56,7 +56,7 @@ test('supplier evening digest for tomorrow lists his products with quantities, s
     await buildNotifications(e.DB,at(day(0),18),{telegramOn:false});
     assert.equal((await tasks(e.DB)).filter(t=>t.dedup_key.startsWith('SUPPLIER')).length,0,'no digest at 18:00');
     await buildNotifications(e.DB,at(day(0),19),{telegramOn:false});
-    const t=(await tasks(e.DB)).find(x=>x.dedup_key===`SUPPLIER:PM:${day(1)}:${sid}`);
+    const t=(await tasks(e.DB)).find(x=>x.dedup_key.startsWith(`SUPPLIER:PM:${day(1)}:${sid}`));
     assert.ok(t,'evening digest for tomorrow');
     assert.ok(t.text.includes('Завтра подготовить'));
     assert.ok(t.text.includes(e.productName),'his product is listed');
@@ -81,9 +81,9 @@ test('morning digest for today is sent at 09:00 on the delivery day; each digest
   try{
     const sid=link(e.DB,'SUPPLIER',e.vendor,'888');
     await buildNotifications(e.DB,at(day(1),8),{telegramOn:false});
-    assert.equal((await tasks(e.DB)).filter(t=>t.dedup_key===`SUPPLIER:AM:${day(1)}:${sid}`).length,0);
+    assert.equal((await tasks(e.DB)).filter(t=>t.dedup_key.startsWith(`SUPPLIER:AM:${day(1)}:${sid}`)).length,0);
     await buildNotifications(e.DB,at(day(1),9),{telegramOn:false});
-    const am=(await tasks(e.DB)).find(t=>t.dedup_key===`SUPPLIER:AM:${day(1)}:${sid}`);
+    const am=(await tasks(e.DB)).find(t=>t.dedup_key.startsWith(`SUPPLIER:AM:${day(1)}:${sid}`));
     assert.ok(am&&am.text.includes('Сегодня передать'));
     const again=await buildNotifications(e.DB,at(day(1),9),{telegramOn:false});
     assert.equal(again.supplier,0);
@@ -95,7 +95,7 @@ test('courier group gets the full list for tomorrow at 19:00, with time, address
   try{
     const gid=link(e.DB,'DRIVER',uuid(),'-1001');
     await buildNotifications(e.DB,at(day(0),19),{telegramOn:false});
-    const t=(await tasks(e.DB)).find(x=>x.dedup_key===`DRIVER_LIST:PM:${day(1)}:${gid}`);
+    const t=(await tasks(e.DB)).find(x=>x.dedup_key.startsWith(`DRIVER_LIST:PM:${day(1)}:${gid}`));
     assert.ok(t,'list created');
     assert.ok(t.text.startsWith('Доставки на завтра'));
     assert.ok(t.text.includes('всего 1'));
@@ -114,6 +114,25 @@ test('assigned courier gets his own route in the morning, with the payer phone l
     assert.ok(route);
     assert.ok(route.text.includes(RECIPIENT.phone));
     assert.equal(route.text.includes('+995555111222'),false,'payer phone is not in the route');
+  }finally{e.DB.close()}
+});
+
+test('when a new order for the same day arrives, the supplier gets an updated digest; no change, no repeat', async()=>{
+  const e=await env();
+  try{
+    const sid=link(e.DB,'SUPPLIER',e.vendor,'888');
+    await buildNotifications(e.DB,at(day(0),19),{telegramOn:false});
+    const second=await createProgram(e.DB,{city_id:cid,payer:{name:'Карен',phone:'+995555111222'},recipient:{name:'Тётя Ира',phone:'+995555777888'},address:'Ахалкалаки, ул. Мира 3',minute:600,
+      schedule:{type:'dates',dates:[day(1)]},items:[{product_id:PRODUCT,selection:{grams:1000}}],max_delivery_minor:10000,privacy_consent:true,accepted_weight_rules:true});
+    e.DB.prepare("INSERT INTO subscription_funds(id,program_id,kind,amount_minor,status,reference,requested_at,confirmed_at) VALUES(?,?,'PAYMENT',7000,'CONFIRMED','тест2',?,?)").bind(uuid(),second.program.id,now(),now()).run();
+    await runSubscriptionPlanner(e.DB);
+    const again=await buildNotifications(e.DB,at(day(0),19),{telegramOn:false});
+    assert.equal(again.supplier,1,'changed list creates one new digest');
+    const digests=(await tasks(e.DB)).filter(t=>t.dedup_key.startsWith(`SUPPLIER:PM:${day(1)}:${sid}`));
+    assert.equal(digests.length,2);
+    assert.ok(digests.some(t=>t.text.includes('Заказов: 2')));
+    const none=await buildNotifications(e.DB,at(day(0),19),{telegramOn:false});
+    assert.equal(none.supplier,0,'same list is not repeated');
   }finally{e.DB.close()}
 });
 
