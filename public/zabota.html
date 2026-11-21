@@ -92,6 +92,12 @@
         <label for="start" id="l-start"></label>
         <input id="start" type="date">
       </div>
+      <div id="sched-range" class="hidden">
+        <div id="range-from"><label for="rfrom" id="l-from"></label><input id="rfrom" type="date"></div>
+        <label for="runtil" id="l-until"></label>
+        <input id="runtil" type="date">
+        <div class="hint" id="h-range"></div>
+      </div>
       <div id="sched-dates" class="hidden">
         <label for="dadd" id="l-dates"></label>
         <input id="dadd" type="date">
@@ -163,7 +169,7 @@ ru:{title:'Забота о близких',sub:'Выбирайте продук�
  s2:'Куда доставляем?',zone:'Населённый пункт',address:'Адрес',addrHint:'Улица, дом, подъезд, ориентир.',
  s3:'Какие товары?',prodHint:'Выберите товары из каталога. Количество меняется шагом товара.',
  s4:'Когда доставляем?',sched:'Как часто',weekly:'В определённые дни недели',every:'Каждые N дней',dates:'Конкретные даты',
- days:['Пн','Вт','Ср','Чт','Пт','Сб','Вс'],everyN:'Каждые сколько дней',start:'Начиная с',dateAdd:'Добавить дату',dateBtn:'Добавить',time:'Время доставки',
+ days:['Пн','Вт','Ср','Чт','Пт','Сб','Вс'],rfrom:'С какой даты (необязательно)',runtil:'До какой даты (включительно)',rhint:'После этого дня доставок не будет. По умолчанию — месяц, максимум — 120 дней.',everyN:'Каждые сколько дней',start:'Начиная с',dateAdd:'Добавить дату',dateBtn:'Добавить',time:'Время доставки',
  s5:'Бюджет и правила',budget:'Максимум на одну доставку, ₾',budgetHint:'Если стоимость товаров станет выше, мы не спишем деньги без вашего подтверждения.',
  s6:'Оплата и подтверждение',pname:'Ваше имя',pphone:'Ваш телефон',
  payHint:'Оплата переводом. Программа начнёт работать после того, как оператор подтвердит оплату.',
@@ -185,7 +191,7 @@ hy:{title:'Հոգատարություն մերձավորների համար',sub
  s2:'Ուր ենք առաքում?',zone:'Բնակավայր',address:'Հասցե',addrHint:'Փողոց, տուն, մուտք, orientir։',
  s3:'Ի՞նչ ապրանքներ',prodHint:'Ընտրեք ապրանքներ կատալոգից։ Քանակը փոխվում է ապրանքի քայլով։',
  s4:'Ե՞րբ ենք առաքում',sched:'Որքան հաճախ',weekly:'Շաբաթվա որոշ օրերին',every:'Յուրաքանչյուր N օրը',dates:'Կոնկրետ ամսաթվեր',
- days:['Երկ','Երք','Չրք','Հնգ','Ուրբ','Շբթ','Կիր'],everyN:'Յուրաքանչյուր քանի օրը',start:'Սկսած',dateAdd:'Ավելացնել ամսաթիվ',dateBtn:'Ավելացնել',time:'Առաքման ժամը',
+ days:['Երկ','Երք','Չրք','Հնգ','Ուրբ','Շբթ','Կիր'],rfrom:'Սկսած (ըստ ցանկության)',runtil:'Մինչև (ներառյալ)',rhint:'Այս օրից հետո առաքումներ չեն լինի։ Սովորաբար՝ մեկ ամիս, առավելագույնը՝ 120 օր։',everyN:'Յուրաքանչյուր քանի օրը',start:'Սկսած',dateAdd:'Ավելացնել ամսաթիվ',dateBtn:'Ավելացնել',time:'Առաքման ժամը',
  s5:'Բյուջե և կանոններ',budget:'Առավելագույնը մեկ առաքման համար, ₾',budgetHint:'Եթե ապրանքների արժեքը բարձրանա, գումար չենք գանձի ձեր հաստատման առանց։',
  s6:'Վճարում և հաստատում',pname:'Ձեր անունը',pphone:'Ձեր հեռախոսը',
  payHint:'Վճարումը փոխանցումով։ Ծրագիրը կսկսի աշխատել, երբ օպերատորը հաստատի վճարումը։',
@@ -207,7 +213,7 @@ ka:{title:'ზრუნვა ახლობლებზე',sub:'აირჩ�
  s2:'სად ვაწვდით?',zone:'დასახლება',address:'მისამართი',addrHint:'ქუჩა, სახლი, სადარბაზო, ორიენტირი.',
  s3:'რა პროდუქტები?',prodHint:'აირჩიეთ კატალოგიდან. რაოდენობა იცვლება პროდუქტის ნაბიჯით.',
  s4:'როდის ვაწვდით?',sched:'როგორ ხშირად',weekly:'კვირის გარკვეულ დღეებში',every:'ყოველ N დღეში',dates:'კონკრეტული თარიღები',
- days:['ორშ','სამშ','ოთხ','ხუთ','პარ','შაბ','კვი'],everyN:'ყოველ რამდენ დღეში',start:'დაწყებული',dateAdd:'თარიღის დამატება',dateBtn:'დამატება',time:'მიტანის დრო',
+ days:['ორშ','სამშ','ოთხ','ხუთ','პარ','შაბ','კვი'],rfrom:'დაწყებული (არასავალდებულო)',runtil:'ბოლო თარიღი (ჩათვლით)',rhint:'ამ დღის შემდეგ მიწოდება აღარ იქნება. ჩვეულებრივ — ერთი თვე, მაქსიმუმ 120 დღე.',everyN:'ყოველ რამდენ დღეში',start:'დაწყებული',dateAdd:'თარიღის დამატება',dateBtn:'დამატება',time:'მიტანის დრო',
  s5:'ბიუჯეტი და წესები',budget:'მაქსიმუმი ერთ მიტანაზე, ₾',budgetHint:'თუ პროდუქტების ღირებულება გაიზრდება, თანხას თქვენი დადასტურების გარეშე არ ჩამოვწერთ.',
  s6:'გადახდა და დადასტურება',pname:'თქვენი სახელი',pphone:'თქვენი ტელეფონი',
  payHint:'გადახდა გადარიცხვით. პროგრამა დაიწყებს მუშაობას, როცა ოპერატორი დაადასტურებს გადახდას.',
@@ -264,7 +270,7 @@ function renderStatic(){
   $('s2-title').textContent=t().s2;$('l-zone').textContent=t().zone;$('l-address').textContent=t().address;$('h-address').textContent=t().addrHint;
   $('s3-title').textContent=t().s3;$('h-products').textContent=t().prodHint;
   $('s4-title').textContent=t().s4;$('l-sched').textContent=t().sched;
-  $('l-every').textContent=t().everyN;$('l-start').textContent=t().start;$('l-dates').textContent=t().dateAdd;$('dbtn').textContent=t().dateBtn;
+  $('l-from').textContent=t().rfrom;$('l-until').textContent=t().runtil;$('h-range').textContent=t().rhint;$('l-every').textContent=t().everyN;$('l-start').textContent=t().start;$('l-dates').textContent=t().dateAdd;$('dbtn').textContent=t().dateBtn;
   $('l-time').textContent=t().time;
   $('s5-title').textContent=t().s5;$('l-budget').textContent=t().budget;$('h-budget').textContent=t().budgetHint;
   $('s6-title').textContent=t().s6;$('l-pname').textContent=t().pname;$('l-pphone').textContent=t().pphone;$('h-pay').textContent=t().payHint;
@@ -324,12 +330,17 @@ function renderSchedule(){
   $('sched-weekly').classList.toggle('hidden',v!=='weekly');
   $('sched-interval').classList.toggle('hidden',v!=='every');
   $('sched-dates').classList.toggle('hidden',v!=='dates');
+  $('sched-range').classList.toggle('hidden',v!=='weekly'&&v!=='every');
+  $('range-from').classList.toggle('hidden',v!=='weekly');
+  if(!$('runtil').value)$('runtil').value=plusDays(localDay(),30);
 }
+function plusDays(day,n){const d=new Date(day+'T00:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)}
 function scheduleBody(){
   const v=$('sched').value;
   const today=localDay();
-  if(v==='weekly'){const days=[...state.days].sort();return {type:'weekly',days}}
-  if(v==='every'){return {type:'interval',every:Number($('every').value),start:$('start').value||today}}
+  const until=$('runtil').value||undefined;
+  if(v==='weekly'){const days=[...state.days].sort();return {type:'weekly',days,...($('rfrom').value?{from:$('rfrom').value}:{}),...(until?{until}:{})}}
+  if(v==='every'){return {type:'interval',every:Number($('every').value),start:$('start').value||today,...(until?{until}:{})}}
   return {type:'dates',dates:[...state.dates].sort()}
 }
 function localDay(){const d=new Date();const tbs=new Date(d.getTime()+4*3600e3);return tbs.toISOString().slice(0,10)}

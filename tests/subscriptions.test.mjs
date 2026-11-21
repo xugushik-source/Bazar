@@ -421,3 +421,14 @@ test('plan edits: skip, move to a free day, refuse a taken day, change the sched
     assert.ok(planned.every(d=>new Date(d.day+'T00:00:00Z').getUTCDay()===5),'only the new weekday remains planned');
   }finally{e.DB.close()}
 });
+
+test('schedule range: "until" and "from" cut the plan, bad ranges are rejected (owner 21.11: limit a programme to a month or a date range)',()=>{
+  const today='2026-12-01',w=normalizeSchedule({type:'weekly',days:[1,3],from:'2026-12-08',until:'2026-12-20'},today);
+  assert.deepEqual(w,{type:'weekly',days:[1,3],from:'2026-12-08',until:'2026-12-20'});
+  assert.deepEqual(scheduledDays(w,today,'2027-03-01'),['2026-12-09','2026-12-14','2026-12-16']);
+  const i=normalizeSchedule({type:'interval',every:10,start:'2026-12-01',until:'2026-12-25',from:'2026-12-20'},today);
+  assert.deepEqual(i,{type:'interval',every:10,start:'2026-12-01',until:'2026-12-25'});
+  assert.deepEqual(scheduledDays(i,today,'2027-03-01'),['2026-12-01','2026-12-11','2026-12-21']);
+  assert.deepEqual(normalizeSchedule({type:'weekly',days:[1],until:''},today),{type:'weekly',days:[1]});
+  for(const bad of [{until:'2026-11-30'},{until:'2027-06-01'},{from:'2026-12-10',until:'2026-12-05'},{until:'nope'}])assert.throws(()=>normalizeSchedule({type:'weekly',days:[1],...bad},today),e=>e.message==='INVALID_SCHEDULE');
+});

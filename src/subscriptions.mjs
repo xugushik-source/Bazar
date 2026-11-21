@@ -50,16 +50,19 @@ const dayOfMonth=day=>Number(day.slice(8,10));
 export function normalizeSchedule(s,today){
   const bad=()=>fail('INVALID_SCHEDULE',409);
   if(!s||typeof s!=='object')bad();
+  // Необязательные границы: from (с какого дня) и until (по какой день включительно). Не раньше сегодня и не дальше PLAN_DAYS.
+  const range=allowFrom=>{const o={},ok=d=>isDay(d)&&d>=today&&d<=addDays(today,PLAN_DAYS);if(allowFrom&&s.from!==undefined&&s.from!==''&&s.from!==null){if(!ok(s.from))bad();o.from=s.from}if(s.until!==undefined&&s.until!==''&&s.until!==null){if(!ok(s.until))bad();o.until=s.until}if(o.from&&o.until&&o.from>o.until)bad();return o};
   const ints=(v,min,max,limit)=>{if(!Array.isArray(v)||!v.length||v.length>limit)bad();const out=[...new Set(v)];if(out.some(x=>!Number.isInteger(x)||x<min||x>max))bad();return out.sort((a,b)=>a-b)};
   switch(s.type){
-    case 'weekly':return {type:'weekly',days:ints(s.days,1,7,7)};
-    case 'monthly':return {type:'monthly',dates:ints(s.dates,1,28,28)};
-    case 'interval':{if(!Number.isInteger(s.every)||s.every<1||s.every>60||!isDay(s.start))bad();return {type:'interval',every:s.every,start:s.start}}
+    case 'weekly':return {type:'weekly',days:ints(s.days,1,7,7),...range(true)};
+    case 'monthly':return {type:'monthly',dates:ints(s.dates,1,28,28),...range(true)};
+    case 'interval':{if(!Number.isInteger(s.every)||s.every<1||s.every>60||!isDay(s.start))bad();return {type:'interval',every:s.every,start:s.start,...range(false)}}
     case 'dates':{if(!Array.isArray(s.dates)||!s.dates.length||s.dates.length>60)bad();const dates=[...new Set(s.dates)];if(dates.some(d=>!isDay(d)||d<today||d>addDays(today,PLAN_DAYS)))bad();return {type:'dates',dates:dates.sort()}}
     default:bad();
   }
 }
 function matches(s,day){
+  if((s.from&&day<s.from)||(s.until&&day>s.until))return false;
   switch(s.type){
     case 'weekly':return s.days.includes(isoWeekday(day));
     case 'monthly':return s.dates.includes(dayOfMonth(day));
