@@ -1,8 +1,8 @@
 // Delivery zones (owner 30.10): only Akhalkalaki; «1 Городок» next to the town has a bad road, so delivery there costs extra,
 // without the free-delivery threshold and without the free first order. Ninotsminda and Akhaltsikhe are announced as «скоро».
 // Owner 31.10: «1 городок — 6 лари» (taxi Maxim from the centre: 6,7 ₾); the 14th and 15th gorodoks count as the town.
-// Owner 07.11: nearby villages, free from 160 ₾ of goods.
-const village=(id,fee,ru,hy,ka,aliases)=>({id,fee,free_from:16000,names:{ru,hy,ka},aliases});
+// Owner (ноябрь 2026): доставка в сёла всегда платная, бесплатной не бывает — free_from: null.
+const village=(id,fee,ru,hy,ka,aliases)=>({id,fee,free_from:null,names:{ru,hy,ka},aliases});
 export const zones={akhalkalaki:[{id:'gorodok',fee:700,free_from:15000,names:{ru:'1 Городок',hy:'1 Գորոդոկ',ka:'1 გოროდოკი'},aliases:['1 городок','1-й городок','1й городок','1-ый городок','первый городок','1 gorodok','1 գորոդոկ','1 გოროდოკი']},
  village('bavra',550,'Бавра','Բավրա','ბავრა',['бавр','bavra','բավրա','ბავრა']),village('khulgumo',600,'Хулгумо','Խուլգումո','ხულგუმო',['хулгум','хульгум','khulgumo','xulgumo','խուլգումո','ხულგუმო']),
  village('dilisqa',800,'Дилиска','Դիլիսկա','დილისქა',['дилиск','делиск','dilisqa','dilisca','diliska','դիլիսկա','დილისქა']),village('kartikam',800,'Картикам','Քարթիկամ','ქარტიკამი',['картикам','kartikam','kartikami','քարթիկամ','քարտիկամ','կարտիկամ','ქარტიკამი']),
