@@ -119,7 +119,7 @@ test('migration 0006 keeps existing orders unchanged and the server works on a d
  DB.exec('CREATE TABLE IF NOT EXISTS _local_migrations(name TEXT PRIMARY KEY,applied_at TEXT NOT NULL)');for(const f of fs.readdirSync(dir).filter(f=>/^000[1-5]_/.test(f)).sort()){DB.exec(fs.readFileSync(new URL(f,dir),'utf8'));DB.sqlite.prepare('INSERT INTO _local_migrations VALUES(?,?)').run(f,'x')}
  // 0058 is the owner's one-time wipe of the test orders (30.10), deliberately not order-preserving; it is tested on its own.
  DB.sqlite.prepare('INSERT INTO _local_migrations VALUES(?,?)').run('0058_reset_orders.sql','x');
- await seed(DB,{karo:false});const e={DB,sent:[]};e.owner={id:await createUser(DB,{email:'owner@test.invalid',name:'Владелец',password:'test-password-123456',owner:true})};
+ await seed(DB,{karo:false});DB.exec("INSERT INTO app_config(key,value) VALUES('min-order-minor','0') ON CONFLICT(key) DO UPDATE SET value='0'");const e={DB,sent:[]};e.owner={id:await createUser(DB,{email:'owner@test.invalid',name:'Владелец',password:'test-password-123456',owner:true})};
  const health=await call(e,'health');assert.equal(health.collection,false,'health reports the missing schema honestly');
  const o=await order(e);assert.equal((await customer(e,o)).status,'NEW');assert.equal((await view(e,o,e.owner)).status,'NEW');
  const before=await q(DB,'SELECT * FROM orders WHERE id=?',o.id).first();migrate(DB);const after=await q(DB,'SELECT * FROM orders WHERE id=?',o.id).first();

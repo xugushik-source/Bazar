@@ -4,6 +4,7 @@ import {CONSENT_VERSION}from './legal.mjs';import {zones,zoneOf,zoneFee,detectZo
 const consentKnown=new WeakSet();async function hasConsentColumns(db){if(consentKnown.has(db))return true;try{await db.prepare('SELECT consent_version,marketing FROM orders LIMIT 0').all();consentKnown.add(db);return true}catch{return false}}
 import {quote,assessBasket,weightPrice} from './weight-policy.mjs';
 import {stockLimited} from './stock-mode.mjs';
+import {assertMinimum} from './min-order.mjs';
 import {fail,integer,text,uuid,now,sha,token,constant,jsonParse,teamRole} from './security.mjs';
 export const q=(db,sql,...p)=>db.prepare(sql).bind(...p);
 const guard=db=>db.prepare('INSERT INTO guards(value) VALUES(changes())');
@@ -90,7 +91,7 @@ async function routing(db,id){const jobs=(await q(db,'SELECT l.title,l.kind,l.ac
 export async function createOrder(db,b){const limited=await stockLimited(db);const idem=text(b.idem,80,true);if(!/^[a-zA-Z0-9-]{20,80}$/.test(idem))fail('INVALID_IDEMPOTENCY');const fp=await sha(JSON.stringify(b)),prior=await q(db,'SELECT * FROM orders WHERE idem=?',idem).first();
  if(prior){if(prior.fingerprint!==fp)fail('IDEMPOTENCY_CONFLICT',409);const key=await capability(db,prior.id);return {...await orderView(db,prior.id,null,key),key};}
  {const hrs=await orderHours(db);if(hrs){const tz=(await q(db,'SELECT timezone FROM cities WHERE id=?',String(b.city||'')).first())?.timezone||'Asia/Tbilisi';if(!hoursOpen(hrs,clock(tz).minute))fail('ORDERS_CLOSED',409)}}
- const basket=await priceBasket(db,b),c=basket.city;
+ const basket=await priceBasket(db,b),c=basket.city;await assertMinimum(db,basket.estimate_minor);
  // Owner 09.11: a village written in the address sets its delivery zone even when none was chosen.
  if(!b.zone&&b.fulfillment==='delivery'){const dz=detectZone(zones[c.id],b.customer?.address);if(dz)b={...b,zone:dz}}{const closed=await closedToday(db,b.day);if(basket.lines.some(l=>closed.has(l.product_id)))fail('CLOSED_TODAY',409)}if(!['pickup','delivery'].includes(b.fulfillment)||!['cash','transfer'].includes(b.method))fail('INVALID_INPUT');validateSlot(c,b.day,b.minute);{const w=await slotWindow(db,c.id,basket.lines.map(l=>l.vendor_id),b.day);if(!w.minutes.includes(b.minute))fail(b.minute<w.from||b.minute>w.to?'VENDOR_CLOSED':'INVALID_SLOT',409);if(supplierDelivered(basket.lines)&&b.method!=='transfer')fail('BULK_TRANSFER_ONLY',409);const lead=bulkLead(basket.lines),x=clock(c.timezone);if(lead&&b.day===x.day&&b.minute<x.minute+lead)fail('BULK_LEAD_TIME',409)}
  const customer={name:text(b.customer?.name,80,true),phone:text(b.customer?.phone,40,true),address:text(b.customer?.address||'',300,b.fulfillment==='delivery'),note:text(b.customer?.note||'',400),method:b.method};if(!/^[+0-9 ()-]{5,40}$/.test(customer.phone))fail('INVALID_PHONE');

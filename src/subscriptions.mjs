@@ -13,11 +13,12 @@ import {q,parse,priceBasket,deliveryFee,slots,createOrder,clock} from './commerc
 import {zones,zoneOf,detectZone} from './zones.mjs';
 import {CONSENT_VERSION} from './legal.mjs';
 import {Problem,fail,text,integer,uuid,now,token,sha,constant} from './security.mjs';
+import {assertMinimum,MIN_ORDER_MINOR} from './min-order.mjs';
 
 export const ORDER_LEAD_DAYS=2;            // заказ создаётся за 2 дня; после этого доставка для плательщика заблокирована
 export const PLAN_DAYS=120;                // на сколько дней вперёд строится план (без резервирования товара)
 export const CLAIM_TIMEOUT_MS=10*60*1000;  // «зависшая» заявка на заказ возвращается в план
-export const TOWN_MIN_ORDER_MINOR=3000;    // 30 ₾ — условие ТЗ для Ахалкалаки (только для программ, см. docs)
+export const TOWN_MIN_ORDER_MINOR=MIN_ORDER_MINOR;   // владелец: 25 ₾ для всех заказов и программ (src/min-order.mjs)
 export const MAX_BUDGET_MINOR=10000000;    // 100 000 ₾ на одну доставку — защита от опечатки
 const MAX_ITEMS=30;
 const MAX_FUNDS_MINOR=10000000;
@@ -76,7 +77,7 @@ export function scheduledDays(s,from,to){const out=[];for(let day=from;day<=to;d
 export async function quoteFor(db,{city_id,zone,items}){
   const basket=await priceBasket(db,{city_id,items});
   const estimate=basket.estimate_minor;
-  if(!zone&&city_id==='akhalkalaki'&&estimate<TOWN_MIN_ORDER_MINOR)fail('MIN_ORDER',409);
+  await assertMinimum(db,estimate);
   const fee=deliveryFee(basket.city,'delivery',estimate,zone);
   return {basket,items,estimate,fee,total:estimate+fee,maximum:basket.maximum_minor+fee};
 }

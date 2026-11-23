@@ -99,10 +99,11 @@ test('Akhalkalaki town: 30→35, 80→85, 99.99→+5, 100→100 GEL (delivery fr
   }finally{e.DB.close()}
 });
 
-test('Akhalkalaki town: goods below 30 GEL cannot be a subscription (MIN_ORDER at creation and in the planner)', async()=>{
+test('goods below 25 GEL cannot be a subscription (MIN_ORDER at creation)', async()=>{
   const e=await env();
   try{
-    setPrice(e,'apple_loose',2500);
+    e.DB.exec("UPDATE app_config SET value='2500' WHERE key='min-order-minor'");
+    setPrice(e,'apple_loose',2400);
     const r=await create(e);
     assert.equal(r.http,409);
     assert.equal(r.error,'MIN_ORDER');
