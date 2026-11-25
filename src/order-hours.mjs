@@ -11,4 +11,11 @@ export const orderHoursSql=()=>[`INSERT INTO app_config(key,value) VALUES('${ORD
 export const readyFoodTo=1170;   // 19:30
 // Owner 11.11 (later): cakes from the same bakery are ordered in the evening too.
 export const isReadyCat=c=>String(c||'').startsWith('rf_')||c==='cakes';
+// Owner 25.11: suppliers with their own hours (Каро 09–20, Выпечка 09–20, Рафо/Форель 11–23) take today's orders by those hours.
+// A basket counts only when EVERY supplier in it has its own hours; any market goods keep 09:00–18:00. The last order is 20 minutes
+// before the supplier closes. A later day is always open (see commerce.mjs), so this window only matters for today.
+export const ownOrderGap=20;
+export const isOwnHours=v=>!!v&&v.open_minute!=null&&v.close_minute!=null&&!(v.open_minute===540&&v.close_minute===1080);
+export const ownOrderWindow=(vendors,gap=ownOrderGap)=>{if(!vendors.length||!vendors.every(isOwnHours))return null;return {from:Math.max(...vendors.map(v=>v.open_minute)),to:Math.min(...vendors.map(v=>v.close_minute-gap))}};
+export async function ownWindowFor(db,lines){const ids=[...new Set((lines||[]).map(l=>l.vendor_id).filter(Boolean))];if(!ids.length)return null;const rows=(await db.prepare(`SELECT id,open_minute,close_minute FROM vendors WHERE id IN (${ids.map(()=>'?').join(',')})`).bind(...ids).all()).results;if(rows.length!==ids.length)return null;return ownOrderWindow(rows)}
 export const readyOpen=(h,minute)=>!h||globalThis.process?.env?.BAZAR_IGNORE_ORDER_HOURS==='1'||(minute>=h.from&&minute<Math.max(h.to,readyFoodTo));

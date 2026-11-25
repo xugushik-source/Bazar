@@ -9,16 +9,16 @@ import {createOrder,priceBasket,deliveryFee,clock,q,action,releaseScheduledOrder
 // Owner 18.11: a phone order for a later day. Hours are checked against the real clock, so each test sets the window itself:
 // '0-0' is always closed, '0-1440' is always open. npm test sets BAZAR_IGNORE_ORDER_HOURS=1, which would switch the check off.
 const TZ='Asia/Tbilisi',CITY='akhalkalaki';
-async function fixture(){const db=new LocalD1();migrate(db);await seed(db,{karo:false});db.exec('DELETE FROM day_hours; UPDATE cities SET first_order_free=0');const user={id:await createUser(db,{email:'operator@test.invalid',name:'Test operator',password:'test-password-123456',owner:true}),owner:true};return {db,user}}
+async function fixture(){const db=new LocalD1();migrate(db);await seed(db,{karo:false});db.exec("DELETE FROM day_hours; UPDATE cities SET first_order_free=0; UPDATE vendors SET open_minute=NULL,close_minute=NULL WHERE id='akhalkalaki-karo';");const user={id:await createUser(db,{email:'operator@test.invalid',name:'Test operator',password:'test-password-123456',owner:true}),owner:true};return {db,user}}
 async function hours(db,value){await q(db,"INSERT INTO app_config(key,value) VALUES('order_hours',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value",value).run()}
 async function withRealHours(fn){const saved=process.env.BAZAR_IGNORE_ORDER_HOURS;delete process.env.BAZAR_IGNORE_ORDER_HOURS;try{return await fn()}finally{if(saved!==undefined)process.env.BAZAR_IGNORE_ORDER_HOURS=saved}}
 const dayAt=days=>clock(TZ,new Date(Date.now()+days*86400000)).day;
 const at=(day,hhmm)=>new Date(Date.parse(`${day}T${hhmm}:00+04:00`));
 async function payload(db,day,minute=720){const b={city_id:CITY,items:[{product_id:CITY+'--apple_loose',selection:{grams:1000}},{product_id:CITY+'--pear_loose',selection:{grams:1000}}],fulfillment:'delivery',day,minute,method:'cash',customer:{name:'TEST ONLY',phone:'+995555000000',address:'DO NOT DELIVER'},accepted_weight_rules:true,privacy_consent:true,idem:crypto.randomUUID()};const p=await priceBasket(db,b),fee=deliveryFee(p.city,b.fulfillment,p.estimate_minor);return {...b,expected_total:p.estimate_minor+fee,maximum_total:p.maximum_minor+fee}}
 
-test('the operator books a later day outside working hours; the website and same-day orders keep the closing rule',()=>withRealHours(async()=>{const {db,user}=await fixture();try{
+test('a later day is bookable outside working hours (operator and website, owner 25.11); same-day orders keep the closing rule',()=>withRealHours(async()=>{const {db,user}=await fixture();try{
  await hours(db,'0-0');const day=dayAt(1);
- await assert.rejects(createOrder(db,await payload(db,day)),/ORDERS_CLOSED/,'website: closed hours still apply to a later day');
+ await assert.doesNotReject(createOrder(db,await payload(db,day)),'website: a later day is open at any hour (owner 25.11)');
  const phone=await phoneAPI(db,'create',await payload(db,day),user);
  assert.equal(phone.day,day);assert.equal(phone.status,'NEW');assert.equal(phone.confirmed,false);assert.equal(phone.payment,'UNPAID');
  await assert.rejects(phoneAPI(db,'create',await payload(db,dayAt(0)),user),/ORDERS_CLOSED/,'a same-day order still follows the hours');
